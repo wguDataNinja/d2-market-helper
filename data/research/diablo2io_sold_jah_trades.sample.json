@@ -1,0 +1,291 @@
+[
+  {
+    "source": "diablo2io",
+    "surface": "sold_search",
+    "evidence_class": "completed_player_trade_candidate",
+    "source_url": "https://diablo2.io/search.php?keywords=Jah&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=43",
+    "fixture_path": "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+    "target_item": "Jah Rune",
+    "target_item_id": 43,
+    "target_quantity": 1,
+    "trade_side": "WTB",
+    "segment": {
+      "platform": "pc",
+      "ladder": "non_ladder",
+      "hardcore": "unknown",
+      "region": "americas",
+      "ruleset": "rotw"
+    },
+    "segment_confidence": "medium",
+    "seller": "Ctaylorheck",
+    "buyer": "varangium",
+    "sold_at_relative": null,
+    "sold_timestamp": null,
+    "consideration": [
+      {
+        "item": "Ist",
+        "quantity": 11,
+        "normalized_item_name": "Ist Rune",
+        "rune_order": 24
+      }
+    ],
+    "raw_title": "WTB SOLD Jah",
+    "raw_description": "Looking to buy jah or ber, offering 11 ist.",
+    "raw_sale_line": "Sold by Ctaylorheck to varangium for 11 Ist",
+    "views": 45,
+    "offers": 3,
+    "parse_class": "clean_single_rune",
+    "use_in_model": false
+  },
+  {
+    "source": "diablo2io",
+    "surface": "sold_search",
+    "evidence_class": "completed_player_trade_candidate",
+    "source_url": "https://diablo2.io/search.php?keywords=Jah&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=43",
+    "fixture_path": "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+    "target_item": "Jah Rune",
+    "target_item_id": 43,
+    "target_quantity": 1,
+    "trade_side": "WTS",
+    "segment": {
+      "platform": "pc",
+      "ladder": "non_ladder",
+      "hardcore": "unknown",
+      "region": "americas",
+      "ruleset": "rotw"
+    },
+    "segment_confidence": "medium",
+    "seller": "Arinahaset",
+    "buyer": "varangium",
+    "sold_at_relative": null,
+    "sold_timestamp": null,
+    "consideration": [
+      {
+        "item": "Cham",
+        "quantity": 1,
+        "normalized_item_name": "Cham Rune",
+        "rune_order": 32
+      },
+      {
+        "item": "Ist",
+        "quantity": 1,
+        "normalized_item_name": "Ist Rune",
+        "rune_order": 24
+      }
+    ],
+    "raw_title": "WTS SOLD Jah",
+    "raw_description": "For Cham + Ist",
+    "raw_sale_line": "Sold by Arinahaset to varangium for 1 Cham for 1 Ist",
+    "views": 24,
+    "offers": 1,
+    "parse_class": "clean_multi_rune",
+    "use_in_model": false
+  },
+  {
+    "source": "diablo2io",
+    "surface": "sold_search",
+    "evidence_class": "completed_player_trade_candidate",
+    "source_url": "https://diablo2.io/search.php?keywords=Jah&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=43",
+    "fixture_path": "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+    "target_item": "Jah Rune",
+    "target_item_id": 43,
+    "target_quantity": 1,
+    "trade_side": "WTS",
+    "segment": {
+      "platform": "pc",
+      "ladder": "non_ladder",
+      "hardcore": "unknown",
+      "region": "europe",
+      "ruleset": "rotw"
+    },
+    "segment_confidence": "medium",
+    "seller": "ZET-U",
+    "buyer": null,
+    "sold_at_relative": null,
+    "sold_timestamp": null,
+    "consideration": null,
+    "raw_title": "WTS SOLD Jah",
+    "raw_description": "O: Jah N: Ber",
+    "raw_sale_line": "Sold by ZET-U",
+    "views": 8,
+    "offers": 0,
+    "parse_class": "description_only_consideration",
+    "use_in_model": false
+  },
+  {
+    "source": "diablo2io",
+    "surface": "sold_search",
+    "evidence_class": "completed_player_trade_candidate",
+    "source_url": "https://diablo2.io/search.php?keywords=Jah&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=43",
+    "fixture_path": "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+    "target_item": "Jah Rune",
+    "target_item_id": 43,
+    "target_quantity": 2,
+    "trade_side": "WTS",
+    "segment": {
+      "platform": "pc",
+      "ladder": "non_ladder",
+      "hardcore": "unknown",
+      "region": "americas",
+      "ruleset": "rotw"
+    },
+    "segment_confidence": "medium",
+    "seller": "Triumphant",
+    "buyer": "LyonCZ",
+    "sold_at_relative": null,
+    "sold_timestamp": null,
+    "consideration": [
+      {
+        "item": "Ber",
+        "quantity": 2,
+        "normalized_item_name": "Ber Rune",
+        "rune_order": 30
+      }
+    ],
+    "raw_title": "WTS SOLD 2 Jah",
+    "raw_description": "WTB 2 Ber for 2 Jah",
+    "raw_sale_line": "Sold by Triumphant to LyonCZ for 2 Ber",
+    "views": 38,
+    "offers": 1,
+    "parse_class": "quantity_bundle",
+    "use_in_model": false
+  },
+  {
+    "source": "diablo2io",
+    "surface": "sold_search",
+    "evidence_class": "completed_player_trade_candidate",
+    "source_url": "https://diablo2.io/search.php?keywords=Jah&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=43",
+    "fixture_path": "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+    "target_item": "Jah Rune",
+    "target_item_id": 43,
+    "target_quantity": 1,
+    "trade_side": "WTS",
+    "segment": {
+      "platform": "pc",
+      "ladder": "ladder",
+      "hardcore": "unknown",
+      "region": "unknown",
+      "ruleset": "rotw"
+    },
+    "segment_confidence": "medium",
+    "seller": "Volarmis",
+    "buyer": "Zampag",
+    "sold_at_relative": null,
+    "sold_timestamp": null,
+    "consideration": [
+      {
+        "item": "Sur",
+        "quantity": 1,
+        "normalized_item_name": "Sur Rune",
+        "rune_order": 29
+      },
+      {
+        "item": "Lo",
+        "quantity": 1,
+        "normalized_item_name": "Lo Rune",
+        "rune_order": 28
+      }
+    ],
+    "raw_title": "WTS SOLD Jah",
+    "raw_description": "N Sur + Lo",
+    "raw_sale_line": "Sold by Volarmis to Zampag for 1 Sur for 1 Lo",
+    "views": 34,
+    "offers": 1,
+    "parse_class": "clean_multi_rune",
+    "use_in_model": false
+  },
+  {
+    "source": "diablo2io",
+    "surface": "sold_search",
+    "evidence_class": "completed_player_trade_candidate",
+    "source_url": "https://diablo2.io/search.php?keywords=Jah&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=43",
+    "fixture_path": "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+    "target_item": "Jah Rune",
+    "target_item_id": 43,
+    "target_quantity": 1,
+    "trade_side": "WTS",
+    "segment": {
+      "platform": "pc",
+      "ladder": "non_ladder",
+      "hardcore": "unknown",
+      "region": "americas",
+      "ruleset": "rotw"
+    },
+    "segment_confidence": "medium",
+    "seller": "Goldendude",
+    "buyer": "Johnny-23",
+    "sold_at_relative": null,
+    "sold_timestamp": null,
+    "consideration": [
+      {
+        "item": "Sur",
+        "quantity": 2,
+        "normalized_item_name": "Sur Rune",
+        "rune_order": 29
+      },
+      {
+        "item": "Ohm",
+        "quantity": 1,
+        "normalized_item_name": "Ohm Rune",
+        "rune_order": 27
+      }
+    ],
+    "raw_title": "WTS SOLD Jah",
+    "raw_description": "LF 2 Sur or 1 Cham and 1 Sur",
+    "raw_sale_line": "Sold by Goldendude to Johnny-23 for 2 Sur for 1 Ohm",
+    "views": 132,
+    "offers": 4,
+    "parse_class": "clean_multi_rune",
+    "use_in_model": false
+  },
+  {
+    "source": "diablo2io",
+    "surface": "sold_search",
+    "evidence_class": "completed_player_trade_candidate",
+    "source_url": "https://diablo2.io/search.php?keywords=Jah&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=43",
+    "fixture_path": "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+    "target_item": "Jah Rune",
+    "target_item_id": 43,
+    "target_quantity": 1,
+    "trade_side": "WTS",
+    "segment": {
+      "platform": "pc",
+      "ladder": "non_ladder",
+      "hardcore": "unknown",
+      "region": "europe",
+      "ruleset": "rotw"
+    },
+    "segment_confidence": "medium",
+    "seller": "JakeEilert",
+    "buyer": "LyonCZ",
+    "sold_at_relative": null,
+    "sold_timestamp": null,
+    "consideration": [
+      {
+        "item": "Vex",
+        "quantity": 2,
+        "normalized_item_name": "Vex Rune",
+        "rune_order": 26
+      },
+      {
+        "item": "Gul",
+        "quantity": 2,
+        "normalized_item_name": "Gul Rune",
+        "rune_order": 25
+      },
+      {
+        "item": "Mal",
+        "quantity": 2,
+        "normalized_item_name": "Mal Rune",
+        "rune_order": 23
+      }
+    ],
+    "raw_title": "WTS SOLD Jah",
+    "raw_description": "My jah for 2 vex 2 Gul och 2 mal",
+    "raw_sale_line": "Sold by JakeEilert to LyonCZ for 2 Vex for 2 Gul for 2 Mal",
+    "views": 24,
+    "offers": 1,
+    "parse_class": "clean_multi_rune",
+    "use_in_model": false
+  }
+]
