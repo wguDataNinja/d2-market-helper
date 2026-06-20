@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "item_id": "jah_rune",
+  "display_name": "Jah Rune",
+  "category": "runes",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "currency",
+    "liquidity": "very_high",
+    "volatility": "medium",
+    "new_player_risk": "low",
+    "commonly_used_as_currency": true
+  },
+  "gameplay_context": {
+    "uses": [
+      "Enigma runeword (Jah + Ith + Ber)",
+      "top-tier caster runewords (Last Wish, Phoenix, Faith, Ice)"
+    ],
+    "demand_drivers": [
+      "Enigma is the most wanted runeword in the game",
+      "consistent demand across all ladder ages"
+    ],
+    "supply_notes": [
+      "drops from Travincal, Chaos Sanctuary, Worldstone Keep, LK super chests",
+      "cube recipe from Cham + Sur is usually uneconomical",
+      "limited supply relative to mid runes"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "FG on d2jsp"
+    ],
+    "common_trade_forms": [
+      "single Jah Rune",
+      "Jah for Ber + Ist / Ber + Vex (symmetric pair trading)"
+    ],
+    "important_rolls_or_variants": [],
+    "segment_sensitivity": [
+      "ladder vs non-ladder: significant price difference",
+      "softcore vs hardcore: hardcore usually commands higher price",
+      "early ladder vs late ladder: price peaks early, declines over time"
+    ],
+    "known_model_risks": [
+      "Jah is well-modeled by Ist-paired trades in all segments",
+      "volume is high enough for stable VWAP",
+      "symmetric trades (Jah-for-Ber) provide cross-check opportunity"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "Primary source. High volume of Ist-paired trades."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": "Useful for FG conversion cross-reference."
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Jah is the most stable top-tier rune alongside Ber. Core Enigma demand."
+    }
+  ],
+  "open_questions": [
+    "Does Jah/Ber ratio change meaningfully across ladder age or within a season?",
+    "Should Jah be a secondary numeraire for high-end items?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

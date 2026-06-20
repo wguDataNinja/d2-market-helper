@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "item_id": "hellfire_torch",
+  "display_name": "Hellfire Torch",
+  "category": "charms",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "chase_unique",
+    "liquidity": "high",
+    "volatility": "medium",
+    "new_player_risk": "high",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "large charm granting +3 class skills, stats, and resists"
+    ],
+    "demand_drivers": [
+      "needed by every endgame build",
+      "different classes demand different torches — Sorceress, Paladin torches most expensive",
+      "ladder resets create renewed demand"
+    ],
+    "supply_notes": [
+      "dropped from Uber Tristram (requires keys + organs)",
+      "supply depends on key farming and Uber Tristram runner activity",
+      "class random — supply of specific class torches varies"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "Jah Rune or Ber Rune (high-roll meta-class torches)"
+    ],
+    "common_trade_forms": [
+      "single Hellfire Torch"
+    ],
+    "important_rolls_or_variants": [
+      "+3 to random class skills",
+      "+10-20 to all attributes",
+      "+10-20 to all resistances",
+      "class matters: Sorceress > Paladin > Barbarian > Amazon > Assassin > Necromancer > Druid"
+    ],
+    "segment_sensitivity": [
+      "ladder vs non-ladder: significant price and supply differences",
+      "class popularity varies by season meta",
+      "perfect rolls command massive premium"
+    ],
+    "known_model_risks": [
+      "price varies enormously by class and roll quality",
+      "raw VWAP across all classes and rolls is misleading",
+      "Sorceress and Paladin torches trade at multiples of Druid/Necromancer torches",
+      "class information may be in Traderie listing data but roll data may not",
+      "per-class-per-roll modeling needed for useful pricing"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "unknown",
+      "notes": "Needs evaluation: does Traderie expose class and roll data? Per-class pricing may be feasible even without per-roll."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": "FG prices often listed per-class and per-roll range on d2jsp."
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Like Annihilus, Hellfire Torch has severe roll and class variance. Per-class pricing may be feasible as a first step."
+    }
+  ],
+  "open_questions": [
+    "Does the Traderie API expose class for Torch listings?",
+    "Does it expose roll data (attributes, resists)?",
+    "Is per-class VWAP useful even without per-roll refinement?",
+    "What is the current class price ranking for the active ladder?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

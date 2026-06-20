@@ -1,0 +1,71 @@
+{
+  "source": "g2g",
+  "captured_at": "2026-06-20T06:31:06Z",
+  "har_available": false,
+  "api_endpoints_found": [
+    {
+      "url": "https://translate-pa.googleapis.com",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://fonts.googleapis.com",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://translate.googleapis.com",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;600;700;900&display=swap",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&amp;display=swap",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://identitytoolkit.googleapis.com",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;600;700;900&amp;display=swap",
+      "method": "GET (inferred from page source)",
+      "status": null,
+      "content_type": null,
+      "purpose": "Found in page source or JS bundle"
+    }
+  ],
+  "notes": "No HAR capture performed. API endpoints listed here were found by scanning page source for URL patterns. Full API traffic requires HAR capture or CDP session monitoring."
+}

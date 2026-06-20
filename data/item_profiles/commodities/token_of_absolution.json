@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.1",
+  "item_id": "token_of_absolution",
+  "display_name": "Token of Absolution",
+  "category": "commodities",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "commodity",
+    "liquidity": "high",
+    "volatility": "low",
+    "new_player_risk": "low",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "respecialize character stats and skills"
+    ],
+    "demand_drivers": [
+      "character respecs after completing Den of Evil quest rewards",
+      "build experimentation",
+      "ladder resets increase demand temporarily"
+    ],
+    "supply_notes": [
+      "crafted from four essences dropped by act bosses (Andariel/Duriel, Mephisto, Diablo, Baal)",
+      "supply is steady — essences drop frequently"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "Pul Rune or Lem Rune (low value)"
+    ],
+    "common_trade_forms": [
+      "single Token of Absolution",
+      "bulk tokens"
+    ],
+    "important_rolls_or_variants": [],
+    "segment_sensitivity": [
+      "low value — pricing noise may dominate signal",
+      "similar price across ladder and non-ladder"
+    ],
+    "known_model_risks": [
+      "low absolute price means small Ist fractions",
+      "may not have enough Ist-paired trades for reliable VWAP",
+      "consider modeling in FG or Pul/Lem units instead"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "Likely has sufficient trade volume for basic pricing, but Ist-pair volume may be low."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": ""
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Low-value commodity. Pricing may need alternative unit."
+    }
+  ],
+  "open_questions": [
+    "Does Token trade volume on Traderie support Ist-pair pricing or should it be quoted in PGems / FG?",
+    "Is there enough non-ladder volume to include?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

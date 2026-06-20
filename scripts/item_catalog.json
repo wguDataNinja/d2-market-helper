@@ -1,0 +1,122 @@
+{
+  "3x3 Key Set": {
+    "id": 3357156195,
+    "type": "misc",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/misc/7fa446b7d36ae8c7a2d3fc670c19e8313x3 Key Set.jpeg"
+  },
+  "Aegis": {
+    "id": 2914605671,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/shield/tower_shield.png"
+  },
+  "Aerin Shield": {
+    "id": 3927707895,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/shield/aerin_shield.png"
+  },
+  "A Jade Figurine": {
+    "id": 4117768341,
+    "type": "misc",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/quest/jade_figurine.png"
+  },
+  "Akaran Rondache": {
+    "id": 3610980548,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/shield/rondache.png"
+  },
+  "Akaran Targe": {
+    "id": 3424545611,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/shield/targe.png"
+  },
+  "Aldur's Advance": {
+    "id": 2912900382,
+    "type": "sets",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/boot/light_plate_boots.png"
+  },
+  "Aldur's Deception": {
+    "id": 4257248502,
+    "type": "sets",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/armor/full_plate_mail.png"
+  },
+  "Aldur's Rhythm": {
+    "id": 2186559570,
+    "type": "sets",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/mace/bloodrise.png"
+  },
+  "Aldur's Stony Gaze": {
+    "id": 3438280911,
+    "type": "sets",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/pelt/antlers.png"
+  },
+  "Aldur's Watchtower": {
+    "id": 2918805741,
+    "type": "sets",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/sets/Aldurs_Watchtower.png"
+  },
+  "Alma Negra": {
+    "id": 3084194131,
+    "type": "uniques",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/shield/rondache.png"
+  },
+  "Alpha Helm": {
+    "id": 2666810562,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/pelt/wolf_head.png"
+  },
+  "Amethyst": {
+    "id": 2254176312,
+    "type": "gems",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/gem/amethyst.png"
+  },
+  "Amn Rune": {
+    "id": 4237640539,
+    "type": "runes",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/rune/amn_rune.png"
+  },
+  "Amulet": {
+    "id": 3209126938,
+    "type": "misc",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/amulet/amulet.png"
+  },
+  "Amulet of the Viper": {
+    "id": 3709620819,
+    "type": "misc",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/amulet/viper_amulet.png"
+  },
+  "Ancient Armor": {
+    "id": 2573484841,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/armor/ancient_armor.png"
+  },
+  "Ancient Axe": {
+    "id": 2242083904,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/axe/giant_axe.png"
+  },
+  "Ancient Shield": {
+    "id": 2282820168,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/shield/gothic_shield.png"
+  },
+  "Ancients' Pledge": {
+    "id": 3908837840,
+    "type": "runewords",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/runeword/ancients_pledge.png"
+  },
+  "Ancient Sword": {
+    "id": 2604934062,
+    "type": "base",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/sword/war_sword.png"
+  },
+  "Andariel's Visage": {
+    "id": 2768846755,
+    "type": "uniques",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/helmet/mask.png"
+  },
+  "Angelic Halo": {
+    "id": 3001899185,
+    "type": "sets",
+    "icon": "https://cdn.nookazon.com/diablo2resurrected/ring/ring5.png"
+  }
+}

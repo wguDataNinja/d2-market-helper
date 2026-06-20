@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+data/submissions_*.jsonl
+data/candidates_*.jsonl
+data/llm_export_*
+data/comments/
+logs/
+sessions/

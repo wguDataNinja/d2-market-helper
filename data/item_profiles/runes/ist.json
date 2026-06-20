@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "item_id": "ist_rune",
+  "display_name": "Ist Rune",
+  "category": "runes",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "currency",
+    "liquidity": "very_high",
+    "volatility": "low",
+    "new_player_risk": "low",
+    "commonly_used_as_currency": true
+  },
+  "gameplay_context": {
+    "uses": [
+      "runeword component",
+      "trade numeraire / base pricing unit"
+    ],
+    "demand_drivers": [
+      "caster runewords (Heart of the Oak, Call to Arms)",
+      "general runeword demand"
+    ],
+    "supply_notes": [
+      "drops from Hellforge quest (Ist is in the drop table)",
+      "cube recipe from lower runes",
+      "steady supply from LK super chest farming"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune (self)",
+      "FG on d2jsp"
+    ],
+    "common_trade_forms": [
+      "single Ist Rune",
+      "bulk Ist (multiple Ist for high runes)"
+    ],
+    "important_rolls_or_variants": [],
+    "segment_sensitivity": [
+      "ladder vs non-ladder supply difference",
+      "price ratio to Jah/Ber varies by ladder age"
+    ],
+    "known_model_risks": [
+      "Ist is the numeraire — its price is always 1.0 by definition",
+      "model cannot validate Ist's own absolute value",
+      "external check needed: FG conversion, forum sentiment"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "Primary source. Ist-paired trades are the backbone of the pricing model."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated for structured data."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": "FG-to-Ist conversion research useful for numeraire validation."
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Ist is the current pipeline numeraire. Needs periodic re-validation that Ist remains the most liquid mid-tier rune."
+    }
+  ],
+  "open_questions": [
+    "Is Ist still the most stable mid-tier rune for ladder and non-ladder?",
+    "Does the Ist-to-FG conversion rate remain consistent enough for cross-validation?",
+    "Should ladder and non-ladder have separate Ist baselines?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

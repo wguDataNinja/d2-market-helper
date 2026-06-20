@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "item_id": "annihilus",
+  "display_name": "Annihilus",
+  "category": "charms",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "chase_unique",
+    "liquidity": "high",
+    "volatility": "medium",
+    "new_player_risk": "high",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "large charm granting +1 skills, experience, stats, and all resists"
+    ],
+    "demand_drivers": [
+      "needed by every endgame build",
+      "demand is constant across all characters",
+      "ladder resets create renewed demand"
+    ],
+    "supply_notes": [
+      "dropped by Uber Diablo (D Clone) — spawns when enough Stone of Jordan are sold",
+      "supply is uneven — D Clone walks infrequently",
+      "duped Annihilus is a historical concern"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "Jah Rune or Ber Rune (perfect/high rolls)"
+    ],
+    "common_trade_forms": [
+      "single Annihilus charm"
+    ],
+    "important_rolls_or_variants": [
+      "+1 skills (always 1)",
+      "+10-20 to all attributes",
+      "+10-20 to all resistances",
+      "+5-10% extra experience"
+    ],
+    "segment_sensitivity": [
+      "ladder vs non-ladder: price and supply differ significantly",
+      "hardcore vs softcore: affects pricing",
+      "perfect rolls (20/20/10) trade at massive premium"
+    ],
+    "known_model_risks": [
+      "price varies enormously by roll quality",
+      "raw trade data aggregates all rolls — VWAP is misleading without roll classifier",
+      "low-roll Annihilus may trade near Ist; perfect roll can trade for multiple Jah/Ber",
+      "classifying roll quality from listing text requires NLP or structured listing parsing",
+      "Traderie may not reliably expose roll data in the API response"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "unknown",
+      "notes": "Needs evaluation: does Traderie expose roll data? If not, per-roll pricing is infeasible from this source."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated. May have better structured listing data."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": "FG prices often listed per-roll range on d2jsp."
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Annihilus is a textbook roll-sensitive item. Raw VWAP across all rolls is not useful. Needs per-roll model or roll classification before pricing."
+    }
+  ],
+  "open_questions": [
+    "Does the Traderie API expose roll data (attributes, resistances, experience) for Annihilus listings?",
+    "Can roll quality be classified from listing title/body text?",
+    "Should Annihilus be excluded from pricing until roll-aware modeling is possible?",
+    "What is the current per-roll price distribution?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

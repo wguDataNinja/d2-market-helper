@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1",
+  "product": "items7_cash_prices",
+  "source_slug": "items7",
+  "generated_at": "2026-06-20T06:56:32Z",
+  "artifact_path": "research/sources/downloads/rune_sources_2026-06-20/items7.html",
+  "observation_count": 0,
+  "observations": [],
+  "parser_notes": "items7 static HTML does not contain per-rune prices in extractable format. Prices are loaded client-side via JavaScript. A browser capture (Camoufox) is required to render and extract per-rune prices. Static capture showed 21 dollar amounts ($0.15-$2.85) in the full page text but these could not be mapped to specific rune names from the static HTML alone."
+}

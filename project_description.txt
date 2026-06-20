@@ -1,0 +1,251 @@
+
+
+🛠 Dev Guide: Generate and Push rune_prices.json
+
+⸻
+
+🚩 Goal
+
+Take processed price data from your pipeline, generate rune_prices.json, and push it to your GitHub repo so Traderie Tools can use it.
+
+⸻
+
+1️⃣ ✅ Prerequisites
+
+Before starting:
+	•	Your full processing pipeline already works:
+	•	fetch_trades.py
+	•	extract_rune_trades.py
+	•	calculate_rune_prices.py
+	•	(optional) consolidate_prices.py → generates rune_prices_consolidated.csv
+	•	You have a GitHub repo set up:
+Example:
+https://github.com/wguDataNinja/TraderieTools
+	•	You have git installed locally.
+	•	You have working git credentials:
+	•	SSH keys (preferred), or
+	•	Personal Access Token (PAT)
+
+⸻
+
+2️⃣ ✅ Clone the Repo Locally
+
+If not done yet:
+
+git clone git@github.com:wguDataNinja/TraderieTools.git
+cd TraderieTools
+
+⚠ Use git@github.com:... if you’re using SSH.
+
+You now have your repo ready locally.
+
+⸻
+
+3️⃣ ✅ Directory Layout
+
+Inside the repo, set up:
+
+/scripts       # All your pipeline code
+/data/raw      # Raw fetched data (ignored by git)
+
+Keep your output files organized like this:
+
+/data/prices/rune_prices_consolidated.csv
+/data/prices/rune_prices.json  # <-- This is the file you'll commit
+
+
+⸻
+
+4️⃣ ✅ Generate rune_prices.json
+
+Create script: scripts/generate_prices_json.py
+
+# scripts/generate_prices_json.py
+
+import csv
+import json
+
+input_csv = 'data/prices/rune_prices_consolidated.csv'
+output_json = 'data/prices/rune_prices.json'
+
+result = {}
+
+with open(input_csv, 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        rune = row['Rune'].strip()
+        price = float(row['Blended_FMV'])
+        result[f"{rune} Rune"] = round(price, 4)
+
+with open(output_json, 'w') as f:
+    json.dump(result, f, indent=2)
+
+print(f"✅ Successfully generated {output_json}")
+
+
+⸻
+
+5️⃣ ✅ Add .gitignore (Important!)
+
+Inside repo root, create or edit .gitignore:
+
+# Ignore raw & intermediate data files
+data/raw/
+data/extracted/
+data/prices/rune_prices_consolidated.csv
+
+✅ This prevents you from accidentally pushing huge data files.
+
+⸻
+
+6️⃣ ✅ Full Pipeline Run Example
+
+cd TraderieTools
+
+# 1. Fetch new data
+python scripts/fetch_trades.py
+
+# 2. Extract valid trades
+python scripts/extract_rune_trades.py
+
+# 3. Calculate rune prices
+python scripts/calculate_rune_prices.py
+
+# 4. Consolidate prices (if applicable)
+python scripts/consolidate_prices.py
+
+# 5. Generate the final JSON for Traderie Tools
+python scripts/generate_prices_json.py
+
+At this point, data/prices/rune_prices.json is updated and ready.
+
+⸻
+
+7️⃣ ✅ Commit and Push to GitHub
+
+git add data/prices/rune_prices.json
+git commit -m "Update rune_prices.json"
+git push
+
+✅ Your updated price file is now live on GitHub.
+
+⸻
+
+8️⃣ ✅ Verify URL
+
+Double check the file is accessible:
+
+https://raw.githubusercontent.com/wguDataNinja/TraderieTools/main/data/prices/rune_prices.json
+
+
+⸻
+
+9️⃣ ✅ Update Traderie Tools URL (if necessary)
+
+Inside your Tampermonkey script:
+
+const PRICE_URL = 'https://raw.githubusercontent.com/wguDataNinja/TraderieTools/main/data/prices/rune_prices.json';
+
+
+⸻
+
+✅ Done. The tools will now pull updated prices automatically.
+
+⸻
+
+🚀 Fully Automating (optional)
+
+
+📦 Traderie Rune Pricing Pipeline — Current Project Overview
+
+🗓️ June 16, 2025
+🔧 Maintainer: buddy
+
+⸻
+
+🔎 Goal
+	•	Fully automated, reproducible Diablo II rune pricing pipeline.
+	•	Fetch, extract, and process full Traderie trade history.
+	•	Compute high-confidence Ist-normalized market prices.
+	•	Handle both single-item and multi-item trades.
+	•	Build foundations for consistency checking.
+
+⸻
+
+🔨 Pipeline Architecture (as of June 2025)
+
+1️⃣ Data Fetching
+	•	Script: fetch_completed_trades.py
+	•	Source: Traderie API
+https://traderie.com/api/diablo2resurrected/listings
+	•	Segments:
+	•	pc_sc_l
+	•	pc_sc_nl
+	•	pc_hc_l
+	•	pc_hc_nl
+	•	Deduplication: based on updated_at timestamp.
+	•	Output:
+/Users/buddy/Desktop/traderie/data/raw/raw_trades_<segment>.json
+
+⸻
+
+2️⃣ Extraction: Valid Rune Trades
+	•	Script: extract_rune_trades.py
+	•	Function:
+	•	Parse raw JSON into valid rune-for-rune trades.
+	•	Handles both single-item and multi-item (AND) trades.
+	•	Filters:
+	•	Skip open listings (price: [])
+	•	Skip invalid qty (≤ 0)
+	•	Skip self-trades
+	•	Only rune-to-rune trades
+	•	Output:
+/Users/buddy/Desktop/traderie/data/extracted/normalized_trades_<segment>.csv
+	•	CSV Format:
+TradeID, Offered, Requested
+
+⸻
+
+3️⃣ Price Calculation: Ist-Normalized Pricing
+	•	Script: calculate_rune_prices.py
+	•	Process:
+	•	Reads extracted CSVs.
+	•	Handles each segment separately.
+	•	Calculates Ist-normalized price per rune.
+	•	Uses both bid and ask sides, blended FMV.
+	•	Output:
+/Users/buddy/Desktop/traderie/data/prices/rune_prices_<segment>.csv
+	•	CSV Format:
+Rune, Bid_Price, Bid_Count, Ask_Price, Ask_Count, Blended_FMV, Total_Trades
+
+⸻
+
+🔬 Current Stats (June 2025 Extraction)
+
+Segment	Raw	Normalized	Singles	AND Trades	Skipped
+pc_sc_l	17018	14126	10637	3489	~2892
+pc_sc_nl	13526	11466	9774	1692	~2060
+pc_hc_l	3306	2333	1560	773	~973
+pc_hc_nl	469	296	219	77	~173
+
+	•	AND trades: ~10-20% of valid trades — significant but not yet modeled.
+
+⸻
+
+✅ Design Principles
+	•	Deterministic & fully reproducible.
+	•	Clean segment separation.
+	•	Modular for easy extension.
+	•	Audit-logged and failure-resistant.
+	•	Direct raw aggregation preferred over unstable log-space modeling.
+
+⸻
+
+🔑 Summary (June 2025)
+	•	✅ Solid data extraction & normalization verified.
+	•	✅ Ist-normalized prices calculated per segment.
+	•	✅ Multi-segment aggregation logic operational.
+	•	✅ System stable, extensible, and accurate.
+
+⸻
+

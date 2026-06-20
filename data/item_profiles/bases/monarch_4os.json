@@ -1,0 +1,92 @@
+{
+  "schema_version": "0.1",
+  "item_id": "monarch_4os",
+  "display_name": "Monarch (4 open sockets)",
+  "category": "bases",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "crafting_base",
+    "liquidity": "high",
+    "volatility": "low",
+    "new_player_risk": "medium",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "Spirit runeword shield (Tal + Thul + Ort + Amn)",
+      "Phoenix runeword shield",
+      "Splendor, Sanctuary, Exile (ethereal only for Exile)"
+    ],
+    "demand_drivers": [
+      "Spirit Monarch is the default endgame shield for caster builds",
+      "low strength requirement (156) for a 4-socket shield",
+      "every caster build needs one"
+    ],
+    "supply_notes": [
+      "dropped by many monsters in Hell difficulty",
+      "Monarch with 4 sockets can be Larzuk quest reward or cube recipe",
+      "white Monarch is common; 4os is common from cube or Larzuk"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "Lem Rune or Pul Rune"
+    ],
+    "common_trade_forms": [
+      "single 4os Monarch"
+    ],
+    "important_rolls_or_variants": [
+      "defense varies (minor impact on price)",
+      "superior vs non-superior — superior may have enhanced defense or durability",
+      "ethereal 4os Monarch is only useful for Exile runeword (low demand)"
+    ],
+    "segment_sensitivity": [
+      "ladder vs non-ladder: moderate price difference in early ladder; minimal later",
+      "early ladder: 4os Monarch is significantly more expensive",
+      "low-value item — pricing noise may dominate"
+    ],
+    "known_model_risks": [
+      "low absolute price means small Ist fractions — may need FG or PGem unit",
+      "superior vs non-superior may have small price difference",
+      "ethereal trades differently",
+      "white (0os) Monarch trades differently than 4os Monarch — must distinguish"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "High volume for a base item. Need to verify listings distinguish 0os vs 4os reliably."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": ""
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. 4os Monarch is the most commonly traded runeword base. Good candidate for base-item pricing."
+    }
+  ],
+  "open_questions": [
+    "Does Traderie reliably distinguish 0-socket Monarch from 4-socket Monarch?",
+    "Is 4os Monarch volume high enough for VWAP in all segments?",
+    "Should ethereal 4os Monarch be priced separately?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

@@ -1,0 +1,12 @@
+{
+  "source_url": "https://www.playerauctions.com/diablo-2-resurrected-marketplace/",
+  "captured_at": "2026-06-20T06:50:46Z",
+  "har_available": false,
+  "api_endpoints_found": [
+    "https://account-api.playerauctions.com/",
+    "https://public-api.playerauctions.com/",
+    "https://user-api.playerauctions.com/",
+    "https://www.playerauctions.com/elder-scrolls-online-boosting/trials/cloudrest/"
+  ],
+  "notes": "API patterns from page source scan. Full traffic requires HAR capture."
+}

@@ -1,0 +1,117 @@
+after removing bookmarking and adblock logic to make a GUI shell,
+
+We fixed the checkbox formatting for Remove Ads and Inject Rune Pricing by restructuring the layout using display: flex on each <label> for inline alignment of the checkbox and text, while placing the labels in a .tools-options container styled with flex-direction: column. This ensured that each checkbox+label pair appears on its own line, fully left-aligned, and avoids wrapping or centering issues caused by inherited or global styles. All underlying logic was removed to create a clean, static shell UI.
+
+
+// filename: bookmarking-module.js
+// Modular Bookmark Feature for Traderie Tools
+
+// Inject this block inside your main script after GUI is built.
+// It requires the `panel` DOM element to already exist.
+
+// 📌 INSTRUCTIONS:
+// 1. Paste this block after the panel DOM is appended.
+// 2. Ensure `panel.innerHTML` includes the needed .bookmark-header and inputs.
+// 3. Reconnect localStorage keys and UI events as shown below.
+
+const STORAGE_BOOKMARKS = 'traderieBookmarks';
+const STORAGE_BOOKMARKS_OPEN = 'traderieBookmarksOpen';
+
+function getBookmarks() {
+  return JSON.parse(localStorage.getItem(STORAGE_BOOKMARKS) || '[]');
+}
+
+function saveBookmarks(bms) {
+  localStorage.setItem(STORAGE_BOOKMARKS, JSON.stringify(bms));
+}
+
+function renderBookmarks() {
+  const all = getBookmarks();
+  const listings = all.filter(b => b.type === 'listing');
+  const searches = all.filter(b => b.type === 'search');
+  const ll = document.getElementById('listingList');
+  const sl = document.getElementById('searchList');
+  ll.innerHTML = ''; sl.innerHTML = '';
+  const makeItem = (b, idx, arr) => {
+    const item = document.createElement('div');
+    item.className = 'bookmark-item';
+    const text = document.createElement('span');
+    text.className = 'text';
+    text.textContent = b.name;
+    text.onclick = () => window.location.href = b.url;
+    const edit = document.createElement('span');
+    edit.className = 'edit-btn'; edit.textContent = '✎';
+    edit.onclick = () => {
+      const input = document.createElement('input');
+      input.className = 'bookmark-edit-input';
+      input.value = b.name;
+      input.onkeypress = e => {
+        if (e.key === 'Enter') {
+          arr[idx].name = input.value.trim();
+          saveBookmarks(all);
+          renderBookmarks();
+        }
+      };
+      item.innerHTML = '';
+      item.appendChild(input);
+      input.focus();
+      input.select();
+    };
+    const del = document.createElement('span');
+    del.className = 'delete-btn'; del.textContent = '🗑';
+    del.onclick = () => {
+      arr.splice(idx, 1);
+      saveBookmarks(arr);
+      renderBookmarks();
+    };
+    item.appendChild(text);
+    item.appendChild(edit);
+    item.appendChild(del);
+    return item;
+  };
+  listings.forEach((b,i) => ll.appendChild(makeItem(b, i, all)));
+  searches.forEach((b,i) => sl.appendChild(makeItem(b, i + listings.length, all)));
+}
+
+renderBookmarks();
+
+document.getElementById('saveSearchBtn').onclick = () => {
+  const input = document.getElementById('bookmarkName');
+  input.style.display = 'block';
+  input.value = '';
+  input.focus();
+  input.select();
+};
+
+document.getElementById('bookmarkName').onkeypress = e => {
+  if (e.key === 'Enter') {
+    const nm = e.target.value.trim();
+    if (!nm) return;
+    const url = window.location.href;
+    const isSearch = !url.includes('/listing');
+    const bms = getBookmarks();
+    bms.push({ type: isSearch ? 'search' : 'listing', name: nm, url });
+    saveBookmarks(bms);
+    renderBookmarks();
+    e.target.style.display = 'none';
+    document.getElementById('bookmarkSection').style.display = 'flex';
+    localStorage.setItem(STORAGE_BOOKMARKS_OPEN, 'true');
+  }
+};
+
+const bookmarkToggle = document.getElementById('bookmarkToggle');
+const bookmarkSection = document.getElementById('bookmarkSection');
+bookmarkToggle.addEventListener('click', () => {
+  const exp = bookmarkToggle.classList.toggle('expanded');
+  bookmarkToggle.classList.toggle('collapsed', !exp);
+  bookmarkSection.style.display = exp ? 'flex' : 'none';
+  localStorage.setItem(STORAGE_BOOKMARKS_OPEN, JSON.stringify(exp));
+});
+
+if (JSON.parse(localStorage.getItem(STORAGE_BOOKMARKS_OPEN) || 'false')) {
+  bookmarkToggle.classList.add('expanded');
+  bookmarkToggle.classList.remove('collapsed');
+  bookmarkSection.style.display = 'flex';
+}
+
+

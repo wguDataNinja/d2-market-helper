@@ -1,0 +1,72 @@
+# Source Manifest
+
+## What It Is
+
+`data/source_manifest.json` is the canonical ledger of every known D2R pricing and trade source. It tracks discovery status, extraction method, segment support, and next actions for each source.
+
+## How to Add a New Source
+
+1. Add an entry to `data/source_manifest.json` with all required fields.
+2. Create a source notes file at `research/sources/{source_slug}.md` with detailed findings.
+3. If static capture is possible, download the page and save to `research/sources/downloads/`.
+4. If browser capture is required, create a capture artifact directory.
+5. Run `python scripts/validate_source_manifest.py` to verify.
+6. Run `python scripts/validate_source_manifest.py` after any update.
+
+## Status Lifecycle
+
+```
+discovered → captured_static → offline_parse_candidate → parser_prototype_ready → integrated
+          ↘ captured_browser ↗                                        ↘ rejected
+          ↘ deferred (blocked or deferred)
+          ↘ rejected (not usable)
+```
+
+| Status | Meaning |
+|---|---|
+| `discovered` | URL known, not yet downloaded or captured |
+| `captured_static` | Static HTML downloaded to `research/sources/downloads/` |
+| `captured_browser` | Rendered page captured via Camoufox to `research/sources/captures/` |
+| `offline_parse_candidate` | Saved artifacts can be parsed for price data |
+| `parser_prototype_ready` | Working parser script exists in `scripts/` |
+| `integrated` | Source data flows into a production data product |
+| `deferred` | Not currently actionable — revisit later |
+| `rejected` | Not usable for this project |
+
+## Evidence Class Definitions
+
+| Class | Description | Example |
+|---|---|---|
+| `completed_player_trades` | Actual completed trades between players | Traderie API |
+| `active_player_listings` | Current active listings asking for trades/sales | Traderie active listings |
+| `forum_trade_posts` | Forum posts offering or seeking trades | d2jsp |
+| `cash_market_listings` | Real-money marketplace listings (asking prices) | G2G, PlayerAuctions |
+| `community_discussion` | Qualitative discussion about items, prices, economy | Reddit, Discord |
+| `source_directory` | A directory or aggregator of other sources | d2stock |
+
+## Segment Filter Rules
+
+- Sources with segment filters can provide segment-specific prices.
+- Sources without segment filters produce blended prices that may not reflect any real segment.
+- Segment metadata: platform, ladder, hardcore, softcore, season, region.
+- Missing segment metadata lowers confidence or excludes the observation.
+- Do not merge segment data across sources unless explicitly modeling blended averages.
+
+## Cash-Market Separation
+
+Cash-market sources (G2G, PlayerAuctions, items7, etc.) are **comparison-only**:
+
+- They show asking prices from sellers, not completed transactions.
+- Prices may include transaction fees, minimum floors, and profit margins.
+- They are not blended into the in-game rune value model.
+- They are displayed on the website with clear labels: "Cash listing price — not in-game trade value."
+
+## Agent Update Rules
+
+When updating the manifest:
+
+- Do not change status from `integrated` or `rejected` without review.
+- Do not add sources without evidence artifacts (download, capture, or screenshot).
+- Do not set `parser_prototype_ready` without a working parser script in `scripts/`.
+- Add caveats for any known limitations (login required, dynamic prices, no segments).
+- Run validation after every change.

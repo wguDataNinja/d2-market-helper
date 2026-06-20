@@ -1,0 +1,143 @@
+
+📦 Traderie Tools Overview
+
+Enhances traderie.com with:
+	•	✅ Ad-blocking
+	•	📊 Rune-for-rune price analysis (Diablo II)
+	•	📌 Bookmarking UI for listings & searches
+
+🧩 Technologies
+	•	Tampermonkey
+	•	Vanilla JavaScript
+	•	localStorage (for UI persistence)
+	•	External data: rune_prices.json via GitHub
+	•	DOM manipulation + MutationObserver
+
+⸻
+
+📁 Project Structure
+
+traderie-tools.user.js       # Main Tampermonkey userscript
+rune_prices.json             # External price mapping of runes → Ist value
+
+🧾 rune_prices.json Format
+
+{
+  "pc_sc_nl": {
+    "Jah Rune": { "ist_value": 10.38, "low_confidence": false },
+    "Lo Rune": { "ist_value": 4.93, "low_confidence": true }
+  }
+}
+
+	•	Keyed by: <platform>_<mode>_<ladder>
+	•	Values: Normalized to Ist rune
+
+⸻
+
+🛠️ Script Features
+
+1. 📵 Ad Blocker
+	•	Selectors defined by category:
+
+const SELECTOR_GROUPS = {
+  google: ['iframe[src*="googlesyndication"]', ...],
+  styled: ['div.sc-gfoqjT.gXykUj', ...],
+  ...
+};
+
+
+	•	Persists enabled groups in localStorage
+	•	Uses:
+	•	MutationObserver to monitor DOM
+	•	style tag for CSS-based hiding
+	•	Manual removal via .remove()
+
+Control API (window-bound):
+
+window.traderieAdblock = {
+  enable, disable, isEnabled
+}
+
+2. 💰 Rune Pricing
+	•	Enabled via checkbox → localStorage
+	•	Fetches external JSON (rune-to-Ist rates)
+	•	Annotates listings with:
+	•	+/-% difference
+	•	Tooltip showing offer/ask Ist values
+
+Key Functions:
+
+fetchRunePrices(cb)         // Load price JSON
+injectAll(prices)           // Inject into all visible listings
+injectPercentAndTooltip()   // Per listing UI injection
+
+	•	Uses:
+	•	MutationObserver
+	•	DOM parsing of .listing-name and .price-line
+	•	parseRune() & parseAskGroups() utilities
+
+⸻
+
+3. 📌 Bookmarks
+	•	UI for saving current URL as “listing” or “search”
+	•	localStorage format:
+
+[
+  {
+    "type": "search" | "listing",
+    "name": "My Rune Search",
+    "url": "https://traderie.com/d2r?prop_Mode=..."
+  }
+]
+
+	•	UI includes:
+	•	Editable names
+	•	Click-to-visit
+	•	Delete, rename
+
+Relevant IDs:
+
+#listingList, #searchList         // containers
+#bookmarkName                     // input field
+STORAGE_BOOKMARKS                // localStorage key
+
+
+⸻
+
+4. 🧩 UI Panel
+	•	Draggable, resizable <div> with:
+	•	Tabs: Bookmarks / Options
+	•	Toggle state saved: open/closed, size, position
+	•	Styled with custom CSS + Google Font (Alegreya Sans)
+	•	Resizing and drag-persistence:
+	•	Manual mousedown/mousemove tracking
+	•	localStorage keys: traderieAppSize, traderieAppPosition
+
+⸻
+
+🧠 State/Storage Keys
+
+'traderie-adblock-enabled'
+'traderie-rune-pricing-enabled'
+'traderieBookmarks'
+'traderieAppSize'
+'traderieAppPosition'
+'traderieAppOpen'
+'traderieBookmarksOpen'
+
+
+⸻
+
+📤 Installation
+	1.	Install Tampermonkey on your browser
+	2.	Visit GreasyFork Traderie Tools (replace with actual link)
+	3.	Click Install
+	4.	Visit traderie.com and use the sidebar panel
+
+⸻
+
+✨ Developer Tips
+	•	Edit rune values: update rune_prices.json and push to GitHub
+	•	Modify UI: tweak injected CSS and HTML strings
+	•	Bookmark logic is easily extensible: e.g., add tags, folders, import/export
+

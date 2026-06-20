@@ -1,0 +1,56 @@
+[
+  {
+    "category": "uncategorized",
+    "item_count": 1247,
+    "profile_count": 3,
+    "description": "Items without category assignment \u2014 review needed"
+  },
+  {
+    "category": "runes",
+    "item_count": 33,
+    "profile_count": 3,
+    "description": "33 rune items used in runewords and as trade currency"
+  },
+  {
+    "category": "jewelry",
+    "item_count": 19,
+    "profile_count": 0,
+    "description": "Rings, amulets, and circlets"
+  },
+  {
+    "category": "commodities",
+    "item_count": 16,
+    "profile_count": 4,
+    "description": "Keys, essences, tokens, organs for Uber Tristram and respecs"
+  },
+  {
+    "category": "gems",
+    "item_count": 7,
+    "profile_count": 0,
+    "description": "7 perfect gem items used in crafting and as low-value currency"
+  },
+  {
+    "category": "charms",
+    "item_count": 3,
+    "profile_count": 0,
+    "description": "Small, large, grand charms including Annihilus and Hellfire Torch"
+  },
+  {
+    "category": "bases",
+    "item_count": 1,
+    "profile_count": 1,
+    "description": ""
+  },
+  {
+    "category": "jewels",
+    "item_count": 1,
+    "profile_count": 0,
+    "description": "Magic jewels used in crafting"
+  },
+  {
+    "category": "uniques",
+    "item_count": 1,
+    "profile_count": 1,
+    "description": ""
+  }
+]

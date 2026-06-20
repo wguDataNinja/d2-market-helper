@@ -1,0 +1,58 @@
+{
+  "captured_at": "2026-06-20T07:01:08Z",
+  "target_url": "https://www.iggm.com/d2-resurrected-items",
+  "final_url": "https://www.iggm.com/d2-resurrected-items",
+  "capture_method": "camoufox headless sync_api + DOM navigation",
+  "page_title": "Diablo 2 Resurrected Items For Sale, Buy D2R Items - IGGM",
+  "page_rendered": true,
+  "login_required": false,
+  "selected_filters": {
+    "ladder": true,
+    "non_ladder": true,
+    "softcore": true,
+    "hardcore": true,
+    "rotw": true,
+    "pc": true,
+    "xbox": true,
+    "season": true
+  },
+  "detected_platform": "pc",
+  "detected_ladder": false,
+  "detected_hardcore": false,
+  "detected_softcore": true,
+  "detected_season": "ROTW",
+  "visible_listings_found": 30,
+  "price_samples": [
+    "0.09",
+    "0.12",
+    "0.19",
+    "0.22",
+    "0.29",
+    "0.39",
+    "0.49",
+    "0.89",
+    "1.79",
+    "2.79"
+  ],
+  "navigation_attempts": [
+    "Error clicking link: ElementHandle.click: Timeout 30000ms exceeded.\nCall log:\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    59 \u00d7 waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n",
+    "Error clicking link: ElementHandle.click: Timeout 30000ms exceeded.\nCall log:\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    59 \u00d7 waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n",
+    "Clicked rune link: diablo 2 resurrected runes"
+  ],
+  "notes": [
+    "Rune listings found: 30",
+    "Price elements found: 30",
+    "Page text length: 27650 chars"
+  ],
+  "detected_filters_present": [
+    "ladder",
+    "non-ladder",
+    "softcore",
+    "hardcore",
+    "rotw",
+    "pc",
+    "xbox",
+    "switch",
+    "season"
+  ]
+}

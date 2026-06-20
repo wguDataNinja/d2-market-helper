@@ -1,0 +1,92 @@
+{
+  "schema_version": "0.1",
+  "item_id": "griffons_eye",
+  "display_name": "Griffon's Eye",
+  "category": "uniques",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "sought_unique",
+    "liquidity": "high",
+    "volatility": "medium",
+    "new_player_risk": "high",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "lightning caster builds (Lightning/Chain Lightning Sorceress, Javazon, Lightning Trap Assassin)",
+      "best-in-slot diadem for lightning builds"
+    ],
+    "demand_drivers": [
+      "lightning Sorceress is a popular build",
+      "javazon is a top-tier farming build",
+      "demand spikes when lightning builds are meta"
+    ],
+    "supply_notes": [
+      "dropped by Mephisto, Diablo, Baal, and other high-level area monsters",
+      "rare unique — limited supply",
+      "ethereal Griffon's is less desired (no repair, used on mercenary only)"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "Jah Rune or Ber Rune (good rolls)"
+    ],
+    "common_trade_forms": [
+      "single Griffon's Eye"
+    ],
+    "important_rolls_or_variants": [
+      "-15% to -20% enemy lightning resistance (most important stat)",
+      "+10% to +15% lightning skill damage",
+      "ethereal vs non-ethereal",
+      "socketed vs unsocketed (pDrift or facet)"
+    ],
+    "segment_sensitivity": [
+      "ladder vs non-ladder: significant price difference",
+      "softcore vs hardcore: affects pricing",
+      "early ladder: very expensive; declines over time"
+    ],
+    "known_model_risks": [
+      "price varies significantly by lightning resist roll",
+      "Traderie may or may not expose roll data",
+      "ethereal Griffon's trades at a fraction of non-eth",
+      "lightning facet socketing changes value further"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "unknown",
+      "notes": "Needs evaluation: does Traderie expose enemy lightning resist roll in listing data?"
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": "Active trading on d2jsp with per-roll pricing."
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Griffon's is a high-value unique with critical roll variance. Requires roll-aware modeling for useful pricing."
+    }
+  ],
+  "open_questions": [
+    "Can enemy lightning resist roll be extracted from Traderie listing data?",
+    "Should Griffon's get per-roll pricing or a blended estimate with variance warning?",
+    "Is the lightning Sorceress currently meta for the active ladder?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

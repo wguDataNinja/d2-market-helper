@@ -1,0 +1,7 @@
+[
+  { "platform": "pc",          "mode": "softcore",  "ladder": false, "slug": "pc_sc_nl",      "enabled": true },
+  { "platform": "pc",          "mode": "softcore",  "ladder": true,  "slug": "pc_sc_l",       "enabled": true },
+  { "platform": "pc",          "mode": "hardcore",  "ladder": false, "slug": "pc_hc_nl",      "enabled": true },
+  { "platform": "pc",          "mode": "hardcore",  "ladder": true,  "slug": "pc_hc_l",       "enabled": true }
+
+]

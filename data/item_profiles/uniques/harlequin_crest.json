@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1",
+  "item_id": "harlequin_crest",
+  "display_name": "Harlequin Crest (Shako)",
+  "category": "uniques",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "common_unique",
+    "liquidity": "very_high",
+    "volatility": "low",
+    "new_player_risk": "low",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "best-in-slot helmet for almost every caster build",
+      "also used as a generic +skills/stats/life/mana helm for non-casters"
+    ],
+    "demand_drivers": [
+      "universal — almost every build wants Shako",
+      "one of the first high-value items new players target",
+      "steady demand across all ladder ages"
+    ],
+    "supply_notes": [
+      "drops from Mephisto, Diablo, Baal, and many other monsters",
+      "relatively common for a unique — steady supply",
+      "dup concerns in legacy D2:LOD era, less relevant in D2R"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune"
+    ],
+    "common_trade_forms": [
+      "single Shako"
+    ],
+    "important_rolls_or_variants": [
+      "defense is the only variable roll (minor price difference)",
+      "ethereal Shako is common — only cosmetic, no durability use for helm"
+    ],
+    "segment_sensitivity": [
+      "ladder vs non-ladder: moderate price difference",
+      "early ladder: higher price, drops quickly",
+      "softcore vs hardcore: small difference"
+    ],
+    "known_model_risks": [
+      "Shako is relatively easy to model — low roll variance",
+      "high trade volume gives stable VWAP",
+      "defense roll has negligible impact on price",
+      "ethereal vs non-eth may have slight price difference"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "High volume. Low roll variance makes this a good candidate for basic Traderie pricing."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": ""
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Shako is the most liquid common unique. Good candidate for basic Traderie pricing model."
+    }
+  ],
+  "open_questions": [
+    "Is Shako volume high enough across all four segments?",
+    "Does ethereal Shako trade at a discount, or is it effectively the same price?",
+    "Should Shako be the first non-rune item priced via the existing pipeline?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

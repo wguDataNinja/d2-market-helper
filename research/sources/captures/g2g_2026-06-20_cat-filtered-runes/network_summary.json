@@ -1,0 +1,18 @@
+{
+  "source": "g2g",
+  "captured_at": "2026-06-20T06:35:50Z",
+  "har_available": false,
+  "notes": "No HAR capture. Page source inspected for API endpoints.",
+  "api_endpoints_found": [
+    "https://assets.g2g.com/offer/keyword.json",
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap",
+    "https://identitytoolkit.googleapis.com",
+    "https://assets.g2g.com/offer/categories.json",
+    "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;600;700;900&display=swap",
+    "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&amp;display=swap",
+    "https://fonts.googleapis.com",
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
+    "https://translate-pa.googleapis.com",
+    "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;600;700;900&amp;display=swap"
+  ]
+}

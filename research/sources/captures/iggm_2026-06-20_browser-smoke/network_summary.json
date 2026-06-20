@@ -1,0 +1,12 @@
+{
+  "source_url": "https://www.iggm.com/d2-resurrected-items",
+  "captured_at": "2026-06-20T06:51:25Z",
+  "har_available": false,
+  "api_endpoints_found": [
+    "https://www.pinterest.com/IGGM_Official/",
+    "https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit",
+    "https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfaHN4pAAAAAGs3Q_C9-o8oOlvq9EojHX8pfnry&amp;co=aHR0cHM6Ly93d3cuaWdnbS5jb206NDQz&amp;hl=en&amp;v=MerVUtRoajKEbP7pLiGXkL28&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=sl84nlai6c80",
+    "https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=MerVUtRoajKEbP7pLiGXkL28&amp;k=6LfaHN4pAAAAAGs3Q_C9-o8oOlvq9EojHX8pfnry&amp;bft=0dAFcWeA6OMXyikHvmiy8o-l0zSRwRpCFT0H8T2WtztlSBKaoPHfMb4XBi4EE9tSKKg23vDbiBeBEbQGDCitzrJa8K4IkfMV8pHA&amp;ca=false"
+  ],
+  "notes": "API patterns from page source scan. Full traffic requires HAR capture."
+}

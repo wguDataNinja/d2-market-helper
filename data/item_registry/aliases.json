@@ -1,0 +1,357 @@
+[
+  {
+    "alias": "Shako",
+    "canonical_name": "Harlequin Crest",
+    "item_id": "harlequin_crest",
+    "confidence": "high",
+    "context": "unique diadem",
+    "canonical_item": {
+      "item_id": "harlequin_crest",
+      "canonical_name": "Harlequin Crest"
+    }
+  },
+  {
+    "alias": "SoJ",
+    "canonical_name": "The Stone of Jordan",
+    "item_id": "stone_of_jordan",
+    "confidence": "high",
+    "context": "unique ring",
+    "canonical_item": {
+      "item_id": "stone_of_jordan",
+      "canonical_name": "The Stone of Jordan"
+    }
+  },
+  {
+    "alias": "SOJ",
+    "canonical_name": "The Stone of Jordan",
+    "item_id": "stone_of_jordan",
+    "confidence": "high",
+    "context": "unique ring",
+    "canonical_item": {
+      "item_id": "stone_of_jordan",
+      "canonical_name": "The Stone of Jordan"
+    }
+  },
+  {
+    "alias": "Maras",
+    "canonical_name": "Mara's Kaleidoscope",
+    "item_id": "maras_kaleidoscope",
+    "confidence": "high",
+    "context": "unique amulet",
+    "canonical_item": null,
+    "resolution_status": "needs_review"
+  },
+  {
+    "alias": "Mara's",
+    "canonical_name": "Mara's Kaleidoscope",
+    "item_id": "maras_kaleidoscope",
+    "confidence": "high",
+    "context": "unique amulet",
+    "canonical_item": null,
+    "resolution_status": "needs_review"
+  },
+  {
+    "alias": "Griffons",
+    "canonical_name": "Griffon's Eye",
+    "item_id": "griffons_eye",
+    "confidence": "high",
+    "context": "unique diadem",
+    "canonical_item": {
+      "item_id": "griffons_eye",
+      "canonical_name": "Griffon's Eye"
+    }
+  },
+  {
+    "alias": "Griffon's",
+    "canonical_name": "Griffon's Eye",
+    "item_id": "griffons_eye",
+    "confidence": "high",
+    "context": "unique diadem",
+    "canonical_item": {
+      "item_id": "griffons_eye",
+      "canonical_name": "Griffon's Eye"
+    }
+  },
+  {
+    "alias": "Anni",
+    "canonical_name": "Annihilus",
+    "item_id": "annihilus",
+    "confidence": "high",
+    "context": "unique small charm",
+    "canonical_item": {
+      "item_id": "annihilus",
+      "canonical_name": "Annihilus"
+    }
+  },
+  {
+    "alias": "Torch",
+    "canonical_name": "Hellfire Torch",
+    "item_id": "hellfire_torch",
+    "confidence": "high",
+    "context": "unique large charm",
+    "canonical_item": {
+      "item_id": "hellfire_torch",
+      "canonical_name": "Hellfire Torch"
+    }
+  },
+  {
+    "alias": "CTA",
+    "canonical_name": "Call to Arms",
+    "item_id": "call_to_arms",
+    "confidence": "high",
+    "context": "runeword (5 socket weapons)",
+    "canonical_item": {
+      "item_id": "call_to_arms",
+      "canonical_name": "Call To Arms"
+    }
+  },
+  {
+    "alias": "HOTO",
+    "canonical_name": "Heart of the Oak",
+    "item_id": "heart_of_the_oak",
+    "confidence": "high",
+    "context": "runeword (4 socket staves/maces)",
+    "canonical_item": {
+      "item_id": "heart_of_the_oak",
+      "canonical_name": "Heart Of The Oak"
+    }
+  },
+  {
+    "alias": "HotO",
+    "canonical_name": "Heart of the Oak",
+    "item_id": "heart_of_the_oak",
+    "confidence": "high",
+    "context": "runeword",
+    "canonical_item": {
+      "item_id": "heart_of_the_oak",
+      "canonical_name": "Heart Of The Oak"
+    }
+  },
+  {
+    "alias": "PGem",
+    "canonical_name": "Perfect Gem",
+    "item_id": null,
+    "confidence": "high",
+    "context": "generic \u2014 any perfect gem",
+    "canonical_item": null
+  },
+  {
+    "alias": "Pgem",
+    "canonical_name": "Perfect Gem",
+    "item_id": null,
+    "confidence": "high",
+    "context": "generic \u2014 any perfect gem",
+    "canonical_item": null
+  },
+  {
+    "alias": "PGems",
+    "canonical_name": "Perfect Gem",
+    "item_id": null,
+    "confidence": "high",
+    "context": "generic \u2014 any perfect gem (plural)",
+    "canonical_item": null
+  },
+  {
+    "alias": "PAmethyst",
+    "canonical_name": "Perfect Amethyst",
+    "item_id": "perfect_amethyst",
+    "confidence": "high",
+    "context": "specific perfect gem",
+    "canonical_item": {
+      "item_id": "perfect_amethyst",
+      "canonical_name": "Perfect Amethyst"
+    }
+  },
+  {
+    "alias": "P Amethyst",
+    "canonical_name": "Perfect Amethyst",
+    "item_id": "perfect_amethyst",
+    "confidence": "high",
+    "context": "specific perfect gem",
+    "canonical_item": {
+      "item_id": "perfect_amethyst",
+      "canonical_name": "Perfect Amethyst"
+    }
+  },
+  {
+    "alias": "HR",
+    "canonical_name": null,
+    "item_id": null,
+    "confidence": "high",
+    "context": "generic \u2014 any high rune (Vex+), not a single item",
+    "canonical_item": null
+  },
+  {
+    "alias": "High Rune",
+    "canonical_name": null,
+    "item_id": null,
+    "confidence": "high",
+    "context": "generic \u2014 any high rune (Vex+), not a single item",
+    "canonical_item": null
+  },
+  {
+    "alias": "3x3",
+    "canonical_name": null,
+    "item_id": null,
+    "confidence": "medium",
+    "context": "set of 3 Uber keys (Terror+Hate+Destruction). Context-dependent.",
+    "canonical_item": null
+  },
+  {
+    "alias": "Dracs",
+    "canonical_name": "Dracul's Grasp",
+    "item_id": "draculs_grasp",
+    "confidence": "medium",
+    "context": "unique vampirebone gloves",
+    "canonical_item": null,
+    "resolution_status": "needs_review"
+  },
+  {
+    "alias": "Arachnid",
+    "canonical_name": "Arachnid Mesh",
+    "item_id": "arachnid_mesh",
+    "confidence": "high",
+    "context": "unique spiderweb sash",
+    "canonical_item": {
+      "item_id": "arachnid_mesh",
+      "canonical_name": "Arachnid Mesh"
+    }
+  },
+  {
+    "alias": "Arach",
+    "canonical_name": "Arachnid Mesh",
+    "item_id": "arachnid_mesh",
+    "confidence": "medium",
+    "context": "unique spiderweb sash",
+    "canonical_item": {
+      "item_id": "arachnid_mesh",
+      "canonical_name": "Arachnid Mesh"
+    }
+  },
+  {
+    "alias": "Raven",
+    "canonical_name": "Raven Frost",
+    "item_id": "raven_frost",
+    "confidence": "high",
+    "context": "unique ring",
+    "canonical_item": {
+      "item_id": "raven_frost",
+      "canonical_name": "Raven Frost"
+    }
+  },
+  {
+    "alias": "Dwarf",
+    "canonical_name": "Dwarf Star",
+    "item_id": "dwarf_star",
+    "confidence": "high",
+    "context": "unique ring",
+    "canonical_item": {
+      "item_id": "dwarf_star",
+      "canonical_name": "Dwarf Star"
+    }
+  },
+  {
+    "alias": "Grief",
+    "canonical_name": "Grief",
+    "item_id": "grief",
+    "confidence": "high",
+    "context": "runeword (5 socket swords/axes)",
+    "canonical_item": {
+      "item_id": "grief",
+      "canonical_name": "Grief"
+    }
+  },
+  {
+    "alias": "Enigma",
+    "canonical_name": "Enigma",
+    "item_id": "enigma",
+    "confidence": "high",
+    "context": "runeword (3 socket armor)",
+    "canonical_item": {
+      "item_id": "enigma",
+      "canonical_name": "Enigma"
+    }
+  },
+  {
+    "alias": "Infinity",
+    "canonical_name": "Infinity",
+    "item_id": "infinity",
+    "confidence": "high",
+    "context": "runeword (4 socket polearms/spears)",
+    "canonical_item": {
+      "item_id": "infinity",
+      "canonical_name": "Infinity"
+    }
+  },
+  {
+    "alias": "Forty",
+    "canonical_name": "Fortitude",
+    "item_id": "fortitude",
+    "confidence": "medium",
+    "context": "runeword (4 socket weapons/armor)",
+    "canonical_item": {
+      "item_id": "fortitude",
+      "canonical_name": "Fortitude"
+    }
+  },
+  {
+    "alias": "Spirit",
+    "canonical_name": "Spirit",
+    "item_id": "spirit",
+    "confidence": "high",
+    "context": "runeword (4 socket swords/shields)",
+    "canonical_item": {
+      "item_id": "spirit",
+      "canonical_name": "Spirit"
+    }
+  },
+  {
+    "alias": "Phoenix",
+    "canonical_name": "Phoenix",
+    "item_id": "phoenix",
+    "confidence": "high",
+    "context": "runeword (4 socket weapons/shields)",
+    "canonical_item": {
+      "item_id": "phoenix",
+      "canonical_name": "Phoenix"
+    }
+  },
+  {
+    "alias": "Faith",
+    "canonical_name": "Faith",
+    "item_id": "faith",
+    "confidence": "high",
+    "context": "runeword (4/5 socket ranged weapons)",
+    "canonical_item": {
+      "item_id": "faith",
+      "canonical_name": "Faith"
+    }
+  },
+  {
+    "alias": "Nightwing",
+    "canonical_name": "Nightwing's Veil",
+    "item_id": "nightwings_veil",
+    "confidence": "high",
+    "context": "unique spired helm",
+    "canonical_item": null,
+    "resolution_status": "needs_review"
+  },
+  {
+    "alias": "Deaths Web",
+    "canonical_name": "Death's Web",
+    "item_id": "deaths_web",
+    "confidence": "high",
+    "context": "unique unearthed wand",
+    "canonical_item": null,
+    "resolution_status": "needs_review"
+  },
+  {
+    "alias": "Deaths Fathom",
+    "canonical_name": "Death's Fathom",
+    "item_id": "deaths_fathom",
+    "confidence": "high",
+    "context": "unique dimensional shard",
+    "canonical_item": null,
+    "resolution_status": "needs_review"
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.1",
+  "item_id": "key_of_terror",
+  "display_name": "Key of Terror",
+  "category": "commodities",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "commodity",
+    "liquidity": "medium",
+    "volatility": "low",
+    "new_player_risk": "low",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "Uber Tristram portal key (with Key of Hate and Key of Destruction)"
+    ],
+    "demand_drivers": [
+      "Uber Tristram farming for Hellfire Torch",
+      "demand spikes when players farm torches in bulk"
+    ],
+    "supply_notes": [
+      "dropped by The Countess (Act I)",
+      "supply is steady from key farming runs"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "set of 3 keys (Terror + Hate + Destruction)"
+    ],
+    "common_trade_forms": [
+      "single key",
+      "set of 3 keys (all organs)"
+    ],
+    "important_rolls_or_variants": [],
+    "segment_sensitivity": [
+      "usually priced similarly across segments",
+      "demand tied to torch farming, not ladder position"
+    ],
+    "known_model_risks": [
+      "low-value item — pricing noise may dominate",
+      "often traded in sets, not individually",
+      "key sets may trade differently than individual keys"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "Moderate volume. May need set-price modeling."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": ""
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Key sets may need different model than individual keys."
+    }
+  ],
+  "open_questions": [
+    "Do individual keys trade enough to price separately from key sets?",
+    "Should key sets get a separate item profile?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

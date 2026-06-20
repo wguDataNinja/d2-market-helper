@@ -1,0 +1,28 @@
+{
+  "source": "g2g",
+  "captured_at": "2026-06-20T06:31:06Z",
+  "target_url": "https://www.g2g.com/categories/diablo-2-resurrected-item-for-sale?fa=7075ff24%3A2c21e727%7C7071deb3%3A4d2c8b55&sort=lowest_price",
+  "final_url": "https://www.g2g.com/categories/diablo-2-resurrected-item-for-sale?fa=7075ff24%3A2c21e727%7C7071deb3%3A4d2c8b55&sort=lowest_price",
+  "capture_method": "camoufox (headless, sync_api)",
+  "camoufox_version": "0.4.11 (from playwright_workbench venv)",
+  "page_title": "Buy D2R Items | Diablo 2 Resurrected Items For Sale - G2G.com",
+  "visible_listings_found": 20,
+  "page_rendered": true,
+  "login_required": false,
+  "visible_filters": [
+    "search\nServer\nItem Type\nRunes",
+    "Server",
+    "Item Type",
+    "Runes"
+  ],
+  "selected_filters": [
+    "ladder",
+    "non-ladder"
+  ],
+  "platform_ladder_hc_notes": "G2G category page filtered to D2R runes, sorted lowest price. Segment filters (ladder, SC/HC) may not be visible at this URL. G2G typically uses server/region tabs rather than explicit ladder/SC/HC toggles.",
+  "notes": [
+    "Found 89 elements via '[class*='card']'",
+    "20 listings extracted from DOM",
+    "9 API-like URLs found in page source"
+  ]
+}

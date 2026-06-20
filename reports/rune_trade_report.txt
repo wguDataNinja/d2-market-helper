@@ -1,0 +1,29 @@
+=== TRADE VOLUME ===
+HC_L   : 711
+HC_NL  : 169
+SC_L   : 1221
+SC_NL  : 1216
+
+=== TOP 5 TRADES PER SERVER ===
+Rank  HC_L                           SC_L                           SC_NL                          HC_NL                         
+1     Hel Rune:Ist Rune              El Rune:Ist Rune               Ber Rune:Jah Rune              Ber Rune:Jah Rune             
+2     Cham Rune:Ohm Rune             Eld Rune:Ist Rune              Perfect Amethyst:Jah Rune      Ber Rune:Lo Rune              
+3     Perfect Skull:Ist Rune         Perfect Sapphire:Ist Rune      Token of Absolution:Jah Rune   Perfect Amethyst:Lo Rune      
+4     Jah Rune:Ber Rune              Perfect Topaz:Ist Rune         El Rune:Jah Rune               Perfect Ruby:Ist Rune         
+5     Perfect Amethyst:Ist Rune      Perfect Skull:Ist Rune         Ith Rune:Ist Rune              Lem Rune:Pul Rune             
+
+=== HIGH RUNE RATIOS & FAIR VALUE ===
+* Asterisk = low confidence (fewer than 3 trades)
+
+Trade                HC_L       SC_L       SC_NL      HC_NL     
+Jah Rune:Ber Rune    1           0.67           0.67           —         
+Lo Rune:Ber Rune     2           2           1.5           —         
+Sur Rune:Ber Rune    —          —          —          —         
+Cham Rune:Ber Rune   —          3           1*          1*         
+Ohm Rune:Ber Rune    3*          —          —          —         
+Ist Rune:Jah Rune    13*          15           9           10*         
+Ist Rune:Ber Rune    —          —          9*          7          
+Ist Rune:Lo Rune     8*          6           4*          5*         
+Ist Rune:Cham Rune   —          —          —          —         
+Ist Rune:Ohm Rune    5           4           3*          4*         
+Ist Rune:Sur Rune    —          —          —          —         

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Reddit API credentials
+tools/subreddit_research/.env
+
+# Research data (raw, selected, exports)
+research/reddit/raw/
+research/reddit/selected/
+research/reddit/exports/
+
+# Tool internal data/logs
+tools/subreddit_research/data/
+tools/subreddit_research/logs/
+
+# Pipeline raw / intermediate data
+data/raw/
+data/extracted/
+data/normalized/
+data/prices/*.csv
+data/fetch_log.txt
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+
+# Jupyter auto-checkpoints
+.ipynb_checkpoints/
+
+# Legacy archives
+.old/
+data/.old/

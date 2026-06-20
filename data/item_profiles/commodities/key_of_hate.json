@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "item_id": "key_of_hate",
+  "display_name": "Key of Hate",
+  "category": "commodities",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "commodity",
+    "liquidity": "medium",
+    "volatility": "low",
+    "new_player_risk": "low",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "Uber Tristram portal key (with Key of Terror and Key of Destruction)"
+    ],
+    "demand_drivers": [
+      "Uber Tristram farming for Hellfire Torch",
+      "slightly higher demand than Key of Terror due to faster Summoner runs"
+    ],
+    "supply_notes": [
+      "dropped by The Summoner (Act II)",
+      "fast run time means steady supply"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "set of 3 keys"
+    ],
+    "common_trade_forms": [
+      "single key",
+      "set of 3 keys"
+    ],
+    "important_rolls_or_variants": [],
+    "segment_sensitivity": [
+      "usually priced similarly across segments"
+    ],
+    "known_model_risks": [
+      "low-value item — pricing noise may dominate",
+      "often traded in sets, not individually"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "Moderate volume."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": ""
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Key of Hate is typically slightly more valuable than Key of Terror due to faster Summoner runs."
+    }
+  ],
+  "open_questions": [
+    "Is Key of Hate consistently priced higher than Key of Terror?",
+    "Should key prices be modeled as a set or individually?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

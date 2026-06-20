@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1",
+  "item_id": "key_of_destruction",
+  "display_name": "Key of Destruction",
+  "category": "commodities",
+  "game": "diablo2resurrected",
+  "trade_relevance": {
+    "market_role": "commodity",
+    "liquidity": "medium",
+    "volatility": "low",
+    "new_player_risk": "low",
+    "commonly_used_as_currency": false
+  },
+  "gameplay_context": {
+    "uses": [
+      "Uber Tristram portal key (with Key of Terror and Key of Hate)"
+    ],
+    "demand_drivers": [
+      "Uber Tristram farming for Hellfire Torch",
+      "Nihlathak runs are harder/slower than Countess or Summoner — may affect supply"
+    ],
+    "supply_notes": [
+      "dropped by Nihlathak (Act V)",
+      "harder run than other key bosses — generally lowest supply of the three keys"
+    ]
+  },
+  "pricing_context": {
+    "common_quote_units": [
+      "Ist Rune",
+      "set of 3 keys"
+    ],
+    "common_trade_forms": [
+      "single key",
+      "set of 3 keys"
+    ],
+    "important_rolls_or_variants": [],
+    "segment_sensitivity": [
+      "usually priced similarly across segments"
+    ],
+    "known_model_risks": [
+      "low-value item — pricing noise may dominate",
+      "often traded in sets, not individually",
+      "lower supply than other keys may cause price to drift higher"
+    ]
+  },
+  "source_signals": {
+    "traderie": {
+      "use_for_pricing": "yes",
+      "notes": "Moderate volume. May be less liquid than other keys."
+    },
+    "diablo2_io": {
+      "use_for_pricing": "unknown",
+      "notes": "Not yet evaluated."
+    },
+    "reddit": {
+      "use_for_pricing": "no",
+      "notes": "Use for demand, sentiment, confusion points, source discovery, and item-profile updates."
+    },
+    "d2jsp": {
+      "use_for_pricing": "research_only",
+      "notes": ""
+    },
+    "rmt_sites": {
+      "use_for_pricing": "research_only",
+      "notes": "External cash-market signal only. Do not present as a recommendation to buy or sell."
+    }
+  },
+  "research_notes": [
+    {
+      "date": "2026-06-20",
+      "source": "manual",
+      "note": "Initial draft profile. Key of Destruction may be slightly higher value due to harder Nihlathak runs."
+    }
+  ],
+  "open_questions": [
+    "Is Key of Destruction priced higher than the other two keys?",
+    "Should key sets (all 3 types) get a composite profile?"
+  ],
+  "last_reviewed_at": null,
+  "confidence": "draft"
+}

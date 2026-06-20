@@ -1,0 +1,157 @@
+=== TOTAL TRADES PER SERVER ===
+SC_L: 1199
+SC_NL: 1200
+HC_L: 1061
+HC_NL: 283
+
+=== TOP 5 TRADES BY VOLUME ===
+1. Ber Rune : Jah Rune — 100 trades
+2. Ber Rune : Lo Rune — 87 trades
+3. Jah Rune : Ber Rune — 82 trades
+4. Hel Rune : Jah Rune — 78 trades
+5. Io Rune : Ist Rune — 73 trades
+
+=== TOP 5 TRADED ITEMS (BUY OR SELL) ===
+1. Ist Rune — 1155 appearances
+2. Jah Rune — 855 appearances
+3. Mal Rune — 613 appearances
+4. Lo Rune — 465 appearances
+5. Ber Rune — 426 appearances
+
+=== TRACKED ITEM SUMMARY ===
+
+The Stone of Jordan: 0 trades
+
+Perfect Amethyst: 0 trades
+
+Jah Rune: 200 trades
+  - Seller: wjdtjd0974600, Qty: 1, For: 1x Sur Rune, 1x Lo Rune, 1x Ber Rune, 1x Ber Rune
+  - Seller: MegaMan3, Qty: 1, For: 8x The Stone of Jordan
+  - Seller: Jah_Master, Qty: 1, For: 1x Jah Rune, 1x Lo Rune
+
+Io Rune: 156 trades
+  - Seller: 승언신3562, Qty: 10, For: 1x Ist Rune
+  - Seller: coco.choi, Qty: 30, For: 1x Vex Rune
+  - Seller: Kawu33, Qty: 9, For: 1x Ist Rune
+
+Gul Rune: 150 trades
+  - Seller: royliv, Qty: 1, For: 2x Mal Rune
+  - Seller: asd53335, Qty: 1, For: 13x Sol Rune, 13x Perfect Ruby
+  - Seller: royliv, Qty: 2, For: 3x Ist Rune
+
+Lum Rune: 153 trades
+  - Seller: DIABLO_666, Qty: 13, For: 2x Perfect Ruby, 1x Perfect Amethyst, 2x Perfect Skull
+  - Seller: BROTHERBBOO, Qty: 10, For: 2x Pul Rune
+  - Seller: Zedina, Qty: 3, For: 1x Perfect Amethyst
+
+Perfect Emerald: 0 trades
+
+Amn Rune: 162 trades
+  - Seller: 보겸21김73506, Qty: 20, For: 1x Ist Rune
+  - Seller: DuongEPT, Qty: 243, For: 1x Jah Rune
+  - Seller: YoungNick96895, Qty: 25, For: 1x Ist Rune
+
+Mal Rune: 148 trades
+  - Seller: pisdream7327241, Qty: 1, For: 24x Random Gems, 5x Perfect Amethyst
+  - Seller: ddaru, Qty: 5, For: 4x Ist Rune
+  - Seller: BG_Ablaze, Qty: 1, For: 10x Ral Rune
+
+Pul Rune: 166 trades
+  - Seller: 4109lee, Qty: 2, For: 1x Ist Rune
+  - Seller: tering4729, Qty: 1, For: 1x Perfect Amethyst
+  - Seller: machocool, Qty: 1, For: 1x Tal Rasha's Adjudication
+
+Fal Rune: 165 trades
+  - Seller: tering4729, Qty: 1, For: 1x Perfect Amethyst
+  - Seller: Death3441, Qty: 3, For: 1x Pul Rune
+  - Seller: J2G_10920, Qty: 1, For: 2x Ko Rune
+
+El Rune: 147 trades
+  - Seller: injaeyoo150068, Qty: 11, For: 1x Ist Rune
+  - Seller: SynCoPe_, Qty: 10, For: 1x Ist Rune, 1x Mal Rune
+  - Seller: SynCoPe_, Qty: 10, For: 1x Ist Rune, 1x Mal Rune
+
+Perfect Sapphire: 0 trades
+
+Eld Rune: 114 trades
+  - Seller: 3212716320409, Qty: 1, For: 1x Perfect Amethyst
+  - Seller: goddnsrkdl, Qty: 20, For: 1x Gul Rune
+  - Seller: goddnsrkdl, Qty: 20, For: 1x Gul Rune
+
+Cham Rune: 161 trades
+  - Seller: fpzmfal, Qty: 1, For: 2x Vex Rune
+  - Seller: 체이스빈센트90015, Qty: 3, For: 1x Ber Rune
+  - Seller: NamonG, Qty: 5, For: 1x Jah Rune
+
+Eth Rune: 123 trades
+  - Seller: goddnsrkdl, Qty: 15, For: 1x Mal Rune
+  - Seller: kgskgs407279166, Qty: 20, For: 1x Ist Rune
+  - Seller: 포가시스유3820, Qty: 10, For: 1x Lem Rune
+
+Lo Rune: 150 trades
+  - Seller: royliv, Qty: 1, For: 7x Ist Rune
+  - Seller: 눈마음의29215, Qty: 2, For: 1x Ber Rune
+  - Seller: chichi1004, Qty: 1, For: 7x Ist Rune
+
+Perfect Skull: 0 trades
+
+Perfect Topaz: 0 trades
+
+Ort Rune: 155 trades
+  - Seller: 250306, Qty: 50, For: 1x Ist Rune, 7x Perfect Amethyst
+  - Seller: 낭만구름3961, Qty: 10, For: 2x Key of Terror
+  - Seller: gusgus22, Qty: 40, For: 1x Ist Rune
+
+Ral Rune: 200 trades
+  - Seller: Kamezo, Qty: 13, For: 1x Ist Rune
+  - Seller: bk88042, Qty: 15, For: 1x Ist Rune
+  - Seller: kosu1606, Qty: 21, For: 3x Ist Rune, 4x Mal Rune, 3x Gul Rune
+
+Hel Rune: 150 trades
+  - Seller: wangchobo, Qty: 20, For: 1x Lo Rune
+  - Seller: SynCoPe_, Qty: 140, For: 2x Jah Rune, 3x Ber Rune
+  - Seller: SynCoPe_, Qty: 140, For: 2x Jah Rune, 3x Ber Rune
+
+Perfect Ruby: 0 trades
+
+Nef Rune: 155 trades
+  - Seller: dabbcls23, Qty: 44, For: 2x Ist Rune
+  - Seller: 현김95983, Qty: 140, For: 1x Jah Rune, 1x Ber Rune
+  - Seller: 발퀴리부인3199, Qty: 15, For: 1x Um Rune
+
+Ist Rune: 149 trades
+  - Seller: BS7701, Qty: 21, For: 1x Ber Rune
+  - Seller: Kang_7, Qty: 13, For: 2x Lo Rune
+  - Seller: Kang_7, Qty: 16, For: 1x Jah Rune
+
+Ith Rune: 114 trades
+  - Seller: sjswmfdltka, Qty: 10, For: 2x Perfect Amethyst
+  - Seller: cim7575, Qty: 140, For: 1x Jah Rune
+  - Seller: FoxRichMan, Qty: 10, For: 1x Um Rune, 3x Perfect Amethyst
+
+Ber Rune: 200 trades
+  - Seller: Kezzar, Qty: 1, For: 2x Mal Rune, 2x Lo Rune
+  - Seller: 네지르3127, Qty: 1, For: 2x Lo Rune, 2x Vex Rune
+  - Seller: 네지르3127, Qty: 1, For: 1x Lo Rune, 2x Ohm Rune
+
+Token of Absolution: 0 trades
+
+Ko Rune: 159 trades
+  - Seller: ghdyd1376, Qty: 2, For: 3x Perfect Amethyst
+  - Seller: ddaru, Qty: 5, For: 1x Ist Rune
+  - Seller: 250306, Qty: 2, For: 2x Hel Rune, 2x Perfect Amethyst
+
+Ohm Rune: 150 trades
+  - Seller: DuongEPT, Qty: 5, For: 1x Jah Rune
+  - Seller: pisdream7327241, Qty: 1, For: 4x Ist Rune, 1x Mal Rune
+  - Seller: kei0611, Qty: 1, For: 2x Ist Rune, 2x Mal Rune
+
+Lem Rune: 187 trades
+  - Seller: tering4729, Qty: 1, For: 3x Perfect Amethyst
+  - Seller: alan12423, Qty: 3, For: 1x Ist Rune
+  - Seller: jahonee, Qty: 100, For: 1x Jah Rune
+
+Dol Rune: 129 trades
+  - Seller: pepeanan, Qty: 11, For: 1x Ist Rune, 1x Mal Rune, 5x Perfect Amethyst
+  - Seller: 250306, Qty: 20, For: 1x Ist Rune, 7x Perfect Amethyst
+  - Seller: Obducta, Qty: 10, For: 1x Mal Rune, 1x Um Rune

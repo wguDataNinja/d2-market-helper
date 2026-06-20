@@ -1,0 +1,839 @@
+[
+  {
+    "source_slug": "traderie",
+    "display_name": "Traderie API",
+    "base_url": "https://traderie.com/api/diablo2resurrected/listings",
+    "category": "completed_player_trades",
+    "priority": "tier_1",
+    "status": "integrated",
+    "evidence_classes": [
+      "completed_player_trades"
+    ],
+    "known_urls": [
+      "https://traderie.com/api/diablo2resurrected/listings",
+      "https://traderie.com/diablo-2-resurrected/trade"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": true,
+      "ladder": true,
+      "hardcore": true,
+      "softcore": true,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": true,
+      "browser_required": false,
+      "manual_only": false
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Unofficial API surface \u2014 not a public data product. Behavior may change.",
+      "Uses Cloudflare-protected endpoints. Requires cloudscraper.",
+      "Rate limits and pagination limits not documented.",
+      "Completed trades window is unknown \u2014 may not return all available trades."
+    ],
+    "next_action": "Stabilize output JSON schema. Add versioning and confidence scores.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "g2g",
+    "display_name": "G2G",
+    "base_url": "https://www.g2g.com/categories/diablo-2-resurrected-item-for-sale",
+    "category": "cash_market",
+    "priority": "tier_2",
+    "status": "captured_browser",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://www.g2g.com/categories/diablo-2-resurrected-item-for-sale",
+      "https://www.g2g.com/categories/diablo-2-resurrected-item-for-sale/offer/group"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": true,
+      "ladder": "partial (embedded in listing titles)",
+      "hardcore": "partial (embedded in listing titles)",
+      "softcore": "partial (embedded in listing titles)",
+      "season": false,
+      "region": true
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": true,
+      "embedded_json": true,
+      "api_observed": true,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/captures/g2g_2026-06-20_lowest-price-runes/",
+      "research/sources/captures/g2g_2026-06-20_cat-filtered-runes/"
+    ],
+    "source_notes_path": "research/sources/g2g.md",
+    "caveats": [
+      "Vue.js SPA \u2014 browser required. Cannot be captured via static HTTP.",
+      "LoD vs RoTW taxonomy ambiguous. Listings inside D2R category may include both.",
+      "Offer detail pages caused Camoufox JS errors \u2014 not yet resolvable.",
+      "Segment info is embedded in listing titles, not filter toggles.",
+      "Prices are asking prices, not completed sales."
+    ],
+    "next_action": "Deferred until offer-detail page rendering is resolved or manual capture provides clearer RoTW/LoD distinction.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "playerauctions",
+    "display_name": "PlayerAuctions",
+    "base_url": "https://www.playerauctions.com/diablo-2-resurrected-items/",
+    "category": "cash_market",
+    "priority": "tier_2",
+    "status": "captured_browser",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://www.playerauctions.com/diablo-2-resurrected-items/",
+      "https://user-api.playerauctions.com/",
+      "https://public-api.playerauctions.com/"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": true,
+      "ladder": true,
+      "hardcore": true,
+      "softcore": true,
+      "season": true,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": true,
+      "embedded_json": true,
+      "api_observed": true,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/captures/playerauctions_2026-06-20_browser-smoke/"
+    ],
+    "source_notes_path": "research/sources/playerauctions.md",
+    "caveats": [
+      "Marketplace homepage showed navigation items, not rune listings.",
+      "Previous warlock_gear_sets.html had structured data-bind attributes with listing paths \u2014 more useful than the homepage.",
+      "Prices not visible on the general marketplace page. Need a filtered rune-specific URL.",
+      "Three API endpoints discovered but not tested for public access."
+    ],
+    "next_action": "Capture a rune-specific PlayerAuctions URL (search for 'rune' or filter to runes category).",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "items7",
+    "display_name": "items7",
+    "base_url": "https://www.items7.com/",
+    "category": "cash_market",
+    "priority": "tier_2",
+    "status": "captured_static",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://www.items7.com/"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": false,
+    "segment_filters": {
+      "platform": false,
+      "ladder": true,
+      "hardcore": false,
+      "softcore": false,
+      "season": true,
+      "region": false
+    },
+    "extraction": {
+      "static_html": true,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": false,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/downloads/rune_sources_2026-06-20/items7.html"
+    ],
+    "source_notes_path": "research/sources/items7.md",
+    "caveats": [
+      "Static HTML does not contain per-rune prices in extractable format.",
+      "Prices loaded client-side \u2014 browser capture required.",
+      "Cannot move to parser_prototype_ready without browser-captured render."
+    ],
+    "next_action": "Capture items7 via Camoufox browser render to extract per-rune prices.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "iggm",
+    "display_name": "IGGM",
+    "base_url": "https://www.iggm.com/diablo-2-resurrected-items",
+    "category": "cash_market",
+    "priority": "tier_3",
+    "status": "parser_prototype_ready",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://www.iggm.com/diablo-2-resurrected-items"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": true,
+      "ladder": true,
+      "hardcore": true,
+      "softcore": true,
+      "season": true,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": true,
+      "embedded_json": true,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/captures/iggm_2026-06-20_browser-smoke/",
+      "research/sources/captures/iggm_2026-06-20_runes-focused/",
+      "data/external/iggm_cash_prices.json"
+    ],
+    "source_notes_path": "research/sources/iggm.md",
+    "caveats": [
+      "Prices are per-unit asking prices, not completed sales.",
+      "30 rune prices extracted via offline parser from browser-captured HTML.",
+      "Segment context confirmed: PC, Non-Ladder, Softcore, ROTW. Confidence: high.",
+      "Other filter combinations may yield different prices."
+    ],
+    "next_action": "First external_cash_prices source. Verify segment variation by capturing Ladder/Non-Ladder filter toggle.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "itemnow",
+    "display_name": "itemnow.com (d2items_for_sale)",
+    "base_url": "https://itemnow.com/product-category/diablo-2/runes/",
+    "category": "cash_market",
+    "priority": "tier_3",
+    "status": "captured_static",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://itemnow.com/product-category/diablo-2/runes/",
+      "https://itemnow.com/wp-json/wp/v2/"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": true,
+      "ladder": true,
+      "hardcore": true,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": true,
+      "rendered_html": false,
+      "embedded_json": true,
+      "api_observed": true,
+      "browser_required": false,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/downloads/rune_sources_2026-06-20/d2items_for_sale.html"
+    ],
+    "source_notes_path": "research/sources/d2items_for_sale.md",
+    "caveats": [
+      "WordPress/WooCommerce site \u2014 prices loaded via AJAX, not always in static HTML.",
+      "WordPress REST API exposed at /wp-json/ \u2014 may provide structured product data.",
+      "Server/segment filter via URL params: ?server=d2r-non-ladder, ?server=d2r-hc-ladder."
+    ],
+    "next_action": "Query WordPress REST API root to discover product endpoints.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "yesgamers",
+    "display_name": "YesGamers",
+    "base_url": "https://www.yesgamers.com/diablo-2-resurrected",
+    "category": "cash_market",
+    "priority": "tier_3",
+    "status": "deferred",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://www.yesgamers.com/diablo-2-resurrected"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": true,
+      "hardcore": true,
+      "softcore": false,
+      "season": true,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": true,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/captures/yesgamers_2026-06-20_browser-smoke/"
+    ],
+    "source_notes_path": "research/sources/yesgamers.md",
+    "caveats": [
+      "Login required to see prices and interact with segment filters.",
+      "Excellent segment UI (ladder, SC/HC, ROTW toggles) but all behind login.",
+      "Do not bypass login without explicit approval.",
+      "Status changed to deferred \u2014 not usable without login access."
+    ],
+    "next_action": "Deferred. Requires login \u2014 revisit only if login access is approved.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "odealo",
+    "display_name": "Odealo",
+    "base_url": "https://odealo.com/games/diablo-2-resurrected/marketplace/runes",
+    "category": "cash_market",
+    "priority": "tier_3",
+    "status": "captured_browser",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://odealo.com/games/diablo-2-resurrected/marketplace/runes"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": true,
+      "ladder": true,
+      "hardcore": true,
+      "softcore": true,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": true,
+      "embedded_json": true,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/captures/odealo_2026-06-20_browser-smoke/"
+    ],
+    "source_notes_path": "research/sources/odealo.md",
+    "caveats": [
+      "React app \u2014 per-item prices render after hydration.",
+      "Prices formatted as numeric 'Base price' without $ prefix in some cases.",
+      "Segment info embedded in listing titles (e.g. '1-PC Ladder').",
+      "General 'Items' page shows mixed items. Rune-specific URL likely has cleaner data.",
+      "JSON-LD AggregateOffer ($0.01-$999.99, 155 offers) was in static shell."
+    ],
+    "next_action": "Capture the Odealo rune-specific marketplace page: /games/diablo-2/marketplace/runes.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "aoeah",
+    "display_name": "AOEAH",
+    "base_url": "https://www.aoeah.com/diablo-2-resurrected/runes",
+    "category": "cash_market",
+    "priority": "tier_3",
+    "status": "captured_static",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://www.aoeah.com/diablo-2-resurrected/runes"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": false,
+    "segment_filters": {
+      "platform": true,
+      "ladder": true,
+      "hardcore": false,
+      "softcore": false,
+      "season": true,
+      "region": false
+    },
+    "extraction": {
+      "static_html": true,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": false,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/downloads/rune_sources_2026-06-20/aoeah.html"
+    ],
+    "source_notes_path": "research/sources/aoeah.md",
+    "caveats": [
+      "All 33 runes present in static HTML but prices in CSS-styled elements \u2014 not plain-text extractable.",
+      "Prices likely extractable per-rune from individual product pages."
+    ],
+    "next_action": "Download individual rune product pages or attempt CSS-aware extraction from category page.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "chicksgold",
+    "display_name": "Chicks Gold",
+    "base_url": "https://www.chicksgold.com/diablo-2-resurrected",
+    "category": "cash_market",
+    "priority": "later",
+    "status": "captured_static",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [
+      "https://www.chicksgold.com/diablo-2-resurrected"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": false,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/sources/downloads/rune_sources_2026-06-20/chicks_gold.html"
+    ],
+    "source_notes_path": "research/sources/chicks_gold.md",
+    "caveats": [
+      "Tiny static shell (6 KB). Fully dynamic. Minimal segment information.",
+      "Low priority \u2014 no segment filters visible, no item names in static HTML."
+    ],
+    "next_action": "Deferred. Only investigate if higher-priority sources are exhausted.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "reddit",
+    "display_name": "Reddit (r/D2R_Marketplace, r/Diablo_2_Resurrected, r/diablo2)",
+    "base_url": "https://www.reddit.com/r/D2R_Marketplace/",
+    "category": "community_discussion",
+    "priority": "tier_3",
+    "status": "deferred",
+    "evidence_classes": [
+      "community_discussion"
+    ],
+    "known_urls": [
+      "https://www.reddit.com/r/D2R_Marketplace/",
+      "https://www.reddit.com/r/Diablo_2_Resurrected/",
+      "https://www.reddit.com/r/diablo2/"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": true,
+      "api_observed": true,
+      "browser_required": false,
+      "manual_only": false
+    },
+    "current_artifacts": [
+      "research/reddit/raw/",
+      "research/reddit/selected/",
+      "research/reddit/notes/"
+    ],
+    "source_notes_path": "docs/MARKET_RESEARCH.md",
+    "caveats": [
+      "Qualitative only \u2014 not pricing data.",
+      "2,998 posts collected, 0 comment trees fetched. Direct market signal was too sparse.",
+      "Useful for venue discovery, player language, item candidates.",
+      "Future comment fetches should be hypothesis-targeted, not broad."
+    ],
+    "next_action": "Deferred. Revisit only for specific hypothesis-driven comment fetches.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "d2jsp",
+    "display_name": "d2jsp",
+    "base_url": "https://forums.d2jsp.org/",
+    "category": "forum_reference",
+    "priority": "tier_3",
+    "status": "discovered",
+    "evidence_classes": [
+      "forum_trade_posts"
+    ],
+    "known_urls": [
+      "https://forums.d2jsp.org/"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": false,
+      "manual_only": true
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Forum-based economy using Forum Gold (FG) \u2014 separate from in-game rune economy.",
+      "FG-to-Ist conversion is an indirect reference, not a direct comparison.",
+      "Requires forum scraping or manual review \u2014 no public API.",
+      "Reddit pass 1 showed minimal d2jsp mentions (7 in 2,998 posts) but may dominate outside Reddit."
+    ],
+    "next_action": "Research whether d2jsp has a public price-check forum or searchable trade history without login.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "diablo2_io",
+    "display_name": "Diablo2.io",
+    "base_url": "https://diablo2.io/",
+    "category": "forum_reference",
+    "priority": "tier_3",
+    "status": "discovered",
+    "evidence_classes": [
+      "forum_trade_posts"
+    ],
+    "known_urls": [
+      "https://diablo2.io/"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": false,
+      "manual_only": true
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Not yet evaluated \u2014 no downloaded artifacts or browser captures.",
+      "Mentioned 2 times in Reddit pass 1 \u2014 low community mindshare on Reddit.",
+      "May have a trade section or price-check feature worth investigating."
+    ],
+    "next_action": "Visit diablo2.io and evaluate whether it has structured trade data or forum-style price checks.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "ebay",
+    "display_name": "eBay",
+    "base_url": "https://www.ebay.com/sch/i.html?_nkw=diablo+2+resurrected+rune",
+    "category": "cash_market",
+    "priority": "later",
+    "status": "discovered",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "General marketplace \u2014 D2R items are a small category.",
+      "Listings may include physical merchandise, accounts, or digital items.",
+      "No segment filtering (ladder, SC/HC).",
+      "Prices are asking prices, not completed sales (unless filtering by sold items)."
+    ],
+    "next_action": "Deferred. Low priority \u2014 segment filtering is absent, item naming is inconsistent.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "eldorado",
+    "display_name": "Eldorado.gg",
+    "base_url": "https://www.eldorado.gg/diablo-2-resurrected/",
+    "category": "cash_market",
+    "priority": "later",
+    "status": "discovered",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Not yet evaluated. Cash marketplace. Unknown segment support.",
+      "May have structured listing data similar to PlayerAuctions."
+    ],
+    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "mmopixel",
+    "display_name": "MMOPixel",
+    "base_url": "https://www.mmopixel.com/diablo-2-resurrected",
+    "category": "cash_market",
+    "priority": "later",
+    "status": "discovered",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Not yet evaluated. Cash marketplace. Unknown segment support."
+    ],
+    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "mulefactory",
+    "display_name": "MuleFactory",
+    "base_url": "https://www.mulefactory.com/diablo-2-resurrected/",
+    "category": "cash_market",
+    "priority": "later",
+    "status": "discovered",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Not yet evaluated. Cash marketplace. Unknown segment support."
+    ],
+    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "rpgstash",
+    "display_name": "RPGStash",
+    "base_url": "https://www.rpgstash.com/diablo-2-resurrected",
+    "category": "cash_market",
+    "priority": "later",
+    "status": "discovered",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
+    "known_urls": [],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": true,
+      "manual_only": false
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Not yet evaluated. Cash marketplace. Unknown segment support."
+    ],
+    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "d2stock",
+    "display_name": "D2Stock",
+    "base_url": "https://d2stock.com/",
+    "category": "source_directory_only",
+    "priority": "later",
+    "status": "discovered",
+    "evidence_classes": [],
+    "known_urls": [
+      "https://d2stock.com/"
+    ],
+    "supports_runes": true,
+    "supports_selected_items": false,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": false,
+      "manual_only": true
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Not yet evaluated. May be a source directory or price aggregator.",
+      "Nature of the site is unknown \u2014 needs a visit to classify."
+    ],
+    "next_action": "Visit d2stock.com and classify whether it has trade data, prices, or is a directory.",
+    "last_reviewed_at": "2026-06-20"
+  },
+  {
+    "source_slug": "discord_baals_ledger",
+    "display_name": "Discord \u2014 Baal's Ledger",
+    "base_url": "",
+    "category": "community_discussion",
+    "priority": "later",
+    "status": "discovered",
+    "evidence_classes": [],
+    "known_urls": [],
+    "supports_runes": true,
+    "supports_selected_items": true,
+    "segment_filters": {
+      "platform": false,
+      "ladder": false,
+      "hardcore": false,
+      "softcore": false,
+      "season": false,
+      "region": false
+    },
+    "extraction": {
+      "static_html": false,
+      "rendered_html": false,
+      "embedded_json": false,
+      "api_observed": false,
+      "browser_required": false,
+      "manual_only": true
+    },
+    "current_artifacts": [],
+    "source_notes_path": "",
+    "caveats": [
+      "Discord trade bot mentioned in Reddit posts. May have a public trade feed or website.",
+      "Requires joining the Discord server or finding a web interface.",
+      "Not yet investigated. May have structured trade data available via API."
+    ],
+    "next_action": "Search for Baal's Ledger website or public trade feed. Evaluate whether it has API access.",
+    "last_reviewed_at": "2026-06-20"
+  }
+]
