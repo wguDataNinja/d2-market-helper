@@ -1,0 +1,3972 @@
+{
+  "schema_version": "0.1",
+  "product": "itemnow_cash_prices",
+  "source_slug": "itemnow",
+  "generated_at": "2026-06-20T11:04:19Z",
+  "artifact_path": "https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100",
+  "total_products": 42,
+  "rune_count": 33,
+  "bundle_count": 9,
+  "observation_count": 42,
+  "observations": [
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/1-multiple-rune-package-100-x-jah-runes/",
+      "item_name": "1. Multiple Rune Package 140 x Jah Runes",
+      "item_slug": "1_multiple_rune_package_100_x_jah_runes",
+      "item_category": "bundle",
+      "product_id": 839585,
+      "product_slug": "1-multiple-rune-package-100-x-jah-runes",
+      "normalized_item_name": "1. Multiple Rune Package 140 x Jah Runes",
+      "rune_order": null,
+      "price": 22.35,
+      "price_min_usd": 22.35,
+      "price_max_usd": 385.0,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 22.35,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        }
+      ],
+      "variation_count": 7,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "1. Multiple Rune Package 140 x Jah Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 7 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $22.35 \u2013 $385.00. Base price $22.35 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (7 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/1-multiple-rune-package-5-x-ohm-runes/",
+      "item_name": "1. Multiple Rune Package 140 x Ber Runes",
+      "item_slug": "1_multiple_rune_package_5_x_ohm_runes",
+      "item_category": "bundle",
+      "product_id": 88480,
+      "product_slug": "1-multiple-rune-package-5-x-ohm-runes",
+      "normalized_item_name": "1. Multiple Rune Package 140 x Ber Runes",
+      "rune_order": null,
+      "price": 22.35,
+      "price_min_usd": 22.35,
+      "price_max_usd": 375.0,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 22.35,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        }
+      ],
+      "variation_count": 7,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "1. Multiple Rune Package 140 x Ber Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 7 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $22.35 \u2013 $375.00. Base price $22.35 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (7 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/cham-rune/",
+      "item_name": "Cham",
+      "item_slug": "cham_rune",
+      "item_category": "rune",
+      "product_id": 12155,
+      "product_slug": "cham-rune",
+      "normalized_item_name": "Cham Rune",
+      "rune_order": 32,
+      "price": 0.35,
+      "price_min_usd": 0.35,
+      "price_max_usd": 16.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.35,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Cham Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.35 \u2013 $16.95. Base price $0.35 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/lo-rune/",
+      "item_name": "Lo",
+      "item_slug": "lo_rune",
+      "item_category": "rune",
+      "product_id": 12143,
+      "product_slug": "lo-rune",
+      "normalized_item_name": "Lo Rune",
+      "rune_order": 28,
+      "price": 0.35,
+      "price_min_usd": 0.35,
+      "price_max_usd": 16.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.35,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Lo Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.35 \u2013 $16.95. Base price $0.35 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/ohm-rune/",
+      "item_name": "Ohm",
+      "item_slug": "ohm_rune",
+      "item_category": "rune",
+      "product_id": 12140,
+      "product_slug": "ohm-rune",
+      "normalized_item_name": "Ohm Rune",
+      "rune_order": 27,
+      "price": 0.35,
+      "price_min_usd": 0.35,
+      "price_max_usd": 12.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.35,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Ohm Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.35 \u2013 $12.95. Base price $0.35 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/mal-rune/",
+      "item_name": "Mal",
+      "item_slug": "mal_rune",
+      "item_category": "rune",
+      "product_id": 12128,
+      "product_slug": "mal-rune",
+      "normalized_item_name": "Mal Rune",
+      "rune_order": 23,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 7.45,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Mal Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $7.45. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/um-rune/",
+      "item_name": "Um",
+      "item_slug": "um_rune",
+      "item_category": "rune",
+      "product_id": 12125,
+      "product_slug": "um-rune",
+      "normalized_item_name": "Um Rune",
+      "rune_order": 22,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 6.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Um Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $6.95. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/fal-rune/",
+      "item_name": "Fal",
+      "item_slug": "fal_rune",
+      "item_category": "rune",
+      "product_id": 12116,
+      "product_slug": "fal-rune",
+      "normalized_item_name": "Fal Rune",
+      "rune_order": 19,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Fal Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/ko-rune/",
+      "item_name": "Ko",
+      "item_slug": "ko_rune",
+      "item_category": "rune",
+      "product_id": 12113,
+      "product_slug": "ko-rune",
+      "normalized_item_name": "Ko Rune",
+      "rune_order": 18,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.75,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Ko Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.75. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/lum-rune/",
+      "item_name": "Lum",
+      "item_slug": "lum_rune",
+      "item_category": "rune",
+      "product_id": 12110,
+      "product_slug": "lum-rune",
+      "normalized_item_name": "Lum Rune",
+      "rune_order": 17,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Lum Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/io-rune/",
+      "item_name": "Io",
+      "item_slug": "io_rune",
+      "item_category": "rune",
+      "product_id": 12107,
+      "product_slug": "io-rune",
+      "normalized_item_name": "Io Rune",
+      "rune_order": 16,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Io Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/dol-rune/",
+      "item_name": "Dol",
+      "item_slug": "dol_rune",
+      "item_category": "rune",
+      "product_id": 12104,
+      "product_slug": "dol-rune",
+      "normalized_item_name": "Dol Rune",
+      "rune_order": 14,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Dol Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/shael-rune/",
+      "item_name": "Shael",
+      "item_slug": "shael_rune",
+      "item_category": "rune",
+      "product_id": 12101,
+      "product_slug": "shael-rune",
+      "normalized_item_name": "Shael Rune",
+      "rune_order": 13,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Shael Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/sol-rune/",
+      "item_name": "Sol",
+      "item_slug": "sol_rune",
+      "item_category": "rune",
+      "product_id": 12098,
+      "product_slug": "sol-rune",
+      "normalized_item_name": "Sol Rune",
+      "rune_order": 12,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Sol Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/amn-rune/",
+      "item_name": "Amn",
+      "item_slug": "amn_rune",
+      "item_category": "rune",
+      "product_id": 12095,
+      "product_slug": "amn-rune",
+      "normalized_item_name": "Amn Rune",
+      "rune_order": 11,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Amn Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/thul-rune/",
+      "item_name": "Thul",
+      "item_slug": "thul_rune",
+      "item_category": "rune",
+      "product_id": 12092,
+      "product_slug": "thul-rune",
+      "normalized_item_name": "Thul Rune",
+      "rune_order": 10,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Thul Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/ort-rune/",
+      "item_name": "Ort",
+      "item_slug": "ort_rune",
+      "item_category": "rune",
+      "product_id": 12089,
+      "product_slug": "ort-rune",
+      "normalized_item_name": "Ort Rune",
+      "rune_order": 9,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Ort Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/ral-rune/",
+      "item_name": "Ral",
+      "item_slug": "ral_rune",
+      "item_category": "rune",
+      "product_id": 12086,
+      "product_slug": "ral-rune",
+      "normalized_item_name": "Ral Rune",
+      "rune_order": 8,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Ral Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/tal-rune/",
+      "item_name": "Tal",
+      "item_slug": "tal_rune",
+      "item_category": "rune",
+      "product_id": 12083,
+      "product_slug": "tal-rune",
+      "normalized_item_name": "Tal Rune",
+      "rune_order": 7,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Tal Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/ith-rune/",
+      "item_name": "Ith",
+      "item_slug": "ith_rune",
+      "item_category": "rune",
+      "product_id": 12080,
+      "product_slug": "ith-rune",
+      "normalized_item_name": "Ith Rune",
+      "rune_order": 6,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Ith Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/eth-rune/",
+      "item_name": "Eth",
+      "item_slug": "eth_rune",
+      "item_category": "rune",
+      "product_id": 12077,
+      "product_slug": "eth-rune",
+      "normalized_item_name": "Eth Rune",
+      "rune_order": 5,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Eth Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/tir-rune/",
+      "item_name": "Tir",
+      "item_slug": "tir_rune",
+      "item_category": "rune",
+      "product_id": 12074,
+      "product_slug": "tir-rune",
+      "normalized_item_name": "Tir Rune",
+      "rune_order": 3,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Tir Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/nef-rune/",
+      "item_name": "Nef",
+      "item_slug": "nef_rune",
+      "item_category": "rune",
+      "product_id": 12071,
+      "product_slug": "nef-rune",
+      "normalized_item_name": "Nef Rune",
+      "rune_order": 4,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Nef Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/eld-rune/",
+      "item_name": "Eld",
+      "item_slug": "eld_rune",
+      "item_category": "rune",
+      "product_id": 12068,
+      "product_slug": "eld-rune",
+      "normalized_item_name": "Eld Rune",
+      "rune_order": 2,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Eld Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/el-rune/",
+      "item_name": "El",
+      "item_slug": "el_rune",
+      "item_category": "rune",
+      "product_id": 12065,
+      "product_slug": "el-rune",
+      "normalized_item_name": "El Rune",
+      "rune_order": 1,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "El Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/hel-rune/",
+      "item_name": "Hel",
+      "item_slug": "hel_rune",
+      "item_category": "rune",
+      "product_id": 12062,
+      "product_slug": "hel-rune",
+      "normalized_item_name": "Hel Rune",
+      "rune_order": 15,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.35,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Hel Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.35. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/7-multiple-rune-package-352-x-any-runes/",
+      "item_name": "7. Multiple Rune Package 352 x Any Runes",
+      "item_slug": "7_multiple_rune_package_352_x_any_runes",
+      "item_category": "bundle",
+      "product_id": 12059,
+      "product_slug": "7-multiple-rune-package-352-x-any-runes",
+      "normalized_item_name": "7. Multiple Rune Package 352 x Any Runes",
+      "rune_order": null,
+      "price": 43.5,
+      "price_min_usd": 43.5,
+      "price_max_usd": 114.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 43.5,
+      "stock_status": "out_of_stock",
+      "is_in_stock": false,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 8,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "7. Multiple Rune Package 352 x Any Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $43.50 \u2013 $114.95. Base price $43.50 is the minimum.",
+        "Product is out of stock"
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (8 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/6-multiple-rune-package-176-x-any-runes/",
+      "item_name": "6. Multiple Rune Package 176 x Any Runes",
+      "item_slug": "6_multiple_rune_package_176_x_any_runes",
+      "item_category": "bundle",
+      "product_id": 12056,
+      "product_slug": "6-multiple-rune-package-176-x-any-runes",
+      "normalized_item_name": "6. Multiple Rune Package 176 x Any Runes",
+      "rune_order": null,
+      "price": 16.95,
+      "price_min_usd": 16.95,
+      "price_max_usd": 64.99,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 16.95,
+      "stock_status": "out_of_stock",
+      "is_in_stock": false,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 9,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "6. Multiple Rune Package 176 x Any Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $16.95 \u2013 $64.99. Base price $16.95 is the minimum.",
+        "Product is out of stock"
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (9 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/zod-rune/",
+      "item_name": "Zod",
+      "item_slug": "zod_rune",
+      "item_category": "rune",
+      "product_id": 12158,
+      "product_slug": "zod-rune",
+      "normalized_item_name": "Zod Rune",
+      "rune_order": 33,
+      "price": 0.45,
+      "price_min_usd": 0.45,
+      "price_max_usd": 39.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.45,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Zod Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.45 \u2013 $39.95. Base price $0.45 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/ber-rune/",
+      "item_name": "Ber",
+      "item_slug": "ber_rune",
+      "item_category": "rune",
+      "product_id": 12149,
+      "product_slug": "ber-rune",
+      "normalized_item_name": "Ber Rune",
+      "rune_order": 30,
+      "price": 0.45,
+      "price_min_usd": 0.45,
+      "price_max_usd": 39.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.45,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Ber Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.45 \u2013 $39.95. Base price $0.45 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/sur-rune/",
+      "item_name": "Sur",
+      "item_slug": "sur_rune",
+      "item_category": "rune",
+      "product_id": 12146,
+      "product_slug": "sur-rune",
+      "normalized_item_name": "Sur Rune",
+      "rune_order": 29,
+      "price": 0.35,
+      "price_min_usd": 0.35,
+      "price_max_usd": 23.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.35,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Sur Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.35 \u2013 $23.95. Base price $0.35 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/vex-rune/",
+      "item_name": "Vex",
+      "item_slug": "vex_rune",
+      "item_category": "rune",
+      "product_id": 12137,
+      "product_slug": "vex-rune",
+      "normalized_item_name": "Vex Rune",
+      "rune_order": 26,
+      "price": 0.23,
+      "price_min_usd": 0.23,
+      "price_max_usd": 9.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.23,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Vex Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.23 \u2013 $9.95. Base price $0.23 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/ist-rune/",
+      "item_name": "Ist",
+      "item_slug": "ist_rune",
+      "item_category": "rune",
+      "product_id": 12131,
+      "product_slug": "ist-rune",
+      "normalized_item_name": "Ist Rune",
+      "rune_order": 24,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 9.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Ist Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $9.95. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/5-multiple-rune-package-88-x-any-runes/",
+      "item_name": "5. Multiple Rune Package 88 x Any Runes",
+      "item_slug": "5_multiple_rune_package_88_x_any_runes",
+      "item_category": "bundle",
+      "product_id": 12053,
+      "product_slug": "5-multiple-rune-package-88-x-any-runes",
+      "normalized_item_name": "5. Multiple Rune Package 88 x Any Runes",
+      "rune_order": null,
+      "price": 10.45,
+      "price_min_usd": 10.45,
+      "price_max_usd": 199.0,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 10.45,
+      "stock_status": "out_of_stock",
+      "is_in_stock": false,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 13,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "5. Multiple Rune Package 88 x Any Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $10.45 \u2013 $199.00. Base price $10.45 is the minimum.",
+        "Product is out of stock"
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (13 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/jah-rune/",
+      "item_name": "Jah",
+      "item_slug": "jah_rune",
+      "item_category": "rune",
+      "product_id": 12152,
+      "product_slug": "jah-rune",
+      "normalized_item_name": "Jah Rune",
+      "rune_order": 31,
+      "price": 0.55,
+      "price_min_usd": 0.55,
+      "price_max_usd": 59.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.55,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Jah Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.55 \u2013 $59.95. Base price $0.55 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/gul-rune/",
+      "item_name": "Gul",
+      "item_slug": "gul_rune",
+      "item_category": "rune",
+      "product_id": 12134,
+      "product_slug": "gul-rune",
+      "normalized_item_name": "Gul Rune",
+      "rune_order": 25,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 11.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Gul Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $11.95. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/pul-rune/",
+      "item_name": "Pul",
+      "item_slug": "pul_rune",
+      "item_category": "rune",
+      "product_id": 12122,
+      "product_slug": "pul-rune",
+      "normalized_item_name": "Pul Rune",
+      "rune_order": 21,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.75,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Pul Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.75. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/lem-rune/",
+      "item_name": "Lem",
+      "item_slug": "lem_rune",
+      "item_category": "rune",
+      "product_id": 12119,
+      "product_slug": "lem-rune",
+      "normalized_item_name": "Lem Rune",
+      "rune_order": 20,
+      "price": 0.05,
+      "price_min_usd": 0.05,
+      "price_max_usd": 1.75,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 0.05,
+      "stock_status": "in_stock",
+      "is_in_stock": true,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 14,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "Lem Rune",
+      "caveats": [
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $0.05 \u2013 $1.75. Base price $0.05 is the minimum."
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a variable rune (14 server variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/4-multiple-rune-package-40-x-any-runes/",
+      "item_name": "4. Multiple Rune Package 40 x Any Runes",
+      "item_slug": "4_multiple_rune_package_40_x_any_runes",
+      "item_category": "bundle",
+      "product_id": 12050,
+      "product_slug": "4-multiple-rune-package-40-x-any-runes",
+      "normalized_item_name": "4. Multiple Rune Package 40 x Any Runes",
+      "rune_order": null,
+      "price": 4.75,
+      "price_min_usd": 4.75,
+      "price_max_usd": 155.0,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 4.75,
+      "stock_status": "out_of_stock",
+      "is_in_stock": false,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 13,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "4. Multiple Rune Package 40 x Any Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $4.75 \u2013 $155.00. Base price $4.75 is the minimum.",
+        "Product is out of stock"
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (13 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/3-multiple-rune-package-20-x-any-runes/",
+      "item_name": "3. Multiple Rune Package 20 x Any Runes",
+      "item_slug": "3_multiple_rune_package_20_x_any_runes",
+      "item_category": "bundle",
+      "product_id": 12047,
+      "product_slug": "3-multiple-rune-package-20-x-any-runes",
+      "normalized_item_name": "3. Multiple Rune Package 20 x Any Runes",
+      "rune_order": null,
+      "price": 4.5,
+      "price_min_usd": 4.5,
+      "price_max_usd": 89.99,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 4.5,
+      "stock_status": "out_of_stock",
+      "is_in_stock": false,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 13,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "3. Multiple Rune Package 20 x Any Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $4.50 \u2013 $89.99. Base price $4.50 is the minimum.",
+        "Product is out of stock"
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (13 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/2-multiple-rune-package-10-x-any-runes/",
+      "item_name": "2. Multiple Rune Package 10 x Any Runes",
+      "item_slug": "2_multiple_rune_package_10_x_any_runes",
+      "item_category": "bundle",
+      "product_id": 12044,
+      "product_slug": "2-multiple-rune-package-10-x-any-runes",
+      "normalized_item_name": "2. Multiple Rune Package 10 x Any Runes",
+      "rune_order": null,
+      "price": 1.85,
+      "price_min_usd": 1.85,
+      "price_max_usd": 37.95,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 1.85,
+      "stock_status": "out_of_stock",
+      "is_in_stock": false,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 13,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "2. Multiple Rune Package 10 x Any Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $1.85 \u2013 $37.95. Base price $1.85 is the minimum.",
+        "Product is out of stock"
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (13 variations). "
+    },
+    {
+      "source_slug": "itemnow",
+      "evidence_class": "cash_market_listing",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
+      "source_url": "https://itemnow.com/product/1-multiple-rune-package-5-x-any-runes/",
+      "item_name": "1. Multiple Rune Package 5 x Any Runes",
+      "item_slug": "1_multiple_rune_package_5_x_any_runes",
+      "item_category": "bundle",
+      "product_id": 12041,
+      "product_slug": "1-multiple-rune-package-5-x-any-runes",
+      "normalized_item_name": "1. Multiple Rune Package 5 x Any Runes",
+      "rune_order": null,
+      "price": 1.93,
+      "price_min_usd": 1.93,
+      "price_max_usd": 399.0,
+      "currency": "USD",
+      "quantity": 1,
+      "unit_price": 1.93,
+      "stock_status": "out_of_stock",
+      "is_in_stock": false,
+      "segment_terms": [
+        {
+          "slug": "d2r-ladder",
+          "name": "D2R Ladder"
+        },
+        {
+          "slug": "d2r-non-ladder",
+          "name": "D2R Non-Ladder"
+        },
+        {
+          "slug": "d2r-hc-ladder",
+          "name": "D2R HC Ladder"
+        },
+        {
+          "slug": "d2r-hc-non-ladder",
+          "name": "D2R HC Non-Ladder"
+        },
+        {
+          "slug": "east-ladder",
+          "name": "East Ladder"
+        },
+        {
+          "slug": "europe-ladder",
+          "name": "Europe Ladder"
+        },
+        {
+          "slug": "west-ladder",
+          "name": "West Ladder"
+        },
+        {
+          "slug": "east-hc-ladder",
+          "name": "East HC Ladder"
+        },
+        {
+          "slug": "europe-hc-ladder",
+          "name": "Europe HC Ladder"
+        },
+        {
+          "slug": "west-hc-ladder",
+          "name": "West HC Ladder"
+        },
+        {
+          "slug": "east-non-ladder",
+          "name": "East Non-Ladder"
+        },
+        {
+          "slug": "europe-non-ladder",
+          "name": "Europe Non-Ladder"
+        },
+        {
+          "slug": "west-non-ladder",
+          "name": "West Non-Ladder"
+        },
+        {
+          "slug": "asia-1-ladder",
+          "name": "Asia-1 Ladder"
+        }
+      ],
+      "variation_count": 13,
+      "platform": null,
+      "ladder": null,
+      "hardcore": null,
+      "softcore": null,
+      "season_or_ruleset": null,
+      "segment_confidence": "low",
+      "base_price_scope": "unknown",
+      "use_in_model": false,
+      "raw_text": "1. Multiple Rune Package 5 x Any Runes",
+      "caveats": [
+        "Bundle product \u2014 excluded from individual rune price comparison",
+        "Product name does not match expected rune pattern",
+        "Product has 14 server attribute terms (D2R Ladder/Non-Ladder/HC Ladder/HC Non-Ladder + legacy). Store API base price may be the minimum variation price \u2014 per-segment prices require variation-level access.",
+        "Price range: $1.93 \u2013 $399.00. Base price $1.93 is the minimum.",
+        "Product is out of stock"
+      ],
+      "parser_notes": "Extracted from WooCommerce Store API (https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100). Prices in USD cents, converted to dollars. Score: segment_confidence=low (base price only, per-segment variation prices not accessible via public Store API). Product is a bundle (13 variations). "
+    }
+  ]
+}

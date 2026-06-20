@@ -61,6 +61,17 @@ Cash/RMT prices (PlayerAuctions, items7, etc.) are handled separately:
 - **Useful for:** Detecting divergence, understanding segment premium, identifying arbitrage.
 - **Caveats:** Cash prices include transaction fees, minimum floors, and profit margins. Low-value items may have price floors that don't reflect in-game ratios.
 
+## Source Window
+
+The Traderie completed-trades API exposes at most 50 recent completed listings per item/segment. This is a **count-capped window**, not a time-capped one. For high-volume items (e.g. Jah Rune on PC Softcore Non-Ladder), these 50 listings span roughly 7-8 hours. For low-volume items, the same 50 listings may span days or weeks.
+
+Historical depth depends entirely on scheduled polling and deduplicated snapshot retention. There is no way to paginate deeper into historical completed trades — `nextPage` is a boolean/repeating cursor that returns the same 50 listings.
+
+**Implications:**
+- **Price stability:** High-volume items have fresh data (~hours old). Low-volume items may have stale windows.
+- **Confidence:** The `total_trades` count in the model already accounts for sample size. The window cap means that for very high-volume items, `total_trades` may be truncated at 50 (the API cap), even though many more trades occurred in the same period.
+- **Snapshot discipline:** To build history over time, the polling pipeline must run regularly (every 1-6 hours) and deduplicate by listing ID.
+
 ## Source-Specific Notes
 
 | Source | Class | Use in Model | Notes |

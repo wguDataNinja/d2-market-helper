@@ -5,7 +5,9 @@ into a single normalized product file.
 
 Inputs:
 - data/external/iggm_cash_prices.json
+- data/external/itemnow_cash_prices.json
 - data/external/items7_cash_prices.json
+- data/external/d2stock_cash_prices.json
 
 Output:
 - data/products/external_cash_prices.sample.json
@@ -18,7 +20,9 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 INPUTS = [
     ROOT_DIR / "data" / "external" / "iggm_cash_prices.json",
+    ROOT_DIR / "data" / "external" / "itemnow_cash_prices.json",
     ROOT_DIR / "data" / "external" / "items7_cash_prices.json",
+    ROOT_DIR / "data" / "external" / "d2stock_cash_prices.json",
 ]
 OUTPUT = ROOT_DIR / "data" / "products" / "external_cash_prices.sample.json"
 
@@ -31,6 +35,49 @@ CAVEATS = [
     "Do not blend these prices into the in-game rune value model.",
     "Low-value cash prices may have baseline padding due to transaction friction and minimum price floors.",
 ]
+
+SOURCE_CAVEATS = {
+    "iggm": [
+        "IGGM: page-level URL only — all runes on a single listing page, no per-item deep links.",
+        "IGGM: segment context confirmed PC Non-Ladder Softcore ROTW from browser capture metadata.",
+    ],
+    "itemnow": [
+        "ItemNow: base/minimum variation prices from WooCommerce Store API — not segment-specific.",
+        "ItemNow: prices are the same across all 4 D2R segments (Ladder, Non-Ladder, HC Ladder, HC Non-Ladder).",
+        "ItemNow: per-segment variation prices require WC v3 API authentication — deferred.",
+    ],
+    "items7": [
+        "items7: static HTML does not contain per-rune prices. Browser capture required.",
+    ],
+    "d2stock": [
+        "D2Stock: segment context from RSS feed titles only — Softcore Ladder RotW / Softcore Non-Ladder RotW.",
+        "D2Stock: single-rune prices are segment-specific (2 separate feed items per rune).",
+        "D2Stock: 10-pack and runeword bundles excluded from single-rune comparisons.",
+    ],
+}
+
+ITEM_CATEGORY_MAP = {
+    "rune": "rune",
+    "runes": "rune",
+    "bundle": "bundle",
+    "bundles": "bundle",
+    "item": "item",
+    "items": "item",
+    None: "unknown",
+}
+
+
+def map_item_type(category):
+    if category is None:
+        return "unknown"
+    key = str(category).lower().strip()
+    return ITEM_CATEGORY_MAP.get(key, "unknown")
+
+
+def normalize_item_name(name):
+    if not name:
+        return None
+    return name.strip()
 
 
 def load_source(path):
@@ -65,19 +112,33 @@ def generate():
         all_observations.extend(obs)
         print(f"  {slug}: {count} observations")
 
-    # Normalize each observation to required fields
     normalized = []
     for obs in all_observations:
-        normalized.append({
+        item_name = obs.get("item_name") or ""
+        raw_price = obs.get("price")
+
+        source_caveats = SOURCE_CAVEATS.get(obs.get("source_slug"), [])
+
+        price_cents = None
+        if raw_price is not None:
+            try:
+                price_cents = round(float(raw_price) * 100)
+            except (ValueError, TypeError):
+                pass
+
+        entry = {
             "source_slug": obs.get("source_slug"),
-            "evidence_class": obs.get("evidence_class", "cash_market_listing"),
+            "evidence_class": "cash_listing",
             "captured_at": obs.get("captured_at"),
             "source_artifact_path": obs.get("source_artifact_path"),
             "source_url": obs.get("source_url"),
-            "item_name": obs.get("item_name"),
+            "product_url": obs.get("product_url"),
+            "item_name": item_name,
+            "normalized_item_name": normalize_item_name(item_name),
             "item_slug": obs.get("item_slug"),
-            "item_category": obs.get("item_category"),
-            "price": obs.get("price"),
+            "item_type": map_item_type(obs.get("item_category")),
+            "price_usd": raw_price,
+            "price_cents": price_cents,
             "currency": obs.get("currency", "USD"),
             "quantity": obs.get("quantity"),
             "unit_price": obs.get("unit_price"),
@@ -87,16 +148,22 @@ def generate():
             "softcore": obs.get("softcore"),
             "season_or_ruleset": obs.get("season_or_ruleset"),
             "segment_confidence": obs.get("segment_confidence", "low"),
+            "use_in_model": False,
+            "caveats": source_caveats,
             "raw_text": obs.get("raw_text"),
             "parser_notes": obs.get("parser_notes"),
-        })
+        }
+        normalized.append(entry)
 
     product = {
-        "schema_version": "0.1",
+        "schema_version": "0.2",
         "product": "external_cash_prices",
         "generated_at": generated_at,
+        "product_generated_at": generated_at,
+        "source_window_label": "current_snapshot",
         "model": "external_cash_listing_snapshot_v0",
         "caveats": CAVEATS,
+        "caveat_history": "Project history starts when snapshots began. Prices are current snapshots, not historical time series.",
         "sources": sources_data,
         "observations": normalized,
     }
