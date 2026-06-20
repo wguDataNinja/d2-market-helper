@@ -76,3 +76,14 @@ Stop investigating a source if:
 - Source notes: kept in `research/sources/{slug}.md` — always committed.
 - Manifest: kept in `data/source_manifest.json` — always committed.
 - Validation: run `python scripts/validate_source_manifest.py` after every manifest change.
+
+### Source Classification Rule
+
+#### Mandatory Surface Check Rule
+
+A source must not be classified as only qualitative/source-directory/cash/reference until the agent has explicitly looked for sold/completed trade surfaces and recorded the result.
+
+#### D2R Search Terms
+
+When searching for trade surfaces, use these D2R-specific terms:
+sold, completed, recent trades, price check, historical prices, WTS SOLD, WTB SOLD, sold for, active, ladder, non-ladder, hardcore, softcore, ROTW

@@ -33,6 +33,37 @@ discovered → captured_static → offline_parse_candidate → parser_prototype_
 | `deferred` | Not currently actionable — revisit later |
 | `rejected` | Not usable for this project |
 
+## Source Surface Checklist
+
+A mandatory source surface checklist that every source must pass before classification:
+
+- active listings surface
+- sold/completed listings surface
+- price-check/history surface
+- item-specific page surface
+- search/filter URL params
+- segment filters
+- accepted consideration / sold-for field
+- seller/buyer/time fields
+- pagination/window behavior
+- static/rendered/API parseability
+
+D2R-specific search terms:
+- sold
+- completed
+- recent trades
+- price check
+- historical prices
+- WTS SOLD
+- WTB SOLD
+- sold for
+- active
+- ladder
+- non-ladder
+- hardcore
+- softcore
+- ROTW
+
 ## Evidence Class Definitions
 
 | Class | Description | Example |

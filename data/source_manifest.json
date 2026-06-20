@@ -94,7 +94,7 @@
     "display_name": "PlayerAuctions",
     "base_url": "https://www.playerauctions.com/diablo-2-resurrected-items/",
     "category": "cash_market",
-    "priority": "tier_2",
+    "priority": "tier_3",
     "status": "captured_browser",
     "evidence_classes": [
       "cash_market_listings"
@@ -123,16 +123,22 @@
       "manual_only": false
     },
     "current_artifacts": [
-      "research/sources/captures/playerauctions_2026-06-20_browser-smoke/"
+      "research/sources/captures/playerauctions_2026-06-20_browser-smoke/",
+      "research/sources/captures/playerauctions/2026-06-20_rune_specific/",
+      "research/sources/downloads/rune_sources_2026-06-20/warlock_gear_sets.html",
+      "data/research/playerauctions_rune_probe.sample.json"
     ],
     "source_notes_path": "research/sources/playerauctions.md",
     "caveats": [
-      "Marketplace homepage showed navigation items, not rune listings.",
-      "Previous warlock_gear_sets.html had structured data-bind attributes with listing paths \u2014 more useful than the homepage.",
-      "Prices not visible on the general marketplace page. Need a filtered rune-specific URL.",
-      "Three API endpoints discovered but not tested for public access."
+      "No sold/completed/history surface exists \u2014 asking prices only.",
+      "Cloudflare managed challenge blocks all curl requests. Browser automation required.",
+      "No rune-specific filtered URL captured yet.",
+      "Segment filters are embedded in listing data-bind paths but not confirmed as working UI filter controls.",
+      "Existing warlock_gear_sets.html fixture shows 30+ listings with server-rendered prices from one seller.",
+      "Structured data-bind paths encode platform, ladder, season, HC/SC, item, and rune number.",
+      "API endpoints (public-api, user-api) return 404 or empty \u2014 no public API surface found."
     ],
-    "next_action": "Capture a rune-specific PlayerAuctions URL (search for 'rune' or filter to runes category).",
+    "next_action": "Deferred. Requires browser capture of a rune-specific listing URL to confirm filter UI existence and gather multi-seller data.",
     "last_reviewed_at": "2026-06-20"
   },
   {
@@ -140,7 +146,7 @@
     "display_name": "items7",
     "base_url": "https://www.items7.com/",
     "category": "cash_market",
-    "priority": "tier_2",
+    "priority": "tier_3",
     "status": "captured_static",
     "evidence_classes": [
       "cash_market_listings"
@@ -183,7 +189,7 @@
     "display_name": "IGGM",
     "base_url": "https://www.iggm.com/diablo-2-resurrected-items",
     "category": "cash_market",
-    "priority": "tier_3",
+    "priority": "tier_2",
     "status": "parser_prototype_ready",
     "evidence_classes": [
       "cash_market_listings"
@@ -230,13 +236,14 @@
     "base_url": "https://itemnow.com/product-category/diablo-2/runes/",
     "category": "cash_market",
     "priority": "tier_3",
-    "status": "captured_static",
+    "status": "parser_prototype_ready",
     "evidence_classes": [
       "cash_market_listings"
     ],
     "known_urls": [
       "https://itemnow.com/product-category/diablo-2/runes/",
-      "https://itemnow.com/wp-json/wp/v2/"
+      "https://itemnow.com/wp-json/wp/v2/",
+      "https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100"
     ],
     "supports_runes": true,
     "supports_selected_items": true,
@@ -257,15 +264,20 @@
       "manual_only": false
     },
     "current_artifacts": [
-      "research/sources/downloads/rune_sources_2026-06-20/d2items_for_sale.html"
+      "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "data/external/itemnow_cash_prices.json"
     ],
     "source_notes_path": "research/sources/d2items_for_sale.md",
     "caveats": [
-      "WordPress/WooCommerce site \u2014 prices loaded via AJAX, not always in static HTML.",
-      "WordPress REST API exposed at /wp-json/ \u2014 may provide structured product data.",
-      "Server/segment filter via URL params: ?server=d2r-non-ladder, ?server=d2r-hc-ladder."
+      "WooCommerce Store API is public — no auth needed.",
+      "Base price is the minimum variation price; per-segment prices need variation-level access.",
+      "33 individual runes + 9 bundles identified in category 99 (Runes).",
+      "Hel Rune present (id=12062) — all 33 runes accounted for.",
+      "Prices in USD cents, converted to dollars. Range available per product.",
+      "Stock status available per product.",
+      "No completed/sold history surface exists on ItemNow."
     ],
-    "next_action": "Query WordPress REST API root to discover product endpoints.",
+    "next_action": "Integrate into generate_external_cash_prices.py and validate.",
     "last_reviewed_at": "2026-06-20"
   },
   {
@@ -454,7 +466,10 @@
     "known_urls": [
       "https://www.reddit.com/r/D2R_Marketplace/",
       "https://www.reddit.com/r/Diablo_2_Resurrected/",
-      "https://www.reddit.com/r/diablo2/"
+      "https://www.reddit.com/r/diablo2/",
+      "https://old.reddit.com/r/D2R_Marketplace/",
+      "https://old.reddit.com/r/Diablo_2_Resurrected/",
+      "https://old.reddit.com/r/diablo2/"
     ],
     "supports_runes": true,
     "supports_selected_items": true,
@@ -467,22 +482,24 @@
       "region": false
     },
     "extraction": {
-      "static_html": false,
+      "static_html": true,
       "rendered_html": false,
-      "embedded_json": true,
-      "api_observed": true,
+      "embedded_json": false,
+      "api_observed": false,
       "browser_required": false,
       "manual_only": false
     },
     "current_artifacts": [
       "research/reddit/raw/",
       "research/reddit/selected/",
-      "research/reddit/notes/"
+      "research/reddit/notes/",
+      "research/sources/captures/reddit/2026-06-20_search_probe/"
     ],
     "source_notes_path": "docs/MARKET_RESEARCH.md",
     "caveats": [
-      "Qualitative only \u2014 not pricing data.",
-      "2,998 posts collected, 0 comment trees fetched. Direct market signal was too sparse.",
+      "Qualitative only \u2014 not pricing data. No structured completed-trade or active-listing surface.",
+      "new Reddit (reddit.com) blocks curl with Cloudflare. old.reddit.com is accessible via curl with proper UA.",
+      "2,998 posts collected previously, 0 comment trees fetched. Direct market signal was too sparse.",
       "Useful for venue discovery, player language, item candidates.",
       "Future comment fetches should be hypothesis-targeted, not broad."
     ],
@@ -495,12 +512,14 @@
     "base_url": "https://forums.d2jsp.org/",
     "category": "forum_reference",
     "priority": "tier_3",
-    "status": "discovered",
+    "status": "deferred",
     "evidence_classes": [
       "forum_trade_posts"
     ],
     "known_urls": [
-      "https://forums.d2jsp.org/"
+      "https://forums.d2jsp.org/",
+      "https://forums.d2jsp.org/forum.php?f=271",
+      "https://forums.d2jsp.org/forum.php?f=272"
     ],
     "supports_runes": true,
     "supports_selected_items": true,
@@ -520,56 +539,92 @@
       "browser_required": false,
       "manual_only": true
     },
-    "current_artifacts": [],
+    "current_artifacts": [
+      "research/sources/captures/d2jsp/2026-06-20_search_probe/"
+    ],
     "source_notes_path": "",
     "caveats": [
       "Forum-based economy using Forum Gold (FG) \u2014 separate from in-game rune economy.",
       "FG-to-Ist conversion is an indirect reference, not a direct comparison.",
+      "Fully gated behind login. Curl returns 403 (Cloudflare). Camoufox browser capture confirms: guest view shows only login wall, 0 topic titles visible.",
+      "D2R Trade Forum (f=271) and Price Check forum (f=272) both inaccessible without login.",
+      "FG-denominated trades as rune ratio reference cannot be evaluated without login access.",
       "Requires forum scraping or manual review \u2014 no public API.",
       "Reddit pass 1 showed minimal d2jsp mentions (7 in 2,998 posts) but may dominate outside Reddit."
     ],
-    "next_action": "Research whether d2jsp has a public price-check forum or searchable trade history without login.",
+    "next_action": "Deferred. Fully gated — no public data surface. Revisit only if login access is approved for FG pricing research.",
     "last_reviewed_at": "2026-06-20"
   },
   {
     "source_slug": "diablo2_io",
     "display_name": "Diablo2.io",
     "base_url": "https://diablo2.io/",
-    "category": "forum_reference",
-    "priority": "tier_3",
-    "status": "discovered",
+    "category": "completed_player_trades",
+    "priority": "tier_1",
+    "status": "parser_prototype_ready",
+    "use_in_model": false,
+    "surfaces_checked": {
+      "active_listings": "yes",
+      "sold_completed": "yes",
+      "price_history": "yes",
+      "item_pages": "yes",
+      "search_params": "yes",
+      "segment_filters": "yes",
+      "accepted_consideration": "yes",
+      "buyer_seller_time": "partial",
+      "pagination": "yes",
+      "parseability": "static_html"
+    },
     "evidence_classes": [
-      "forum_trade_posts"
+      "completed_player_trade_candidate",
+      "active_player_listing",
+      "historical_trade_reference",
+      "community_reference"
     ],
     "known_urls": [
-      "https://diablo2.io/"
+      "https://diablo2.io/",
+      "https://diablo2.io/search.php?keywords=Ber&terms=all&author=&fid%5B%5D=16&sc=0&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=45",
+      "https://diablo2.io/search.php?keywords=Ber&terms=all&fid%5B%5D=16&hc=1&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search&activesold=1&uitemid=45",
+      "https://diablo2.io/misc/jah-t43.html",
+      "https://diablo2.io/browsetrades.php"
     ],
     "supports_runes": true,
     "supports_selected_items": true,
     "segment_filters": {
-      "platform": false,
-      "ladder": false,
-      "hardcore": false,
-      "softcore": false,
+      "platform": true,
+      "ladder": true,
+      "hardcore": true,
+      "softcore": true,
       "season": false,
       "region": false
     },
     "extraction": {
-      "static_html": false,
+      "static_html": true,
       "rendered_html": false,
       "embedded_json": false,
       "api_observed": false,
       "browser_required": false,
-      "manual_only": true
+      "manual_only": false
     },
-    "current_artifacts": [],
-    "source_notes_path": "",
-    "caveats": [
-      "Not yet evaluated \u2014 no downloaded artifacts or browser captures.",
-      "Mentioned 2 times in Reddit pass 1 \u2014 low community mindshare on Reddit.",
-      "May have a trade section or price-check feature worth investigating."
+    "current_artifacts": [
+      "research/sources/captures/diablo2io/2026-06-20_jah_sold_search_p1/rendered.html",
+      "research/sources/captures/diablo2io/2026-06-20_ber_sold_search_p1/rendered.html",
+      "research/sources/captures/diablo2io/2026-06-20_lo_sold_search_p1/rendered.html",
+      "research/sources/captures/diablo2io/2026-06-20_sur_sold_search_p1/rendered.html",
+      "scripts/parse_diablo2io_sold_search_offline.py",
+      "data/research/diablo2io_sold_rune_trades.sample.json"
     ],
-    "next_action": "Visit diablo2.io and evaluate whether it has structured trade data or forum-style price checks.",
+    "source_notes_path": "research/sources/diablo2_io.md",
+    "caveats": [
+      "Sold-search surface needs parser validation — rows may not be reliable completed trades.",
+      "Segment filters confirmed via data-param attributes (ladder, hc, platform, wtbs, activesold). HC filter confirmed working (hc=1 yields fewer results).",
+      "Platform filter params discovered (plat_pc, plat_switch). Other platforms inferred.",
+      "Rows may lack buyer or structured accepted consideration.",
+      "Do not blend Diablo2.io with Traderie until source comparison is complete.",
+      "use_in_model remains false — not integrated into pricing.",
+      "Tier label reflects candidate importance, not integration readiness. Source is not integrated."
+    ],
+    "next_action": "Build sold-search parser against Ber fixture. Validate completed-trade semantics and segment filter integration.",
     "last_reviewed_at": "2026-06-20"
   },
   {
@@ -578,11 +633,13 @@
     "base_url": "https://www.ebay.com/sch/i.html?_nkw=diablo+2+resurrected+rune",
     "category": "cash_market",
     "priority": "later",
-    "status": "discovered",
+    "status": "deferred",
     "evidence_classes": [
       "cash_market_listings"
     ],
-    "known_urls": [],
+    "known_urls": [
+      "https://www.ebay.com/sch/i.html?_nkw=diablo+2+resurrected+rune"
+    ],
     "supports_runes": true,
     "supports_selected_items": true,
     "segment_filters": {
@@ -599,72 +656,90 @@
       "embedded_json": false,
       "api_observed": false,
       "browser_required": true,
-      "manual_only": false
+      "manual_only": true
     },
-    "current_artifacts": [],
+    "current_artifacts": [
+      "research/sources/captures/ebay/2026-06-20_search_probe/"
+    ],
     "source_notes_path": "",
     "caveats": [
       "General marketplace \u2014 D2R items are a small category.",
       "Listings may include physical merchandise, accounts, or digital items.",
       "No segment filtering (ladder, SC/HC).",
-      "Prices are asking prices, not completed sales (unless filtering by sold items)."
+      "Prices are asking prices, not completed sales (unless filtering by sold items).",
+      "eBay anti-bot blocks both curl and Camoufox headless browser. Sold/completed filter exists but inaccessible.",
+      "Manual browser session required \u2014 fully blocked from automation."
     ],
-    "next_action": "Deferred. Low priority \u2014 segment filtering is absent, item naming is inconsistent.",
+    "next_action": "Deferred. Fully blocked from automation. Requires manual browser session with sold-items filter.",
     "last_reviewed_at": "2026-06-20"
   },
   {
     "source_slug": "eldorado",
     "display_name": "Eldorado.gg",
-    "base_url": "https://www.eldorado.gg/diablo-2-resurrected/",
+    "base_url": "https://www.eldorado.gg/diablo-2-resurrected-items/i/95-2-0",
     "category": "cash_market",
-    "priority": "later",
-    "status": "discovered",
+    "priority": "tier_3",
+    "status": "captured_browser",
     "evidence_classes": [
       "cash_market_listings"
     ],
-    "known_urls": [],
+    "known_urls": [
+      "https://www.eldorado.gg/",
+      "https://www.eldorado.gg/diablo-2-resurrected-items/i/95-2-0",
+      "https://www.eldorado.gg/sitemap.xml"
+    ],
     "supports_runes": true,
     "supports_selected_items": true,
     "segment_filters": {
-      "platform": false,
-      "ladder": false,
-      "hardcore": false,
-      "softcore": false,
+      "platform": "partial (embedded in listing titles)",
+      "ladder": "partial (embedded in listing titles)",
+      "hardcore": "partial (embedded in listing titles)",
+      "softcore": "partial (embedded in listing titles)",
       "season": false,
       "region": false
     },
     "extraction": {
       "static_html": false,
-      "rendered_html": false,
+      "rendered_html": true,
       "embedded_json": false,
       "api_observed": false,
       "browser_required": true,
       "manual_only": false
     },
-    "current_artifacts": [],
+    "current_artifacts": [
+      "research/sources/captures/eldorado/2026-06-20_search_probe/"
+    ],
     "source_notes_path": "",
     "caveats": [
-      "Not yet evaluated. Cash marketplace. Unknown segment support.",
-      "May have structured listing data similar to PlayerAuctions."
+      "Angular SPA \u2014 browser required. Curl returns shell only (404 on wrong URL path).",
+      "Correct game path is /diablo-2-resurrected-items/i/95-2-0 (not /diablo-2-resurrected/).",
+      "476 items found on rendered page. Segment info (Ladder HC, NonLadder SC, RotW/LoD) embedded in listing titles.",
+      "Prices are per-unit asking prices from multi-seller marketplace.",
+      "Seller reputation scores and delivery times visible in rendered output.",
+      "No embedded JSON or API surface found in static shell."
     ],
-    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "next_action": "Build rendered-HTML parser extractor from Camoufox capture. Investigate rune-specific filtered URL.",
     "last_reviewed_at": "2026-06-20"
   },
   {
     "source_slug": "mmopixel",
     "display_name": "MMOPixel",
-    "base_url": "https://www.mmopixel.com/diablo-2-resurrected",
+    "base_url": "https://www.mmopixel.com/diablo-ii-resurrected",
     "category": "cash_market",
     "priority": "later",
-    "status": "discovered",
+    "status": "captured_browser",
     "evidence_classes": [
       "cash_market_listings"
     ],
-    "known_urls": [],
+    "known_urls": [
+      "https://www.mmopixel.com/",
+      "https://www.mmopixel.com/diablo-ii-resurrected",
+      "https://www.mmopixel.com/sitemap.xml"
+    ],
     "supports_runes": true,
     "supports_selected_items": true,
     "segment_filters": {
-      "platform": false,
+      "platform": true,
       "ladder": false,
       "hardcore": false,
       "softcore": false,
@@ -673,35 +748,48 @@
     },
     "extraction": {
       "static_html": false,
-      "rendered_html": false,
+      "rendered_html": true,
       "embedded_json": false,
       "api_observed": false,
       "browser_required": true,
       "manual_only": false
     },
-    "current_artifacts": [],
+    "current_artifacts": [
+      "research/sources/captures/mmopixel/2026-06-20_search_probe/"
+    ],
     "source_notes_path": "",
     "caveats": [
-      "Not yet evaluated. Cash marketplace. Unknown segment support."
+      "Correct slug is diablo-ii-resurrected (not diablo-2-resurrected).",
+      "Curl blocked by JS anti-bot challenge. Camoufox renders successfully.",
+      "Main items page shows 1,304 item modifier products (sockets, ED, skills) not specifically runes.",
+      "Rune images found in sitemap but rune-specific category page not yet discovered.",
+      "Platform selector visible (PC). No ladder/HC/SC toggles observed.",
+      "Prices in USD. Asking prices only \u2014 no completed/sold history."
     ],
-    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "next_action": "Capture MMOPixel rune-specific URL if it exists. Investigate site structure from sitemap.",
     "last_reviewed_at": "2026-06-20"
   },
   {
     "source_slug": "mulefactory",
     "display_name": "MuleFactory",
-    "base_url": "https://www.mulefactory.com/diablo-2-resurrected/",
+    "base_url": "https://www.mulefactory.com/diablo_2_remaster_items_for_sale/",
     "category": "cash_market",
-    "priority": "later",
-    "status": "discovered",
+    "priority": "tier_3",
+    "status": "captured_static",
     "evidence_classes": [
       "cash_market_listings"
     ],
-    "known_urls": [],
+    "known_urls": [
+      "https://www.mulefactory.com/",
+      "https://www.mulefactory.com/diablo_2_remaster_items_for_sale/",
+      "https://www.mulefactory.com/buy_diablo_2_remaster_rune/",
+      "https://www.mulefactory.com/buy_diablo_2_remaster_runeword/",
+      "https://www.mulefactory.com/shop_sitemap/"
+    ],
     "supports_runes": true,
     "supports_selected_items": true,
     "segment_filters": {
-      "platform": false,
+      "platform": "via JS server selector",
       "ladder": false,
       "hardcore": false,
       "softcore": false,
@@ -709,19 +797,27 @@
       "region": false
     },
     "extraction": {
-      "static_html": false,
+      "static_html": true,
       "rendered_html": false,
       "embedded_json": false,
       "api_observed": false,
-      "browser_required": true,
+      "browser_required": false,
       "manual_only": false
     },
-    "current_artifacts": [],
+    "current_artifacts": [
+      "research/sources/captures/mulefactory/2026-06-20_search_probe/"
+    ],
     "source_notes_path": "",
     "caveats": [
-      "Not yet evaluated. Cash marketplace. Unknown segment support."
+      "Correct game slug: diablo_2_remaster_items_for_sale (not diablo-2-resurrected).",
+      "Rune category page has static HTML with Schema.org microdata including per-rune prices.",
+      "24 of 72 runes displayed on page 1. Remaining via AJAX 'More items' button.",
+      "All 33 D2R runes present but page shows 24 per load; full set across 3 pages via autopager.",
+      "Prices are 'from' (minimum/base) prices. Segment-specific pricing may differ.",
+      "Server/platform selector requires JavaScript \u2014 prices may be default-segment only.",
+      "Other categories (runewords, runeword bases) also have static pages with Schema.org data."
     ],
-    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "next_action": "Build static HTML microdata parser for MuleFactory rune category page.",
     "last_reviewed_at": "2026-06-20"
   },
   {
@@ -734,7 +830,11 @@
     "evidence_classes": [
       "cash_market_listings"
     ],
-    "known_urls": [],
+    "known_urls": [
+      "https://www.rpgstash.com/",
+      "https://www.rpgstash.com/d2r-runes/",
+      "https://www.rpgstash.com/ber-rune-d2r-diablo2-resurrected.html"
+    ],
     "supports_runes": true,
     "supports_selected_items": true,
     "segment_filters": {
@@ -751,34 +851,45 @@
       "embedded_json": false,
       "api_observed": false,
       "browser_required": true,
-      "manual_only": false
+      "manual_only": true
     },
-    "current_artifacts": [],
+    "current_artifacts": [
+      "research/sources/captures/rpgstash/2026-06-20_search_probe/"
+    ],
     "source_notes_path": "",
     "caveats": [
-      "Not yet evaluated. Cash marketplace. Unknown segment support."
+      "Cloudflare blocks curl (403). cloudscraper bypasses CF but page is fully JS-rendered \u2014 no static prices.",
+      "Individual rune product pages (e.g. /ber-rune-d2r-diablo2-resurrected.html) also fully JS-rendered.",
+      "Camoufox crashes with Playwright driver error \u2014 cannot render via headless browser.",
+      "Rune category page exists at /d2r-runes/. Individual rune product pages confirmed.",
+      "RPGStash listings appear on Eldorado marketplace with prices/seller info (proxy evidence).",
+      "Prices are asking prices. No completed/sold history surface found."
     ],
-    "next_action": "Add to browser-capture queue after tier_2 sources are evaluated.",
+    "next_action": "Deferred. Requires Camoufox/Playwright upgrade or alternate capture approach.",
     "last_reviewed_at": "2026-06-20"
   },
   {
     "source_slug": "d2stock",
     "display_name": "D2Stock",
     "base_url": "https://d2stock.com/",
-    "category": "source_directory_only",
-    "priority": "later",
-    "status": "discovered",
-    "evidence_classes": [],
+    "category": "cash_market",
+    "priority": "tier_2",
+    "status": "offline_parse_candidate",
+    "evidence_classes": [
+      "cash_market_listings"
+    ],
     "known_urls": [
-      "https://d2stock.com/"
+      "https://d2stock.com/",
+      "https://d2stock.com/rss.xml",
+      "https://d2stock.com/sitemap.xml"
     ],
     "supports_runes": true,
-    "supports_selected_items": false,
+    "supports_selected_items": true,
     "segment_filters": {
       "platform": false,
-      "ladder": false,
+      "ladder": true,
       "hardcore": false,
-      "softcore": false,
+      "softcore": true,
       "season": false,
       "region": false
     },
@@ -786,17 +897,27 @@
       "static_html": false,
       "rendered_html": false,
       "embedded_json": false,
-      "api_observed": false,
+      "api_observed": true,
       "browser_required": false,
-      "manual_only": true
+      "manual_only": false
     },
-    "current_artifacts": [],
+    "current_artifacts": [
+      "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
+      "research/sources/captures/d2stock/2026-06-20_search_probe/"
+    ],
     "source_notes_path": "",
     "caveats": [
-      "Not yet evaluated. May be a source directory or price aggregator.",
-      "Nature of the site is unknown \u2014 needs a visit to classify."
+      "SvelteKit SPA \u2014 static pages are JS-rendered shells. Cloudflare protects main pages.",
+      "Google Shopping RSS feed at /rss.xml is the primary data source (2.2 MB, 2,014 items).",
+      "Feed includes per-item pricing, availability, product type hierarchy, and segment context.",
+      "Segments derived from titles: 'Softcore Ladder RotW', 'Softcore Non-Ladder RotW'. No Hardcore observed in sample.",
+      "Prices are asking prices, not completed sales. No sold/completed history surface found.",
+      "RSS feed includes runes (single + 10x packs), runewords, uniques, sets, skillers, bases, jewels, torches, charms.",
+      "All 33 D2R runes present with per-rune pricing. Segment-specific pricing via separate feed items.",
+      "Site also lists Warlock expansion items (Reign of the Warlock category).",
+      "cloudscraper bypasses Cloudflare for page access; Camoufox crashed similarly to RPGStash."
     ],
-    "next_action": "Visit d2stock.com and classify whether it has trade data, prices, or is a directory.",
+    "next_action": "Build RSS feed XML parser. Highest priority \u2014 structured data with no browser dependency.",
     "last_reviewed_at": "2026-06-20"
   },
   {
