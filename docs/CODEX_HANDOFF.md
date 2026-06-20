@@ -228,6 +228,16 @@ streamlit run app.py
 > 2. Offline `external_cash_prices.json` prototype from PlayerAuctions/items7 saved HTML.
 > 3. `source_directory.json` + prototype homepage data model.
 
+## Pipeline Audit Docs
+
+1. `docs/TRADERIE_COMPLETED_TRADES_AUDIT.md` — Full pipeline audit: endpoint, fields, dedupe, limitations, unanswered questions
+2. `docs/TRADERIE_NORMALIZED_SCHEMA.md` — Proposed private normalized trade record format
+3. `docs/TRADERIE_TOOLS_INTEGRATION.md` — Userscript structure, JSON format, cache strategy, migration plan
+
+## Current Project Memory
+
+Read `docs/PROJECT_MEMORY.md` first for the latest repo state, product definition, source status, data products, caveats, and next-session checklist.
+
 ## Docs to Read (in order)
 
 1. `docs/PROJECT_ROADMAP.md` — Overall vision and phases
