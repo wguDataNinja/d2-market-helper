@@ -1,0 +1,383 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-20T11:04:19Z",
+  "last_update": "2026-06-20T04:14:51Z",
+  "segments": {
+    "pc_sc_l": {
+      "Lo Rune": {
+        "ist_value": 6.2445,
+        "low_confidence": false
+      },
+      "Ohm Rune": {
+        "ist_value": 4.3154,
+        "low_confidence": false
+      },
+      "Jah Rune": {
+        "ist_value": 17.2533,
+        "low_confidence": false
+      },
+      "Mal Rune": {
+        "ist_value": 0.7458,
+        "low_confidence": false
+      },
+      "Gul Rune": {
+        "ist_value": 1.5499,
+        "low_confidence": false
+      },
+      "Ber Rune": {
+        "ist_value": 12.4307,
+        "low_confidence": false
+      },
+      "Cham Rune": {
+        "ist_value": 4.1993,
+        "low_confidence": false
+      },
+      "Pul Rune": {
+        "ist_value": 0.7734,
+        "low_confidence": false
+      },
+      "Hel Rune": {
+        "ist_value": 1.6923,
+        "low_confidence": true
+      },
+      "Lem Rune": {
+        "ist_value": 0.55,
+        "low_confidence": true
+      },
+      "Eld Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Io Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Amn Rune": {
+        "ist_value": 0.6667,
+        "low_confidence": true
+      },
+      "Ko Rune": {
+        "ist_value": 5.5,
+        "low_confidence": true
+      },
+      "El Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Ral Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Lum Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Nef Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Dol Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ort Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Eth Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ith Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Fal Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      }
+    },
+    "pc_sc_nl": {
+      "Jah Rune": {
+        "ist_value": 11.6524,
+        "low_confidence": false
+      },
+      "Mal Rune": {
+        "ist_value": 0.9006,
+        "low_confidence": false
+      },
+      "Ohm Rune": {
+        "ist_value": 3.5177,
+        "low_confidence": false
+      },
+      "Lo Rune": {
+        "ist_value": 4.2824,
+        "low_confidence": false
+      },
+      "Gul Rune": {
+        "ist_value": 1.3554,
+        "low_confidence": false
+      },
+      "Ber Rune": {
+        "ist_value": 10.2695,
+        "low_confidence": false
+      },
+      "Cham Rune": {
+        "ist_value": 3.5357,
+        "low_confidence": false
+      },
+      "Pul Rune": {
+        "ist_value": 0.781,
+        "low_confidence": false
+      },
+      "Lem Rune": {
+        "ist_value": 0.5,
+        "low_confidence": false
+      },
+      "Hel Rune": {
+        "ist_value": 0.9667,
+        "low_confidence": true
+      },
+      "Amn Rune": {
+        "ist_value": 1.3333,
+        "low_confidence": true
+      },
+      "Ko Rune": {
+        "ist_value": 0.5,
+        "low_confidence": true
+      },
+      "Ort Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Ral Rune": {
+        "ist_value": 1.5,
+        "low_confidence": true
+      },
+      "Io Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Lum Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Eld Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Dol Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Fal Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Nef Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Eth Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ith Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "El Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      }
+    },
+    "pc_hc_l": {
+      "Mal Rune": {
+        "ist_value": 0.7598,
+        "low_confidence": false
+      },
+      "Ohm Rune": {
+        "ist_value": 4.8701,
+        "low_confidence": false
+      },
+      "Gul Rune": {
+        "ist_value": 1.2812,
+        "low_confidence": true
+      },
+      "Cham Rune": {
+        "ist_value": 5.4167,
+        "low_confidence": true
+      },
+      "Ber Rune": {
+        "ist_value": 15.0,
+        "low_confidence": true
+      },
+      "Lo Rune": {
+        "ist_value": 8.25,
+        "low_confidence": true
+      },
+      "Jah Rune": {
+        "ist_value": 21.5,
+        "low_confidence": true
+      },
+      "Io Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Ko Rune": {
+        "ist_value": 0.5,
+        "low_confidence": true
+      },
+      "Lem Rune": {
+        "ist_value": 2.0,
+        "low_confidence": true
+      },
+      "Pul Rune": {
+        "ist_value": 0.5,
+        "low_confidence": true
+      },
+      "Ral Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Fal Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Hel Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ith Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Eth Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "El Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Lum Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Eld Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Nef Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Dol Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ort Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Amn Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      }
+    },
+    "pc_hc_nl": {
+      "Ber Rune": {
+        "ist_value": 18.0,
+        "low_confidence": true
+      },
+      "Cham Rune": {
+        "ist_value": 5.0,
+        "low_confidence": true
+      },
+      "Mal Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true
+      },
+      "Jah Rune": {
+        "ist_value": 9.0,
+        "low_confidence": true
+      },
+      "El Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Lo Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Amn Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Pul Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ort Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ohm Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Nef Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Dol Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Lum Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Lem Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Eth Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ko Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Eld Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ith Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Io Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Hel Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Gul Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Fal Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      },
+      "Ral Rune": {
+        "ist_value": null,
+        "low_confidence": true
+      }
+    }
+  }
+}
