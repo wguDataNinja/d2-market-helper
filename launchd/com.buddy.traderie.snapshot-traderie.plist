@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.buddy.traderie.snapshot-traderie</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/buddy/projects/traderie/scripts/run_traderie_snapshot_launchd.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/buddy/projects/traderie</string>
+
+    <key>StandardOutPath</key>
+    <string>/Users/buddy/projects/traderie/logs/launchd/snapshot-traderie.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/buddy/projects/traderie/logs/launchd/snapshot-traderie.err.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>5</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>11</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>17</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>23</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+</dict>
+</plist>

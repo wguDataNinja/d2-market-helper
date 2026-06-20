@@ -21,6 +21,12 @@ data/extracted/
 data/normalized/
 data/prices/*.csv
 data/fetch_log.txt
+data/snapshots/
+data/history/
+
+# Launchd operation logs
+logs/launchd/
+.run/
 
 # OS
 .DS_Store
@@ -34,3 +40,7 @@ data/fetch_log.txt
 # Legacy archives
 .old/
 data/.old/
+
+# Browser capture HAR files (may contain cookies/secrets)
+*.har
+*.har/
