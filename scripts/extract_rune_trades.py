@@ -21,6 +21,13 @@ ITEMS_PATH = DATA_DIR / "item_ids.json"
 OUTPUT_DIR = DATA_DIR / "extracted"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+SEGMENT_META = {
+    "pc_hc_l": {"platform": "pc", "ladder": True, "hardcore": True, "segment_slug": "pc_hc_l"},
+    "pc_hc_nl": {"platform": "pc", "ladder": False, "hardcore": True, "segment_slug": "pc_hc_nl"},
+    "pc_sc_l": {"platform": "pc", "ladder": True, "hardcore": False, "segment_slug": "pc_sc_l"},
+    "pc_sc_nl": {"platform": "pc", "ladder": False, "hardcore": False, "segment_slug": "pc_sc_nl"},
+}
+
 # Load valid runes
 with open(ITEMS_PATH, "r") as f:
     item_data = json.load(f)
@@ -35,6 +42,8 @@ def extract_rune_trades(segment, raw_path):
 
     extracted = []
     stats = defaultdict(int)
+
+    segment_info = SEGMENT_META[segment]
 
     for offer_rune, offer_listings in listings.items():
         if offer_rune not in valid_runes:
@@ -72,7 +81,16 @@ def extract_rune_trades(segment, raw_path):
             offered_str = f"{offer_rune}:{offer_qty}"
             requested_str = ";".join(f"{r}:{q}" for r, q in requested.items())
 
-            extracted.append((trade_id, offered_str, requested_str))
+            listing_id = listing.get("listing_id", "")
+            seller_rating = listing.get("seller_rating")
+            seller_reviews = listing.get("seller_reviews")
+
+            extracted.append((
+                trade_id, offered_str, requested_str,
+                listing_id, seller_rating, seller_reviews,
+                segment_info["platform"], segment_info["ladder"],
+                segment_info["hardcore"], segment_info["segment_slug"],
+            ))
 
             if len(requested) == 1:
                 stats["single_item"] += 1
@@ -82,7 +100,11 @@ def extract_rune_trades(segment, raw_path):
     output_path = OUTPUT_DIR / f"extracted_trades_{segment}.csv"
     with open(output_path, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["TradeID", "Offered", "Requested"])
+        writer.writerow([
+            "TradeID", "Offered", "Requested",
+            "listing_id", "seller_rating", "seller_reviews",
+            "platform", "ladder", "hardcore", "segment_slug",
+        ])
         writer.writerows(extracted)
 
     print(f"\nSummary for {segment}:")

@@ -66,31 +66,64 @@ def fetch_listings(scraper, url, params, name):
             listings = raw.get("listings", [])
             if not isinstance(listings, list):
                 log(f"Warning: 'listings' field for {name} is not a list. Treating as empty.")
-                return []
-            return listings
+                return [], {}
+            return listings, {
+                "version": raw.get("version"),
+                "nextPage": raw.get("nextPage"),
+            }
         except Exception as e:
             log(f"Fetch error for {name} (attempt {attempt + 1}): {e}")
             time.sleep(RETRY_DELAY * (attempt + 1))
     log(f"Giving up on {name} after 2 attempts.")
-    return []
+    return [], {}
 
-def sanitize_trade_entry(entry):
+
+def extract_properties(properties):
+    meta = {}
+    for prop in (properties or []):
+        name = prop.get("property", "")
+        if name == "Platform":
+            meta["platform"] = (prop.get("string") or "unknown").lower()
+        elif name == "Mode":
+            meta["mode"] = prop.get("string") or "unknown"
+            meta["hardcore"] = meta["mode"].lower() == "hardcore"
+        elif name == "Ladder":
+            if prop.get("type") == "bool":
+                meta["ladder"] = prop.get("bool", False)
+            elif prop.get("string"):
+                meta["ladder"] = prop["string"].lower() == "ladder"
+    return meta
+
+def sanitize_trade_entry(entry, response_meta=None):
     seller_data = entry.get("seller", {}) or {}
     seller = seller_data.get("username", "?")
     raw_prices = entry.get("prices", []) or []
     price_list = [
         {
             "name": p.get("name", "?"),
-            "quantity": p.get("quantity", 1)
+            "quantity": p.get("quantity", 1),
+            "item_id": p.get("item_id")
         }
         for p in raw_prices if isinstance(p, dict)
     ]
-    return {
+    result = {
         "seller": seller,
         "quantity": entry.get("amount", 1),
         "updated_at": entry.get("updated_at"),
-        "price": price_list
+        "price": price_list,
+        "listing_id": entry.get("id"),
+        "seller_rating": seller_data.get("rating"),
+        "seller_reviews": seller_data.get("reviews"),
+        "active": entry.get("active"),
+        "completed": entry.get("completed"),
+        "item_id": entry.get("item_id"),
     }
+    prop_meta = extract_properties(entry.get("properties"))
+    result.update(prop_meta)
+    if response_meta:
+        result["version"] = response_meta.get("version")
+        result["nextPage"] = response_meta.get("nextPage")
+    return result
 
 def print_summary_table(summary_data):
     headers = ["Config", "Category", "Item", "Existing", "Total Fetched", "New", "Skipped"]
@@ -171,7 +204,7 @@ def main():
                     "prop_Ladder": ladder,
                     "item": item_id
                 }
-                listings = fetch_listings(scraper, url, params, name)
+                listings, response_meta = fetch_listings(scraper, url, params, name)
                 total = len(listings)
                 if total == 0:
                     summary[category][name] = {
@@ -189,7 +222,7 @@ def main():
                     updated_at = entry.get("updated_at")
                     if not updated_at or updated_at in existing:
                         continue
-                    trade = sanitize_trade_entry(entry)
+                    trade = sanitize_trade_entry(entry, response_meta)
                     new_entries.append(trade)
                     existing.add(updated_at)
 
