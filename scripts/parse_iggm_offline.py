@@ -16,6 +16,8 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+from lib import snapshot_io
+
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_ARTIFACT_DIR = ROOT_DIR / "research" / "sources" / "captures" / "iggm_2026-06-20_browser-smoke"
 OUTPUT = ROOT_DIR / "data" / "external" / "iggm_cash_prices.json"
@@ -150,6 +152,22 @@ def parse(input_dir: Path):
             "parser_notes": parser_notes,
         }
         observations.append(obs)
+
+    # Collect metadata for raw snapshot
+    metadata = {
+        "platform": platform,
+        "ladder": ladder,
+        "hardcore": hardcore,
+        "softcore": softcore,
+        "season_or_ruleset": season,
+        "segment_confidence": segment_confidence,
+        "parser_notes": parser_notes,
+    }
+
+    # Snapshot I/O — raw, normalized, and history
+    snapshot_io.write_raw_snapshot({"html": html, "metadata": metadata}, "iggm")
+    snapshot_io.write_normalized_snapshot(observations, "iggm")
+    snapshot_io.append_history("iggm", "cash_prices", observations)
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT, "w") as f:

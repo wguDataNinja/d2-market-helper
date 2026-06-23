@@ -1,8 +1,8 @@
 {
   "schema_version": "0.2",
   "product": "external_cash_prices",
-  "generated_at": "2026-06-20T11:04:19Z",
-  "product_generated_at": "2026-06-20T11:04:19Z",
+  "generated_at": "2026-06-23T02:29:52Z",
+  "product_generated_at": "2026-06-23T02:29:52Z",
   "source_window_label": "current_snapshot",
   "model": "external_cash_listing_snapshot_v0",
   "caveats": [
@@ -27,7 +27,7 @@
       "source_slug": "itemnow",
       "observation_count": 42,
       "artifact_paths": [
-        "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json"
+        "https://itemnow.com/wp-json/wc/store/v1/products?category=99&per_page=100"
       ]
     },
     {
@@ -49,7 +49,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -79,7 +79,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -109,7 +109,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -139,7 +139,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -169,7 +169,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -199,7 +199,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -229,7 +229,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -259,7 +259,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -289,7 +289,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -319,7 +319,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -349,7 +349,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -379,7 +379,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -409,7 +409,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -439,7 +439,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -469,7 +469,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -499,7 +499,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -529,7 +529,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -559,7 +559,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -589,7 +589,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -619,7 +619,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -649,7 +649,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -679,7 +679,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -709,7 +709,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -739,7 +739,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -769,7 +769,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -799,7 +799,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -829,7 +829,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -859,7 +859,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -889,7 +889,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -919,7 +919,7 @@
     {
       "source_slug": "iggm",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T07:03:12Z",
+      "captured_at": "2026-06-23T02:29:49Z",
       "source_artifact_path": "research/sources/captures/iggm_2026-06-20_runes-focused/page.html",
       "source_url": "https://www.iggm.com/d2-resurrected-items",
       "product_url": null,
@@ -949,8 +949,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/1-multiple-rune-package-100-x-jah-runes/",
       "product_url": null,
       "item_name": "1. Multiple Rune Package 140 x Jah Runes",
@@ -980,8 +980,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/1-multiple-rune-package-5-x-ohm-runes/",
       "product_url": null,
       "item_name": "1. Multiple Rune Package 140 x Ber Runes",
@@ -1011,8 +1011,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/cham-rune/",
       "product_url": null,
       "item_name": "Cham",
@@ -1042,8 +1042,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/lo-rune/",
       "product_url": null,
       "item_name": "Lo",
@@ -1073,8 +1073,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/ohm-rune/",
       "product_url": null,
       "item_name": "Ohm",
@@ -1104,8 +1104,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/mal-rune/",
       "product_url": null,
       "item_name": "Mal",
@@ -1135,8 +1135,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/um-rune/",
       "product_url": null,
       "item_name": "Um",
@@ -1166,8 +1166,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/fal-rune/",
       "product_url": null,
       "item_name": "Fal",
@@ -1197,8 +1197,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/ko-rune/",
       "product_url": null,
       "item_name": "Ko",
@@ -1228,8 +1228,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/lum-rune/",
       "product_url": null,
       "item_name": "Lum",
@@ -1259,8 +1259,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/io-rune/",
       "product_url": null,
       "item_name": "Io",
@@ -1290,8 +1290,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/dol-rune/",
       "product_url": null,
       "item_name": "Dol",
@@ -1321,8 +1321,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/shael-rune/",
       "product_url": null,
       "item_name": "Shael",
@@ -1352,8 +1352,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/sol-rune/",
       "product_url": null,
       "item_name": "Sol",
@@ -1383,8 +1383,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/amn-rune/",
       "product_url": null,
       "item_name": "Amn",
@@ -1414,8 +1414,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/thul-rune/",
       "product_url": null,
       "item_name": "Thul",
@@ -1445,8 +1445,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/ort-rune/",
       "product_url": null,
       "item_name": "Ort",
@@ -1476,8 +1476,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/ral-rune/",
       "product_url": null,
       "item_name": "Ral",
@@ -1507,8 +1507,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/tal-rune/",
       "product_url": null,
       "item_name": "Tal",
@@ -1538,8 +1538,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/ith-rune/",
       "product_url": null,
       "item_name": "Ith",
@@ -1569,8 +1569,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/eth-rune/",
       "product_url": null,
       "item_name": "Eth",
@@ -1600,8 +1600,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/tir-rune/",
       "product_url": null,
       "item_name": "Tir",
@@ -1631,8 +1631,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/nef-rune/",
       "product_url": null,
       "item_name": "Nef",
@@ -1662,8 +1662,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/eld-rune/",
       "product_url": null,
       "item_name": "Eld",
@@ -1693,8 +1693,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/el-rune/",
       "product_url": null,
       "item_name": "El",
@@ -1724,8 +1724,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/hel-rune/",
       "product_url": null,
       "item_name": "Hel",
@@ -1755,8 +1755,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/7-multiple-rune-package-352-x-any-runes/",
       "product_url": null,
       "item_name": "7. Multiple Rune Package 352 x Any Runes",
@@ -1786,8 +1786,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/6-multiple-rune-package-176-x-any-runes/",
       "product_url": null,
       "item_name": "6. Multiple Rune Package 176 x Any Runes",
@@ -1817,8 +1817,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/zod-rune/",
       "product_url": null,
       "item_name": "Zod",
@@ -1848,8 +1848,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/ber-rune/",
       "product_url": null,
       "item_name": "Ber",
@@ -1879,8 +1879,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/sur-rune/",
       "product_url": null,
       "item_name": "Sur",
@@ -1910,8 +1910,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/vex-rune/",
       "product_url": null,
       "item_name": "Vex",
@@ -1941,8 +1941,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/ist-rune/",
       "product_url": null,
       "item_name": "Ist",
@@ -1972,8 +1972,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/5-multiple-rune-package-88-x-any-runes/",
       "product_url": null,
       "item_name": "5. Multiple Rune Package 88 x Any Runes",
@@ -2003,8 +2003,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/jah-rune/",
       "product_url": null,
       "item_name": "Jah",
@@ -2034,8 +2034,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/gul-rune/",
       "product_url": null,
       "item_name": "Gul",
@@ -2065,8 +2065,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/pul-rune/",
       "product_url": null,
       "item_name": "Pul",
@@ -2096,8 +2096,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/lem-rune/",
       "product_url": null,
       "item_name": "Lem",
@@ -2127,8 +2127,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/4-multiple-rune-package-40-x-any-runes/",
       "product_url": null,
       "item_name": "4. Multiple Rune Package 40 x Any Runes",
@@ -2158,8 +2158,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/3-multiple-rune-package-20-x-any-runes/",
       "product_url": null,
       "item_name": "3. Multiple Rune Package 20 x Any Runes",
@@ -2189,8 +2189,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/2-multiple-rune-package-10-x-any-runes/",
       "product_url": null,
       "item_name": "2. Multiple Rune Package 10 x Any Runes",
@@ -2220,8 +2220,8 @@
     {
       "source_slug": "itemnow",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T10:26:08Z",
-      "source_artifact_path": "research/sources/captures/itemnow/2026-06-20_api_probe/fresh_api_response.json",
+      "captured_at": "2026-06-20T11:04:19Z",
+      "source_artifact_path": "",
       "source_url": "https://itemnow.com/product/1-multiple-rune-package-5-x-any-runes/",
       "product_url": null,
       "item_name": "1. Multiple Rune Package 5 x Any Runes",
@@ -2251,7 +2251,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/el-rune",
@@ -2282,7 +2282,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/el-rune",
@@ -2313,7 +2313,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/eld-rune",
@@ -2344,7 +2344,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/eld-rune",
@@ -2375,7 +2375,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/tir-rune",
@@ -2406,7 +2406,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/tir-rune",
@@ -2437,7 +2437,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/nef-rune",
@@ -2468,7 +2468,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/nef-rune",
@@ -2499,7 +2499,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/eth-rune",
@@ -2530,7 +2530,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/eth-rune",
@@ -2561,7 +2561,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ith-rune",
@@ -2592,7 +2592,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ith-rune",
@@ -2623,7 +2623,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/tal-rune",
@@ -2654,7 +2654,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/tal-rune",
@@ -2685,7 +2685,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ral-rune",
@@ -2716,7 +2716,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ral-rune",
@@ -2747,7 +2747,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ort-rune",
@@ -2778,7 +2778,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ort-rune",
@@ -2809,7 +2809,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/thul-rune",
@@ -2840,7 +2840,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/thul-rune",
@@ -2871,7 +2871,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/amn-rune",
@@ -2902,7 +2902,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/amn-rune",
@@ -2933,7 +2933,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/sol-rune",
@@ -2964,7 +2964,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/sol-rune",
@@ -2995,7 +2995,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/dol-rune",
@@ -3026,7 +3026,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/dol-rune",
@@ -3057,7 +3057,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/hel-rune",
@@ -3088,7 +3088,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/hel-rune",
@@ -3119,7 +3119,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/io-rune",
@@ -3150,7 +3150,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/io-rune",
@@ -3181,7 +3181,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/lum-rune",
@@ -3212,7 +3212,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/lum-rune",
@@ -3243,7 +3243,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ko-rune",
@@ -3274,7 +3274,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ko-rune",
@@ -3305,7 +3305,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/fal-rune",
@@ -3336,7 +3336,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/fal-rune",
@@ -3367,7 +3367,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/lem-rune",
@@ -3398,7 +3398,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/lem-rune",
@@ -3429,7 +3429,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/pul-rune",
@@ -3460,7 +3460,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/pul-rune",
@@ -3491,7 +3491,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/um-rune",
@@ -3522,7 +3522,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/um-rune",
@@ -3553,7 +3553,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/mal-rune",
@@ -3584,7 +3584,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/mal-rune",
@@ -3615,7 +3615,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ist-rune",
@@ -3646,7 +3646,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ist-rune",
@@ -3677,7 +3677,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/gul-rune",
@@ -3708,7 +3708,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/gul-rune",
@@ -3739,7 +3739,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/vex-rune",
@@ -3770,7 +3770,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/vex-rune",
@@ -3801,7 +3801,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ohm-rune",
@@ -3832,7 +3832,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ohm-rune",
@@ -3863,7 +3863,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/lo-rune",
@@ -3894,7 +3894,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/lo-rune",
@@ -3925,7 +3925,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/sur-rune",
@@ -3956,7 +3956,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/sur-rune",
@@ -3987,7 +3987,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ber-rune",
@@ -4018,7 +4018,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ber-rune",
@@ -4049,7 +4049,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/jah-rune",
@@ -4080,7 +4080,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/jah-rune",
@@ -4111,7 +4111,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/cham-rune",
@@ -4142,7 +4142,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/cham-rune",
@@ -4173,7 +4173,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/zod-rune",
@@ -4204,7 +4204,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/zod-rune",
@@ -4235,7 +4235,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-el-rune",
@@ -4266,7 +4266,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-el-rune",
@@ -4297,7 +4297,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-eld-rune",
@@ -4328,7 +4328,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-eld-rune",
@@ -4359,7 +4359,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-tir-rune",
@@ -4390,7 +4390,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-tir-rune",
@@ -4421,7 +4421,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-nef-rune",
@@ -4452,7 +4452,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-nef-rune",
@@ -4483,7 +4483,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-eth-rune",
@@ -4514,7 +4514,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-eth-rune",
@@ -4545,7 +4545,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ith-rune",
@@ -4576,7 +4576,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ith-rune",
@@ -4607,7 +4607,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-tal-rune",
@@ -4638,7 +4638,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-tal-rune",
@@ -4669,7 +4669,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ral-rune",
@@ -4700,7 +4700,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ral-rune",
@@ -4731,7 +4731,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ort-rune",
@@ -4762,7 +4762,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ort-rune",
@@ -4793,7 +4793,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-thul-rune",
@@ -4824,7 +4824,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-thul-rune",
@@ -4855,7 +4855,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-amn-rune",
@@ -4886,7 +4886,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-amn-rune",
@@ -4917,7 +4917,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-sol-rune",
@@ -4948,7 +4948,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-sol-rune",
@@ -4979,7 +4979,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-shael-rune",
@@ -5010,7 +5010,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-shael-rune",
@@ -5041,7 +5041,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-dol-rune",
@@ -5072,7 +5072,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-dol-rune",
@@ -5103,7 +5103,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-hel-rune",
@@ -5134,7 +5134,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-hel-rune",
@@ -5165,7 +5165,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-io-rune",
@@ -5196,7 +5196,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-io-rune",
@@ -5227,7 +5227,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-lum-rune",
@@ -5258,7 +5258,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-lum-rune",
@@ -5289,7 +5289,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ko-rune",
@@ -5320,7 +5320,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ko-rune",
@@ -5351,7 +5351,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-fal-rune",
@@ -5382,7 +5382,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-fal-rune",
@@ -5413,7 +5413,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-lem-rune",
@@ -5444,7 +5444,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-lem-rune",
@@ -5475,7 +5475,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-pul-rune",
@@ -5506,7 +5506,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-pul-rune",
@@ -5537,7 +5537,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-um-rune",
@@ -5568,7 +5568,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-um-rune",
@@ -5599,7 +5599,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-mal-rune",
@@ -5630,7 +5630,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-mal-rune",
@@ -5661,7 +5661,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ist-rune",
@@ -5692,7 +5692,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ist-rune",
@@ -5723,7 +5723,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-gul-rune",
@@ -5754,7 +5754,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-gul-rune",
@@ -5785,7 +5785,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-vex-rune",
@@ -5816,7 +5816,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-vex-rune",
@@ -5847,7 +5847,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ohm-rune",
@@ -5878,7 +5878,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ohm-rune",
@@ -5909,7 +5909,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-lo-rune",
@@ -5940,7 +5940,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-lo-rune",
@@ -5971,7 +5971,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-sur-rune",
@@ -6002,7 +6002,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-sur-rune",
@@ -6033,7 +6033,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ber-rune",
@@ -6064,7 +6064,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-ber-rune",
@@ -6095,7 +6095,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-jah-rune",
@@ -6126,7 +6126,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-jah-rune",
@@ -6157,7 +6157,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-cham-rune",
@@ -6188,7 +6188,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-cham-rune",
@@ -6219,7 +6219,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-zod-rune",
@@ -6250,7 +6250,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/10-zod-rune",
@@ -6281,7 +6281,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/spirit-rune-pack",
@@ -6312,7 +6312,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/spirit-rune-pack",
@@ -6343,7 +6343,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/fortitude-rune-pack",
@@ -6374,7 +6374,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/fortitude-rune-pack",
@@ -6405,7 +6405,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/insight-rune-pack",
@@ -6436,7 +6436,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/insight-rune-pack",
@@ -6467,7 +6467,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/cta-rune-pack",
@@ -6498,7 +6498,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/cta-rune-pack",
@@ -6529,7 +6529,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/hoto-rune-pack",
@@ -6560,7 +6560,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/hoto-rune-pack",
@@ -6591,7 +6591,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/enigma-rune-pack",
@@ -6622,7 +6622,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/enigma-rune-pack",
@@ -6653,7 +6653,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/coh-rune-pack",
@@ -6684,7 +6684,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/coh-rune-pack",
@@ -6715,7 +6715,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/beast-rune-pack",
@@ -6746,7 +6746,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/beast-rune-pack",
@@ -6777,7 +6777,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/grief-rune-pack",
@@ -6808,7 +6808,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/grief-rune-pack",
@@ -6839,7 +6839,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/botd-rune-pack",
@@ -6870,7 +6870,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/botd-rune-pack",
@@ -6901,7 +6901,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/death-rune-pack",
@@ -6932,7 +6932,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/death-rune-pack",
@@ -6963,7 +6963,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/doom-rune-pack",
@@ -6994,7 +6994,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/doom-rune-pack",
@@ -7025,7 +7025,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/dream-rune-pack",
@@ -7056,7 +7056,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/dream-rune-pack",
@@ -7087,7 +7087,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/exile-rune-pack",
@@ -7118,7 +7118,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/exile-rune-pack",
@@ -7149,7 +7149,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/faith-rune-pack",
@@ -7180,7 +7180,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/faith-rune-pack",
@@ -7211,7 +7211,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/flickeflame-rune-pack",
@@ -7242,7 +7242,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/flickeflame-rune-pack",
@@ -7273,7 +7273,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/infinity-rune-pack",
@@ -7304,7 +7304,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/infinity-rune-pack",
@@ -7335,7 +7335,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/last-wish-rune-pack",
@@ -7366,7 +7366,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/last-wish-rune-pack",
@@ -7397,7 +7397,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/phoenix-rune-pack",
@@ -7428,7 +7428,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/phoenix-rune-pack",
@@ -7459,7 +7459,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/mosaic-rune-pack",
@@ -7490,7 +7490,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/metamorphosis-rune-pack",
@@ -7521,7 +7521,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/metamorphosis-rune-pack",
@@ -7552,7 +7552,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/bulwark-rune-pack",
@@ -7583,7 +7583,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/bulwark-rune-pack",
@@ -7614,7 +7614,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/cure-rune-pack",
@@ -7645,7 +7645,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/cure-rune-pack",
@@ -7676,7 +7676,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ground-rune-pack",
@@ -7707,7 +7707,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ground-rune-pack",
@@ -7738,7 +7738,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/hearth-rune-pack",
@@ -7769,7 +7769,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/hearth-rune-pack",
@@ -7800,7 +7800,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/temper-rune-pack",
@@ -7831,7 +7831,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/temper-rune-pack",
@@ -7862,7 +7862,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/fury-rune-pack",
@@ -7893,7 +7893,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/fury-rune-pack",
@@ -7924,7 +7924,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/shael-rune",
@@ -7955,7 +7955,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/shael-rune",
@@ -7986,7 +7986,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/mania-rune-pack",
@@ -8017,7 +8017,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/mania-rune-pack",
@@ -8048,7 +8048,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/authority-rune-pack",
@@ -8079,7 +8079,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/authority-rune-pack",
@@ -8110,7 +8110,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/coven-rune-pack",
@@ -8141,7 +8141,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/coven-rune-pack",
@@ -8172,7 +8172,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/void-rune-pack",
@@ -8203,7 +8203,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/void-rune-pack",
@@ -8234,7 +8234,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ritual-rune-pack",
@@ -8265,7 +8265,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/ritual-rune-pack",
@@ -8296,7 +8296,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/vigilante-rune-pack",
@@ -8327,7 +8327,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/vigilante-rune-pack",
@@ -8358,7 +8358,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/obsession-rune-pack",
@@ -8389,7 +8389,7 @@
     {
       "source_slug": "d2stock",
       "evidence_class": "cash_listing",
-      "captured_at": "2026-06-20T11:04:18Z",
+      "captured_at": "2026-06-23T02:29:37Z",
       "source_artifact_path": "research/sources/captures/d2stock/2026-06-20_search_probe/rss_feed.xml",
       "source_url": "https://d2stock.com/rss.xml",
       "product_url": "https://d2stock.com/product/obsession-rune-pack",

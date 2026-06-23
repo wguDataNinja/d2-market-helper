@@ -18,6 +18,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import urlopen, Request
 
+from lib import snapshot_io
+
 ROOT_DIR = Path(__file__).resolve().parent.parent
 FIXTURE_PATH = ROOT_DIR / "research" / "sources" / "captures" / "d2stock" / "2026-06-20_search_probe" / "rss_feed.xml"
 OUTPUT_PATH = ROOT_DIR / "data" / "external" / "d2stock_cash_prices.json"
@@ -251,6 +253,11 @@ def parse(args):
         else:
             other_count += 1
         observations.append(obs)
+
+    # Snapshot I/O — raw, normalized, and history
+    snapshot_io.write_raw_snapshot({"feed_xml": raw.decode("utf-8", errors="replace")}, "d2stock")
+    snapshot_io.write_normalized_snapshot(observations, "d2stock")
+    snapshot_io.append_history("d2stock", "cash_prices", observations)
 
     artifact_path = str(FIXTURE_PATH.relative_to(ROOT_DIR))
 
