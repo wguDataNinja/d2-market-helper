@@ -155,3 +155,48 @@
   validation: git status — working tree clean
   outcome: complete
   next: Await Buddy'''s next instruction
+
+- date: 2026-06-23
+  agent: git-steward
+  task: roadmap Session 1 (doc refresh) + Session 2 (AND trade decomposition)
+  files_changed:
+    - ROADMAP.md (roadmap modifications during execution)
+    - docs/PROJECT_MEMORY.md (Section 10 replaced to point at ROADMAP.md)
+    - docs/COLLECTION_RUNBOOK.md (snapshot-active text added, 2 occurrences)
+    - docs/DATA_PRODUCTS.md (stale counts/timestamps: 2,570→1,151, 2026-06-20→2026-06-23)
+    - data/source_manifest.json (d2stock→parser_prototype_ready, iggm/itemnow next_action updated)
+    - scripts/build_traderie_dataset_from_history.py (added requested_groups and price_groups_json columns)
+    - scripts/calculate_rune_prices.py (decomposes 2-item AND trades into model rows with audit flags)
+    - scripts/generate_prices_json.py (caveats updated to reflect AND inclusion policy)
+    - data/products/in_game_rune_values.json (regenerated with AND trades: 1,991 total modeled trades)
+    - data/products/traderie_tools_prices.json (regenerated)
+    - data/products/rune_prices_legacy.json (regenerated)
+  commit: 169fc0b
+  validation: git status — working tree clean (.agent-workflow/runs/roadmap-v2/ excluded)
+  outcome: complete
+  next: Await Buddy's next instruction
+
+- date: 2026-06-23
+  agent: orchestrator
+  task: roadmap Sessions 3-6 (MuleFactory parser, operational hardening, hardcore probe, validation & cleanup)
+  files_changed:
+    - scripts/parse_mulefactory.py (created — 24 rune observations from Schema.org microdata)
+    - data/external/mulefactory_cash_prices.json (created — 24 observations)
+    - scripts/generate_external_cash_prices.py (updated — mulefactory added to inputs + caveats)
+    - data/products/external_cash_prices.sample.json (regenerated — 295 obs, 5 sources)
+    - scripts/regenerate_products.sh (created — full pipeline runner)
+    - launchd/com.buddy.traderie.regenerate-products.plist (created — daily 06:00, com.buddy.traderie. namespace)
+    - scripts/snapshot_traderie.py (pc_hc_nl skip list probed — 8/9 items ReadTimeout confirmed, restored)
+    - logs/hardcore_probe_*.log (9 probe logs — 88.9% failure rate on pc_hc_nl skipped items)
+    - BACKLOG.md (created — 6 one-line backlog entries)
+    - LOG.md (updated — this entry)
+    - ROADMAP.md (backlog references cleaned, checkbox text refined)
+  validation: validate_source_manifest.py ✅ validate_in_game_rune_values.py ✅ validate_external_cash_prices.py (5 sources, 295 obs) ✅ npm build ✅ collection_status JSON valid ✅
+  hitl_decisions:
+    - Session 1: review checkpoint (confirmed)
+    - Session 2: B — include AND trades, cap at 2-item requests, add audit flags
+    - Session 3: review checkpoint (confirmed)
+    - Session 4: B — separate daily launchd job at 06:00
+    - Session 5: A — maintain skip list (confirmed API hang when no listings exist)
+  outcome: complete
+  next: Await Buddy's next instruction

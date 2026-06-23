@@ -1,0 +1,22 @@
+
+  Fetching Ist Rune (Runes) on pc_hc_nl [timeout=20s, max_attempts=3]...
+    [attempt 1/2] timeout=20s
+    [attempt 1/2] ReadTimeout: HTTPSConnectionPool(host='traderie.com', port=443): Read timed out. (read timeout=20)
+    [backoff] waiting 5s before retry...
+    [attempt 2/2] timeout=20s
+  [snapshot] raw: /Users/buddy/projects/traderie/data/snapshots/raw/traderie/pc_hc_nl/20260623_042911/response.json
+  [snapshot] normalized: /Users/buddy/projects/traderie/data/snapshots/normalized/traderie/pc_hc_nl/20260623_042911.json
+  [history] appended 50 new to /Users/buddy/projects/traderie/data/history/traderie/pc_hc_nl/completed_trades_pc_hc_nl.jsonl (9558 total unique keys)
+
+============================================================
+Done — 1 item/segment combos processed
+Total listings captured: 50
+Unique listing IDs: 50
+updated_at range: 2026-02-04T12:15:34.402Z — 2026-06-20T23:01:44.808Z
+
+  Ist Rune @ pc_hc_nl:
+    raw:  /Users/buddy/projects/traderie/data/snapshots/raw/traderie/pc_hc_nl/20260623_042911/response.json
+    norm: /Users/buddy/projects/traderie/data/snapshots/normalized/traderie/pc_hc_nl/20260623_042911.json
+    hist: /Users/buddy/projects/traderie/data/history/traderie/pc_hc_nl/completed_trades_pc_hc_nl.jsonl
+    listings: 50
+    updated_at: 2026-02-04T12:15:34.402Z .. 2026-06-20T23:01:44.808Z

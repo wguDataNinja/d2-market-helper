@@ -23,6 +23,7 @@ INPUTS = [
     ROOT_DIR / "data" / "external" / "itemnow_cash_prices.json",
     ROOT_DIR / "data" / "external" / "items7_cash_prices.json",
     ROOT_DIR / "data" / "external" / "d2stock_cash_prices.json",
+    ROOT_DIR / "data" / "external" / "mulefactory_cash_prices.json",
 ]
 OUTPUT = ROOT_DIR / "data" / "products" / "external_cash_prices.sample.json"
 
@@ -53,6 +54,11 @@ SOURCE_CAVEATS = {
         "D2Stock: segment context from RSS feed titles only — Softcore Ladder RotW / Softcore Non-Ladder RotW.",
         "D2Stock: single-rune prices are segment-specific (2 separate feed items per rune).",
         "D2Stock: 10-pack and runeword bundles excluded from single-rune comparisons.",
+    ],
+    "mulefactory": [
+        "MuleFactory: prices are 'from' (minimum/base) prices from Schema.org microdata.",
+        "MuleFactory: segment metadata not available — server/platform selector requires JavaScript.",
+        "MuleFactory: 24 of 33 runes displayed (page 1); remaining runes hidden behind AJAX pagination.",
     ],
 }
 

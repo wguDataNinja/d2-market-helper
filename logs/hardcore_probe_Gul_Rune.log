@@ -1,0 +1,16 @@
+
+  Fetching Gul Rune (Runes) on pc_hc_nl [timeout=20s, max_attempts=3]...
+    [attempt 1/2] timeout=20s
+    [attempt 1/2] ReadTimeout: HTTPSConnectionPool(host='traderie.com', port=443): Read timed out. (read timeout=20)
+    [backoff] waiting 5s before retry...
+    [attempt 2/2] timeout=20s
+    [attempt 2/2] ReadTimeout: HTTPSConnectionPool(host='traderie.com', port=443): Read timed out. (read timeout=20)
+
+  [FAILED] Gul Rune (Runes) on pc_hc_nl: ReadTimeout: HTTPSConnectionPool(host='traderie.com', port=443): Read timed out. (read timeout=20)
+
+  [SUMMARY] 1 item(s) failed
+
+============================================================
+Done — 0 item/segment combos processed
+Total listings captured: 0
+Unique listing IDs: 0
