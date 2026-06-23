@@ -2,8 +2,8 @@
   "schema_version": "0.1",
   "product": "in_game_rune_values",
   "game": "diablo2resurrected",
-  "generated_at": "2026-06-20T20:45:50Z",
-  "product_generated_at": "2026-06-20T20:45:50Z",
+  "generated_at": "2026-06-23T02:29:35Z",
+  "product_generated_at": "2026-06-23T02:29:35Z",
   "evidence_class": "completed_player_trades",
   "source": "Traderie completed trades",
   "source_window_label": "rolling_recent_trades_50_cap",
@@ -43,208 +43,142 @@
       "ladder": true,
       "hardcore": false,
       "source_file": "data/prices/rune_prices_pc_sc_l.csv",
-      "total_modeled_trades": 1344,
+      "total_modeled_trades": 760,
       "runes": {
-        "Lo": {
-          "rune": "Lo",
-          "value_ist": 6.2445,
-          "bid_price": 5.9783,
-          "ask_price": 6.5107,
-          "bid_count": 45,
-          "ask_count": 249,
-          "total_trades": 294,
-          "confidence": "high",
-          "confidence_reason": "Based on 294 trades \u2014 sufficient volume for stable VWAP"
-        },
         "Ohm": {
           "rune": "Ohm",
-          "value_ist": 4.3154,
-          "bid_price": 4.0741,
-          "ask_price": 4.5568,
-          "bid_count": 27,
-          "ask_count": 227,
-          "total_trades": 254,
+          "value_ist": 3.4436,
+          "bid_price": 3.0,
+          "ask_price": 3.8872,
+          "bid_count": 121,
+          "ask_count": 129,
+          "total_trades": 250,
           "confidence": "high",
-          "confidence_reason": "Based on 254 trades \u2014 sufficient volume for stable VWAP"
-        },
-        "Jah": {
-          "rune": "Jah",
-          "value_ist": 17.2533,
-          "bid_price": 16.3884,
-          "ask_price": 18.1181,
-          "bid_count": 102,
-          "ask_count": 118,
-          "total_trades": 220,
-          "confidence": "high",
-          "confidence_reason": "Based on 220 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 250 trades \u2014 sufficient volume for stable VWAP"
         },
         "Mal": {
           "rune": "Mal",
-          "value_ist": 0.7458,
-          "bid_price": 0.6356,
-          "ask_price": 0.856,
-          "bid_count": 47,
-          "ask_count": 154,
-          "total_trades": 201,
+          "value_ist": 0.6967,
+          "bid_price": 0.5636,
+          "ask_price": 0.8297,
+          "bid_count": 25,
+          "ask_count": 184,
+          "total_trades": 209,
           "confidence": "high",
-          "confidence_reason": "Based on 201 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 209 trades \u2014 sufficient volume for stable VWAP"
+        },
+        "Lo": {
+          "rune": "Lo",
+          "value_ist": 6.015,
+          "bid_price": 5.978,
+          "ask_price": 6.0519,
+          "bid_count": 90,
+          "ask_count": 68,
+          "total_trades": 158,
+          "confidence": "high",
+          "confidence_reason": "Based on 158 trades \u2014 sufficient volume for stable VWAP"
+        },
+        "Jah": {
+          "rune": "Jah",
+          "value_ist": 19.4911,
+          "bid_price": 18.5536,
+          "ask_price": 20.4286,
+          "bid_count": 45,
+          "ask_count": 19,
+          "total_trades": 64,
+          "confidence": "high",
+          "confidence_reason": "Based on 64 trades \u2014 sufficient volume for stable VWAP"
         },
         "Gul": {
           "rune": "Gul",
-          "value_ist": 1.5499,
-          "bid_price": 1.3889,
-          "ask_price": 1.711,
-          "bid_count": 33,
-          "ask_count": 114,
-          "total_trades": 147,
-          "confidence": "high",
-          "confidence_reason": "Based on 147 trades \u2014 sufficient volume for stable VWAP"
+          "value_ist": 1.0278,
+          "bid_price": 1.0,
+          "ask_price": 1.0556,
+          "bid_count": 7,
+          "ask_count": 39,
+          "total_trades": 46,
+          "confidence": "medium",
+          "confidence_reason": "Based on 46 trades \u2014 moderate volume"
         },
         "Ber": {
           "rune": "Ber",
-          "value_ist": 12.4307,
-          "bid_price": 12.4211,
-          "ask_price": 12.4404,
-          "bid_count": 36,
-          "ask_count": 95,
-          "total_trades": 131,
-          "confidence": "high",
-          "confidence_reason": "Based on 131 trades \u2014 sufficient volume for stable VWAP"
+          "value_ist": 21.2,
+          "bid_price": 20.2,
+          "ask_price": 22.2,
+          "bid_count": 10,
+          "ask_count": 5,
+          "total_trades": 15,
+          "confidence": "medium",
+          "confidence_reason": "Based on 15 trades \u2014 moderate volume"
         },
         "Cham": {
           "rune": "Cham",
-          "value_ist": 4.1993,
-          "bid_price": 4.3333,
-          "ask_price": 4.0652,
-          "bid_count": 3,
-          "ask_count": 44,
-          "total_trades": 47,
-          "confidence": "medium",
-          "confidence_reason": "Based on 47 trades \u2014 moderate volume"
+          "value_ist": 9.2857,
+          "bid_price": null,
+          "ask_price": 9.2857,
+          "bid_count": 0,
+          "ask_count": 7,
+          "total_trades": 7,
+          "confidence": "low",
+          "confidence_reason": "Based on 7 trades \u2014 thin volume"
         },
         "Pul": {
           "rune": "Pul",
-          "value_ist": 0.7734,
-          "bid_price": 1.0,
-          "ask_price": 0.5469,
-          "bid_count": 1,
-          "ask_count": 31,
-          "total_trades": 32,
-          "confidence": "medium",
-          "confidence_reason": "Based on 32 trades \u2014 moderate volume"
-        },
-        "Hel": {
-          "rune": "Hel",
-          "value_ist": 1.6923,
-          "bid_price": 2.3846,
-          "ask_price": 1.0,
-          "bid_count": 3,
-          "ask_count": 1,
-          "total_trades": 4,
+          "value_ist": 0.5556,
+          "bid_price": null,
+          "ask_price": 0.5556,
+          "bid_count": 0,
+          "ask_count": 5,
+          "total_trades": 5,
           "confidence": "low",
-          "confidence_reason": "Based on 4 trades \u2014 thin volume"
+          "confidence_reason": "Based on 5 trades \u2014 thin volume"
         },
         "Lem": {
           "rune": "Lem",
-          "value_ist": 0.55,
-          "bid_price": 0.5,
-          "ask_price": 0.6,
-          "bid_count": 1,
-          "ask_count": 3,
-          "total_trades": 4,
+          "value_ist": 0.5833,
+          "bid_price": 0.5833,
+          "ask_price": null,
+          "bid_count": 3,
+          "ask_count": 0,
+          "total_trades": 3,
           "confidence": "low",
-          "confidence_reason": "Based on 4 trades \u2014 thin volume"
+          "confidence_reason": "Based on 3 trades \u2014 thin volume"
+        },
+        "Fal": {
+          "rune": "Fal",
+          "value_ist": 0.5,
+          "bid_price": null,
+          "ask_price": 0.5,
+          "bid_count": 0,
+          "ask_count": 2,
+          "total_trades": 2,
+          "confidence": "low",
+          "confidence_reason": "Based on 2 trades \u2014 thin volume"
+        },
+        "Hel": {
+          "rune": "Hel",
+          "value_ist": 1.0,
+          "bid_price": null,
+          "ask_price": 1.0,
+          "bid_count": 0,
+          "ask_count": 1,
+          "total_trades": 1,
+          "confidence": "low",
+          "confidence_reason": "Based on 1 trades \u2014 thin volume"
         },
         "Eld": {
           "rune": "Eld",
-          "value_ist": 1.0,
+          "value_ist": null,
           "bid_price": null,
-          "ask_price": 1.0,
+          "ask_price": null,
           "bid_count": 0,
-          "ask_count": 2,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
-        },
-        "Io": {
-          "rune": "Io",
-          "value_ist": 1.0,
-          "bid_price": null,
-          "ask_price": 1.0,
-          "bid_count": 0,
-          "ask_count": 2,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
         },
         "Amn": {
           "rune": "Amn",
-          "value_ist": 0.6667,
-          "bid_price": null,
-          "ask_price": 0.6667,
-          "bid_count": 0,
-          "ask_count": 2,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
-        },
-        "Ko": {
-          "rune": "Ko",
-          "value_ist": 5.5,
-          "bid_price": null,
-          "ask_price": 5.5,
-          "bid_count": 0,
-          "ask_count": 2,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
-        },
-        "El": {
-          "rune": "El",
-          "value_ist": 1.0,
-          "bid_price": null,
-          "ask_price": 1.0,
-          "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
-        },
-        "Ral": {
-          "rune": "Ral",
-          "value_ist": 1.0,
-          "bid_price": null,
-          "ask_price": 1.0,
-          "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
-        },
-        "Lum": {
-          "rune": "Lum",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Nef": {
-          "rune": "Nef",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Dol": {
-          "rune": "Dol",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -265,8 +199,63 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
+        "Dol": {
+          "rune": "Dol",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Nef": {
+          "rune": "Nef",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "El": {
+          "rune": "El",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Lum": {
+          "rune": "Lum",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
         "Eth": {
           "rune": "Eth",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Ko": {
+          "rune": "Ko",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -287,8 +276,19 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Fal": {
-          "rune": "Fal",
+        "Io": {
+          "rune": "Io",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Ral": {
+          "rune": "Ral",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -307,131 +307,87 @@
       "ladder": false,
       "hardcore": false,
       "source_file": "data/prices/rune_prices_pc_sc_nl.csv",
-      "total_modeled_trades": 1095,
+      "total_modeled_trades": 355,
       "runes": {
         "Jah": {
           "rune": "Jah",
-          "value_ist": 11.6524,
-          "bid_price": 11.5438,
-          "ask_price": 11.7611,
-          "bid_count": 525,
-          "ask_count": 86,
-          "total_trades": 611,
+          "value_ist": 10.8329,
+          "bid_price": 10.1141,
+          "ask_price": 11.5517,
+          "bid_count": 134,
+          "ask_count": 19,
+          "total_trades": 153,
           "confidence": "high",
-          "confidence_reason": "Based on 611 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 153 trades \u2014 sufficient volume for stable VWAP"
         },
         "Mal": {
           "rune": "Mal",
-          "value_ist": 0.9006,
-          "bid_price": 0.8519,
-          "ask_price": 0.9493,
-          "bid_count": 10,
-          "ask_count": 100,
-          "total_trades": 110,
+          "value_ist": 0.7515,
+          "bid_price": 0.6667,
+          "ask_price": 0.8364,
+          "bid_count": 3,
+          "ask_count": 83,
+          "total_trades": 86,
           "confidence": "high",
-          "confidence_reason": "Based on 110 trades \u2014 sufficient volume for stable VWAP"
-        },
-        "Ohm": {
-          "rune": "Ohm",
-          "value_ist": 3.5177,
-          "bid_price": 3.1481,
-          "ask_price": 3.8873,
-          "bid_count": 27,
-          "ask_count": 68,
-          "total_trades": 95,
-          "confidence": "high",
-          "confidence_reason": "Based on 95 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 86 trades \u2014 sufficient volume for stable VWAP"
         },
         "Lo": {
           "rune": "Lo",
-          "value_ist": 4.2824,
-          "bid_price": 4.1746,
-          "ask_price": 4.3902,
-          "bid_count": 59,
-          "ask_count": 32,
-          "total_trades": 91,
-          "confidence": "high",
-          "confidence_reason": "Based on 91 trades \u2014 sufficient volume for stable VWAP"
+          "value_ist": 4.6387,
+          "bid_price": 4.375,
+          "ask_price": 4.9024,
+          "bid_count": 8,
+          "ask_count": 38,
+          "total_trades": 46,
+          "confidence": "medium",
+          "confidence_reason": "Based on 46 trades \u2014 moderate volume"
         },
-        "Gul": {
-          "rune": "Gul",
-          "value_ist": 1.3554,
-          "bid_price": 1.2,
-          "ask_price": 1.5109,
-          "bid_count": 3,
-          "ask_count": 47,
-          "total_trades": 50,
-          "confidence": "high",
-          "confidence_reason": "Based on 50 trades \u2014 sufficient volume for stable VWAP"
+        "Ohm": {
+          "rune": "Ohm",
+          "value_ist": 3.3125,
+          "bid_price": 2.75,
+          "ask_price": 3.875,
+          "bid_count": 4,
+          "ask_count": 15,
+          "total_trades": 19,
+          "confidence": "medium",
+          "confidence_reason": "Based on 19 trades \u2014 moderate volume"
         },
         "Ber": {
           "rune": "Ber",
-          "value_ist": 10.2695,
-          "bid_price": 9.439,
-          "ask_price": 11.1,
-          "bid_count": 29,
-          "ask_count": 20,
-          "total_trades": 49,
+          "value_ist": 10.125,
+          "bid_price": 9.25,
+          "ask_price": 11.0,
+          "bid_count": 6,
+          "ask_count": 13,
+          "total_trades": 19,
           "confidence": "medium",
-          "confidence_reason": "Based on 49 trades \u2014 moderate volume"
+          "confidence_reason": "Based on 19 trades \u2014 moderate volume"
         },
-        "Cham": {
-          "rune": "Cham",
-          "value_ist": 3.5357,
-          "bid_price": 3.5714,
-          "ask_price": 3.5,
-          "bid_count": 4,
-          "ask_count": 23,
-          "total_trades": 27,
-          "confidence": "medium",
-          "confidence_reason": "Based on 27 trades \u2014 moderate volume"
-        },
-        "Pul": {
-          "rune": "Pul",
-          "value_ist": 0.781,
-          "bid_price": 0.9286,
-          "ask_price": 0.6333,
-          "bid_count": 8,
-          "ask_count": 16,
-          "total_trades": 24,
-          "confidence": "medium",
-          "confidence_reason": "Based on 24 trades \u2014 moderate volume"
-        },
-        "Lem": {
-          "rune": "Lem",
-          "value_ist": 0.5,
+        "Gul": {
+          "rune": "Gul",
+          "value_ist": 1.4333,
           "bid_price": null,
-          "ask_price": 0.5,
+          "ask_price": 1.4333,
           "bid_count": 0,
           "ask_count": 16,
           "total_trades": 16,
           "confidence": "medium",
           "confidence_reason": "Based on 16 trades \u2014 moderate volume"
         },
-        "Hel": {
-          "rune": "Hel",
-          "value_ist": 0.9667,
-          "bid_price": 1.2667,
-          "ask_price": 0.6667,
-          "bid_count": 4,
-          "ask_count": 2,
-          "total_trades": 6,
+        "Cham": {
+          "rune": "Cham",
+          "value_ist": 7.2778,
+          "bid_price": 6.0,
+          "ask_price": 8.5556,
+          "bid_count": 1,
+          "ask_count": 9,
+          "total_trades": 10,
           "confidence": "low",
-          "confidence_reason": "Based on 6 trades \u2014 thin volume"
+          "confidence_reason": "Based on 10 trades \u2014 thin volume"
         },
-        "Amn": {
-          "rune": "Amn",
-          "value_ist": 1.3333,
-          "bid_price": null,
-          "ask_price": 1.3333,
-          "bid_count": 0,
-          "ask_count": 3,
-          "total_trades": 3,
-          "confidence": "low",
-          "confidence_reason": "Based on 3 trades \u2014 thin volume"
-        },
-        "Ko": {
-          "rune": "Ko",
+        "Pul": {
+          "rune": "Pul",
           "value_ist": 0.5,
           "bid_price": null,
           "ask_price": 0.5,
@@ -441,52 +397,8 @@
           "confidence": "low",
           "confidence_reason": "Based on 3 trades \u2014 thin volume"
         },
-        "Ort": {
-          "rune": "Ort",
-          "value_ist": 1.0,
-          "bid_price": null,
-          "ask_price": 1.0,
-          "bid_count": 0,
-          "ask_count": 3,
-          "total_trades": 3,
-          "confidence": "low",
-          "confidence_reason": "Based on 3 trades \u2014 thin volume"
-        },
-        "Ral": {
-          "rune": "Ral",
-          "value_ist": 1.5,
-          "bid_price": 1.0,
-          "ask_price": 2.0,
-          "bid_count": 1,
-          "ask_count": 1,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
-        },
-        "Io": {
-          "rune": "Io",
-          "value_ist": 1.0,
-          "bid_price": null,
-          "ask_price": 1.0,
-          "bid_count": 0,
-          "ask_count": 2,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
-        },
-        "Lum": {
-          "rune": "Lum",
-          "value_ist": 1.0,
-          "bid_price": null,
-          "ask_price": 1.0,
-          "bid_count": 0,
-          "ask_count": 2,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
-        },
-        "Eld": {
-          "rune": "Eld",
+        "El": {
+          "rune": "El",
           "value_ist": 1.0,
           "bid_price": null,
           "ask_price": 1.0,
@@ -496,8 +408,30 @@
           "confidence": "low",
           "confidence_reason": "Based on 1 trades \u2014 thin volume"
         },
-        "Dol": {
-          "rune": "Dol",
+        "Lem": {
+          "rune": "Lem",
+          "value_ist": 0.5,
+          "bid_price": null,
+          "ask_price": 0.5,
+          "bid_count": 0,
+          "ask_count": 1,
+          "total_trades": 1,
+          "confidence": "low",
+          "confidence_reason": "Based on 1 trades \u2014 thin volume"
+        },
+        "Lum": {
+          "rune": "Lum",
+          "value_ist": 0.5,
+          "bid_price": null,
+          "ask_price": 0.5,
+          "bid_count": 0,
+          "ask_count": 1,
+          "total_trades": 1,
+          "confidence": "low",
+          "confidence_reason": "Based on 1 trades \u2014 thin volume"
+        },
+        "Eld": {
+          "rune": "Eld",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -507,8 +441,30 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Fal": {
-          "rune": "Fal",
+        "Amn": {
+          "rune": "Amn",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Ort": {
+          "rune": "Ort",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Dol": {
+          "rune": "Dol",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -540,6 +496,28 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
+        "Fal": {
+          "rune": "Fal",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Ko": {
+          "rune": "Ko",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
         "Ith": {
           "rune": "Ith",
           "value_ist": null,
@@ -551,8 +529,30 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "El": {
-          "rune": "El",
+        "Io": {
+          "rune": "Io",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Hel": {
+          "rune": "Hel",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Ral": {
+          "rune": "Ral",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -571,142 +571,186 @@
       "ladder": true,
       "hardcore": true,
       "source_file": "data/prices/rune_prices_pc_hc_l.csv",
-      "total_modeled_trades": 126,
+      "total_modeled_trades": 17,
       "runes": {
         "Mal": {
           "rune": "Mal",
-          "value_ist": 0.7598,
-          "bid_price": 0.7407,
-          "ask_price": 0.7789,
-          "bid_count": 15,
-          "ask_count": 52,
-          "total_trades": 67,
-          "confidence": "high",
-          "confidence_reason": "Based on 67 trades \u2014 sufficient volume for stable VWAP"
-        },
-        "Ohm": {
-          "rune": "Ohm",
-          "value_ist": 4.8701,
-          "bid_price": 4.4545,
-          "ask_price": 5.2857,
-          "bid_count": 11,
-          "ask_count": 14,
-          "total_trades": 25,
-          "confidence": "medium",
-          "confidence_reason": "Based on 25 trades \u2014 moderate volume"
+          "value_ist": 0.625,
+          "bid_price": 0.5,
+          "ask_price": 0.75,
+          "bid_count": 2,
+          "ask_count": 6,
+          "total_trades": 8,
+          "confidence": "low",
+          "confidence_reason": "Based on 8 trades \u2014 thin volume"
         },
         "Gul": {
           "rune": "Gul",
-          "value_ist": 1.2812,
+          "value_ist": 1.25,
           "bid_price": 1.0,
-          "ask_price": 1.5625,
-          "bid_count": 5,
-          "ask_count": 9,
-          "total_trades": 14,
-          "confidence": "low",
-          "confidence_reason": "Based on 14 trades \u2014 thin volume"
-        },
-        "Cham": {
-          "rune": "Cham",
-          "value_ist": 5.4167,
-          "bid_price": 7.0,
-          "ask_price": 3.8333,
-          "bid_count": 1,
-          "ask_count": 6,
-          "total_trades": 7,
-          "confidence": "low",
-          "confidence_reason": "Based on 7 trades \u2014 thin volume"
-        },
-        "Ber": {
-          "rune": "Ber",
-          "value_ist": 15.0,
-          "bid_price": 15.0,
-          "ask_price": null,
+          "ask_price": 1.5,
           "bid_count": 3,
-          "ask_count": 0,
+          "ask_count": 1,
+          "total_trades": 4,
+          "confidence": "low",
+          "confidence_reason": "Based on 4 trades \u2014 thin volume"
+        },
+        "Ohm": {
+          "rune": "Ohm",
+          "value_ist": 4.6667,
+          "bid_price": null,
+          "ask_price": 4.6667,
+          "bid_count": 0,
+          "ask_count": 3,
           "total_trades": 3,
           "confidence": "low",
           "confidence_reason": "Based on 3 trades \u2014 thin volume"
+        },
+        "Eld": {
+          "rune": "Eld",
+          "value_ist": 0.5,
+          "bid_price": null,
+          "ask_price": 0.5,
+          "bid_count": 0,
+          "ask_count": 1,
+          "total_trades": 1,
+          "confidence": "low",
+          "confidence_reason": "Based on 1 trades \u2014 thin volume"
         },
         "Lo": {
           "rune": "Lo",
-          "value_ist": 8.25,
-          "bid_price": 8.0,
-          "ask_price": 8.5,
-          "bid_count": 1,
-          "ask_count": 2,
-          "total_trades": 3,
-          "confidence": "low",
-          "confidence_reason": "Based on 3 trades \u2014 thin volume"
-        },
-        "Jah": {
-          "rune": "Jah",
-          "value_ist": 21.5,
-          "bid_price": 13.0,
-          "ask_price": 30.0,
-          "bid_count": 1,
-          "ask_count": 1,
-          "total_trades": 2,
-          "confidence": "low",
-          "confidence_reason": "Based on 2 trades \u2014 thin volume"
-        },
-        "Io": {
-          "rune": "Io",
-          "value_ist": 1.0,
+          "value_ist": 9.0,
           "bid_price": null,
-          "ask_price": 1.0,
+          "ask_price": 9.0,
           "bid_count": 0,
           "ask_count": 1,
           "total_trades": 1,
           "confidence": "low",
           "confidence_reason": "Based on 1 trades \u2014 thin volume"
         },
-        "Ko": {
-          "rune": "Ko",
-          "value_ist": 0.5,
+        "Ber": {
+          "rune": "Ber",
+          "value_ist": null,
           "bid_price": null,
-          "ask_price": 0.5,
+          "ask_price": null,
           "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
         },
         "Lem": {
           "rune": "Lem",
-          "value_ist": 2.0,
+          "value_ist": null,
           "bid_price": null,
-          "ask_price": 2.0,
+          "ask_price": null,
           "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Amn": {
+          "rune": "Amn",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
         },
         "Pul": {
           "rune": "Pul",
-          "value_ist": 0.5,
+          "value_ist": null,
           "bid_price": null,
-          "ask_price": 0.5,
+          "ask_price": null,
           "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Ral": {
-          "rune": "Ral",
-          "value_ist": 1.0,
+        "Ort": {
+          "rune": "Ort",
+          "value_ist": null,
           "bid_price": null,
-          "ask_price": 1.0,
+          "ask_price": null,
           "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Fal": {
-          "rune": "Fal",
+        "Nef": {
+          "rune": "Nef",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Lum": {
+          "rune": "Lum",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Jah": {
+          "rune": "Jah",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Ko": {
+          "rune": "Ko",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Cham": {
+          "rune": "Cham",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Ith": {
+          "rune": "Ith",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Io": {
+          "rune": "Io",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -727,8 +771,8 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Ith": {
-          "rune": "Ith",
+        "Fal": {
+          "rune": "Fal",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -760,39 +804,6 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Lum": {
-          "rune": "Lum",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Eld": {
-          "rune": "Eld",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Nef": {
-          "rune": "Nef",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
         "Dol": {
           "rune": "Dol",
           "value_ist": null,
@@ -804,19 +815,8 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Ort": {
-          "rune": "Ort",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Amn": {
-          "rune": "Amn",
+        "Ral": {
+          "rune": "Ral",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -835,65 +835,76 @@
       "ladder": false,
       "hardcore": true,
       "source_file": "data/prices/rune_prices_pc_hc_nl.csv",
-      "total_modeled_trades": 5,
+      "total_modeled_trades": 19,
       "runes": {
-        "Ber": {
-          "rune": "Ber",
-          "value_ist": 18.0,
+        "Lo": {
+          "rune": "Lo",
+          "value_ist": 5.75,
+          "bid_price": 4.0,
+          "ask_price": 7.5,
+          "bid_count": 5,
+          "ask_count": 2,
+          "total_trades": 7,
+          "confidence": "low",
+          "confidence_reason": "Based on 7 trades \u2014 thin volume"
+        },
+        "Jah": {
+          "rune": "Jah",
+          "value_ist": 9.3333,
+          "bid_price": 9.3333,
+          "ask_price": null,
+          "bid_count": 3,
+          "ask_count": 0,
+          "total_trades": 3,
+          "confidence": "low",
+          "confidence_reason": "Based on 3 trades \u2014 thin volume"
+        },
+        "Ohm": {
+          "rune": "Ohm",
+          "value_ist": 3.75,
+          "bid_price": 3.0,
+          "ask_price": 4.5,
+          "bid_count": 1,
+          "ask_count": 2,
+          "total_trades": 3,
+          "confidence": "low",
+          "confidence_reason": "Based on 3 trades \u2014 thin volume"
+        },
+        "Mal": {
+          "rune": "Mal",
+          "value_ist": 0.625,
+          "bid_price": 0.5,
+          "ask_price": 0.75,
+          "bid_count": 1,
+          "ask_count": 2,
+          "total_trades": 3,
+          "confidence": "low",
+          "confidence_reason": "Based on 3 trades \u2014 thin volume"
+        },
+        "Pul": {
+          "rune": "Pul",
+          "value_ist": 0.5,
           "bid_price": null,
-          "ask_price": 18.0,
+          "ask_price": 0.5,
           "bid_count": 0,
           "ask_count": 2,
           "total_trades": 2,
           "confidence": "low",
           "confidence_reason": "Based on 2 trades \u2014 thin volume"
         },
-        "Cham": {
-          "rune": "Cham",
-          "value_ist": 5.0,
+        "Gul": {
+          "rune": "Gul",
+          "value_ist": 2.0,
           "bid_price": null,
-          "ask_price": 5.0,
+          "ask_price": 2.0,
           "bid_count": 0,
           "ask_count": 1,
           "total_trades": 1,
           "confidence": "low",
           "confidence_reason": "Based on 1 trades \u2014 thin volume"
         },
-        "Mal": {
-          "rune": "Mal",
-          "value_ist": 1.0,
-          "bid_price": null,
-          "ask_price": 1.0,
-          "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
-        },
-        "Jah": {
-          "rune": "Jah",
-          "value_ist": 9.0,
-          "bid_price": null,
-          "ask_price": 9.0,
-          "bid_count": 0,
-          "ask_count": 1,
-          "total_trades": 1,
-          "confidence": "low",
-          "confidence_reason": "Based on 1 trades \u2014 thin volume"
-        },
-        "El": {
-          "rune": "El",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Lo": {
-          "rune": "Lo",
+        "Ko": {
+          "rune": "Ko",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -914,17 +925,6 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Pul": {
-          "rune": "Pul",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
         "Ort": {
           "rune": "Ort",
           "value_ist": null,
@@ -936,30 +936,8 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Ohm": {
-          "rune": "Ohm",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
         "Nef": {
           "rune": "Nef",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Dol": {
-          "rune": "Dol",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -991,8 +969,8 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Eth": {
-          "rune": "Eth",
+        "Ber": {
+          "rune": "Ber",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -1002,19 +980,8 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Ko": {
-          "rune": "Ko",
-          "value_ist": null,
-          "bid_price": null,
-          "ask_price": null,
-          "bid_count": 0,
-          "ask_count": 0,
-          "total_trades": 0,
-          "confidence": "unavailable",
-          "confidence_reason": "No trades available for this rune in this segment"
-        },
-        "Eld": {
-          "rune": "Eld",
+        "Cham": {
+          "rune": "Cham",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -1057,8 +1024,8 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Gul": {
-          "rune": "Gul",
+        "Fal": {
+          "rune": "Fal",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
@@ -1068,8 +1035,41 @@
           "confidence": "unavailable",
           "confidence_reason": "No trades available for this rune in this segment"
         },
-        "Fal": {
-          "rune": "Fal",
+        "Eth": {
+          "rune": "Eth",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "El": {
+          "rune": "El",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Eld": {
+          "rune": "Eld",
+          "value_ist": null,
+          "bid_price": null,
+          "ask_price": null,
+          "bid_count": 0,
+          "ask_count": 0,
+          "total_trades": 0,
+          "confidence": "unavailable",
+          "confidence_reason": "No trades available for this rune in this segment"
+        },
+        "Dol": {
+          "rune": "Dol",
           "value_ist": null,
           "bid_price": null,
           "ask_price": null,
