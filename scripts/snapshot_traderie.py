@@ -8,6 +8,7 @@ Maintains backward-compatible output at data/raw/raw_trades_{slug}.json.
 import argparse
 import json
 import sys
+import random
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -32,6 +33,7 @@ DEFAULT_REQUEST_TIMEOUT_SECONDS = 10
 HARDCORE_REQUEST_TIMEOUT_SECONDS = 30
 REQUEST_MAX_ATTEMPTS = 3
 REQUEST_BACKOFF_SECONDS = [5, 15]
+HARDCORE_REQUEST_MAX_ATTEMPTS = 2
 
 # Segment slugs
 HARDCORE_SEGMENTS = {"pc_hc_l", "pc_hc_nl"}
@@ -174,7 +176,7 @@ def append_to_legacy_raw(observations, cfg, category, item_name):
     return new_count
 
 
-def fetch_with_retry(scraper, url, params, slug, item_name):
+def fetch_with_retry(scraper, url, params, slug, item_name, max_attempts=None):
     """Fetch with segment-aware timeout and bounded retry/backoff.
 
     Returns (response_json, attempts_used) on success.
@@ -182,19 +184,21 @@ def fetch_with_retry(scraper, url, params, slug, item_name):
     """
     is_hardcore = slug in HARDCORE_SEGMENTS
     timeout = HARDCORE_REQUEST_TIMEOUT_SECONDS if is_hardcore else DEFAULT_REQUEST_TIMEOUT_SECONDS
+    if max_attempts is None:
+        max_attempts = REQUEST_MAX_ATTEMPTS
 
     last_exception = None
-    for attempt in range(1, REQUEST_MAX_ATTEMPTS + 1):
+    for attempt in range(1, max_attempts + 1):
         try:
-            print(f"    [attempt {attempt}/{REQUEST_MAX_ATTEMPTS}] timeout={timeout}s")
+            print(f"    [attempt {attempt}/{max_attempts}] timeout={timeout}s")
             res = scraper.get(url, params=params, timeout=timeout)
             res.raise_for_status()
             return res.json(), attempt
         except Exception as e:
             last_exception = e
             cls = type(e).__name__
-            print(f"    [attempt {attempt}/{REQUEST_MAX_ATTEMPTS}] {cls}: {e}")
-            if attempt < REQUEST_MAX_ATTEMPTS:
+            print(f"    [attempt {attempt}/{max_attempts}] {cls}: {e}")
+            if attempt < max_attempts:
                 backoff = REQUEST_BACKOFF_SECONDS[attempt - 1]
                 print(f"    [backoff] waiting {backoff}s before retry...")
                 time.sleep(backoff)
@@ -211,7 +215,8 @@ def fetch_for_item(scraper, cfg, item_name, item_id, category, captured_at):
     timeout_str = f"{HARDCORE_REQUEST_TIMEOUT_SECONDS}s" if is_hardcore else f"{DEFAULT_REQUEST_TIMEOUT_SECONDS}s"
     print(f"\n  Fetching {item_name} ({category}) on {slug} [timeout={timeout_str}, max_attempts={REQUEST_MAX_ATTEMPTS}]...")
 
-    raw_data, attempts_used = fetch_with_retry(scraper, URL, params, slug, item_name)
+    max_attempts = HARDCORE_REQUEST_MAX_ATTEMPTS if is_hardcore else REQUEST_MAX_ATTEMPTS
+    raw_data, attempts_used = fetch_with_retry(scraper, URL, params, slug, item_name, max_attempts=max_attempts)
     listings = raw_data.get("listings", [])
     if not isinstance(listings, list):
         listings = []
@@ -321,7 +326,7 @@ def main():
                 break
         if args.single and results:
             break
-        time.sleep(PER_ITEM_DELAY)
+        time.sleep(PER_ITEM_DELAY + random.uniform(0, 2))
 
     if failed_items:
         print(f"\n  [SUMMARY] {failed_items} item(s) failed")

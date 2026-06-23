@@ -102,4 +102,21 @@
     - SESSION.md (updated)
   validation: manual
   outcome: complete
+
+- date: 2026-06-22
+  agent: git-steward
+  task: commit-replace-roadmap
+  files_changed:
+    - docs/PROJECT_ROADMAP.md (replaced with concrete work sessions)
+  commit: 14a7435
+  validation: git status — working tree clean for committed file; scripts/snapshot_traderie.py remains unstaged
+  outcome: complete
+
+- date: 2026-06-22
+  agent: orchestrator
+  task: commit-snapshot-traderie-fixes
+  files_changed:
+    - scripts/snapshot_traderie.py (jitter + reduced hardcore attempts)
+  validation: python compiles clean
+  outcome: complete
   next: Await Buddy's next instruction
