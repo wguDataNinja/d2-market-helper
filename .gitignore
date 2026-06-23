@@ -44,3 +44,10 @@ data/.old/
 # Browser capture HAR files (may contain cookies/secrets)
 *.har
 *.har/
+
+# Orchestrator config copy placed in repo root
+/orchestrator.md
+
+# Research probe exports and browser captures
+data/research/
+research/sources/captures/
