@@ -1,0 +1,5 @@
+- current_goal: Harden agent routing contracts and review repo state
+- active_task: Pending — orchestrator/dir routing rules updated, awaiting direction
+- active_agent: orchestrator
+- blockers: None
+- next_action: Buddy reviewing work; needs decision on ~55 untracked files + stale PROJECT_MEMORY
