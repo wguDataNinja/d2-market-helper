@@ -41,28 +41,46 @@ for segment in SEGMENTS:
     # Count requested items for filtering
     df['NumAsks'] = df['Requested'].str.count(':')
 
+    model_rows = []
+    and_decomposed_count = 0
+    and_excluded_count = 0
+    for _, row in df.iterrows():
+        num_asks = row['NumAsks']
+        if num_asks == 1:
+            row_copy = row.copy()
+            row_copy['is_and_decomposed'] = False
+            model_rows.append(row_copy)
+        elif num_asks == 2:
+            items = [part.split(':') for part in row['Requested'].split(';')]
+            for item_name, item_qty in items:
+                new_row = row.copy()
+                new_row['Requested'] = f"{item_name}:{item_qty}"
+                new_row['is_and_decomposed'] = True
+                model_rows.append(new_row)
+            and_decomposed_count += 1
+        else:
+            and_excluded_count += 1
+
+    model_input = pd.DataFrame(model_rows)
+
     results = []
 
     for rune in runes:
         if rune == 'Ist Rune':
             continue
 
-        single_item = df[df['NumAsks'] == 1]  # single rune requests have 0 semicolons
-
-        # Ist for Rune (bid side)
-        ist_for_rune = single_item[
-            (single_item['Offered'].str.contains('Ist Rune')) &
-            (single_item['Requested'].str.contains(re.escape(rune)))
+        ist_for_rune = model_input[
+            (model_input['Offered'].str.contains('Ist Rune')) &
+            (model_input['Requested'].str.contains(re.escape(rune)))
             ].copy()
 
         ist_for_rune['IstQty'] = ist_for_rune['Offered'].apply(lambda x: parse_quantity(x, 'Ist Rune')).astype(int)
         ist_for_rune['RuneQty'] = ist_for_rune['Requested'].apply(lambda x: parse_quantity(x, rune)).astype(int)
         ist_for_rune['IstsPerRune'] = ist_for_rune['IstQty'] / ist_for_rune['RuneQty']
 
-        # Rune for Ist (ask side)
-        rune_for_ist = single_item[
-            (single_item['Offered'].str.contains(re.escape(rune))) &
-            (single_item['Requested'].str.contains('Ist Rune'))
+        rune_for_ist = model_input[
+            (model_input['Offered'].str.contains(re.escape(rune))) &
+            (model_input['Requested'].str.contains('Ist Rune'))
             ].copy()
 
         rune_for_ist['IstQty'] = rune_for_ist['Requested'].apply(lambda x: parse_quantity(x, 'Ist Rune')).astype(int)
@@ -109,4 +127,4 @@ for segment in SEGMENTS:
     results_df = pd.DataFrame(results).sort_values(by='Total_Trades', ascending=False)
     output_file = PRICES_DIR / f"rune_prices_{segment}.csv"
     results_df.to_csv(output_file, index=False)
-    print(f"Finished segment {segment}, saved: {output_file}")
+    print(f"Finished segment {segment}, saved: {output_file} (decomposed {and_decomposed_count} AND trades, excluded {and_excluded_count} multi-item)")

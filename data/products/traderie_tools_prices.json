@@ -1,88 +1,88 @@
 {
   "schema_version": "0.2",
-  "generated_at": "2026-06-23T02:29:35Z",
-  "last_update": "2026-06-23T02:29:29Z",
+  "generated_at": "2026-06-23T04:18:28Z",
+  "last_update": "2026-06-23T04:18:28Z",
   "segments": {
     "pc_sc_l": {
       "Ohm Rune": {
-        "ist_value": 3.4436,
+        "ist_value": 3.4118,
         "low_confidence": false,
         "confidence": "high",
         "bid_price": 3.0,
-        "ask_price": 3.8872,
-        "total_trades": 250
-      },
-      "Mal Rune": {
-        "ist_value": 0.6967,
-        "low_confidence": false,
-        "confidence": "high",
-        "bid_price": 0.5636,
-        "ask_price": 0.8297,
-        "total_trades": 209
-      },
-      "Lo Rune": {
-        "ist_value": 6.015,
-        "low_confidence": false,
-        "confidence": "high",
-        "bid_price": 5.978,
-        "ask_price": 6.0519,
-        "total_trades": 158
+        "ask_price": 3.8235,
+        "total_trades": 291
       },
       "Jah Rune": {
-        "ist_value": 19.4911,
+        "ist_value": 11.7381,
         "low_confidence": false,
         "confidence": "high",
-        "bid_price": 18.5536,
-        "ask_price": 20.4286,
-        "total_trades": 64
+        "bid_price": 19.2812,
+        "ask_price": 4.1949,
+        "total_trades": 267
+      },
+      "Mal Rune": {
+        "ist_value": 0.7187,
+        "low_confidence": false,
+        "confidence": "high",
+        "bid_price": 0.5942,
+        "ask_price": 0.8433,
+        "total_trades": 256
+      },
+      "Lo Rune": {
+        "ist_value": 5.8996,
+        "low_confidence": false,
+        "confidence": "high",
+        "bid_price": 6.0336,
+        "ask_price": 5.7656,
+        "total_trades": 232
       },
       "Gul Rune": {
-        "ist_value": 1.0278,
+        "ist_value": 1.014,
         "low_confidence": false,
-        "confidence": "medium",
+        "confidence": "high",
         "bid_price": 1.0,
-        "ask_price": 1.0556,
-        "total_trades": 46
+        "ask_price": 1.0279,
+        "total_trades": 171
       },
       "Ber Rune": {
-        "ist_value": 21.2,
+        "ist_value": 18.04,
         "low_confidence": false,
-        "confidence": "medium",
-        "bid_price": 20.2,
-        "ask_price": 22.2,
-        "total_trades": 15
+        "confidence": "high",
+        "bid_price": 20.28,
+        "ask_price": 15.8,
+        "total_trades": 70
       },
       "Cham Rune": {
-        "ist_value": 9.2857,
-        "low_confidence": true,
-        "confidence": "low",
-        "bid_price": null,
-        "ask_price": 9.2857,
-        "total_trades": 7
+        "ist_value": 6.5769,
+        "low_confidence": false,
+        "confidence": "medium",
+        "bid_price": 7.0,
+        "ask_price": 6.1538,
+        "total_trades": 15
       },
       "Pul Rune": {
-        "ist_value": 0.5556,
+        "ist_value": 0.6,
         "low_confidence": true,
         "confidence": "low",
-        "bid_price": null,
-        "ask_price": 0.5556,
-        "total_trades": 5
+        "bid_price": 0.6,
+        "ask_price": 0.6,
+        "total_trades": 9
       },
       "Lem Rune": {
-        "ist_value": 0.5833,
+        "ist_value": 0.6154,
         "low_confidence": true,
         "confidence": "low",
-        "bid_price": 0.5833,
+        "bid_price": 0.6154,
         "ask_price": null,
-        "total_trades": 3
+        "total_trades": 4
       },
       "Fal Rune": {
         "ist_value": 0.5,
         "low_confidence": true,
         "confidence": "low",
-        "bid_price": null,
+        "bid_price": 0.5,
         "ask_price": 0.5,
-        "total_trades": 2
+        "total_trades": 3
       },
       "Hel Rune": {
         "ist_value": 1.0,
@@ -191,76 +191,68 @@
     },
     "pc_sc_nl": {
       "Jah Rune": {
-        "ist_value": 10.8329,
+        "ist_value": 6.5856,
         "low_confidence": false,
         "confidence": "high",
-        "bid_price": 10.1141,
-        "ask_price": 11.5517,
-        "total_trades": 153
+        "bid_price": 10.1477,
+        "ask_price": 3.0234,
+        "total_trades": 314
       },
       "Mal Rune": {
-        "ist_value": 0.7515,
+        "ist_value": 0.7415,
         "low_confidence": false,
         "confidence": "high",
         "bid_price": 0.6667,
-        "ask_price": 0.8364,
-        "total_trades": 86
+        "ask_price": 0.8164,
+        "total_trades": 93
       },
       "Lo Rune": {
-        "ist_value": 4.6387,
+        "ist_value": 4.6399,
         "low_confidence": false,
         "confidence": "medium",
         "bid_price": 4.375,
-        "ask_price": 4.9024,
+        "ask_price": 4.9048,
+        "total_trades": 47
+      },
+      "Ber Rune": {
+        "ist_value": 10.5758,
+        "low_confidence": false,
+        "confidence": "medium",
+        "bid_price": 10.1515,
+        "ask_price": 11.0,
         "total_trades": 46
       },
+      "Gul Rune": {
+        "ist_value": 1.1806,
+        "low_confidence": false,
+        "confidence": "medium",
+        "bid_price": 1.0,
+        "ask_price": 1.3611,
+        "total_trades": 23
+      },
       "Ohm Rune": {
-        "ist_value": 3.3125,
+        "ist_value": 3.4803,
         "low_confidence": false,
         "confidence": "medium",
         "bid_price": 2.75,
-        "ask_price": 3.875,
-        "total_trades": 19
-      },
-      "Ber Rune": {
-        "ist_value": 10.125,
-        "low_confidence": false,
-        "confidence": "medium",
-        "bid_price": 9.25,
-        "ask_price": 11.0,
-        "total_trades": 19
-      },
-      "Gul Rune": {
-        "ist_value": 1.4333,
-        "low_confidence": false,
-        "confidence": "medium",
-        "bid_price": null,
-        "ask_price": 1.4333,
-        "total_trades": 16
+        "ask_price": 4.2105,
+        "total_trades": 22
       },
       "Cham Rune": {
-        "ist_value": 7.2778,
+        "ist_value": 7.3,
         "low_confidence": true,
         "confidence": "low",
         "bid_price": 6.0,
-        "ask_price": 8.5556,
-        "total_trades": 10
+        "ask_price": 8.6,
+        "total_trades": 11
       },
       "Pul Rune": {
-        "ist_value": 0.5,
+        "ist_value": 0.6364,
         "low_confidence": true,
         "confidence": "low",
         "bid_price": null,
-        "ask_price": 0.5,
-        "total_trades": 3
-      },
-      "El Rune": {
-        "ist_value": 1.0,
-        "low_confidence": true,
-        "confidence": "low",
-        "bid_price": null,
-        "ask_price": 1.0,
-        "total_trades": 1
+        "ask_price": 0.6364,
+        "total_trades": 7
       },
       "Lem Rune": {
         "ist_value": 0.5,
@@ -268,6 +260,14 @@
         "confidence": "low",
         "bid_price": null,
         "ask_price": 0.5,
+        "total_trades": 3
+      },
+      "Amn Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": null,
+        "ask_price": 1.0,
         "total_trades": 1
       },
       "Lum Rune": {
@@ -278,6 +278,30 @@
         "ask_price": 0.5,
         "total_trades": 1
       },
+      "El Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": null,
+        "ask_price": 1.0,
+        "total_trades": 1
+      },
+      "Ko Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
+      "Eth Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
       "Eld Rune": {
         "ist_value": null,
         "low_confidence": true,
@@ -286,15 +310,7 @@
         "ask_price": null,
         "total_trades": 0
       },
-      "Amn Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Ort Rune": {
+      "Ith Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",
@@ -318,38 +334,6 @@
         "ask_price": null,
         "total_trades": 0
       },
-      "Eth Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Fal Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Ko Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Ith Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
       "Io Rune": {
         "ist_value": null,
         "low_confidence": true,
@@ -358,7 +342,23 @@
         "ask_price": null,
         "total_trades": 0
       },
+      "Ort Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
       "Hel Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
+      "Fal Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",
@@ -376,29 +376,53 @@
       }
     },
     "pc_hc_l": {
-      "Mal Rune": {
-        "ist_value": 0.625,
-        "low_confidence": true,
-        "confidence": "low",
-        "bid_price": 0.5,
-        "ask_price": 0.75,
-        "total_trades": 8
-      },
       "Gul Rune": {
-        "ist_value": 1.25,
+        "ist_value": 1.0161,
+        "low_confidence": false,
+        "confidence": "medium",
+        "bid_price": 1.0,
+        "ask_price": 1.0323,
+        "total_trades": 33
+      },
+      "Mal Rune": {
+        "ist_value": 0.7639,
         "low_confidence": true,
         "confidence": "low",
-        "bid_price": 1.0,
-        "ask_price": 1.5,
-        "total_trades": 4
+        "bid_price": 0.7778,
+        "ask_price": 0.75,
+        "total_trades": 13
       },
       "Ohm Rune": {
-        "ist_value": 4.6667,
+        "ist_value": 4.0,
         "low_confidence": true,
         "confidence": "low",
         "bid_price": null,
-        "ask_price": 4.6667,
-        "total_trades": 3
+        "ask_price": 4.0,
+        "total_trades": 7
+      },
+      "Pul Rune": {
+        "ist_value": 0.7143,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": 0.7143,
+        "ask_price": null,
+        "total_trades": 5
+      },
+      "Lo Rune": {
+        "ist_value": 5.25,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": null,
+        "ask_price": 5.25,
+        "total_trades": 4
+      },
+      "Jah Rune": {
+        "ist_value": 1.5,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": null,
+        "ask_price": 1.5,
+        "total_trades": 2
       },
       "Eld Rune": {
         "ist_value": 0.5,
@@ -407,22 +431,6 @@
         "bid_price": null,
         "ask_price": 0.5,
         "total_trades": 1
-      },
-      "Lo Rune": {
-        "ist_value": 9.0,
-        "low_confidence": true,
-        "confidence": "low",
-        "bid_price": null,
-        "ask_price": 9.0,
-        "total_trades": 1
-      },
-      "Ber Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
       },
       "Lem Rune": {
         "ist_value": null,
@@ -433,14 +441,6 @@
         "total_trades": 0
       },
       "Amn Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Pul Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",
@@ -472,7 +472,7 @@
         "ask_price": null,
         "total_trades": 0
       },
-      "Jah Rune": {
+      "Ber Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",
@@ -563,12 +563,36 @@
     },
     "pc_hc_nl": {
       "Lo Rune": {
-        "ist_value": 5.75,
+        "ist_value": 3.9167,
         "low_confidence": true,
         "confidence": "low",
         "bid_price": 4.0,
-        "ask_price": 7.5,
-        "total_trades": 7
+        "ask_price": 3.8333,
+        "total_trades": 11
+      },
+      "Gul Rune": {
+        "ist_value": 1.1111,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": null,
+        "ask_price": 1.1111,
+        "total_trades": 9
+      },
+      "Ohm Rune": {
+        "ist_value": 4.0,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": 3.0,
+        "ask_price": 5.0,
+        "total_trades": 4
+      },
+      "Mal Rune": {
+        "ist_value": 0.7083,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": 0.6667,
+        "ask_price": 0.75,
+        "total_trades": 4
       },
       "Jah Rune": {
         "ist_value": 9.3333,
@@ -578,31 +602,31 @@
         "ask_price": null,
         "total_trades": 3
       },
-      "Ohm Rune": {
-        "ist_value": 3.75,
-        "low_confidence": true,
-        "confidence": "low",
-        "bid_price": 3.0,
-        "ask_price": 4.5,
-        "total_trades": 3
-      },
-      "Mal Rune": {
-        "ist_value": 0.625,
-        "low_confidence": true,
-        "confidence": "low",
-        "bid_price": 0.5,
-        "ask_price": 0.75,
-        "total_trades": 3
-      },
       "Pul Rune": {
+        "ist_value": 0.75,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": 1.0,
+        "ask_price": 0.5,
+        "total_trades": 3
+      },
+      "Lem Rune": {
         "ist_value": 0.5,
         "low_confidence": true,
         "confidence": "low",
-        "bid_price": null,
-        "ask_price": 0.5,
+        "bid_price": 0.5,
+        "ask_price": null,
         "total_trades": 2
       },
-      "Gul Rune": {
+      "Ko Rune": {
+        "ist_value": 1.0,
+        "low_confidence": true,
+        "confidence": "low",
+        "bid_price": 1.0,
+        "ask_price": null,
+        "total_trades": 1
+      },
+      "Ber Rune": {
         "ist_value": 2.0,
         "low_confidence": true,
         "confidence": "low",
@@ -610,63 +634,7 @@
         "ask_price": 2.0,
         "total_trades": 1
       },
-      "Ko Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Amn Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Ort Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Nef Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Lum Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Lem Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Ber Rune": {
-        "ist_value": null,
-        "low_confidence": true,
-        "confidence": "unavailable",
-        "bid_price": null,
-        "ask_price": null,
-        "total_trades": 0
-      },
-      "Cham Rune": {
+      "Io Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",
@@ -682,7 +650,7 @@
         "ask_price": null,
         "total_trades": 0
       },
-      "Io Rune": {
+      "Cham Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",
@@ -714,7 +682,23 @@
         "ask_price": null,
         "total_trades": 0
       },
+      "Lum Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
       "El Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
+      "Nef Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",
@@ -730,7 +714,23 @@
         "ask_price": null,
         "total_trades": 0
       },
+      "Ort Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
       "Dol Rune": {
+        "ist_value": null,
+        "low_confidence": true,
+        "confidence": "unavailable",
+        "bid_price": null,
+        "ask_price": null,
+        "total_trades": 0
+      },
+      "Amn Rune": {
         "ist_value": null,
         "low_confidence": true,
         "confidence": "unavailable",

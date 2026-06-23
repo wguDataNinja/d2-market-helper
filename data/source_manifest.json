@@ -229,7 +229,7 @@
       "Segment context confirmed: PC, Non-Ladder, Softcore, ROTW. Confidence: high.",
       "Other filter combinations may yield different prices."
     ],
-    "next_action": "First external_cash_prices source. Verify segment variation by capturing Ladder/Non-Ladder filter toggle.",
+    "next_action": "Parser exists (parse_iggm_offline.py). Remaining action is snapshot_io integration and data-quality review.",
     "last_reviewed_at": "2026-06-20"
   },
   {
@@ -279,7 +279,7 @@
       "Stock status available per product.",
       "No completed/sold history surface exists on ItemNow."
     ],
-    "next_action": "Integrate into generate_external_cash_prices.py and validate.",
+    "next_action": "Parser exists (parse_itemnow_api.py). Remaining action is snapshot_io integration and data-quality review.",
     "last_reviewed_at": "2026-06-20"
   },
   {
@@ -876,7 +876,7 @@
     "base_url": "https://d2stock.com/",
     "category": "cash_market",
     "priority": "tier_2",
-    "status": "offline_parse_candidate",
+    "status": "parser_prototype_ready",
     "evidence_classes": [
       "cash_market_listings"
     ],
@@ -919,7 +919,7 @@
       "Site also lists Warlock expansion items (Reign of the Warlock category).",
       "cloudscraper bypasses Cloudflare for page access; Camoufox crashed similarly to RPGStash."
     ],
-    "next_action": "Build RSS feed XML parser. Highest priority \u2014 structured data with no browser dependency.",
+    "next_action": "Parser exists (parse_d2stock_rss.py). Remaining action is snapshot_io integration and data-quality review.",
     "last_reviewed_at": "2026-06-20"
   },
   {

@@ -127,10 +127,15 @@ def extract_fields(obs: dict, segment: str, valid_runes: set) -> dict | None:
     offered_str = f"{item_name}:{quantity}"
 
     requested_counts = defaultdict(int)
+    requested_groups = defaultdict(list)
     for p in price:
         pname = p.get("name", "") if isinstance(p, dict) else ""
         pqty = p.get("quantity", 1) if isinstance(p, dict) else 1
+        pq = p.get("add")
+        pgroup = p.get("group")
         requested_counts[pname] += pqty
+        gkey = str(pgroup) if pgroup is not None else "ungrouped"
+        requested_groups[gkey].append({"name": pname, "quantity": pqty, "add": pq, "group": pgroup})
 
     requested_str = ";".join(f"{r}:{q}" for r, q in requested_counts.items())
 
@@ -163,6 +168,7 @@ def extract_fields(obs: dict, segment: str, valid_runes: set) -> dict | None:
         "has_and_prices": str(has_and).lower(),
         "price_group_count": group_count,
         "price_entry_count": entry_count,
+        "price_groups_json": json.dumps(dict(requested_groups), sort_keys=True),
     }
 
 
@@ -222,6 +228,7 @@ def build_dataset(segment: str, valid_runes: set, write_research: bool) -> dict:
             "listing_id", "seller_rating", "seller_reviews",
             "platform", "ladder", "hardcore", "segment_slug",
             "has_and_prices", "price_group_count", "price_entry_count",
+            "price_groups_json",
         ]
         with open(csv_path, "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)

@@ -221,15 +221,7 @@ Last full green smoke test: `research/memos/2026-06-20-integration-smoke-test.md
 
 ## 10. Next Actions
 
-Prioritized:
-
-1. **Let launchd run for its next cycle (17:00, 23:00).** Check if the hardcore timeout/retry fix resolves pc_hc_nl collection. Verify pc_hc_l mid-segment timeouts improved. Monitor lock health. Relaunch inspection after next schedule.
-2. **Add `scripts/collection_status.py`.** Report last snapshot time, history row counts per source/segment, launchd log health, and any stalled collections.
-3. **Regenerate products from retained history.** After sufficient snapshots accumulate (3+ days), test whether `extract → model → generate` pipeline produces stable or improved prices from larger N.
-4. **Polish UI.** Priority: add source freshness/window status to the dashboard, confidence tooltips, responsive improvements.
-5. **Optional: Add MuleFactory/Eldorado cash parsers.** Cash coverage is already strong (271 obs). Add only if specific segment gaps emerge.
-6. **Optional: Probe Diablo2.io item price-history page.** The `misc/jah-t43.html` page shows "Total results: 2812" — potentially more data, but with less context per row. Low priority. Do not prioritize sold-search further.
-7. **Clean or promote remaining scratch artifacts.** ~35 untracked files (probe outputs, screenshots, session docs). Commit durable findings; clean the rest.
+ROADMAP.md is the active task authority. Current priorities are: 1. Refresh stale docs and source manifest state. 2. Decide whether to model Traderie AND trades. 3. Add MuleFactory cash parser if data quality is approved. 4. Choose launchd regeneration strategy. 5. Decide pc_hc_nl skipped-item policy. 6. Run final validation and separate backlog.
 
 ---
 

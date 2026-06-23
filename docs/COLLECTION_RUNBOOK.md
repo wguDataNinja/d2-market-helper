@@ -135,7 +135,7 @@ python3 scripts/parse_d2stock_rss.py --offline
 - 2.2 MB feed with 2,014 items — parses locally
 - Cloudflare protects main pages but RSS feed is accessible
 
-**Needed:** Add `snapshot_io` calls (raw, normalized, history) to this parser.
+Snapshot integration is active; collection_status.py auto-detects this source.
 
 **Output paths (current):**
 - Product: `data/external/d2stock_cash_prices.json`
@@ -168,7 +168,7 @@ python3 scripts/parse_iggm_offline.py --input-dir research/sources/captures/iggm
 - Segment metadata in `metadata.json` is optional but recommended
 - 33 rune prices extracted via regex
 
-**Needed:** Add `snapshot_io` calls (raw, normalized, history) to this parser.
+Snapshot integration is active; collection_status.py auto-detects this source.
 
 **Output paths (current):**
 - Product: `data/external/iggm_cash_prices.json`
