@@ -16,88 +16,39 @@ Traderie-normalized in-game rune values + multi-source external cash comparison
 
 ---
 
-## Progress Summary
-
-| Area | Status |
-|------|--------|
-| Traderie pipeline | Active — 4 segments, 4x daily snapshots, 3+ days of accumulated history |
-| External cash parsers | ItemNow ✅, D2Stock ✅, IGGM ✅, items7 ⏳ |
-| Source manifest | 20 sources, all validated |
-| Snapshot/history infrastructure | Active — raw, normalized, history JSONL per source |
-| Collection status script | Active |
-| Website (Vite + React) | Scaffolded — 0 tsc errors, production ~100KB gzip |
-| Agent routing contracts | Updated — Fast Path Routing, Git Routing, git-steward objective |
-
----
-
 ## Proposed Work Sessions
 
-### Session 1 — Regenerate Products from Accumulated History
+### Session 1 — Regenerate Products from Accumulated Traderie History
 
-History has grown massively since the last product generation (2026-06-20).
-Regenerate using the full accumulated dataset.
+- [ ] **`python3 scripts/build_traderie_dataset_from_history.py --write-research`** — Run from repo root. Requires `data/history/traderie/pc_sc_l/completed_trades_pc_sc_l.jsonl`, `data/history/traderie/pc_sc_nl/completed_trades_pc_sc_nl.jsonl`, `data/history/traderie/pc_hc_l/completed_trades_pc_hc_l.jsonl`, and `data/history/traderie/pc_hc_nl/completed_trades_pc_hc_nl.jsonl`. Omitting `--segment` processes all four segments. Output: `data/research/extracted_trades_pc_sc_l.csv`, `data/research/extracted_trades_pc_sc_nl.csv`, `data/research/extracted_trades_pc_hc_l.csv`, `data/research/extracted_trades_pc_hc_nl.csv`, plus `data/research/traderie_history_dataset_pc_sc_l.json`, `data/research/traderie_history_dataset_pc_sc_nl.json`, `data/research/traderie_history_dataset_pc_hc_l.json`, and `data/research/traderie_history_dataset_pc_hc_nl.json`. Success: exit code 0 and the printed summary shows total extracted trades. Validate by reading the four `data/research/traderie_history_dataset_{segment}.json` files and confirming `extracted_rows` is at least `3000` for `pc_sc_l`, `350` for `pc_sc_nl`, `250` for `pc_hc_l`, and `100` for `pc_hc_nl`. Failure handling: when exit code is not 0 or any threshold is missed, run `python3 scripts/collection_status.py` and report its full output with the missing threshold.
+- [ ] **`python3 scripts/calculate_rune_prices.py --input-dir data/research`** — Run from repo root after the research CSVs exist. Input: `data/research/extracted_trades_{segment}.csv` for `pc_sc_l`, `pc_sc_nl`, `pc_hc_l`, and `pc_hc_nl`. Output: `data/prices/rune_prices_pc_sc_l.csv`, `data/prices/rune_prices_pc_sc_nl.csv`, `data/prices/rune_prices_pc_hc_l.csv`, and `data/prices/rune_prices_pc_hc_nl.csv`. Success: exit code 0 and stdout prints one `Finished segment ... saved:` line for each of the four segments. Validate by reading each output CSV and confirming the header includes `Rune,Bid_Price,Bid_Count,Ask_Price,Ask_Count,Blended_FMV,Total_Trades`. Failure handling: when exit code is not 0 or any output CSV is missing, run `python3 scripts/collection_status.py` and report its full output with the missing path.
+- [ ] **`python3 scripts/generate_prices_json.py`** — Run from repo root after all four `data/prices/rune_prices_{segment}.csv` files exist. Input: the four per-segment price CSVs in `data/prices/`. Output: `data/products/in_game_rune_values.json`, `data/products/traderie_tools_prices.json`, and `data/products/rune_prices_legacy.json`. Success: exit code 0 and stdout prints `Generated:` lines for all three product files plus a four-segment summary. Validate by reading `data/products/in_game_rune_values.json` and confirming `schema_version` is `0.1`, `source_window_label` is `rolling_recent_trades_50_cap`, and `segments` contains exactly `pc_sc_l`, `pc_sc_nl`, `pc_hc_l`, and `pc_hc_nl`. Failure handling: when exit code is not 0 or any product file is missing, run `python3 scripts/validate_in_game_rune_values.py` and report its full output.
+- [ ] **`python3 scripts/validate_in_game_rune_values.py`** — Run from repo root after product generation. Input: `data/products/in_game_rune_values.json` and `data/products/traderie_tools_prices.json`. Output: no files; this is a schema and policy validation. Success: exit code 0. Validate by confirming no `ERROR` lines are printed and the process exits 0. Failure handling: when exit code is not 0, report the complete stdout and do not proceed to website work until this validation passes.
+- [ ] **`python3 scripts/validate_external_cash_prices.py`** — Run from repo root to confirm the existing comparison-only cash product remains valid after in-game regeneration. Input: `data/products/external_cash_prices.sample.json` and `data/source_manifest.json`. Output: no files; this validates schema version, required observation fields, source manifest linkage, and `use_in_model=false`. Success: exit code 0. Validate by confirming no `ERROR` lines are printed and the process exits 0. Failure handling: when exit code is not 0, report the complete stdout and keep cash prices out of any in-game model output.
 
-- [ ] Run `build_traderie_dataset_from_history.py --write-research`
-- [ ] Run `calculate_rune_prices.py --input-dir data/research`
-- [ ] Run `generate_prices_json.py`
-- [ ] Compare observation counts vs last generation
-- [ ] Validate output: `validate_in_game_rune_values.py`
-- [ ] Validate output: `validate_external_cash_prices.py`
-- [ ] #driver: worker
+### Session 2 — Stabilize Hardcore Traderie Snapshot Collection
 
-### Session 2 — Hardcore Segment Reliability
+- [ ] **`python3 scripts/collection_status.py`** — Run from repo root before manual hardcore collection. Input: `data/history/traderie/{segment}/completed_trades_{segment}.jsonl`, `data/snapshots/normalized/`, `data/products/`, and `logs/launchd/snapshot-traderie.err.log`. Output: no files; stdout contains `Traderie History by Segment`, `Products`, and `Log Health`. Success: exit code 0 and the `Log Health` section shows the current `ReadTimeout` count. Validate by recording that count as the baseline for this session. Failure handling: when exit code is not 0, report the full stdout and stderr before changing `scripts/snapshot_traderie.py`.
+- [ ] **`python3 scripts/snapshot_traderie.py --segment pc_hc_l`** — Run from repo root to exercise the hardcore ladder segment with the current collector settings: 30 second hardcore timeout, 2 hardcore attempts, and 5/15 second retry backoff. Input: `data/item_ids.json` and `server_configs.json`. Output: `data/raw/raw_trades_pc_hc_l.json`, `data/snapshots/raw/traderie/pc_hc_l/<timestamp>/response.json`, `data/snapshots/normalized/traderie/pc_hc_l/<timestamp>.json`, and appended rows in `data/history/traderie/pc_hc_l/completed_trades_pc_hc_l.jsonl`. Success: exit code 0 and stdout ends with `Done —` plus per-item `raw`, `norm`, and `hist` paths. Validate by running `python3 scripts/collection_status.py` and confirming `pc_hc_l` shows status `ok` or `thin` with a latest snapshot path. Failure handling: when exit code is not 0, save the failed item names printed as `[FAILED]` lines for the skip-list edit in this session.
+- [ ] **`python3 scripts/snapshot_traderie.py --segment pc_hc_nl`** — Run from repo root to exercise the hardcore non-ladder segment with the same collector settings. Input: `data/item_ids.json` and `server_configs.json`. Output: `data/raw/raw_trades_pc_hc_nl.json`, `data/snapshots/raw/traderie/pc_hc_nl/<timestamp>/response.json`, `data/snapshots/normalized/traderie/pc_hc_nl/<timestamp>.json`, and appended rows in `data/history/traderie/pc_hc_nl/completed_trades_pc_hc_nl.jsonl`. Success: exit code 0 and stdout ends with `Done —` plus per-item `raw`, `norm`, and `hist` paths. Validate by running `python3 scripts/collection_status.py` and confirming `pc_hc_nl` shows status `ok` or `thin` with a latest snapshot path. Failure handling: when exit code is not 0, save the failed item names printed as `[FAILED]` lines for the skip-list edit in this session.
+- [ ] **Edit `scripts/snapshot_traderie.py` to add deterministic hardcore timeout diagnostics and a hardcore-only skip list** — Use the `[FAILED]` item names from the two manual hardcore runs. Add a module-level skip-list data structure keyed by `pc_hc_l` and `pc_hc_nl`, skip only matching items for those two hardcore segments, and print each skipped item with its segment. Keep softcore behavior unchanged. Output: updated `scripts/snapshot_traderie.py`; no data files are produced by the edit. Success: the file contains the new hardcore-only skip-list structure and the collector still accepts `--segment` and `--item`. Validate by running `python3 scripts/snapshot_traderie.py --segment pc_hc_l --item "Jah Rune"` and confirming exit code 0 plus one per-item result or one explicit skip message. Failure handling: when validation exits nonzero, run `python3 scripts/collection_status.py` and report the full output with the failing command.
+- [ ] **Edit `scripts/snapshot_traderie.py` to set `HARDCORE_REQUEST_TIMEOUT_SECONDS = 20`** — Keep `DEFAULT_REQUEST_TIMEOUT_SECONDS = 10`, `REQUEST_MAX_ATTEMPTS = 3`, `HARDCORE_REQUEST_MAX_ATTEMPTS = 2`, and `REQUEST_BACKOFF_SECONDS = [5, 15]` unchanged. Output: updated `scripts/snapshot_traderie.py`; no data files are produced by the edit. Success: the constant is exactly `20` and hardcore collection still uses the hardcore-specific timeout. Validate by running `python3 scripts/snapshot_traderie.py --segment pc_hc_nl --item "Jah Rune"` and confirming exit code 0 plus one per-item result or one explicit skip message. Failure handling: when validation exits nonzero, run `python3 scripts/collection_status.py` and report the full output with the failing command.
+- [ ] **`python3 scripts/collection_status.py`** — Run from repo root after both manual hardcore segment validations and the collector edits. Input: current history, snapshots, products, and launchd logs. Output: no files; stdout is the operational health report. Success: exit code 0 and the total `ReadTimeout` count in `logs/launchd/snapshot-traderie.err.log` is no more than 5 higher than the baseline recorded at the start of this session. Validate by comparing the baseline count to the final `Log Health` count. Failure handling: when the final count increased by more than 5, report the baseline, final count, and the full final `collection_status.py` output.
 
-Despite the retry/backoff fix and 30s timeout, hardcore segments still fail
-intermittently (16 ReadTimeouts, exit code 1 on recent runs).
+### Session 3 — Add Snapshot History to D2Stock and IGGM Cash Parsers
 
-- [ ] Monitor 2-3 launchd cycles after jitter + reduced-attempts fix
-- [ ] If still failing: add skip list for items that consistently time out on hardcore
-- [ ] Collect timeout stats per item to identify problem items
-- [ ] Consider reducing hardcore timeout further (20s) if items either respond or don't
-- [ ] #driver: orchestrator → git-steward for monitoring, worker for code changes
+- [ ] **Edit `scripts/parse_d2stock_rss.py` to call `scripts/lib/snapshot_io.py` after observations are assembled** — Import `snapshot_io`, call `write_raw_snapshot({"feed_xml": raw.decode("utf-8", errors="replace")}, "d2stock")`, call `write_normalized_snapshot(observations, "d2stock")`, and call `append_history("d2stock", "cash_prices", observations)` before returning from `parse(args)`. Preserve the existing `data/external/d2stock_cash_prices.json` output. Output after the validation command: `data/external/d2stock_cash_prices.json`, `data/snapshots/raw/d2stock/<timestamp>/response.json`, `data/snapshots/normalized/d2stock/<timestamp>.json`, and `data/history/d2stock/cash_prices.jsonl`. Success: the parser still supports `--offline` and writes all four output locations. Validate by running `python3 scripts/parse_d2stock_rss.py --offline` from repo root and confirming exit code 0. Failure handling: when validation exits nonzero, report stdout and stderr with the command.
+- [ ] **Edit `scripts/parse_iggm_offline.py` to call `scripts/lib/snapshot_io.py` after observations are assembled** — Import `snapshot_io`, call `write_raw_snapshot()` with the captured HTML and metadata payload for source `iggm`, call `write_normalized_snapshot(observations, "iggm")`, and call `append_history("iggm", "cash_prices", observations)` before returning from `parse(input_dir)`. Preserve the existing `data/external/iggm_cash_prices.json` output. Output after the validation command: `data/external/iggm_cash_prices.json`, `data/snapshots/raw/iggm/<timestamp>/response.json`, `data/snapshots/normalized/iggm/<timestamp>.json`, and `data/history/iggm/cash_prices.jsonl`. Success: the parser accepts `--input-dir` and writes all four output locations. Validate by running `python3 scripts/parse_iggm_offline.py --input-dir research/sources/captures/iggm_2026-06-20_runes-focused` from repo root and confirming exit code 0. Failure handling: when validation exits nonzero, report stdout and stderr with the command and confirm `research/sources/captures/iggm_2026-06-20_runes-focused/page.html` exists.
+- [ ] **`python3 scripts/generate_external_cash_prices.py`** — Run from repo root after both parser validations pass. Input: `data/external/d2stock_cash_prices.json`, `data/external/iggm_cash_prices.json`, and the other existing `data/external/*.json` cash source files. Output: `data/products/external_cash_prices.sample.json`. Success: exit code 0 and the product contains `schema_version` `0.2`, `sources[]` entries for `d2stock` and `iggm`, and `observations[]` with `use_in_model=false`. Validate by running `python3 scripts/validate_external_cash_prices.py` and confirming exit code 0. Failure handling: when generation or validation exits nonzero, report the full stdout and stderr from the failing command.
+- [ ] **`python3 scripts/collection_status.py`** — Run from repo root after D2Stock and IGGM snapshot outputs exist. Input: `data/snapshots/normalized/d2stock/`, `data/snapshots/normalized/iggm/`, current products, history, and logs. Output: no files; stdout is the operational health report. Success: exit code 0 and the `Cash Source Snapshots` section contains `d2stock` and `iggm` with snapshot counts greater than 0. Validate by reading the `Cash Source Snapshots` section in stdout. Failure handling: when either source is missing from that section, report the full output and confirm that `data/snapshots/normalized/d2stock/` and `data/snapshots/normalized/iggm/` exist.
 
-### Session 3 — Cash Source Snapshot Integration
+### Session 4 — Polish the React Market Dashboard
 
-D2Stock and IGGM parsers don't call `snapshot_io` yet. Adding snapshot
-integration gives them the same history accumulation as Traderie and ItemNow.
-
-- [ ] Add `snapshot_io.write_raw_snapshot()` to `parse_d2stock_rss.py`
-- [ ] Add `snapshot_io.write_normalized_snapshot()` to `parse_d2stock_rss.py`
-- [ ] Add `snapshot_io.append_history()` to `parse_d2stock_rss.py`
-- [ ] Same for `parse_iggm_offline.py`
-- [ ] Re-run both parsers, verify history files created
-- [ ] Update `collection_status.py` to detect new cash source snapshots
-- [ ] #driver: worker
-
-### Session 4 — UI Polish
-
-The Vite + React dashboard is scaffolded but minimal. Priority additions:
-
-- [ ] Source freshness indicators (last snapshot time per source)
-- [ ] Confidence tooltips on rune prices (high/medium/low/unavailable)
-- [ ] Segment selector persistence via URL
-- [ ] Responsive layout fixes (test at mobile widths)
-- [ ] Cash price comparison panel (read-only, labeled)
-- [ ] #driver: worker
-
-### Session 5 — Optional: MuleFactory/Eldorado Cash Parsers
-
-Cash coverage is already strong (271 obs). Add only if specific segment gaps emerge.
-
-- [ ] Evaluate need: which segments lack cash coverage?
-- [ ] If needed: write offline parser for MuleFactory (static microdata)
-- [ ] If needed: write offline parser for Eldorado (rendered HTML)
-- [ ] #driver: worker (only if gaps exist)
-
-### Session 6 — Optional: Diablo2.io Price-History Probe
-
-The `misc/jah-t43.html` page shows "Total results: 2812" — potentially more data
-than the sold-search surface (max 14 rows). Low priority.
-
-- [ ] Scope the price-history page format
-- [ ] Compare row quality vs sold-search surface
-- [ ] If viable: write explorer script
-- [ ] #driver: worker (low priority)
+- [ ] **Edit `web/src/data/types.ts`, `web/src/data/loader.ts`, `web/src/pages/Sources.tsx`, and `web/src/pages/Runes.tsx` to expose source freshness fields** — Use `generated_at`, `product_generated_at`, and `source_window_label` from `data/products/in_game_rune_values.json` and `data/products/external_cash_prices.sample.json`. Output: updated TypeScript files only. Success: the Sources page displays product freshness and source window labels for in-game and cash products, and the Runes page displays the selected segment with its product timestamp. Validate by running `npm run build` from repo root and confirming exit code 0. Failure handling: when the build exits nonzero, report the TypeScript or Vite error lines and the edited file path named in the first error.
+- [ ] **Edit `web/src/components/ConfidenceBadge.tsx` and `web/src/pages/Runes.tsx` to add confidence tooltips** — Extend `ConfidenceBadge` to accept a `title` string and pass each rune row's `confidence_reason` plus `total_trades` from `data/products/in_game_rune_values.json`. Output: updated `ConfidenceBadge.tsx` and `Runes.tsx`. Success: each confidence badge renders the existing visual level and exposes a native browser tooltip through the `title` attribute. Validate by running `npm run build` from repo root and confirming exit code 0. Failure handling: when the build exits nonzero, report the TypeScript or Vite error lines and the edited file path named in the first error.
+- [ ] **Edit `web/src/components/SegmentSelector.tsx`, `web/src/pages/Runes.tsx`, and the page navigation that links to `/runes` to preserve `?segment=`** — Keep the existing `useSearchParams()` mechanism in `Runes.tsx`, ensure every segment change writes `?segment={segment}`, and ensure navigation back to the Runes page keeps the selected segment query string. Output: updated React files only. Success: selecting `pc_hc_l` produces a URL containing `?segment=pc_hc_l`, and returning to the Runes page keeps `pc_hc_l` selected. Validate by running `npm run build` from repo root and confirming exit code 0. Failure handling: when the build exits nonzero, report the TypeScript or Vite error lines and the edited file path named in the first error.
+- [ ] **Edit `web/src/App.css`, `web/src/pages/Runes.tsx`, and `web/src/components/SegmentSelector.tsx` for responsive layouts at 375px, 768px, and 1024px widths** — Make rune rows, controls, and segment selection fit without horizontal overflow at those widths. Output: updated CSS and React files only. Success: at 375px, 768px, and 1024px viewport widths, no button text, table text, badge text, or selector text overlaps its container. Validate by running `npm run build` from repo root and confirming exit code 0, then inspecting the Runes page at those three widths. Failure handling: when the build exits nonzero, report the TypeScript or Vite error lines and the edited file path named in the first error.
+- [ ] **Edit `web/src/data/types.ts`, `web/src/data/loader.ts`, `web/src/pages/Runes.tsx`, and `web/src/components/CashDisclaimer.tsx` to add a read-only cash comparison panel** — Load `data/products/external_cash_prices.sample.json`, group observations by normalized rune/item name for display beside in-game rune values, and label the panel as comparison-only with `use_in_model=false`. Output: updated TypeScript and React files only. Success: the Runes page shows cash comparison observations without feeding them into `value_ist`, `bid_price`, `ask_price`, or confidence calculations. Validate by running `npm run build` from repo root and confirming exit code 0, then run `python3 scripts/validate_external_cash_prices.py` and confirm exit code 0. Failure handling: when either validation exits nonzero, report the full failing output and keep the cash panel hidden until both validations pass.
 
 ---
 
