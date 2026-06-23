@@ -1,5 +1,6 @@
 # calculate_rune_prices.py
 
+import argparse
 import pandas as pd
 import re
 import numpy as np
@@ -8,14 +9,17 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
-
-# Config
-EXTRACTED_DIR = DATA_DIR / "extracted"
 PRICES_DIR = DATA_DIR / "prices"
 PRICES_DIR.mkdir(parents=True, exist_ok=True)
 
 SEGMENTS = ["pc_hc_l", "pc_hc_nl", "pc_sc_l", "pc_sc_nl"]
 ITEMS_PATH = DATA_DIR / "item_ids.json"
+
+parser = argparse.ArgumentParser(description="Calculate Ist-normalized VWAP rune prices from extracted CSVs")
+parser.add_argument("--input-dir", default=str(DATA_DIR / "extracted"),
+                    help="Directory containing extracted_trades_{segment}.csv files (default: data/extracted)")
+args = parser.parse_args()
+EXTRACTED_DIR = Path(args.input_dir)
 
 # Load valid runes
 with open(ITEMS_PATH, 'r') as f:

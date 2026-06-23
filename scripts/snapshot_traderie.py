@@ -25,6 +25,20 @@ CONFIG_PATH = ROOT_DIR / "server_configs.json"
 URL = "https://traderie.com/api/diablo2resurrected/listings"
 PER_ITEM_DELAY = 5
 
+# Timeout and retry configuration
+# Hardcore segment API responses are slower/unreliable due to low trade volume.
+# Softcore default is adequate; hardcore needs more time plus retry on transient failure.
+DEFAULT_REQUEST_TIMEOUT_SECONDS = 10
+HARDCORE_REQUEST_TIMEOUT_SECONDS = 30
+REQUEST_MAX_ATTEMPTS = 3
+REQUEST_BACKOFF_SECONDS = [5, 15]
+
+# Segment slugs
+HARDCORE_SEGMENTS = {"pc_hc_l", "pc_hc_nl"}
+
+# Map of item_id known to be difficult (slow responses)
+# Empty for now — hardcore detection by segment slug is sufficient.
+
 
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -68,9 +82,16 @@ def normalize_observation(entry, cfg, item_name, item_id, captured_at,
             "name": p.get("name", "?"),
             "quantity": p.get("quantity", 1),
             "item_id": p.get("item_id"),
+            "add": p.get("add") if "add" in p else None,
+            "group": p.get("group") if "group" in p else None,
         }
         for p in raw_prices if isinstance(p, dict)
     ]
+    has_and_prices = any(p.get("add") is True for p in price_list)
+    price_group_count = len({p.get("group") for p in price_list
+                            if p.get("group") is not None})
+    price_entry_count = len(price_list)
+
     prop_meta = extract_properties(entry.get("properties"))
     listing_id = entry.get("id")
 
@@ -86,6 +107,11 @@ def normalize_observation(entry, cfg, item_name, item_id, captured_at,
         "seller": seller_data.get("username") or "?",
         "seller_rating": seller_data.get("rating"),
         "seller_reviews": seller_data.get("reviews"),
+        "seller_score": seller_data.get("score"),
+        "seller_status": seller_data.get("status"),
+        "has_and_prices": has_and_prices,
+        "price_group_count": price_group_count,
+        "price_entry_count": price_entry_count,
         "quantity": entry.get("amount", 1),
         "updated_at": entry.get("updated_at"),
         "price": price_list,
@@ -148,16 +174,44 @@ def append_to_legacy_raw(observations, cfg, category, item_name):
     return new_count
 
 
+def fetch_with_retry(scraper, url, params, slug, item_name):
+    """Fetch with segment-aware timeout and bounded retry/backoff.
+
+    Returns (response_json, attempts_used) on success.
+    Raises the last exception if all attempts fail.
+    """
+    is_hardcore = slug in HARDCORE_SEGMENTS
+    timeout = HARDCORE_REQUEST_TIMEOUT_SECONDS if is_hardcore else DEFAULT_REQUEST_TIMEOUT_SECONDS
+
+    last_exception = None
+    for attempt in range(1, REQUEST_MAX_ATTEMPTS + 1):
+        try:
+            print(f"    [attempt {attempt}/{REQUEST_MAX_ATTEMPTS}] timeout={timeout}s")
+            res = scraper.get(url, params=params, timeout=timeout)
+            res.raise_for_status()
+            return res.json(), attempt
+        except Exception as e:
+            last_exception = e
+            cls = type(e).__name__
+            print(f"    [attempt {attempt}/{REQUEST_MAX_ATTEMPTS}] {cls}: {e}")
+            if attempt < REQUEST_MAX_ATTEMPTS:
+                backoff = REQUEST_BACKOFF_SECONDS[attempt - 1]
+                print(f"    [backoff] waiting {backoff}s before retry...")
+                time.sleep(backoff)
+
+    raise last_exception
+
+
 def fetch_for_item(scraper, cfg, item_name, item_id, category, captured_at):
     params = build_params(cfg, item_id)
     slug = cfg["slug"]
     source = f"traderie/{slug}"
+    is_hardcore = slug in HARDCORE_SEGMENTS
 
-    print(f"\n  Fetching {item_name} ({category}) on {slug}...")
+    timeout_str = f"{HARDCORE_REQUEST_TIMEOUT_SECONDS}s" if is_hardcore else f"{DEFAULT_REQUEST_TIMEOUT_SECONDS}s"
+    print(f"\n  Fetching {item_name} ({category}) on {slug} [timeout={timeout_str}, max_attempts={REQUEST_MAX_ATTEMPTS}]...")
 
-    res = scraper.get(URL, params=params, timeout=10)
-    res.raise_for_status()
-    raw_data = res.json()
+    raw_data, attempts_used = fetch_with_retry(scraper, URL, params, slug, item_name)
     listings = raw_data.get("listings", [])
     if not isinstance(listings, list):
         listings = []
@@ -242,6 +296,7 @@ def main():
 
     scraper = cloudscraper.create_scraper()
     results = []
+    failed_items = 0
 
     for cfg in configs:
         for category, items in items_by_cat.items():
@@ -249,9 +304,15 @@ def main():
                 if args.item != "all" and not match_item_name(args.item, name):
                     continue
 
-                result = fetch_for_item(
-                    scraper, cfg, name, item_id, category, captured_at)
-                results.append(result)
+                try:
+                    result = fetch_for_item(
+                        scraper, cfg, name, item_id, category, captured_at)
+                    results.append(result)
+                except Exception as e:
+                    slug = cfg["slug"]
+                    cls = type(e).__name__
+                    print(f"\n  [FAILED] {name} ({category}) on {slug}: {cls}: {e}")
+                    failed_items += 1
 
                 if args.single:
                     print("\n  [--single] stopping after first match")
@@ -261,6 +322,9 @@ def main():
         if args.single and results:
             break
         time.sleep(PER_ITEM_DELAY)
+
+    if failed_items:
+        print(f"\n  [SUMMARY] {failed_items} item(s) failed")
 
     total_listings = sum(r["listing_count"] for r in results)
     all_ids = []
@@ -288,8 +352,10 @@ def main():
         print(f"    listings: {r['listing_count']}")
         print(f"    updated_at: {r['updated_at_min']} .. {r['updated_at_max']}")
 
-    return results
+    exit_code = 1 if failed_items else 0
+    return results, exit_code
 
 
 if __name__ == "__main__":
-    main()
+    _, ec = main()
+    sys.exit(ec)

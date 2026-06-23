@@ -37,9 +37,11 @@
       "Unofficial API surface \u2014 not a public data product. Behavior may change.",
       "Uses Cloudflare-protected endpoints. Requires cloudscraper.",
       "Rate limits and pagination limits not documented.",
-      "Completed trades window is unknown \u2014 may not return all available trades."
+      "Completed trades window is count-capped at 50 per item/segment (rolling_recent_trades_50_cap). No historical API backfill exists.",
+      "nextPage is a boolean cursor, not sequential pagination. All pages return the same 50 listings.",
+      "History is accumulated via scheduled (4x daily) snapshot collection. No pre-snapshot history is available."
     ],
-    "next_action": "Stabilize output JSON schema. Add versioning and confidence scores.",
+    "next_action": "Maintain scheduled snapshot pipeline. Regenerate products from accumulated history periodically.",
     "last_reviewed_at": "2026-06-20"
   },
   {

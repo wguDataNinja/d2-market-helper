@@ -92,6 +92,19 @@ Cash-market sources (G2G, PlayerAuctions, items7, etc.) are **comparison-only**:
 - They are not blended into the in-game rune value model.
 - They are displayed on the website with clear labels: "Cash listing price — not in-game trade value."
 
+## Completed-Trade / History Surface Tracking
+
+Every source should track its completed-trade/history discovery status. The following fields are planned for future `data/source_manifest.json` schema expansion (not yet in validation — documented here as forward reference):
+
+| Field | Type | Values |
+|---|---|---|
+| `completed_history_confidence` | string | `unknown`, `low`, `medium`, `medium_high`, `high` |
+| `completed_history_last_checked` | string | ISO date or `none` |
+| `completed_history_probe_status` | string | `not_started`, `partial`, `complete`, `gated`, `blocked` |
+| `completed_history_notes` | string | Free-text finding summary |
+
+Until these fields are added to the manifest JSON schema and validator, record completed-trade/history findings in the source notes file at `research/sources/{source_slug}.md` and in the memo `research/memos/2026-06-20-completed-trade-source-confidence-plan.md`.
+
 ## Agent Update Rules
 
 When updating the manifest:

@@ -36,7 +36,7 @@ Per-segment CSV with columns: Rune, Bid_Price, Bid_Count, Ask_Price, Ask_Count, 
 
 - **AND trades** (multi-item requests) are extracted but not modeled. They represent ~10-20% of valid trades.
 - **Non-Ist pairs** (e.g. Jah-for-Ber trades) are not used. Graph-based price inference from all rune pairs is future work.
-- **No confidence score** is computed yet. Price stability, sample size, and spread are not surfaced.
+- **Confidence levels:** high (50+ trades), medium (15-49), low (1-14), unavailable (0). Computed at generation time.
 - **No time-weighting.** All trades in the dataset are weighted equally regardless of age.
 - **No multi-segment aggregation.** Each segment is priced independently.
 
@@ -44,7 +44,7 @@ Per-segment CSV with columns: Rune, Bid_Price, Bid_Count, Ask_Price, Ask_Count, 
 
 | Improvement | Priority | Notes |
 |---|---|---|
-| Confidence score (spread + sample size) | High | Surface bid-ask spread, trade count, and recency |
+| Spread-based confidence refinement | Medium | Weight confidence by bid-ask spread width in addition to trade count |
 | Time weighting | Medium | Weight recent trades higher |
 | AND-trade modeling | Medium | Multi-item trades reveal additional price relationships |
 | Graph-based pricing | Low | Use all rune pairs to infer prices via graph solving |
@@ -71,6 +71,34 @@ Historical depth depends entirely on scheduled polling and deduplicated snapshot
 - **Price stability:** High-volume items have fresh data (~hours old). Low-volume items may have stale windows.
 - **Confidence:** The `total_trades` count in the model already accounts for sample size. The window cap means that for very high-volume items, `total_trades` may be truncated at 50 (the API cap), even though many more trades occurred in the same period.
 - **Snapshot discipline:** To build history over time, the polling pipeline must run regularly (every 1-6 hours) and deduplicate by listing ID.
+
+### History-Backed Pricing
+
+The canonical pricing product can also be generated from the retained Traderie history JSONL (`data/history/traderie/<seg>/completed_trades_<seg>.jsonl`), which is append-only and deduped by listing ID:
+
+```bash
+# Step 1: Build extracted trade CSVs from history
+python3 scripts/build_traderie_dataset_from_history.py --write-research
+
+# Step 2: Calculate prices from the history-derived CSVs
+python3 scripts/calculate_rune_prices.py --input-dir data/research
+
+# Step 3: Generate products
+python3 scripts/generate_prices_json.py
+```
+
+The history builder dedupes more aggressively than the raw-file extractor (by `listing_id` rather than by `trade_id` hash), which means the history-backed product may show fewer total trades since snapshot duplicates are consolidated. This is the more correct count.
+
+The history dataset spans farther back than the current raw files because history JSONL accumulates across snapshot runs:
+
+| Segment | History Span |
+|---|---|
+| pc_sc_l | 2026-05-16 → present |
+| pc_sc_nl | 2026-05-06 → present |
+| pc_hc_l | 2024-03-08 → present (2+ years) |
+| pc_hc_nl | 2026-03-25 → present |
+
+History JSONL is append-only and gitignored. Dedupe is by `listing_id` when available, falling back to composite hash. No pricing weights changed. Cash remains excluded.
 
 ## Source-Specific Notes
 

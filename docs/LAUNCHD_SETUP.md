@@ -1,5 +1,27 @@
 # Launchd Setup — Traderie Snapshot Collection
 
+## ⚠️ Already Installed
+
+This job is already installed and running on this machine. **Default next-session action is inspect only.**
+
+```bash
+# Inspect state (safe — read only)
+launchctl print gui/$(id -u)/com.buddy.traderie.snapshot-traderie
+
+# Check label exists
+launchctl list | grep com.buddy.traderie
+
+# View logs
+tail -n 50 logs/launchd/snapshot-traderie.out.log
+tail -n 50 logs/launchd/snapshot-traderie.err.log
+```
+
+**Do not** run `bootstrap`, `bootout`, `kickstart`, `unload`, `remove`, or `restart` unless you are explicitly asked to repair or modify the job.
+
+Do not touch any launchd label outside `com.buddy.traderie.*`.
+
+---
+
 ## Namespace
 
 All labels use the `com.buddy.traderie.*` namespace.

@@ -116,6 +116,10 @@ def generate():
             compat_runes[display_name] = {
                 "ist_value": round(blended, 4) if blended is not None else None,
                 "low_confidence": confidence in ("low", "unavailable"),
+                "confidence": confidence,
+                "bid_price": round(bid_price, 4) if bid_price is not None else None,
+                "ask_price": round(ask_price, 4) if ask_price is not None else None,
+                "total_trades": total,
             }
 
             if confidence == "high":
@@ -192,7 +196,7 @@ def generate():
         pass
 
     compat_product = {
-        "schema_version": "0.1",
+        "schema_version": "0.2",
         "generated_at": generated_at,
         "last_update": last_update,
         "segments": compat_segments,
@@ -200,6 +204,15 @@ def generate():
 
     with open(OUTPUT_DIR / "traderie_tools_prices.json", "w") as f:
         json.dump(compat_product, f, indent=2)
+
+    # Legacy flat format for backward compatibility with existing userscript
+    # The userscript expects ONLY per-segment keys at the top level.
+    # No metadata wrapper — the userscript iterates keys as segment names.
+    # See docs/USERSCRIPT.md for more details.
+    with open(OUTPUT_DIR / "rune_prices_legacy.json", "w") as f:
+        json.dump(compat_segments, f, indent=2)
+
+    print(f"Generated: {OUTPUT_DIR / 'rune_prices_legacy.json'} (legacy flat format, no metadata wrapper)")
 
     # Summary
     print(f"Generated: {OUTPUT_DIR / 'in_game_rune_values.json'}")

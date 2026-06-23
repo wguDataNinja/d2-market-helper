@@ -102,10 +102,16 @@ def sanitize_trade_entry(entry, response_meta=None):
         {
             "name": p.get("name", "?"),
             "quantity": p.get("quantity", 1),
-            "item_id": p.get("item_id")
+            "item_id": p.get("item_id"),
+            "add": p.get("add") if "add" in p else None,
+            "group": p.get("group") if "group" in p else None,
         }
         for p in raw_prices if isinstance(p, dict)
     ]
+    has_and_prices = any(p.get("add") is True for p in price_list)
+    price_group_count = len({p.get("group") for p in price_list
+                            if p.get("group") is not None})
+    price_entry_count = len(price_list)
     result = {
         "seller": seller,
         "quantity": entry.get("amount", 1),
@@ -114,6 +120,11 @@ def sanitize_trade_entry(entry, response_meta=None):
         "listing_id": entry.get("id"),
         "seller_rating": seller_data.get("rating"),
         "seller_reviews": seller_data.get("reviews"),
+        "seller_score": seller_data.get("score"),
+        "seller_status": seller_data.get("status"),
+        "has_and_prices": has_and_prices,
+        "price_group_count": price_group_count,
+        "price_entry_count": price_entry_count,
         "active": entry.get("active"),
         "completed": entry.get("completed"),
         "item_id": entry.get("item_id"),

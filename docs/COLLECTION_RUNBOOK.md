@@ -1,17 +1,40 @@
 # Collection Scheduler & Runbook
 
+## Collection Status Script
+
+An inspect-only status script reports operational health from local files:
+
+```bash
+# Readable text report
+python3 scripts/collection_status.py
+
+# Machine-readable JSON
+python3 scripts/collection_status.py --json
+```
+
+Reports:
+- Traderie history row counts and unique listing IDs per segment
+- Latest normalized snapshot age per segment
+- Cash source snapshot counts
+- Product generation timestamps and schema versions
+- Launchd log tail and timeout counts
+- Stale lock detection (does not remove)
+- Overall status summary
+
+The script is read-only — no network requests, no launchctl, no scrapers.
+
+---
+
 ## Source Cadence Summary
 
 | Source | Cadence | Command | Snapshot Integration | Collection Status |
-|---|---|---|---|---|
-| Traderie | Every 3h | `python3 scripts/snapshot_traderie.py` [1] | Not yet (needs `snapshot_io`) | Tier 1 |
+|---|---|---|---|---|---|
+| Traderie | 4x daily (05/11/17/23) | `python3 scripts/snapshot_traderie.py` | Complete — uses `snapshot_io` via launchd job | Tier 1 |
 | ItemNow | Daily | `python3 scripts/parse_itemnow_api.py` | Complete | Tier 3 |
 | D2Stock | Daily | `python3 scripts/parse_d2stock_rss.py` | Not yet (product only) | Tier 2 |
 | IGGM | Weekly (Mon) | `python3 scripts/parse_iggm_offline.py` | Not yet (fixture-only) | Tier 2 |
 | Diablo2.io | Weekly/Manual | `python3 scripts/parse_diablo2io_sold_search_offline.py --items jah,ber,lo,sur` | Not integrated (research only) | Tier 1 research |
 | Items7 | Blocked | `python3 scripts/parse_items7_offline.py` | Not yet (no prices in static HTML) | Tier 3 |
-
-[1] `scripts/snapshot_traderie.py` — does not exist yet. Currently using `scripts/fetch_completed_trades.py`. The snapshot wrapper should extend `fetch_completed_trades.py` with `snapshot_io` calls.
 
 ---
 
@@ -23,29 +46,47 @@
 
 **Command:**
 ```bash
+# Primary: snapshot-preserving collector (launchd runs this 4x daily)
+python3 scripts/snapshot_traderie.py [--segment pc_sc_nl] [--item "Jah Rune"]
+
+# Legacy: basic fetch without snapshots (kept for backward compat)
 python3 scripts/fetch_completed_trades.py
 ```
 
 **Safety:**
 - Item list is bounded: `data/item_ids.json` only (currently ~70 items across Runes, Keys, and selected uniques)
-- Retry: 2 attempts per item fetch, 5s delay between attempts
 - Per-item delay: 5s between requests
 - No pagination beyond the single 50-listing page (confirmed: `nextPage` is a boolean flag, not a cursor)
 - Cloudscraper handles Cloudflare challenge
-- Output: `data/raw/raw_trades_{seg}.json` (4 segment files)
+- Timeout: 10s default (softcore), 30s for hardcore segments (`pc_hc_l`, `pc_hc_nl`) — hardcore API responses are slower
+- Retry: up to 3 attempts per item with 5s/15s backoff
+- Item failure does not abort segment (continues to next item)
+- Output: `data/raw/raw_trades_{seg}.json` (4 segment files) + timestamped snapshots + history JSONL
 
 **Output paths:**
 - Raw: `data/raw/raw_trades_{pc_sc_l,pc_sc_nl,pc_hc_l,pc_hc_nl}.json`
-- Snapshots (planned): `data/snapshots/raw/traderie/<ts>/response.json`
-- Normalized (planned): `data/snapshots/normalized/traderie/<ts>.json`
-- History (planned): `data/history/traderie/completed_trades.jsonl`
+- Snapshots: `data/snapshots/raw/traderie/<seg>/<ts>/response.json`
+- Normalized: `data/snapshots/normalized/traderie/<seg>/<ts>.json`
+- History: `data/history/traderie/<seg>/completed_trades_{seg}.jsonl`
 
-**Note:** When `scripts/snapshot_traderie.py` is implemented, it should:
-1. Call `fetch_completed_trades` for each item/segment
-2. Call `write_raw_snapshot()` with the raw API response per segment
-3. Normalize listings into observations
-4. Call `write_normalized_snapshot()` with observations
-5. Call `append_history()` for the deduped JSONL
+**Note:** `scripts/snapshot_traderie.py` is the primary snapshot collector. It calls `snapshot_io.write_raw_snapshot()`, `write_normalized_snapshot()`, and `append_history()` for each item/segment. The launchd job `com.buddy.traderie.snapshot-traderie` runs it 4x daily via `scripts/run_traderie_snapshot_launchd.sh`.
+
+### Generating Products from Retained History
+
+Instead of relying only on current raw intermediates, prices can be generated from the append-only history JSONL:
+
+```bash
+# Build extracted CSVs from history (deduped by listing_id)
+python3 scripts/build_traderie_dataset_from_history.py --write-research
+
+# Calculate VWAP prices from history-derived CSVs
+python3 scripts/calculate_rune_prices.py --input-dir data/research
+
+# Regenerate products
+python3 scripts/generate_prices_json.py
+```
+
+The history dataset spans farther back than current raw files because it accumulates across snapshot runs. See `docs/PRICING_MODEL.md` for per-segment time windows.
 
 ---
 
