@@ -23,7 +23,7 @@ Default agent: `orchestrator`.
 
 - Session closeouts: `research/memos/YYYY-MM-DD-*.md`
 - State doc: `docs/PROJECT_MEMORY.md`
-- Roadmap: `docs/PROJECT_ROADMAP.md`
+- Roadmap: `ROADMAP.md`
 - Do not duplicate these — reference from orchestrator-owned files.
 
 ## Safety

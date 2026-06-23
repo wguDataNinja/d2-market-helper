@@ -154,7 +154,7 @@ streamlit run app.py
 >
 > Read these docs first:
 > - `docs/CODEX_HANDOFF.md`
-> - `docs/PROJECT_ROADMAP.md`
+> - `ROADMAP.md`
 > - `docs/ARCHITECTURE.md`
 > - `docs/PRICING_MODEL.md`
 > - `docs/DATA_PRODUCTS.md`
@@ -240,7 +240,7 @@ Read `docs/PROJECT_MEMORY.md` first for the latest repo state, product definitio
 
 ## Docs to Read (in order)
 
-1. `docs/PROJECT_ROADMAP.md` — Overall vision and phases
+1. `ROADMAP.md` — Overall vision and phases
 2. `docs/ARCHITECTURE.md` — Repo layout and data flow
 3. `docs/PRICING_MODEL.md` — Model principles and constraints
 4. `docs/DATA_PRODUCTS.md` — Planned output schemas

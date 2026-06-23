@@ -130,7 +130,7 @@ traderie/
 │   ├── ITEM_REGISTRY.md            # Registry schema
 │   ├── ITEM_PROFILES.md            # Profile schema
 │   ├── REDDIT_RESEARCH_PLAN.md     # Reddit collection policy
-│   ├── PROJECT_ROADMAP.md         # This file
+│   ├── ROADMAP.md                 # Project roadmap (work sessions)
 │   ├── ARCHITECTURE.md            # This file
 │   ├── PRICING_MODEL.md           # Pricing methodology
 │   ├── DATA_PRODUCTS.md           # Output schemas
