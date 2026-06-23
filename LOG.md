@@ -27,3 +27,15 @@
   validation: manual
   outcome: deferred
   next: Buddy reviewing synthesized state below
+
+
+- date: 2026-06-22
+  agent: git-steward
+  task: commit-gitignore-update
+  files_changed:
+    - .gitignore (modified)
+  summary: gitignore /orchestrator.md, data/research/, and research/sources/captures/
+  commit: 9bd06c2
+  validation: git status — working tree clean
+  outcome: complete
+  next: Await Buddy's next instruction
