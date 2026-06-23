@@ -120,3 +120,14 @@
   validation: python compiles clean
   outcome: complete
   next: Await Buddy's next instruction
+
+- date: 2026-06-22
+  agent: git-steward
+  task: commit-jitter-and-hardcore-attempts
+  files_changed:
+    - scripts/snapshot_traderie.py (jitter via random.uniform(0,2) on per-item delay; HARDCORE_REQUEST_MAX_ATTEMPTS=2)
+    - LOG.md (updated)
+  commit: 687e14b
+  validation: git status — working tree clean; python compiles clean
+  outcome: complete
+  next: Await Buddy's next instruction
