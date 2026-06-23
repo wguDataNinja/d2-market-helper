@@ -131,3 +131,17 @@
   validation: git status — working tree clean; python compiles clean
   outcome: complete
   next: Await Buddy's next instruction
+
+
+- date: 2026-06-22
+  agent: git-steward
+  task: move-ROADMAP-to-root
+  files_changed:
+    - docs/PROJECT_ROADMAP.md -> ROADMAP.md (renamed)
+    - AGENTS.md (reference updated)
+    - docs/ARCHITECTURE.md (reference updated)
+    - docs/CODEX_HANDOFF.md (reference updated)
+  commit: 27cf9fa
+  validation: git status — working tree clean
+  outcome: complete
+  next: Await Buddy'''s next instruction
