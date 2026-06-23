@@ -30,7 +30,7 @@ PER_ITEM_DELAY = 5
 # Hardcore segment API responses are slower/unreliable due to low trade volume.
 # Softcore default is adequate; hardcore needs more time plus retry on transient failure.
 DEFAULT_REQUEST_TIMEOUT_SECONDS = 10
-HARDCORE_REQUEST_TIMEOUT_SECONDS = 30
+HARDCORE_REQUEST_TIMEOUT_SECONDS = 20
 REQUEST_MAX_ATTEMPTS = 3
 REQUEST_BACKOFF_SECONDS = [5, 15]
 HARDCORE_REQUEST_MAX_ATTEMPTS = 2
@@ -38,8 +38,21 @@ HARDCORE_REQUEST_MAX_ATTEMPTS = 2
 # Segment slugs
 HARDCORE_SEGMENTS = {"pc_hc_l", "pc_hc_nl"}
 
-# Map of item_id known to be difficult (slow responses)
-# Empty for now — hardcore detection by segment slug is sufficient.
+# Items that consistently fail on hardcore segments (ReadTimeout / HTTP 503)
+# Populated from manual collection runs — pc_hc_l had zero failures on 2026-06-23.
+HARDCORE_SKIP_ITEMS = {
+    "pc_hc_nl": {
+        "Ist Rune",
+        "Cham Rune",
+        "Gul Rune",
+        "Hel Rune",
+        "Lem Rune",
+        "Mal Rune",
+        "Pul Rune",
+        "Amn Rune",
+        "The Stone of Jordan",
+    },
+}
 
 
 def load_json(path):
@@ -307,6 +320,11 @@ def main():
         for category, items in items_by_cat.items():
             for name, item_id in items.items():
                 if args.item != "all" and not match_item_name(args.item, name):
+                    continue
+
+                slug = cfg["slug"]
+                if slug in HARDCORE_SKIP_ITEMS and name in HARDCORE_SKIP_ITEMS[slug]:
+                    print(f"  [SKIP] {name} — hardcore skip list ({slug})")
                     continue
 
                 try:
