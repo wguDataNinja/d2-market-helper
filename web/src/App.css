@@ -133,6 +133,28 @@ h3 { font-size: 1rem; margin-bottom: 8px; }
 }
 .caveat-cash { border-color: #4e2a1a; background: #2e1a1a; }
 
+/* Freshness */
+.freshness-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.freshness-box strong {
+  color: var(--text);
+  margin-right: 4px;
+}
+.freshness-item {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.freshness-bar {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+  padding: 6px 0;
+}
+
 /* Snapshot grid */
 .snapshot-grid {
   display: grid;
@@ -255,6 +277,25 @@ h3 { font-size: 1rem; margin-bottom: 8px; }
 .tier-medium { color: var(--blue); }
 .tier-high { color: var(--accent); }
 .cash-cell { color: var(--orange); }
+.cash-obs-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+.cash-obs-row + .cash-obs-row { margin-top: 2px; }
+.cash-comp-badge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  background: #2e1a1a;
+  color: var(--orange);
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid #4e2a1a;
+  line-height: 1;
+}
+.cash-source-item { font-size: 0.75rem; }
 .source-cell { font-size: 0.8rem; color: var(--text-dim); }
 .empty-row { text-align: center; color: var(--text-dim); padding: 40px !important; }
 
@@ -352,9 +393,47 @@ h3 { font-size: 1rem; margin-bottom: 8px; }
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .app-main { padding: 24px 16px; }
+}
+
 @media (max-width: 768px) {
   .header-inner { flex-direction: column; gap: 10px; }
   .main-nav { flex-wrap: wrap; justify-content: center; }
   .rune-mini-grid { grid-template-columns: repeat(2, 1fr); }
   .snapshot-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .segment-selector {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+  .segment-selector select { width: 100%; }
+
+  .table-controls { flex-wrap: wrap; }
+
+  .rune-table { font-size: 0.8rem; }
+  .rune-table th, .rune-table td { padding: 6px 8px; }
+
+  .freshness-bar { font-size: 0.75rem; }
+}
+
+@media (max-width: 375px) {
+  .app-main { padding: 16px 10px; }
+
+  .segment-selector { padding: 8px 10px; }
+  .segment-selector label { font-size: 0.8rem; }
+  .segment-selector select { font-size: 0.8rem; }
+
+  .table-controls { gap: 4px; }
+  .btn-sort { font-size: 0.75rem; padding: 4px 10px; }
+
+  .rune-table { font-size: 0.7rem; }
+  .rune-table th, .rune-table td { padding: 4px 6px; }
+
+  .rune-mini-grid { grid-template-columns: 1fr; }
+
+  .cash-mini-row { flex-wrap: wrap; gap: 4px; }
+
+  .freshness-bar { font-size: 0.7rem; }
 }

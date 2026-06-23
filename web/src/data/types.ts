@@ -24,6 +24,9 @@ export interface RuneObservation {
 }
 
 export interface InGameRuneValues {
+  generated_at: string
+  product_generated_at: string
+  source_window_label: string
   segments: Record<string, {
     segment_slug: string
     runes: Record<string, RuneObservation>
@@ -46,10 +49,12 @@ export interface RuneRegistryEntry {
 export interface CashObservation {
   source_slug: string
   item_name: string
+  normalized_item_name: string
   unit_price: number | null
   price_usd: number | null
   currency: string
   source_url: string
+  use_in_model: boolean
   caveats: string[]
   platform: string
   ladder: boolean

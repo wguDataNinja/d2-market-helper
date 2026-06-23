@@ -1,4 +1,4 @@
-import { sourceManifest } from '../data/loader'
+import { sourceManifest, getGeneratedAt, getProductGeneratedAt, getSourceWindowLabel } from '../data/loader'
 import StatusBadge from '../components/StatusBadge'
 import type { SourceEntry } from '../data/types'
 
@@ -77,6 +77,13 @@ export default function Sources() {
     <div>
       <h1>Sources</h1>
       <p className="page-subtitle">Every source tracked in the D2R Market Helper source manifest, with status, evidence class, and caveats.</p>
+
+      <div className="caveat-box freshness-box">
+        <strong>Product Freshness</strong>
+        <span className="freshness-item">Generated: {getGeneratedAt()}</span>
+        <span className="freshness-item">Product generated: {getProductGeneratedAt()}</span>
+        <span className="freshness-item">Window: {getSourceWindowLabel()}</span>
+      </div>
 
       {categories.map((cat) => (
         <section key={cat}>

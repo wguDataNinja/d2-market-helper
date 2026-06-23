@@ -4,13 +4,16 @@ import SegmentSelector from '../components/SegmentSelector'
 import ConfidenceBadge from '../components/ConfidenceBadge'
 import CashDisclaimer from '../components/CashDisclaimer'
 import { type SegmentSlug, DEFAULT_SEGMENT } from '../data/types'
-import { getSortedRunes } from '../data/loader'
+import { getSortedRunes, getProductGeneratedAt, getSourceWindowLabel } from '../data/loader'
 
 export default function Runes() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const seg = (searchParams.get('segment') as SegmentSlug) || DEFAULT_SEGMENT
+  const seg = (searchParams.get('segment') as SegmentSlug) ||
+    (sessionStorage.getItem('traderie_segment') as SegmentSlug) ||
+    DEFAULT_SEGMENT
 
   const setSegment = (s: SegmentSlug) => {
+    sessionStorage.setItem('traderie_segment', s)
     setSearchParams({ segment: s })
   }
 
@@ -54,6 +57,10 @@ export default function Runes() {
         <strong>Cash prices</strong> are external comparison only. Never blend in-game and cash prices.
       </div>
 
+      <div className="freshness-bar">
+        Data generated: <strong>{getProductGeneratedAt()}</strong> &middot; Window: <strong>{getSourceWindowLabel()}</strong>
+      </div>
+
       <div className="table-controls">
         <button onClick={() => toggleSort('order')} className="btn-sort">
           Sort by Rune Order{sortArrow('order')}
@@ -94,11 +101,27 @@ export default function Runes() {
                 <td className="num">{r.bid_price !== null ? r.bid_price.toFixed(2) : '—'}</td>
                 <td className="num">{r.ask_price !== null ? r.ask_price.toFixed(2) : '—'}</td>
                 <td className="num">{r.total_trades || '—'}</td>
-                <td><ConfidenceBadge level={r.confidence} /></td>
+                <td><ConfidenceBadge level={r.confidence} title={`${r.total_trades} trades`} /></td>
                 <td className="num cash-cell">
-                  {r.cashPrice ? `$${r.cashPrice.unit_price?.toFixed(2)}` : '—'}
+                  {r.cashPrices.length > 0
+                    ? r.cashPrices.map((cp, i) => (
+                        <div key={i} className="cash-obs-row">
+                          <span>${cp.unit_price?.toFixed(2) ?? '—'}</span>
+                          {cp.use_in_model === false && <span className="cash-comp-badge">comparison</span>}
+                        </div>
+                      ))
+                    : '—'}
                 </td>
-                <td className="source-cell">Traderie{r.cashPrice ? ` / ${r.cashPrice.source_slug}` : ''}</td>
+                <td className="source-cell">
+                  Traderie{r.cashPrices.length > 0
+                    ? r.cashPrices.map((cp, i) => (
+                        <span key={i} className="cash-source-item">
+                          {i > 0 && ', '}
+                          <span title={cp.caveats?.join('; ')}>{cp.source_slug}</span>
+                        </span>
+                      ))
+                    : ''}
+                </td>
               </tr>
             ))}
           </tbody>

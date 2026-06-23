@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import { useMemo } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import SegmentSelector from '../components/SegmentSelector'
 import ConfidenceBadge from '../components/ConfidenceBadge'
 import CashDisclaimer from '../components/CashDisclaimer'
@@ -9,23 +10,16 @@ import {
 } from '../data/types'
 import { getSortedRunes, sourceManifest, externalCash } from '../data/loader'
 
-function useSegment() {
-  const params = new URLSearchParams(window.location.search)
-  const initial = (params.get('segment') as SegmentSlug) || DEFAULT_SEGMENT
-  const [seg, setSeg] = useState<SegmentSlug>(initial)
-
-  const update = (s: SegmentSlug) => {
-    setSeg(s)
-    const url = new URL(window.location.href)
-    url.searchParams.set('segment', s)
-    window.history.replaceState({}, '', url.toString())
-  }
-
-  return [seg, update] as const
-}
-
 export default function Home() {
-  const [segment, setSegment] = useSegment()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const segment = (searchParams.get('segment') as SegmentSlug) ||
+    (sessionStorage.getItem('traderie_segment') as SegmentSlug) ||
+    DEFAULT_SEGMENT
+
+  const setSegment = (s: SegmentSlug) => {
+    sessionStorage.setItem('traderie_segment', s)
+    setSearchParams({ segment: s })
+  }
   const runes = useMemo(() => getSortedRunes(segment), [segment])
 
   const integratedSources = sourceManifest.filter((s) => s.status === 'integrated')
@@ -69,7 +63,7 @@ export default function Home() {
               {r.value_ist !== null ? `${r.value_ist.toFixed(2)} Ist` : '—'}
             </div>
             <div className="rune-mini-meta">
-              {r.total_trades} trades · <ConfidenceBadge level={r.confidence} />
+              {r.total_trades} trades · <ConfidenceBadge level={r.confidence} title={`${r.total_trades} trades`} />
             </div>
           </div>
         ))}

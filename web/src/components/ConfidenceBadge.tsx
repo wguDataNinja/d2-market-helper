@@ -7,8 +7,13 @@ const COLORS: Record<string, string> = {
 
 interface Props {
   level: string
+  title?: string
 }
 
-export default function ConfidenceBadge({ level }: Props) {
-  return <span className={`badge ${COLORS[level] || 'badge-gray'}`}>{level}</span>
+export default function ConfidenceBadge({ level, title }: Props) {
+  return (
+    <span className={`badge ${COLORS[level] || 'badge-gray'}`} title={title}>
+      {level}
+    </span>
+  )
 }
