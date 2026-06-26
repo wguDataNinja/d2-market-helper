@@ -31,6 +31,11 @@ export default function Home() {
 
   return (
     <div>
+      <div className="alpha-banner">
+        <strong>Alpha:</strong> Prices are Ist-anchored estimates from completed Traderie
+        trades. Some high-rune relationships, especially Jah↔Ber, are under active validation.
+        Cash prices are display-only and use the lowest observed available ask where available.
+      </div>
       <h1>Market Overview</h1>
       <SegmentSelector value={segment} onChange={setSegment} />
 

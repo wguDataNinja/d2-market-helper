@@ -47,6 +47,15 @@ export default function Methodology() {
           priced via bid/ask VWAP.
         </p>
         <p>
+          <strong>Current model limitation:</strong> Only Ist-anchored trades are used for
+          pricing. Non-Ist trades (e.g., direct Jah↔Ber swaps, which are the most common
+          high-rune trade pattern) are not yet included in the production model. An audit
+          found that Jah and Ber trade 1:1 in over 400 documented trades on PC Softcore
+          Ladder alone, while the Ist-only model reports Ber as 49% more valuable than Jah.
+          This gap is under active investigation — see the Game Version / Ruleset section
+          and the project research scripts for details.
+        </p>
+        <p>
           Only rune-for-rune trades are modeled. AND trades (multiple runes on one side) are
           extracted but not yet priced. Active listings are not used.
         </p>

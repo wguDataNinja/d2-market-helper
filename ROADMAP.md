@@ -16,162 +16,31 @@ Traderie-normalized in-game rune values + multi-source external cash comparison
 
 ---
 
-## Project State
+## Completed Sessions
 
-All four prior roadmap sessions are complete. The repo has:
-
-- ✅ Stable Traderie pipeline (4 segments, 4x daily snapshots, history accumulation)
-- ✅ Product regeneration from accumulated history
-- ✅ Hardcore timeout/retry hardening (skip list, 20s timeout)
-- ✅ Cash parser snapshot integration (D2Stock, IGGM, ItemNow)
-- ✅ Web dashboard (freshness, tooltips, segment persistence, responsive, cash panel)
-- ✅ Agent contracts, tracking files, tree clean
-
-Remaining work falls into three categories: **quality gaps**, **operational hardening**, and **polish**.
-
----
-
-## Proposed Sessions
-
-### Session 1 — Refresh Stale Documentation
-
-Three docs drifted out of sync during the pipeline hardening + roadmap implementation sprint. This session brings them current.
-
-- [ ] **Edit `docs/PROJECT_MEMORY.md`: replace the entire Section 10 heading and numbered list, from `## 10. Next Actions` through the line `7. **Clean or promote remaining scratch artifacts.** ~35 untracked files (probe outputs, screenshots, session docs). Commit durable findings; clean the rest.`, with a new `## 10. Next Actions` section that says `ROADMAP.md is the active task authority. Current priorities are: 1. Refresh stale docs and source manifest state. 2. Decide whether to model Traderie AND trades. 3. Add MuleFactory cash parser if data quality is approved. 4. Choose launchd regeneration strategy. 5. Decide pc_hc_nl skipped-item policy. 6. Run final validation and separate backlog.`** Validate: `python3 -c "from pathlib import Path; t=Path('docs/PROJECT_MEMORY.md').read_text(); assert 'ROADMAP.md is the active task authority' in t and 'Add `scripts/collection_status.py`' not in t; print('PROJECT_MEMORY Section 10 refreshed')"`. Failure: if the assertion fails, reopen `docs/PROJECT_MEMORY.md`, replace only Section 10, and rerun the validation command.
-- [ ] **Edit `docs/COLLECTION_RUNBOOK.md`: replace the exact string `Needed: Add snapshot_io calls` wherever it appears with `Snapshot integration is active; collection_status.py auto-detects this source.`** Validate: `python3 -c "from pathlib import Path; t=Path('docs/COLLECTION_RUNBOOK.md').read_text(); assert 'Needed: Add snapshot_io calls' not in t; assert t.count('Snapshot integration is active; collection_status.py auto-detects this source.') >= 2; print('COLLECTION_RUNBOOK snapshot notes refreshed')"`. Failure: if the old string remains, repeat the exact replacement and rerun the validation command.
-- [ ] **Edit `docs/DATA_PRODUCTS.md`: update observation counts and generated timestamps by reading `data/products/in_game_rune_values.json`, `data/products/traderie_tools_prices.json`, and `data/products/external_cash_prices.sample.json`; replace stale counts with the values printed by `python3 -c "import json; from pathlib import Path; paths=['data/products/in_game_rune_values.json','data/products/traderie_tools_prices.json','data/products/external_cash_prices.sample.json']; [print(p, json.loads(Path(p).read_text()).get('generated_at') or json.loads(Path(p).read_text()).get('product_generated_at'), json.loads(Path(p).read_text()).get('metadata',{}).get('observation_count') or len(json.loads(Path(p).read_text()).get('observations',[])) or sum(s.get('total_modeled_trades',0) for s in json.loads(Path(p).read_text()).get('segments',{}).values())) for p in paths]"`** Validate: `python3 -c "from pathlib import Path; t=Path('docs/DATA_PRODUCTS.md').read_text(); assert '2,570' in t or 'total_modeled_trades' in t or 'external_cash_prices.sample.json' in t; print('DATA_PRODUCTS manually refreshed; inspect diff for exact current counts')"`. Failure: if the validation cannot prove the update, rerun the print command, compare each product file value manually, and update only stale counts/timestamps.
-- [ ] **Edit `data/source_manifest.json`: replace each source object status for `d2stock`, `iggm`, and `itemnow` from `offline_parse_candidate` to `parser_prototype_ready`, and replace each corresponding `next_action` value with text stating the parser exists and the remaining action is integration/data-quality review.** Validate: `python3 scripts/validate_source_manifest.py`. Failure: if validation exits nonzero, fix only the reported manifest fields and rerun `python3 scripts/validate_source_manifest.py` until it exits 0.
-
-**Validation:** Run `python3 scripts/validate_source_manifest.py && python3 -c "from pathlib import Path; checks=[('docs/PROJECT_MEMORY.md','ROADMAP.md is the active task authority'),('docs/COLLECTION_RUNBOOK.md','Snapshot integration is active'),('docs/DATA_PRODUCTS.md','external_cash_prices.sample.json'),('data/source_manifest.json','parser_prototype_ready')]; [(__import__('builtins').print(f'{p}: ok') if needle in Path(p).read_text() else (_ for _ in ()).throw(AssertionError(f'{needle} missing from {p}'))) for p,needle in checks]"`. Expected: exit 0 and four `ok` lines. Failure: apply the specific edit step whose check failed, then rerun this validation.
-
-🤖 **Stop — HITL: Review doc changes.** Buddy should run `python3 -c "from pathlib import Path; files=['docs/PROJECT_MEMORY.md','docs/COLLECTION_RUNBOOK.md','docs/DATA_PRODUCTS.md','data/source_manifest.json']; [print(f'--- {p} ---\\n'+Path(p).read_text()[:1200]) for p in files]"` and confirm: PROJECT_MEMORY Section 10 points at ROADMAP.md, COLLECTION_RUNBOOK has no `Needed: Add snapshot_io calls`, DATA_PRODUCTS counts match current product JSONs, and `python3 scripts/validate_source_manifest.py` exits 0 before Session 2 begins.
+| Session | Topic | Status | Key Result |
+|---------|-------|--------|------------|
+| 1-6 | Original roadmap (doc refresh, AND trades, MuleFactory, ops, hardcore, validation) | ✅ Done | Pipeline running, products generated |
+| 7 | Game version / ruleset preservation | ✅ Done | game_version+ruleset in pipeline, products, API filter |
+| 8 | Exit code hardening | ✅ Done | Softcore critical (exit 1), hardcore warning (exit 0) |
+| 9 | Regen launchd plist | ✅ Done | Bootstrapped and loaded, daily 06:00 |
+| 10 | GH Pages deploy prep | ✅ Done | Workflow, SPA fallback, deploy script, methodology |
+| 11 | Non-Ist pair audit | ✅ Done | 4,995 trades analyzed, Jah↔Ber divergence confirmed |
+| 12 | Graph pricing v1 | ⚠️ Research | scipy_nnls, Jah/Ber signal, unstable (collapsed pc_sc_nl) |
+| 13 | Userscript patch | ✅ Done | Cache, segment safety, complexity labels, SPA hooks |
+| 14 | G2G cash parser | ✅ Done | 33 obs, pc_sc_nl, lowest_available_ask |
+| 15 | Cash vs trade audit | ✅ Done | All 6 sources, min-based ranking, G2G integrated |
 
 ---
 
-### Session 2 — Model AND Trades in VWAP Pricing
+## Remaining Before Website Alpha
 
-AND trades (multi-item on one or both sides) represent 10-20% of extracted trades. The pipeline flags them (`has_and_prices`, `price_group_count`) but the VWAP model excludes them entirely. This is the single largest quality gap in the pricing model.
+1. ✅ Commit current cash/G2G/model-audit work (Git Steward)
+2. 🔲 Verify launchd jobs after next scheduled runs
+3. 🔲 Create/connect GitHub remote
+4. 🔲 Push master and enable GitHub Pages
+5. 🔲 Verify deployed site
 
-**High-reasoning step — needs Buddy decision before implementation:**
+## Post-Alpha Backlog
 
-The current model assumes every trade is a simple rune-for-rune swap:
-```
-input:  Ist Rune
-output: Ber Rune
-value:  Ber = N × Ist
-```
-
-AND trades look like:
-```
-input:  Ist Rune + Vex Rune
-output: Ber Rune
-```
-
-The price-group fields already track which items group together. The question is how to decompose them. Two approaches:
-
-- **A: Drop AND trades entirely** (current behavior). Simplest. Loses 10-20% of data.
-- **B: Distribute proportionally.** If a trade offers 2 Ist + 1 Vex for 1 Ber, treat it as two separate data points: Ist→Ber and Vex→Ber at face value. This assumes equal contribution from each price group item, which is a modeling assumption.
-
-🤖 **Stop — HITL: Choose approach A or B.** Buddy should run `python3 scripts/build_traderie_dataset_from_history.py --write-research && python3 -c "import csv, statistics; from pathlib import Path; segs=['pc_sc_l','pc_sc_nl','pc_hc_l','pc_hc_nl']; total=andc=0; groups=[]; [(__import__('builtins').print(f'{seg}: total={len(rows)} and={sum(1 for r in rows if r.get(\"has_and_prices\")==\"true\" or int(r.get(\"price_group_count\") or 0)>1)} pct={(sum(1 for r in rows if r.get(\"has_and_prices\")==\"true\" or int(r.get(\"price_group_count\") or 0)>1)/len(rows)*100 if rows else 0):.1f}% avg_groups={(statistics.mean([int(r.get(\"price_group_count\") or 0) for r in rows if int(r.get(\"price_group_count\") or 0)>1]) if any(int(r.get(\"price_group_count\") or 0)>1 for r in rows) else 0):.2f}') ) for seg in segs for rows in [list(csv.DictReader(open(Path('data/research')/f'extracted_trades_{seg}.csv')))] ]"` and choose A if preserving current model assumptions matters more than volume, or B if AND trade volume is material and the proportional assumption is acceptable. If B, proceed with implementation below. If A, skip to Session 3.
-
-If B:
-
-- [ ] **`python3 scripts/build_traderie_dataset_from_history.py --write-research`** — Generate or refresh the research CSVs from history before analysis. Input: `data/history/traderie/<segment>/completed_trades_<segment>.jsonl`. Output: `data/research/extracted_trades_pc_sc_l.csv`, `data/research/extracted_trades_pc_sc_nl.csv`, `data/research/extracted_trades_pc_hc_l.csv`, `data/research/extracted_trades_pc_hc_nl.csv`. Validate: `python3 -c "from pathlib import Path; segs=['pc_sc_l','pc_sc_nl','pc_hc_l','pc_hc_nl']; missing=[s for s in segs if not (Path('data/research')/f'extracted_trades_{s}.csv').exists()]; assert not missing, missing; print('research CSVs exist for all segments')"`. Failure: if any file is missing, inspect whether the matching `data/history/traderie/<segment>/completed_trades_<segment>.jsonl` exists; if history is missing, stop and ask Buddy for a snapshot run.
-- [ ] **`python3 -c "import csv, statistics; from pathlib import Path; segs=['pc_sc_l','pc_sc_nl','pc_hc_l','pc_hc_nl']; print('segment,total,and_count,and_pct,avg_group_size,median_group_size'); [(__import__('builtins').print(f'{seg},{len(rows)},{len(and_rows)},{(len(and_rows)/len(rows)*100 if rows else 0):.2f},{(statistics.mean(groups) if groups else 0):.2f},{(statistics.median(groups) if groups else 0):.2f}') ) for seg in segs for rows in [list(csv.DictReader(open(Path('data/research')/f'extracted_trades_{seg}.csv')))] for and_rows in [[r for r in rows if r.get('has_and_prices')=='true' or int(r.get('price_group_count') or 0)>1]] for groups in [[int(r.get('price_group_count') or 0) for r in and_rows if int(r.get('price_group_count') or 0)>0]]]"`** — Analyze AND trade volume per segment from existing research CSV fields. Input: `data/research/extracted_trades_*.csv`. Output: stdout CSV summary. Validate: command exits 0 and prints five data rows including header. Failure: if a column is missing, rerun the previous build command and confirm the CSV header contains `has_and_prices,price_group_count,price_entry_count`.
-- [ ] **Edit `scripts/build_traderie_dataset_from_history.py`: at lines 129-135 replace the requested-count loop with an equivalent loop that also builds `requested_groups = defaultdict(list)` and appends each price entry as `{"name": pname, "quantity": pqty, "add": p.get("add"), "group": p.get("group")}` under key `str(p.get("group")) if p.get("group") is not None else "ungrouped"`; at line 166 add `"price_groups_json": json.dumps(dict(requested_groups), sort_keys=True),` to the returned row; at lines 220-225 add `"price_groups_json"` to the CSV `fieldnames` after `"price_entry_count"`.** Validate: `python3 -c "from pathlib import Path; t=Path('scripts/build_traderie_dataset_from_history.py').read_text(); assert 'requested_groups' in t and 'price_groups_json' in t and 'json.dumps(dict(requested_groups)' in t; print('history builder preserves AND group composition')"`. Failure: if validation fails, reapply only these three anchored edits and rerun the validation command.
-- [ ] **Edit `scripts/calculate_rune_prices.py`: at lines 41-50 replace `df['NumAsks'] = df['Requested'].str.count(':')` and `single_item = df[df['NumAsks'] == 1]  # single rune requests have 0 semicolons` with code that builds `model_rows` from every non-AND row unchanged and, for rows where `has_and_prices == "true"` or `price_group_count > 1`, parses `price_groups_json` and emits one row per group with `Requested` rebuilt as `name:quantity` pairs joined by `;`; then set `model_input = pd.DataFrame(model_rows)`; at lines 53-70 replace both filters that read from `single_item[...]` with filters that read from `model_input[...]`; at lines 72-74 keep the outlier filter unchanged.** Validate: `python3 -c "from pathlib import Path; t=Path('scripts/calculate_rune_prices.py').read_text(); assert 'price_groups_json' in t and 'model_rows' in t and 'model_input = pd.DataFrame(model_rows)' in t and 'single_item = df[df' not in t; print('calculate_rune_prices.py decomposes AND groups')"`. Failure: if validation fails, revert only the attempted edit in this file, reapply the exact replacements at the stated anchors, and rerun validation.
-- [ ] **Edit `scripts/generate_prices_json.py`: replace the caveat string `Current model uses only single-rune Ist-pair trades from completed listings.` with `Current model uses Ist-pair completed listings and includes approved AND-trade handling.`, replace `AND trades (multi-item requests) are excluded from this model.` with `AND trades are included only through the approved proportional decomposition rule.`, and remove the exact list entry `"AND trades (multi-item requests)",` from `model["excludes"]`.** Validate: `python3 -c "from pathlib import Path; t=Path('scripts/generate_prices_json.py').read_text(); assert 'approved proportional decomposition rule' in t and 'AND trades (multi-item requests)' not in t; print('generate_prices_json model caveats updated')"`. Failure: if validation fails, reapply the three exact string edits and rerun validation.
-- [ ] **`python3 scripts/build_traderie_dataset_from_history.py --write-research && python3 scripts/calculate_rune_prices.py --input-dir data/research && python3 scripts/generate_prices_json.py`** — Regenerate research CSVs, per-segment rune price CSVs, and public products. Input: `data/history/traderie/`, `data/research/`. Output: `data/prices/rune_prices_*.csv`, `data/products/in_game_rune_values.json`, `data/products/traderie_tools_prices.json`, `data/products/rune_prices_legacy.json`. Validate: `python3 -c "from pathlib import Path; files=['data/products/in_game_rune_values.json','data/products/traderie_tools_prices.json','data/products/rune_prices_legacy.json']; assert all(Path(f).exists() for f in files), files; print('price products regenerated')"`. Failure: if any command exits nonzero, stop, keep the traceback, and fix only the file named by the traceback before rerunning the full command.
-- [ ] **`python3 scripts/validate_in_game_rune_values.py && python3 scripts/validate_external_cash_prices.py`** — Validate regenerated products. Input: `data/products/in_game_rune_values.json`, `data/products/traderie_tools_prices.json`, `data/products/external_cash_prices.sample.json`. Output: stdout validation summaries. Validate: both commands exit 0. Failure: if in-game validation fails, inspect generated `data/prices/rune_prices_*.csv`; if cash validation fails, confirm no cash files were written under `data/prices/`.
-- [ ] **`python3 -c "import json; p=json.load(open('data/products/in_game_rune_values.json')); print('segment,total_modeled_trades,rune_observations'); [print(f'{seg},{s.get(\"total_modeled_trades\",0)},{len(s.get(\"runes\",{}))}') for seg,s in sorted(p.get('segments',{}).items())]; print('all_segments_total', sum(s.get('total_modeled_trades',0) for s in p.get('segments',{}).values()))"`** — Report modeled trade counts after AND handling for Buddy review. Input: `data/products/in_game_rune_values.json`. Output: stdout CSV-like summary. Validate: command exits 0 and prints four segment rows plus `all_segments_total`. Failure: if any segment prints 0 modeled trades, stop and inspect the corresponding `data/prices/rune_prices_<segment>.csv` before continuing.
-
-🤖 **Stop — HITL: Review AND trade results.** Buddy should run `python3 -c "import json; p=json.load(open('data/products/in_game_rune_values.json')); [print(seg, s.get('total_modeled_trades'), len(s.get('runes',{}))) for seg,s in sorted(p.get('segments',{}).items())]"` and approve only if total modeled trades increased versus the pre-AND baseline, no segment has 0 modeled trades, and no segment lost all high-value rune observations. If anomalies appear, stop and investigate `data/research/extracted_trades_<segment>.csv` and `data/prices/rune_prices_<segment>.csv`.
-
----
-
-### Session 3 — Add MuleFactory Cash Parser
-
-MuleFactory has per-rune prices in static HTML with Schema.org microdata. This is the highest-signal remaining cash source: clean data, no browser required, 24-33 new observations.
-
-- [ ] **`test -f research/sources/downloads/rune_sources_2026-06-20/mulefactory.html || cp research/sources/captures/mulefactory/2026-06-20_search_probe/curl_rune_page.html research/sources/downloads/rune_sources_2026-06-20/mulefactory.html`** — Ensure the parser fixture path exists; the repo currently has probe HTML but no dedicated download fixture. Input fallback: `research/sources/captures/mulefactory/2026-06-20_search_probe/curl_rune_page.html`. Output: `research/sources/downloads/rune_sources_2026-06-20/mulefactory.html`. Validate: `test -s research/sources/downloads/rune_sources_2026-06-20/mulefactory.html && grep -q 'schema.org/Product' research/sources/downloads/rune_sources_2026-06-20/mulefactory.html && grep -q 'priceCurrency' research/sources/downloads/rune_sources_2026-06-20/mulefactory.html`. Failure: if validation fails, run `curl -L --fail --retry 2 --connect-timeout 15 --max-time 45 -A 'Mozilla/5.0' 'https://www.mulefactory.com/buy_diablo_2_remaster_rune/' -o research/sources/downloads/rune_sources_2026-06-20/mulefactory.html` and rerun the validation.
-- [ ] **`python3 -m pip install --user extruct w3lib`** — Install the microdata extraction dependency used by the parser. Input: Python package index. Output: local user-site install of `extruct` and `w3lib`. Validate: `python3 -c "import extruct, w3lib.html; print('extruct available')"`. Failure: if install fails because network is unavailable, stop and tell Buddy to install `extruct` and `w3lib` manually; do not rewrite the parser to regex unless Buddy approves.
-- [ ] **`python3 -c "import extruct, json; from pathlib import Path; from w3lib.html import get_base_url; p=Path('research/sources/downloads/rune_sources_2026-06-20/mulefactory.html'); html=p.read_text(errors='replace'); data=extruct.extract(html, base_url=get_base_url(html, 'https://www.mulefactory.com/'), syntaxes=['microdata']); products=[x for x in data.get('microdata',[]) if x.get('type')=='http://schema.org/Product' or x.get('type')=='https://schema.org/Product']; print(json.dumps(products[:1], indent=2)[:2000]); print('product_count', len(products))"`** — Confirm Schema.org Product/Offer microdata extraction before writing the parser. Input: `research/sources/downloads/rune_sources_2026-06-20/mulefactory.html`. Output: stdout sample product and `product_count`. Validate: product_count is at least 24 and the sample contains `offers`, `price`, and `priceCurrency`. Failure: if product_count is 0, confirm the fixture is not a search page without products and rerun the download fallback from the first Session 3 step.
-- [ ] **Create `scripts/parse_mulefactory.py`: copy the `snapshot_io` import and write pattern from `scripts/parse_d2stock_rss.py` lines 21 and 257-260; read `research/sources/downloads/rune_sources_2026-06-20/mulefactory.html`; use `extruct.extract(..., syntaxes=['microdata'])`; normalize only rune products matched through `data/rune_registry.json`; write `data/external/mulefactory_cash_prices.json` with top-level fields `schema_version`, `product`, `source_slug`, `generated_at`, `artifact_path`, `observation_count`, and `observations`; each observation must include `source_slug: "mulefactory"`, `evidence_class: "cash_listing"`, `item_name`, `normalized_item_name`, `item_type: "rune"`, `price_usd`, `price_cents`, `currency`, `segment_confidence: "low"`, `use_in_model: false`, `captured_at`, `source_artifact_path`, `source_url`, and `product_url`.** Validate: `python3 -m py_compile scripts/parse_mulefactory.py`. Failure: if compilation fails, fix only the syntax error reported by `py_compile` and rerun it.
-- [ ] **`python3 scripts/parse_mulefactory.py`** — Parse the fixture and write raw, normalized, history, and external product outputs. Input: `research/sources/downloads/rune_sources_2026-06-20/mulefactory.html`. Output: `data/external/mulefactory_cash_prices.json`, `data/snapshots/raw/mulefactory/<timestamp>/response.json`, `data/snapshots/normalized/mulefactory/<timestamp>.json`, `data/history/mulefactory/cash_prices.jsonl`. Validate: `python3 -c "import json; from pathlib import Path; p=Path('data/external/mulefactory_cash_prices.json'); d=json.loads(p.read_text()); obs=d.get('observations',[]); assert 24 <= len(obs) <= 33, len(obs); assert all(o.get('source_slug')=='mulefactory' and o.get('use_in_model') is False and o.get('evidence_class')=='cash_listing' and o.get('price_usd') is not None for o in obs); print('mulefactory observations', len(obs))"`. Failure: if count is outside 24-33, print three raw product samples from the prior extruct command and fix the item filtering.
-- [ ] **Edit `scripts/generate_external_cash_prices.py`: add `data/external/mulefactory_cash_prices.json` to the same input list used for existing cash parser outputs, and map MuleFactory observations without changing `use_in_model=false` or `evidence_class='cash_listing'`.** Validate: `python3 -m py_compile scripts/generate_external_cash_prices.py`. Failure: if compilation fails, fix only the reported syntax error and rerun validation.
-- [ ] **`python3 scripts/generate_external_cash_prices.py`** — Regenerate the merged cash product. Input: existing `data/external/*_cash_prices.json` files plus `data/external/mulefactory_cash_prices.json`. Output: `data/products/external_cash_prices.sample.json`. Validate: `python3 -c "import json; p=json.load(open('data/products/external_cash_prices.sample.json')); obs=p.get('observations',[]); mf=[o for o in obs if o.get('source_slug')=='mulefactory']; assert 24 <= len(mf) <= 33, len(mf); print('merged mulefactory observations', len(mf), 'total', len(obs))"`. Failure: if MuleFactory rows are absent, recheck the generator input list and rerun the command.
-- [ ] **`python3 scripts/validate_external_cash_prices.py`** — Validate merged cash product schema and cash/in-game separation. Input: `data/products/external_cash_prices.sample.json`, `data/source_manifest.json`. Output: stdout validation summary. Validate: command exits 0. Failure: if `source_slug 'mulefactory' not found` appears, update only the MuleFactory entry in `data/source_manifest.json` and rerun `python3 scripts/validate_source_manifest.py && python3 scripts/validate_external_cash_prices.py`.
-
-🤖 **Stop — HITL: Review MuleFactory data quality.** Buddy should run `python3 -c "import json; obs=json.load(open('data/external/mulefactory_cash_prices.json'))['observations']; [print(o['item_name'], o['price_usd'], o['currency'], o.get('product_url')) for o in obs[:5]]"` and approve only if 24-33 rune rows exist, prices are nonzero USD values, `use_in_model` is false for every row, and sample prices are the same order of magnitude as IGGM, ItemNow, and D2Stock.
-
----
-
-### Session 4 — Operational Hardening
-
-The pipeline runs but has no automated product regeneration and no failure notifications.
-
-- [ ] **Create `scripts/regenerate_products.sh` with exactly this content: `#!/bin/bash`, `set -euo pipefail`, `python3 scripts/build_traderie_dataset_from_history.py --write-research`, `python3 scripts/calculate_rune_prices.py --input-dir data/research`, `python3 scripts/generate_prices_json.py`, `python3 scripts/generate_external_cash_prices.py`, `python3 scripts/validate_in_game_rune_values.py`, `python3 scripts/validate_external_cash_prices.py`, `python3 scripts/collection_status.py`, `echo "Regeneration complete."`** Validate: `bash -n scripts/regenerate_products.sh`. Failure: if `bash -n` exits nonzero, fix only the shell syntax and rerun `bash -n scripts/regenerate_products.sh`.
-- [ ] **`chmod +x scripts/regenerate_products.sh && test -x scripts/regenerate_products.sh`** — Make the regeneration script executable. Input: `scripts/regenerate_products.sh`. Output: executable file mode. Validate: `test -x scripts/regenerate_products.sh && echo executable`. Failure: if not executable, rerun `chmod +x scripts/regenerate_products.sh`.
-- [ ] **Create `launchd/com.buddy.traderie.regenerate-products.plist` rather than modifying the existing snapshot plist; use label `com.buddy.traderie.regenerate-products`, ProgramArguments string `/Users/buddy/projects/traderie/scripts/regenerate_products.sh`, WorkingDirectory string `/Users/buddy/projects/traderie`, stdout path `/Users/buddy/projects/traderie/logs/launchd/regenerate-products.out.log`, stderr path `/Users/buddy/projects/traderie/logs/launchd/regenerate-products.err.log`, RunAtLoad false, and StartCalendarInterval Hour 6 Minute 0.** Validate: `plutil -lint launchd/com.buddy.traderie.regenerate-products.plist`. Failure: if `plutil` reports invalid XML, fix only the malformed plist tag and rerun the lint command.
-- [ ] **`plutil -lint launchd/com.buddy.traderie.snapshot-traderie.plist && plutil -lint launchd/com.buddy.traderie.regenerate-products.plist`** — Validate both launchd templates without loading them. Input: both plist files under `launchd/`. Output: `OK` from `plutil`. Validate: command exits 0. Failure: if the existing snapshot plist fails, stop and ask Buddy before editing it; if only the new regeneration plist fails, repair the new file.
-- [ ] **Document for Buddy, do not run: `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.buddy.traderie.regenerate-products.plist` after copying `launchd/com.buddy.traderie.regenerate-products.plist` into `~/Library/LaunchAgents/`.** Validate: `python3 -c "from pathlib import Path; t=Path('launchd/com.buddy.traderie.regenerate-products.plist').read_text(); assert 'com.buddy.traderie.regenerate-products' in t and 'regenerate_products.sh' in t; print('launchctl command documented; not executed')"`. Failure: if validation fails, correct the new plist label or ProgramArguments and rerun the validation.
-
-🤖 **Stop — HITL: Choose launchd strategy.** Options:
-- A: Extend existing launchd plist to run regeneration after snapshots. Review criterion: `plutil -lint launchd/com.buddy.traderie.snapshot-traderie.plist` exits 0 and ProgramArguments still has one deterministic runner.
-- B: Create separate daily launchd job for regeneration. Review criterion: `plutil -lint launchd/com.buddy.traderie.regenerate-products.plist` exits 0 and StartCalendarInterval is 06:00.
-- C: Document as manual weekly step in COLLECTION_RUNBOOK.md. Review criterion: `grep -n "regenerate_products.sh" docs/COLLECTION_RUNBOOK.md` prints the manual step.
-- D: Skip — not needed if you regenerate on demand. Review criterion: no launchctl command is run and no LaunchAgents file is installed.
-
----
-
-### Session 5 — Hardcore Gap Decision
-
-9 items on pc_hc_nl are permanently skipped (28% failure rate). This is a structural gap that won't resolve itself.
-
-- [ ] **Edit `scripts/snapshot_traderie.py`: temporarily remove the nine pc_hc_nl names from `HARDCORE_SKIP_ITEMS` lines 43-55 by replacing the set body with an empty set `set()`, and do not change timeout constants.** Validate: `python3 -c "from pathlib import Path; t=Path('scripts/snapshot_traderie.py').read_text(); assert '\"pc_hc_nl\": set()' in t; print('pc_hc_nl skip list temporarily empty for probe')"`. Failure: if validation fails, replace only the `pc_hc_nl` value in `HARDCORE_SKIP_ITEMS` with `set()` and rerun the validation command.
-- [ ] **`for item in "Ist Rune" "Cham Rune" "Gul Rune" "Hel Rune" "Lem Rune" "Mal Rune" "Pul Rune" "Amn Rune" "The Stone of Jordan"; do echo "--- $item ---"; python3 scripts/snapshot_traderie.py --segment pc_hc_nl --item "$item" 2>&1 | tee "logs/hardcore_probe_${item// /_}.log" | tail -20; sleep 2; done`** — Collect single-item timing/failure output for skipped pc_hc_nl items. Input: Traderie API and `scripts/snapshot_traderie.py`. Output: `logs/hardcore_probe_Ist_Rune.log`, `logs/hardcore_probe_Cham_Rune.log`, `logs/hardcore_probe_Gul_Rune.log`, `logs/hardcore_probe_Hel_Rune.log`, `logs/hardcore_probe_Lem_Rune.log`, `logs/hardcore_probe_Mal_Rune.log`, `logs/hardcore_probe_Pul_Rune.log`, `logs/hardcore_probe_Amn_Rune.log`, `logs/hardcore_probe_The_Stone_of_Jordan.log`. Validate: `ls logs/hardcore_probe_*.log | wc -l`. Failure: if fewer than 9 logs exist, rerun only the missing item command using the same `python3 scripts/snapshot_traderie.py --segment pc_hc_nl --item "<item>"` pattern.
-- [ ] **`python3 -c "from pathlib import Path; logs=sorted(Path('logs').glob('hardcore_probe_*.log')); print('item,readtimeout_count,failed_count,processed_count'); [print(f'{p.stem.replace(\"hardcore_probe_\",\"\")},{p.read_text(errors=\"replace\").count(\"ReadTimeout\")},{p.read_text(errors=\"replace\").count(\"[FAILED]\")},{p.read_text(errors=\"replace\").count(\"item/segment combos processed\")}') for p in logs]"`** — Summarize timeout and failure counts using the same `ReadTimeout` substring that `collection_status.py` counts. Input: `logs/hardcore_probe_*.log`. Output: stdout CSV summary. Validate: prints 9 item rows. Failure: if a row is missing, rerun the missing probe; if every row has `processed_count=0`, restore the skip list and choose option A or D at HITL.
-- [ ] **`python3 -c "from pathlib import Path; logs=list(Path('logs').glob('hardcore_probe_*.log')); total=len(logs); failed=sum(1 for p in logs if '[FAILED]' in p.read_text(errors='replace') or 'ReadTimeout' in p.read_text(errors='replace')); rate=(failed/total*100 if total else 100); print(f'failure_rate={rate:.1f}% failed={failed} total={total}'); assert total==9; print('acceptable' if rate <= 25 else 'unacceptable')" `** — Classify the probe result; acceptable failure rate is <=25% because the current structural gap is 9 skipped items out of 32 tracked pc_hc_nl items, about 28%. Input: `logs/hardcore_probe_*.log`. Output: failure-rate line and acceptable/unacceptable. Validate: command exits 0 and prints `acceptable` or `unacceptable`. Failure: if total is not 9, rerun missing probes before interpreting the rate.
-- [ ] **Restore or intentionally revise `scripts/snapshot_traderie.py` skip list: for option A restore the exact set `{"Ist Rune", "Cham Rune", "Gul Rune", "Hel Rune", "Lem Rune", "Mal Rune", "Pul Rune", "Amn Rune", "The Stone of Jordan"}` under `pc_hc_nl`; for option B leave the set empty; for option C remove those names from the pc_hc_nl tracked item set only if Buddy approves the exact file; for option D keep the temporary probe branch and document the unresolved root-cause question.** Validate: `python3 -m py_compile scripts/snapshot_traderie.py`. Failure: if compile fails, restore the last syntactically valid version of only this file and rerun `python3 -m py_compile scripts/snapshot_traderie.py`.
-
-🤖 **Stop — HITL: Decide what to do about hardcore gaps.** Options:
-- **A: Accept.** The skip list is adequate. pc_hc_nl is a thin economy. 32 - 9 = 23 items still tracked. Review criterion: failure rate from `logs/hardcore_probe_*.log` is >25% or repeated `ReadTimeout` appears.
-- **B: Remove from skip list.** Accept partial coverage on those items. Review criterion: failure rate is <=25% and at least 7 of 9 probe logs show one processed combo.
-- **C: Remove from tracked item set entirely.** Cleaner than maintaining a skip list. Review criterion: Buddy approves the exact tracked-item file before any edit outside `snapshot_traderie.py`.
-- **D: Investigate further.** There may be a root cause (e.g., Traderie API doesn't serve those items for non-ladder hardcore, or the item IDs are wrong for that segment). Review criterion: at least three logs show consistent non-timeout errors or zero listings with successful responses.
-
----
-
-### Session 6 — Final Validation & Cleanup
-
-One pass across the entire repo to verify everything is coherent.
-
-- [ ] **`python3 scripts/validate_source_manifest.py && python3 scripts/validate_in_game_rune_values.py && python3 scripts/validate_external_cash_prices.py && python3 scripts/collection_status.py --json | python3 -m json.tool > /dev/null && echo "collection_status JSON valid"`** — Run full validation suite. Input: `data/source_manifest.json`, `data/products/*.json`, local logs/history. Output: stdout validation summaries and `collection_status JSON valid`. Validate: command exits 0. Failure: fix the first validator error reported; do not continue to the next validation until the first exits 0.
-- [ ] **`npm --prefix web run build`** — Build the web app. Input: `web/package.json`, `web/src/`. Output: `web/dist/`. Validate: command exits 0. Failure: fix only build errors reported by Vite/TypeScript, then rerun `npm --prefix web run build`.
-- [ ] **Confirm no stale backlog references remain as active roadmap work — moved to BACKLOG.md.** Validate: `python3 -c "from pathlib import Path; t=Path('ROADMAP.md').read_text(); assert 'BACKLOG.md' in t; print('remnants cleared')"`. Failure: check for unprocessed backlog mentions and move them to BACKLOG.md.
-- [ ] **Create `BACKLOG.md` with one-line entries for each deferred/candidate item.** Validate: `python3 -c "from pathlib import Path; p=Path('BACKLOG.md'); assert p.exists() and p.stat().st_size > 50; print('BACKLOG.md created with entries')"`. Failure: create BACKLOG.md with the backlog items and rerun validation.
-- [ ] **`find . -path './.git' -prune -o -type f -size +5M -print`** — Check for large artifacts without running git. Input: repo filesystem. Output: list of files larger than 5 MB. Validate: output contains only expected ignored runtime/build artifacts such as `web/dist`, `data/history`, `data/snapshots`, or captured HTML; no new parser/debug dump appears. Failure: if an unexpected large artifact appears, delete or move it only after Buddy approves the exact path.
-- [ ] **Edit `LOG.md`: append one final dated entry documenting completed roadmap sessions, validations run, and any HITL decisions made; if `LOG.md` does not exist, create it with a single `# Log` heading and the final entry.** Validate: `python3 -c "from pathlib import Path; t=Path('LOG.md').read_text(); assert 'ROADMAP' in t and 'validate_source_manifest.py' in t and 'validate_in_game_rune_values.py' in t and 'validate_external_cash_prices.py' in t; print('LOG final entry present')"`. Failure: append the missing validation names or roadmap completion note and rerun validation.
-
-🤖 **Stop — HITL: Final repo sign-off.** Buddy reviews:
-- `python3 scripts/validate_source_manifest.py` exits 0
-- `python3 scripts/validate_in_game_rune_values.py` exits 0
-- `python3 scripts/validate_external_cash_prices.py` exits 0
-- `python3 scripts/collection_status.py --json | python3 -m json.tool > /dev/null` exits 0
-- `npm --prefix web run build` exits 0
-- `BACKLOG.md` contains the six one-line backlog entries
-- `ROADMAP.md` is fully checked off
-
----
-
-## Invariants
-
-- Never merge segments. PC SC L is a separate economy from PC SC NL.
-- Never blend cash/RMT prices into in-game rune values. Cash is comparison-only.
-- Every price observation must carry segment metadata (platform, mode, ladder, hardcore).
-- Missing segment metadata lowers confidence or excludes the observation.
-- Reddit/community mentions are qualitative only — not pricing data.
-- Active listings are not completed trades.
-- Public-facing data must be schema-versioned.
-- Raw and intermediate data stay private (gitignored).
-- Do not run launchctl mutations unless explicitly asked.
+See `BACKLOG.md` for deferred and candidate work.

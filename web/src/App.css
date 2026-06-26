@@ -82,6 +82,16 @@ h2 { font-size: 1.2rem; margin: 28px 0 12px; color: var(--text); }
 h3 { font-size: 1rem; margin-bottom: 8px; }
 
 .page-subtitle { color: var(--text-dim); margin-bottom: 24px; font-size: 0.95rem; }
+.alpha-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--accent-dim);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
 
 /* Segment selector */
 .segment-selector {
