@@ -24,6 +24,7 @@ INPUTS = [
     ROOT_DIR / "data" / "external" / "items7_cash_prices.json",
     ROOT_DIR / "data" / "external" / "d2stock_cash_prices.json",
     ROOT_DIR / "data" / "external" / "mulefactory_cash_prices.json",
+    ROOT_DIR / "data" / "external" / "g2g_cash_prices.json",
 ]
 OUTPUT = ROOT_DIR / "data" / "products" / "external_cash_prices.sample.json"
 
@@ -59,6 +60,13 @@ SOURCE_CAVEATS = {
         "MuleFactory: prices are 'from' (minimum/base) prices from Schema.org microdata.",
         "MuleFactory: segment metadata not available — server/platform selector requires JavaScript.",
         "MuleFactory: 24 of 33 runes displayed (page 1); remaining runes hidden behind AJAX pagination.",
+    ],
+    "g2g": [
+        "G2G: captured from category-page listing cards — prices are from-price per unit.",
+        "G2G: all captured listings show 'LoD' ruleset label — may be G2G-wide naming, not guaranteed Lord of Destruction exclusivity.",
+        "G2G: category page filtered to D2R, sorted lowest_price — only lowest-price listings visible.",
+        "G2G: segment metadata parsed from listing card title paths (PC - LoD - NonLadder - SC).",
+        "G2G: browser-captured on 2026-06-20 using Camoufox. Prices may be stale.",
     ],
 }
 
@@ -145,6 +153,7 @@ def generate():
             "item_type": map_item_type(obs.get("item_category")),
             "price_usd": raw_price,
             "price_cents": price_cents,
+            "price_type": obs.get("price_type", "listing_ask"),
             "currency": obs.get("currency", "USD"),
             "quantity": obs.get("quantity"),
             "unit_price": obs.get("unit_price"),

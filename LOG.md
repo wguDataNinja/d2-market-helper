@@ -382,6 +382,37 @@
     - web/dist/ contains: index.html, 404.html, assets/, data/ (6 product JSONs), icons.svg
   outcome: complete
   next: Need to create GitHub repo and add remote, then push
+
+- date: 2026-06-26
+  agent: worker
+  task: add-g2g-cash-parser
+  files_changed:
+    - scripts/parse_g2g_cash_prices.py (created — parses G2G captured HTML into cash observations)
+    - scripts/generate_external_cash_prices.py (added g2g_cash_prices.json to INPUTS, added G2G source caveats)
+    - data/external/g2g_cash_prices.json (created — 33 parsed observations)
+    - data/products/external_cash_prices.sample.json (regenerated — 328 obs, 6 sources)
+    - SESSION.md (updated)
+    - LOG.md (updated)
+  g2g_observations: 33
+    segment: pc_sc_nl (PC - NonLadder - Softcore) — 33
+    segment_confidence: medium (LoD label ambiguous)
+    price_range: $0.029 (Ith) — $2.000 (Zod)
+    median_price: $0.064
+  all_cash_sources_now: iggm (30), itemnow (42), d2stock (199), mulefactory (24), g2g (33), items7 (0) = 328 total
+  validation:
+    - python3 -m py_compile parse_g2g_cash_prices.py ✅
+    - python3 -m py_compile generate_external_cash_prices.py ✅
+    - python3 scripts/parse_g2g_cash_prices.py ✅
+    - python3 scripts/generate_external_cash_prices.py ✅
+    - python3 scripts/validate_external_cash_prices.py ✅
+    - python3 scripts/audit_cash_vs_trade_value.py ✅
+  remaining_ambiguity:
+    All 33 G2G captured listings use 'LoD' label, even though the URL targets the
+    D2R category. This may be G2G's generic naming convention. A dedicated ROTW
+    filter URL was never identified or captured. Offer detail pages cause
+    Camoufox JS errors — unresolved.
+  outcome: complete
+  next: Await Buddy's decision on LoD/ROTW resolution for G2G
   files_changed:
     - scripts/snapshot_traderie.py (added CRITICAL_SEGMENTS, per-segment failure tracking, segment health summary, exit 0 for non-critical failures)
     - SESSION.md (updated)

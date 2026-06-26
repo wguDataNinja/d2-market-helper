@@ -1,5 +1,5 @@
-- current_goal: GitHub Pages deploy workflow prepared — 404.html SPA redirect, data files in public/, deploy script, GH Actions workflow
+- current_goal: G2G cash parser added — 33 observations, pc_sc_nl, medium confidence; 328 total cash obs across 6 sources
 - active_task: Complete
 - active_agent: orchestrator
-- blockers: No GitHub remote configured — cannot push or deploy until repo URL is set
-- next_action: Create GitHub repo and add remote, then push master to trigger deploy
+- blockers: LoD/ROTW ambiguity in G2G captured listings — all 33 show "LoD" label even from D2R category URL
+- next_action: Await Buddy's next instruction

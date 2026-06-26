@@ -2,8 +2,8 @@
   "schema_version": "0.1",
   "product": "in_game_rune_values",
   "game": "diablo2resurrected",
-  "generated_at": "2026-06-26T07:38:40Z",
-  "product_generated_at": "2026-06-26T07:38:40Z",
+  "generated_at": "2026-06-26T10:00:09Z",
+  "product_generated_at": "2026-06-26T10:00:09Z",
   "evidence_class": "completed_player_trades",
   "source": "Traderie completed trades",
   "source_window_label": "rolling_recent_trades_50_cap",
@@ -12,12 +12,12 @@
   "caveat_history": "Project history for this source starts when scheduled snapshot retention began. Pre-snapshot history is not available.",
   "ruleset_aggregate": {
     "counts": {
-      "classic": 202,
-      "lod": 1811,
-      "rotw": 88363,
-      "unknown": 18413
+      "classic": 208,
+      "lod": 1885,
+      "rotw": 92216,
+      "unknown": 19050
     },
-    "total": 108789
+    "total": 113359
   },
   "caveat_ruleset": "Prices aggregate all game versions/rulesets (Classic, Lord of Destruction, Reign of the Warlock). As of the latest audit, ROTW constitutes >95% of observed completed trades. LoD and Classic listings are included in the model but have insufficient volume for separate pricing. Region data is not available in the completed-trades API and is not included.",
   "model": {
@@ -55,15 +55,15 @@
       "ladder": true,
       "hardcore": false,
       "source_file": "data/prices/rune_prices_pc_sc_l.csv",
-      "total_modeled_trades": 2342,
+      "total_modeled_trades": 2425,
       "ruleset_breakdown": {
         "counts": {
-          "classic": 26,
-          "lod": 148,
-          "rotw": 26120,
+          "classic": 27,
+          "lod": 154,
+          "rotw": 27463,
           "unknown": 6
         },
-        "total_observed_raw_listings": 26300,
+        "total_observed_raw_listings": 27650,
         "dominant_ruleset": "rotw",
         "dominant_ruleset_share": 0.993
       },
@@ -71,36 +71,36 @@
       "runes": {
         "Ohm": {
           "rune": "Ohm",
-          "value_ist": 3.446,
-          "bid_price": 3.0647,
-          "ask_price": 3.8273,
-          "bid_count": 314,
-          "ask_count": 265,
-          "total_trades": 579,
+          "value_ist": 3.4525,
+          "bid_price": 3.0667,
+          "ask_price": 3.8384,
+          "bid_count": 319,
+          "ask_count": 276,
+          "total_trades": 595,
           "confidence": "high",
-          "confidence_reason": "Based on 579 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 595 trades \u2014 sufficient volume for stable VWAP"
         },
         "Jah": {
           "rune": "Jah",
-          "value_ist": 11.8515,
-          "bid_price": 19.4306,
-          "ask_price": 4.2725,
-          "bid_count": 132,
-          "ask_count": 320,
-          "total_trades": 452,
+          "value_ist": 11.8674,
+          "bid_price": 19.4631,
+          "ask_price": 4.2717,
+          "bid_count": 137,
+          "ask_count": 343,
+          "total_trades": 480,
           "confidence": "high",
-          "confidence_reason": "Based on 452 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 480 trades \u2014 sufficient volume for stable VWAP"
         },
         "Lo": {
           "rune": "Lo",
-          "value_ist": 6.1676,
-          "bid_price": 6.0598,
-          "ask_price": 6.2754,
-          "bid_count": 244,
-          "ask_count": 196,
-          "total_trades": 440,
+          "value_ist": 6.1927,
+          "bid_price": 6.084,
+          "ask_price": 6.3014,
+          "bid_count": 252,
+          "ask_count": 208,
+          "total_trades": 460,
           "confidence": "high",
-          "confidence_reason": "Based on 440 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 460 trades \u2014 sufficient volume for stable VWAP"
         },
         "Mal": {
           "rune": "Mal",
@@ -108,43 +108,43 @@
           "bid_price": 0.6597,
           "ask_price": 0.7889,
           "bid_count": 64,
-          "ask_count": 331,
-          "total_trades": 395,
+          "ask_count": 339,
+          "total_trades": 403,
           "confidence": "high",
-          "confidence_reason": "Based on 395 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 403 trades \u2014 sufficient volume for stable VWAP"
         },
         "Gul": {
           "rune": "Gul",
-          "value_ist": 1.0153,
+          "value_ist": 1.0208,
           "bid_price": 1.0,
-          "ask_price": 1.0305,
+          "ask_price": 1.0415,
           "bid_count": 17,
-          "ask_count": 242,
-          "total_trades": 259,
+          "ask_count": 245,
+          "total_trades": 262,
           "confidence": "high",
-          "confidence_reason": "Based on 259 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 262 trades \u2014 sufficient volume for stable VWAP"
         },
         "Ber": {
           "rune": "Ber",
-          "value_ist": 17.6448,
-          "bid_price": 20.0505,
+          "value_ist": 17.6484,
+          "bid_price": 20.0577,
           "ask_price": 15.2391,
-          "bid_count": 99,
+          "bid_count": 104,
           "ask_count": 46,
-          "total_trades": 145,
+          "total_trades": 150,
           "confidence": "high",
-          "confidence_reason": "Based on 145 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 150 trades \u2014 sufficient volume for stable VWAP"
         },
         "Cham": {
           "rune": "Cham",
-          "value_ist": 9.0361,
+          "value_ist": 9.1077,
           "bid_price": 9.6,
-          "ask_price": 8.4722,
+          "ask_price": 8.6154,
           "bid_count": 10,
-          "ask_count": 34,
-          "total_trades": 44,
+          "ask_count": 37,
+          "total_trades": 47,
           "confidence": "medium",
-          "confidence_reason": "Based on 44 trades \u2014 moderate volume"
+          "confidence_reason": "Based on 47 trades \u2014 moderate volume"
         },
         "Pul": {
           "rune": "Pul",
@@ -331,15 +331,15 @@
       "ladder": false,
       "hardcore": false,
       "source_file": "data/prices/rune_prices_pc_sc_nl.csv",
-      "total_modeled_trades": 804,
+      "total_modeled_trades": 811,
       "ruleset_breakdown": {
         "counts": {
           "classic": 27,
-          "lod": 1104,
-          "rotw": 30817,
-          "unknown": 80
+          "lod": 1151,
+          "rotw": 32215,
+          "unknown": 85
         },
-        "total_observed_raw_listings": 32028,
+        "total_observed_raw_listings": 33478,
         "dominant_ruleset": "rotw",
         "dominant_ruleset_share": 0.962
       },
@@ -347,25 +347,25 @@
       "runes": {
         "Jah": {
           "rune": "Jah",
-          "value_ist": 6.9716,
-          "bid_price": 10.1368,
-          "ask_price": 3.8065,
-          "bid_count": 253,
-          "ask_count": 197,
-          "total_trades": 450,
+          "value_ist": 6.9826,
+          "bid_price": 10.1364,
+          "ask_price": 3.8288,
+          "bid_count": 254,
+          "ask_count": 201,
+          "total_trades": 455,
           "confidence": "high",
-          "confidence_reason": "Based on 450 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 455 trades \u2014 sufficient volume for stable VWAP"
         },
         "Mal": {
           "rune": "Mal",
-          "value_ist": 0.7342,
+          "value_ist": 0.7339,
           "bid_price": 0.6667,
-          "ask_price": 0.8018,
+          "ask_price": 0.8012,
           "bid_count": 4,
-          "ask_count": 109,
-          "total_trades": 113,
+          "ask_count": 111,
+          "total_trades": 115,
           "confidence": "high",
-          "confidence_reason": "Based on 113 trades \u2014 sufficient volume for stable VWAP"
+          "confidence_reason": "Based on 115 trades \u2014 sufficient volume for stable VWAP"
         },
         "Ber": {
           "rune": "Ber",
@@ -607,15 +607,15 @@
       "ladder": true,
       "hardcore": true,
       "source_file": "data/prices/rune_prices_pc_hc_l.csv",
-      "total_modeled_trades": 79,
+      "total_modeled_trades": 82,
       "ruleset_breakdown": {
         "counts": {
-          "classic": 149,
-          "lod": 201,
-          "rotw": 25948,
-          "unknown": 9711
+          "classic": 154,
+          "lod": 208,
+          "rotw": 27017,
+          "unknown": 10078
         },
-        "total_observed_raw_listings": 36009,
+        "total_observed_raw_listings": 37457,
         "dominant_ruleset": "rotw",
         "dominant_ruleset_share": 0.721
       },
@@ -623,14 +623,14 @@
       "runes": {
         "Gul": {
           "rune": "Gul",
-          "value_ist": 1.0238,
+          "value_ist": 1.0326,
           "bid_price": 1.0,
-          "ask_price": 1.0476,
+          "ask_price": 1.0652,
           "bid_count": 3,
-          "ask_count": 40,
-          "total_trades": 43,
+          "ask_count": 43,
+          "total_trades": 46,
           "confidence": "medium",
-          "confidence_reason": "Based on 43 trades \u2014 moderate volume"
+          "confidence_reason": "Based on 46 trades \u2014 moderate volume"
         },
         "Mal": {
           "rune": "Mal",
@@ -886,13 +886,13 @@
       "total_modeled_trades": 38,
       "ruleset_breakdown": {
         "counts": {
-          "lod": 358,
-          "rotw": 5478,
-          "unknown": 8616
+          "lod": 372,
+          "rotw": 5521,
+          "unknown": 8881
         },
-        "total_observed_raw_listings": 14452,
+        "total_observed_raw_listings": 14774,
         "dominant_ruleset": "unknown",
-        "dominant_ruleset_share": 0.596
+        "dominant_ruleset_share": 0.601
       },
       "caveat_ruleset": "Prices aggregate all game versions/rulesets (Classic, Lord of Destruction, Reign of the Warlock). As of the latest audit, ROTW constitutes >95% of observed completed trades. LoD and Classic listings are included in the model but have insufficient volume for separate pricing. Region data is not available in the completed-trades API and is not included.",
       "runes": {
