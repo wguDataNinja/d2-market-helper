@@ -51,3 +51,6 @@ data/.old/
 # Research probe exports and browser captures
 data/research/
 research/sources/captures/
+
+# Web deploy artifacts (copied by deploy_web.sh)
+web/public/data/

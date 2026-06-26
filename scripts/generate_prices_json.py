@@ -38,7 +38,17 @@ CAVEATS = [
     "Reddit/community data is qualitative only and is not included in this file.",
     "Active listings are not completed trades and are not included.",
     "Prices are relative in-game trade values (Ist-normalized), not absolute cash values.",
+    "Game version / ruleset (Classic, Lord of Destruction, Reign of the Warlock) is tracked but not split in pricing. ROTW dominates observed volume.",
+    "Region (Americas, Europe, Asia) is visible in the Traderie website UI but unavailable in completed-trades API data.",
 ]
+
+RULESET_CAVEAT = (
+    "Prices aggregate all game versions/rulesets (Classic, Lord of Destruction, "
+    "Reign of the Warlock). As of the latest audit, ROTW constitutes >95% of "
+    "observed completed trades. LoD and Classic listings are included in the "
+    "model but have insufficient volume for separate pricing. Region data is "
+    "not available in the completed-trades API and is not included."
+)
 
 
 def rune_name_to_display(raw: str) -> str:
@@ -68,6 +78,56 @@ def confidence_from(total_trades: int) -> tuple[str, str]:
     if total_trades >= 15:
         return ("medium", f"Based on {total_trades} trades — moderate volume")
     return ("low", f"Based on {total_trades} trades — thin volume")
+
+
+SNAPSHOTS_DIR = ROOT_DIR / "data" / "snapshots" / "raw" / "traderie"
+
+
+def count_rulesets_in_snapshots(segment: str) -> dict:
+    """Scan raw API snapshots for Game version / ruleset distribution.
+
+    Reads locally stored snapshot response.json files. No network calls.
+    Returns dict with counts per ruleset, total, dominant_ruleset, share.
+    """
+    ruleset_map_raw = {
+        "classic": "classic",
+        "lord of destruction": "lod",
+        "reign of the warlock": "rotw",
+    }
+    counts = {}
+    seg_dir = SNAPSHOTS_DIR / segment
+    if not seg_dir.exists():
+        return {"counts": {}, "total": 0, "dominant_ruleset": None, "dominant_share": 0.0}
+
+    for run_dir in sorted(seg_dir.iterdir()):
+        resp_path = run_dir / "response.json"
+        if not resp_path.exists():
+            continue
+        try:
+            raw = json.loads(resp_path.read_text(errors="replace"))
+        except Exception:
+            continue
+        for listing in raw.get("listings", []):
+            gv = "unknown"
+            for prop in (listing.get("properties") or []):
+                if prop.get("property") == "Game version":
+                    gv = (prop.get("string") or "").strip().lower()
+                    break
+            # Handle comma-separated multi-value
+            parts = [p.strip() for p in gv.split(",")] if gv not in ("unknown", "") else ["unknown"]
+            for p in parts:
+                rs = ruleset_map_raw.get(p, "unknown")
+                counts[rs] = counts.get(rs, 0) + 1
+
+    total = sum(counts.values()) if counts else 0
+    dominant = max(counts, key=counts.get) if counts else None
+    dominant_share = round(counts[dominant] / total, 3) if dominant and total else 0.0
+    return {
+        "counts": dict(sorted(counts.items())),
+        "total_observed_raw_listings": total,
+        "dominant_ruleset": dominant,
+        "dominant_ruleset_share": dominant_share,
+    }
 
 
 def generate():
@@ -134,6 +194,8 @@ def generate():
         total_trades_all += seg_trades
         total_runes_all += len(runes_out)
 
+        ruleset_breakdown = count_rulesets_in_snapshots(seg)
+
         segments_out[seg] = {
             "segment_slug": seg,
             "platform": meta["platform"],
@@ -142,10 +204,20 @@ def generate():
             "hardcore": meta["hardcore"],
             "source_file": f"data/prices/rune_prices_{seg}.csv",
             "total_modeled_trades": seg_trades,
+            "ruleset_breakdown": ruleset_breakdown,
+            "caveat_ruleset": RULESET_CAVEAT,
             "runes": runes_out,
         }
 
         compat_segments[seg] = compat_runes
+
+    # Aggregate ruleset breakdown across all segments
+    aggregate_rulesets = {"counts": {}, "total": 0}
+    for seg in SEGMENTS_ORDERED:
+        rb = segments_out[seg].get("ruleset_breakdown", {}).get("counts", {})
+        for rs, c in rb.items():
+            aggregate_rulesets["counts"][rs] = aggregate_rulesets["counts"].get(rs, 0) + c
+            aggregate_rulesets["total"] += c
 
     # Output 1: in_game_rune_values.json
     product_v2 = {
@@ -160,6 +232,8 @@ def generate():
         "caveat_window": "Traderie completed-trade API returns at most 50 recent completed listings per item/segment. Not a full historical archive. Project history depends on scheduled polling and deduped snapshot retention.",
         "caveat_pagination": "nextPage is a boolean/repeating cursor, not a sequential page index. No deeper API pagination observed beyond 50 listings.",
         "caveat_history": "Project history for this source starts when scheduled snapshot retention began. Pre-snapshot history is not available.",
+        "ruleset_aggregate": aggregate_rulesets,
+        "caveat_ruleset": RULESET_CAVEAT,
         "model": {
             "name": "ist_normalized_vwap_v1",
             "numeraire": "Ist Rune",

@@ -14,4 +14,7 @@ export default defineConfig({
       allow: [path.resolve(__dirname, '..')],
     },
   },
+  // For GitHub Pages sub-path deployment, change base to '/<repo>/' e.g. '/traderie/'
+  // For root-domain deployment (username.github.io), keep as '/'
+  base: '/',
 })

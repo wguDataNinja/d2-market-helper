@@ -165,6 +165,8 @@ def extract_fields(obs: dict, segment: str, valid_runes: set) -> dict | None:
         "ladder": str(meta["ladder"]).lower(),
         "hardcore": str(meta["hardcore"]).lower(),
         "segment_slug": segment,
+        "game_version": obs.get("game_version", "unknown"),
+        "ruleset": obs.get("ruleset", "unknown"),
         "has_and_prices": str(has_and).lower(),
         "price_group_count": group_count,
         "price_entry_count": entry_count,
@@ -227,6 +229,7 @@ def build_dataset(segment: str, valid_runes: set, write_research: bool) -> dict:
             "TradeID", "Offered", "Requested",
             "listing_id", "seller_rating", "seller_reviews",
             "platform", "ladder", "hardcore", "segment_slug",
+            "game_version", "ruleset",
             "has_and_prices", "price_group_count", "price_entry_count",
             "price_groups_json",
         ]

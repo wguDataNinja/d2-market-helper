@@ -10,6 +10,7 @@ import json
 import sys
 import random
 import time
+import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -37,6 +38,15 @@ HARDCORE_REQUEST_MAX_ATTEMPTS = 2
 
 # Segment slugs
 HARDCORE_SEGMENTS = {"pc_hc_l", "pc_hc_nl"}
+CRITICAL_SEGMENTS = {"pc_sc_l", "pc_sc_nl"}
+
+# Ruleset filter mapping (used with prop_Game%20version API param)
+# Proven via probe: prop_Game%20version=lord+of+destruction filters completed trades.
+RULESET_MAP = {
+    "rotw": "reign of the warlock",
+    "lod": "lord of destruction",
+    "classic": "classic",
+}
 
 # Items that consistently fail on hardcore segments (ReadTimeout / HTTP 503)
 # Populated from manual collection runs — pc_hc_l had zero failures on 2026-06-23.
@@ -60,8 +70,8 @@ def load_json(path):
         return json.load(f)
 
 
-def build_params(cfg, item_id):
-    return {
+def build_params(cfg, item_id, ruleset=None):
+    params = {
         "completed": "true",
         "auction": "false",
         "prop_Platform": cfg["platform"].upper(),
@@ -69,6 +79,10 @@ def build_params(cfg, item_id):
         "prop_Ladder": str(cfg["ladder"]).lower(),
         "item": item_id,
     }
+    # Game version param is NOT added here — it requires %20 encoding in the
+    # param name (requests encodes spaces as +, which the API rejects).
+    # fetch_for_item appends it manually to the URL with correct encoding.
+    return params
 
 
 def extract_properties(properties):
@@ -85,6 +99,24 @@ def extract_properties(properties):
                 meta["ladder"] = prop.get("bool", False)
             elif prop.get("string"):
                 meta["ladder"] = prop["string"].lower() == "ladder"
+        elif name == "Game version":
+            raw = (prop.get("string") or "").strip()
+            meta["game_version"] = raw or "unknown"
+            parts = [p.strip().lower() for p in raw.split(",")] if raw else []
+            resolved = set()
+            for p in parts:
+                if p == "classic":
+                    resolved.add("classic")
+                elif p == "lord of destruction":
+                    resolved.add("lod")
+                elif p == "reign of the warlock":
+                    resolved.add("rotw")
+            if len(resolved) == 1:
+                meta["ruleset"] = resolved.pop()
+            elif len(resolved) > 1:
+                meta["ruleset"] = "mixed"
+            else:
+                meta["ruleset"] = "unknown"
     return meta
 
 
@@ -175,6 +207,8 @@ def append_to_legacy_raw(observations, cfg, category, item_name):
                 "mode": obs.get("mode"),
                 "hardcore": obs.get("hardcore"),
                 "ladder": obs.get("ladder"),
+                "game_version": obs.get("game_version"),
+                "ruleset": obs.get("ruleset"),
                 "version": obs.get("version"),
                 "nextPage": obs.get("nextPage"),
             })
@@ -192,6 +226,10 @@ def append_to_legacy_raw(observations, cfg, category, item_name):
 def fetch_with_retry(scraper, url, params, slug, item_name, max_attempts=None):
     """Fetch with segment-aware timeout and bounded retry/backoff.
 
+    If params is None, url must be a fully-prepared URL including query string.
+    Otherwise, params dict is URL-encoded by requests (use only for params
+    whose names contain no spaces).
+
     Returns (response_json, attempts_used) on success.
     Raises the last exception if all attempts fail.
     """
@@ -204,7 +242,10 @@ def fetch_with_retry(scraper, url, params, slug, item_name, max_attempts=None):
     for attempt in range(1, max_attempts + 1):
         try:
             print(f"    [attempt {attempt}/{max_attempts}] timeout={timeout}s")
-            res = scraper.get(url, params=params, timeout=timeout)
+            if params is not None:
+                res = scraper.get(url, params=params, timeout=timeout)
+            else:
+                res = scraper.get(url, timeout=timeout)
             res.raise_for_status()
             return res.json(), attempt
         except Exception as e:
@@ -219,8 +260,8 @@ def fetch_with_retry(scraper, url, params, slug, item_name, max_attempts=None):
     raise last_exception
 
 
-def fetch_for_item(scraper, cfg, item_name, item_id, category, captured_at):
-    params = build_params(cfg, item_id)
+def fetch_for_item(scraper, cfg, item_name, item_id, category, captured_at, ruleset=None):
+    params = build_params(cfg, item_id, ruleset=ruleset)
     slug = cfg["slug"]
     source = f"traderie/{slug}"
     is_hardcore = slug in HARDCORE_SEGMENTS
@@ -229,7 +270,28 @@ def fetch_for_item(scraper, cfg, item_name, item_id, category, captured_at):
     print(f"\n  Fetching {item_name} ({category}) on {slug} [timeout={timeout_str}, max_attempts={REQUEST_MAX_ATTEMPTS}]...")
 
     max_attempts = HARDCORE_REQUEST_MAX_ATTEMPTS if is_hardcore else REQUEST_MAX_ATTEMPTS
-    raw_data, attempts_used = fetch_with_retry(scraper, URL, params, slug, item_name, max_attempts=max_attempts)
+
+    # Build the request URL. Standard params go through requests encoding.
+    # Game version param needs %20 (not +) in the param name, so we build
+    # the final URL manually when ruleset filtering is active.
+    if ruleset:
+        api_value = RULESET_MAP.get(ruleset)
+        if api_value:
+            base_qs = urllib.parse.urlencode(params)
+            encoded_value = urllib.parse.quote(api_value)
+            full_url = f"{URL}?{base_qs}&prop_Game%20version={encoded_value}"
+            fetch_params = None
+        else:
+            full_url = URL
+            fetch_params = params
+    else:
+        full_url = URL
+        fetch_params = params
+
+    raw_data, attempts_used = fetch_with_retry(
+        scraper, full_url, fetch_params, slug, item_name,
+        max_attempts=max_attempts,
+    )
     listings = raw_data.get("listings", [])
     if not isinstance(listings, list):
         listings = []
@@ -241,8 +303,11 @@ def fetch_for_item(scraper, cfg, item_name, item_id, category, captured_at):
 
     raw_path = snapshot_io.write_raw_snapshot(raw_data, source)
 
-    query_string = "&".join(f"{k}={v}" for k, v in params.items())
-    source_url = f"{URL}?{query_string}"
+    if fetch_params is None:
+        source_url = full_url
+    else:
+        query_string = "&".join(f"{k}={v}" for k, v in params.items())
+        source_url = f"{URL}?{query_string}"
 
     observations = []
     for entry in listings:
@@ -299,6 +364,11 @@ def main():
                         help="Segment slug (e.g. 'pc_sc_nl') or 'all'")
     parser.add_argument("--single", action="store_true",
                         help="Test mode: process only first matched combo")
+    parser.add_argument("--ruleset", default=None,
+                        choices=sorted(RULESET_MAP.keys()),
+                        help="Filter by ruleset: rotw, lod, classic")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Print prepared URLs and exit without making requests")
     args = parser.parse_args()
 
     captured_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -312,9 +382,33 @@ def main():
             print(f"Error: segment '{args.segment}' not found")
             sys.exit(1)
 
+    if args.dry_run:
+        ruleset_label = f" ruleset={args.ruleset}" if args.ruleset else ""
+        print(f"DRY RUN — {len(configs)} config(s){ruleset_label}")
+        for cfg in configs:
+            for category, items in items_by_cat.items():
+                for name, item_id in items.items():
+                    if args.item != "all" and not match_item_name(args.item, name):
+                        continue
+                    params = build_params(cfg, item_id)
+                    base_qs = urllib.parse.urlencode(params)
+                    if args.ruleset:
+                        api_value = RULESET_MAP.get(args.ruleset)
+                        if api_value:
+                            encoded_value = urllib.parse.quote(api_value)
+                            query = f"{URL}?{base_qs}&prop_Game%20version={encoded_value}"
+                        else:
+                            query = f"{URL}?{base_qs}"
+                    else:
+                        query = f"{URL}?{base_qs}"
+                    print(f"  {name:40s} {cfg['slug']:10s}  {query[:200]}")
+        print("DRY RUN — no requests made")
+        return [], 0
+
     scraper = cloudscraper.create_scraper()
     results = []
-    failed_items = 0
+    # Track failures per segment: {slug: [item_name, ...]}
+    seg_failures: dict[str, list[str]] = {}
 
     for cfg in configs:
         for category, items in items_by_cat.items():
@@ -329,13 +423,14 @@ def main():
 
                 try:
                     result = fetch_for_item(
-                        scraper, cfg, name, item_id, category, captured_at)
+                        scraper, cfg, name, item_id, category, captured_at,
+                        ruleset=args.ruleset)
                     results.append(result)
                 except Exception as e:
                     slug = cfg["slug"]
                     cls = type(e).__name__
                     print(f"\n  [FAILED] {name} ({category}) on {slug}: {cls}: {e}")
-                    failed_items += 1
+                    seg_failures.setdefault(slug, []).append(name)
 
                 if args.single:
                     print("\n  [--single] stopping after first match")
@@ -345,9 +440,6 @@ def main():
         if args.single and results:
             break
         time.sleep(PER_ITEM_DELAY + random.uniform(0, 2))
-
-    if failed_items:
-        print(f"\n  [SUMMARY] {failed_items} item(s) failed")
 
     total_listings = sum(r["listing_count"] for r in results)
     all_ids = []
@@ -359,9 +451,34 @@ def main():
         if r["updated_at_max"]:
             all_updated.append(r["updated_at_max"])
 
+    # Segment-level health classification
+    segs_run = list({cfg["slug"] for cfg in configs})
+    ok_segs: list[str] = []
+    warn_segs: list[str] = []
+    crit_failed: list[str] = []
+    for s in segs_run:
+        f_count = len(seg_failures.get(s, []))
+        if f_count == 0:
+            ok_segs.append(s)
+        elif s in CRITICAL_SEGMENTS:
+            crit_failed.append(f"{s} ({f_count} item(s) failed)")
+        else:
+            warn_segs.append(f"{s} ({f_count} item(s) failed)")
+
+    critical_exit = len(crit_failed) > 0
+    exit_code = 1 if critical_exit else 0
+
     print(f"\n{'='*60}")
-    print(f"Done — {len(results)} item/segment combos processed")
-    print(f"Total listings captured: {total_listings}")
+    print(f"SEGMENT SUMMARY")
+    print(f"{'='*60}")
+    if ok_segs:
+        print(f"  OK:       {', '.join(ok_segs)}")
+    if warn_segs:
+        print(f"  WARNING:  {', '.join(warn_segs)}")
+    if crit_failed:
+        print(f"  CRITICAL: {', '.join(crit_failed)}")
+    print(f"  EXIT CODE: {exit_code} ({'critical failure' if critical_exit else 'ok' if not warn_segs else 'ok with warnings'})")
+    print(f"\nTotal listings captured: {total_listings}")
     print(f"Unique listing IDs: {len(set(all_ids))}")
     if all_updated:
         print(f"updated_at range: {min(all_updated)} — {max(all_updated)}")
@@ -375,7 +492,6 @@ def main():
         print(f"    listings: {r['listing_count']}")
         print(f"    updated_at: {r['updated_at_min']} .. {r['updated_at_max']}")
 
-    exit_code = 1 if failed_items else 0
     return results, exit_code
 
 

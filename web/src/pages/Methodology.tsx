@@ -97,12 +97,47 @@ export default function Methodology() {
       </section>
 
       <section className="methodology-section">
+        <h2>Game Version / Ruleset</h2>
+        <p>
+          D2R has three game versions: <strong>Classic</strong>,{' '}
+          <strong>Lord of Destruction</strong>, and{' '}
+          <strong>Reign of the Warlock</strong>. Each listing on Traderie carries a
+          Game version property in its metadata.
+        </p>
+        <p>
+          The project tracks Game version for every completed trade observation,
+          but <strong>does not split prices by ruleset</strong>. As of the latest
+          data audit, Reign of the Warlock (ROTW) constitutes <strong>over 95%
+          </strong> of observed completed trades across all tracked segments.
+          Lord of Destruction and Classic listings have insufficient volume for
+          separate VWAP pricing. Prices shown are aggregate across all game versions
+          within each segment.
+        </p>
+        <p>
+          The <code>ruleset_breakdown</code> metadata in the product JSON shows
+          exact observed counts by game version per segment.
+        </p>
+      </section>
+
+      <section className="methodology-section">
+        <h2>Region Is Not Available in Completed-Trades Data</h2>
+        <p>
+          The Traderie website UI shows a Region filter (Americas / Europe / Asia)
+          for active listings. However, the <strong>completed-trades API does not
+          expose region data</strong>. Every completed trade observation is
+          region-agnostic. This is a structural limitation of the data source.
+        </p>
+      </section>
+
+      <section className="methodology-section">
         <h2>Known Limitations</h2>
         <ul>
           <li>Traderie is an unofficial API surface — behavior may change.</li>
           <li>Pagination/window behavior of the completed trades endpoint is not fully understood.</li>
           <li>No buyer metadata is exposed by Traderie completed trades.</li>
           <li>Only rune-for-rune trades are modeled (AND trades excluded from VWAP).</li>
+          <li>Game versions are not split — prices aggregate Classic, LoD, and ROTW (ROTW dominates).</li>
+          <li>Region data is unavailable for completed trades — only visible on the website UI.</li>
           <li>Hardcore segments have thin volume.</li>
           <li>Diablo2.io parser is not yet validated.</li>
           <li>Cash sources are asking prices, not completed sales.</li>

@@ -1,5 +1,5 @@
-- current_goal: Tree clean — 5 commits staged and pushed to master
+- current_goal: GitHub Pages deploy workflow prepared — 404.html SPA redirect, data files in public/, deploy script, GH Actions workflow
 - active_task: Complete
 - active_agent: orchestrator
-- blockers: None
-- next_action: Await Buddy's next instruction
+- blockers: No GitHub remote configured — cannot push or deploy until repo URL is set
+- next_action: Create GitHub repo and add remote, then push master to trigger deploy
