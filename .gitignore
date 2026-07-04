@@ -54,3 +54,7 @@ research/sources/captures/
 
 # Web deploy artifacts (copied by deploy_web.sh)
 web/public/data/
+
+# Local orchestration workspace
+.agent-workflow/
+_outbox/
