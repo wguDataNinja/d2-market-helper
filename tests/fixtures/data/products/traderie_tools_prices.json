@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-07-05T10:00:00Z",
+  "segments": {
+    "pc_sc_l": {
+      "Ist Rune": { "ist_value": 1.0, "confidence": "high", "bid_price": 1.0, "ask_price": 1.0, "total_trades": 200 },
+      "Ber Rune": { "ist_value": 17.25, "confidence": "high", "bid_price": 16.39, "ask_price": 18.12, "total_trades": 220 },
+      "Jah Rune": { "ist_value": 12.53, "confidence": "high", "bid_price": 11.9, "ask_price": 13.16, "total_trades": 180 }
+    }
+  }
+}
