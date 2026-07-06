@@ -1,0 +1,24 @@
+# =============================================================================
+# Traderie — D2R Market Helper Python Dependencies
+# =============================================================================
+# Install: python3 -m pip install -r requirements.txt
+# =============================================================================
+
+# --- Core pipeline (snapshot / price calculation) ---
+cloudscraper>=1.2,<2          # Cloudflare bypass HTTP client
+numpy>=1.24                   # Numerical operations (rune price calculation)
+pandas>=2.0                   # DataFrame / CSV analysis
+
+# --- Cash price parsers (optional, local-only) ---
+extruct>=0.15                 # Schema.org microdata extraction (MuleFactory parser)
+w3lib>=2.1                    # Web utilities for extruct
+beautifulsoup4>=4.12          # HTML parsing (diablo2.io, G2G, IGGM parsers)
+tabulate>=0.9                 # CLI table formatting (audit/inspection scripts)
+
+# --- Browser capture (optional, local-only) ---
+# camoufox>=0.4               # Anti-bot browser automation
+# playwright>=1.40            # Browser automation engine
+
+# --- Research / legacy scripts ---
+# networkx>=3.0               # Graph rune pricing prototype
+# scipy>=1.11                 # NNLS solver (graph pricing prototype)

@@ -2,8 +2,10 @@
 __pycache__/
 *.pyc
 .venv/
+.python-version
 
-# Reddit API credentials
+# Environment / secrets
+.env
 tools/subreddit_research/.env
 
 # Research data (raw, selected, exports)
@@ -25,8 +27,13 @@ data/snapshots/
 data/history/
 
 # Launchd operation logs
-logs/launchd/
+logs/
 .run/
+
+# Runtime / transient artifacts
+runtime/
+*.log
+*.tmp
 
 # OS
 .DS_Store
@@ -58,3 +65,8 @@ web/public/data/
 # Local orchestration workspace
 .agent-workflow/
 _outbox/
+
+# Node / JavaScript
+node_modules/
+web/node_modules/
+web/dist/
