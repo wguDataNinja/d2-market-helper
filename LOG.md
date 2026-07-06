@@ -1,3 +1,20 @@
+- date: 2026-07-06
+  agent: orchestrator
+  task: postgresql-foundation-and-pilot-loader
+  files_changed:
+    - db/migrations/ (9 applied)
+    - db/validation/999_full_validation.sql (confirmed PASS)
+    - scripts/traderie_pilot_loader.py (created)
+    - tests/test_traderie_pilot_loader.py (created)
+    - docs/VPS_CONTINUITY.md (created)
+  validation:
+    - python3 -m pytest tests/test_traderie_adapter.py ✅ 40 passed
+    - python3 -m pytest tests/test_traderie_pilot_loader.py ✅ 6 passed
+    - clean backup created and verified — manifest_clean_20260706T064435Z.yaml
+    - restore drill PASS
+  outcome: foundation-complete
+  next: CI, deploy docs, commit boundaries, pilot Gate approval
+
 - date: 2026-06-21
   agent: orchestrator
   task: bootstrap-standard-files
@@ -433,3 +450,60 @@
     - dry-run still works (no regression)
   outcome: complete
   next: Await Buddy's next instruction
+
+- date: 2026-07-05
+  agent: worker
+  task: trd-009-pre-github-hardening
+  files_changed:
+    - .gitignore (added .env, logs/, node_modules/, runtime/, *.log, web/dist/)
+    - .env.example (created — 4 env var groups)
+    - requirements.txt (created — core deps: cloudscraper, numpy, pandas)
+    - scripts/run_traderie_snapshot_launchd.sh (parameterized REPO_DIR via TRADERIE_REPO_DIR)
+    - scripts/regenerate_products.sh (parameterized REPO_DIR via TRADERIE_REPO_DIR)
+    - logs/hardcore_probe_*.log (9 files removed from git tracking via git rm --cached)
+    - SESSION.md (updated)
+  validation:
+    - python3 -m py_compile scripts/snapshot_traderie.py ✅
+    - python3 -m py_compile scripts/calculate_rune_prices.py ✅
+    - python3 -m py_compile scripts/build_traderie_dataset_from_history.py ✅
+    - bash -n scripts/run_traderie_snapshot_launchd.sh ✅
+    - bash -n scripts/regenerate_products.sh ✅
+    - rg -n '/Users/buddy/' across tracked non-archived files — remaining hardcoded paths are in legacy/archived files (scripts/old/, notebooks/, dev/, docs/, prompts/) and launchd plist templates (require absolute paths by design)
+    - git status --short — modified: .gitignore, 2 shell scripts, 4 product JSONs (pre-existing dirty); deleted: 9 probe logs (index only); untracked: .env.example, requirements.txt
+    - no secrets or credentials in tracked diffs
+  outcome: complete
+  next: Await Buddy's review of TRD-009 report — LICENSE decision, remaining hardcoded plist paths, portfolio license decision
+
+- date: 2026-07-05
+  agent: sub-agent (batch-1)
+  task: TRD_BACKUP_RETENTION_PREP — backup/retention preparation
+  files_changed:
+    - docs/retention.md (created)
+    - docs/backup-restore.md (created)
+    - scripts/traderie_disk_inventory.py (created)
+    - docs/TRD_BACKUP_RETENTION_PREP.md (ivy-control, created)
+  validation: python3 -c py_compile scripts/traderie_disk_inventory.py ✅
+  outcome: complete
+  next: TRD-007 scope — backup script, retention script, launchd services
+
+- date: 2026-07-06
+  agent: Codex
+  task: Traderie real-data pilot readiness dry-run
+  files_changed:
+    - scripts/traderie_pilot_readiness_report.py (created)
+    - SESSION.md (updated)
+    - LOG.md (updated)
+  decision:
+    - No live PostgreSQL ingest executed.
+    - Pilot blocked because scripts/traderie_pg_adapter.py is an in-memory dry store, not a live database writer.
+    - Pilot also requires explicit real-data Gate approval before any load.
+  dry_run_candidate:
+    command: python3 scripts/traderie_pilot_readiness_report.py --eligible-only --json
+    segment: pc_sc_l
+    selected_count: 25
+    digest: df82ac34e7ccb16688963a1100d30bfc1eeeb8223d00b2243c75146e88bf794f
+  validation:
+    - python3 scripts/traderie_pilot_readiness_report.py --eligible-only --json ✅
+    - python3 -m pytest tests/test_traderie_adapter.py ✅ 40 passed
+  outcome: blocked-by-gate-and-adapter
+  next: Implement real PG loader/adapter with dry-run/plan/apply, reject report, rollback by observation_key, delete-and-reimport proof, and parity.
