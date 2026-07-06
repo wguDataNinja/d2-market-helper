@@ -1,0 +1,17 @@
+# =============================================================================
+# traderie-validate-products.timer
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Runs 30 minutes after process-products completes.
+# This gap allows the product regeneration to finish before validation.
+
+[Unit]
+Description=Traderie validate products timer (daily 06:30)
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Timer]
+OnCalendar=06:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,35 @@
+# =============================================================================
+# traderie-validate-products.service
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Runs all product validators against current artifacts:
+#   validate_in_game_rune_values.py
+#   validate_external_cash_prices.py
+#   validate_source_manifest.py
+#   collection_status.py --json
+# Should run AFTER process-products completes.
+# Non-zero exit on any validation failure.
+
+[Unit]
+Description=Traderie validate products — run all product validators
+After=network-online.target
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Service]
+Type=oneshot
+User=scraper
+WorkingDirectory=/home/scraper/apps/traderie
+EnvironmentFile=/home/scraper/config/traderie.env
+
+ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
+ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/validate-products.lock \
+    /home/scraper/apps/traderie/scripts/run_traderie_validate.sh
+
+Restart=on-failure
+RestartSec=30
+TimeoutStartSec=300
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,38 @@
+# =============================================================================
+# traderie-ingest-snapshot.service
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Prerequisites:
+#   - Cloudscraper/browser must be running before ingest can succeed
+#   - TRADERIE_PG_ADAPTER_ENABLED controls PG vs file fallback
+#   - Wrapper script: scripts/run_traderie_snapshot.sh
+#     (adapt from scripts/run_traderie_snapshot_launchd.sh for VPS paths)
+
+[Unit]
+Description=Traderie ingest API snapshot — fetch completed trades for all 4 segments
+After=network-online.target
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Service]
+Type=oneshot
+User=scraper
+WorkingDirectory=/home/scraper/apps/traderie
+EnvironmentFile=/home/scraper/config/traderie.env
+
+# Flock prevents concurrent snapshot runs
+ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
+ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/snapshot.lock \
+    /home/scraper/apps/traderie/scripts/run_traderie_snapshot.sh
+
+# PG-disabled fallback: script reads TRADERIE_PG_ADAPTER_ENABLED env var.
+# If disabled or false, all writes go to file adapter (JSONL history).
+# Non-zero exit on failed required work (softcore failure = critical).
+
+Restart=on-failure
+RestartSec=30
+TimeoutStartSec=300
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=timers.target

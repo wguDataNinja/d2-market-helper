@@ -1,0 +1,36 @@
+# =============================================================================
+# traderie-backup-postgres.service
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# INERT until Backup/Restore Gate is granted.
+# Backs up traderie PostgreSQL database via pg_dump.
+# Requires: Database Authority Gate, Backup/Restore Gate.
+# Produces: dump + SHA-256 checksum + manifest at TRADERIE_BACKUP_ROOT.
+# Off-host copy to Mac is handled separately (not in this service).
+
+[Unit]
+Description=Traderie backup PostgreSQL — pg_dump with checksum and manifest
+After=network-online.target
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Service]
+Type=oneshot
+User=scraper
+WorkingDirectory=/home/scraper/apps/traderie
+EnvironmentFile=/home/scraper/config/traderie.env
+
+ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
+ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/backup-postgres.lock \
+    /home/scraper/apps/traderie/scripts/run_traderie_backup.sh
+
+# PG-disabled fallback: if PG adapter is not enabled, backup is a no-op
+# that still writes a health record indicating backup_state=not_applicable.
+
+Restart=on-failure
+RestartSec=60
+TimeoutStartSec=1800
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=timers.target

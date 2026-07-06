@@ -1,0 +1,34 @@
+# =============================================================================
+# traderie-check-health.service
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Produces sanitized health JSON export at TRADERIE_HEALTH_OUTPUT.
+# Reads: snapshot age, product age, segment status, history rows,
+#   hardcore degradation, storage growth, backup state, migration version.
+# Writes: SHARED-003 compliant sanitized JSON for Hermes/dashboard.
+# PG-disabled fallback: reads file adapter state when PG is unavailable.
+
+[Unit]
+Description=Traderie check health — produce sanitized health export JSON
+After=network-online.target
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Service]
+Type=oneshot
+User=scraper
+WorkingDirectory=/home/scraper/apps/traderie
+EnvironmentFile=/home/scraper/config/traderie.env
+
+ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
+ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/check-health.lock \
+    /usr/bin/python3 /home/scraper/apps/traderie/scripts/traderie_health_export.py \
+    --output ${TRADERIE_HEALTH_OUTPUT}
+
+Restart=on-failure
+RestartSec=10
+TimeoutStartSec=120
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=timers.target

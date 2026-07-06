@@ -1,0 +1,34 @@
+# =============================================================================
+# traderie-process-products.service
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Rebuilds all product JSON files from accumulated history:
+#   build_traderie_dataset -> calculate_rune_prices -> generate_prices_json
+#   -> generate_external_cash_prices -> validation -> collection_status
+# PG-disabled fallback: all reads from file adapter (JSONL history + products)
+
+[Unit]
+Description=Traderie process products — rebuild all product artifacts from history
+After=network-online.target
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Service]
+Type=oneshot
+User=scraper
+WorkingDirectory=/home/scraper/apps/traderie
+EnvironmentFile=/home/scraper/config/traderie.env
+
+# Flock prevents concurrent regeneration
+ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
+ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/process-products.lock \
+    /home/scraper/apps/traderie/scripts/regenerate_products.sh
+
+# Non-zero exit on any step failure (pipeline stops on error)
+Restart=on-failure
+RestartSec=30
+TimeoutStartSec=300
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=timers.target

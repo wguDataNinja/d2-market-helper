@@ -1,0 +1,19 @@
+# =============================================================================
+# traderie-retain-snapshots.timer
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# INERT until Backup/Restore Gate AND Destructive Operation Gate are granted.
+# Runs weekly on Sunday at 03:00 — minimum activity window.
+# Must NOT run concurrently with ingest-snapshot or backup-postgres.
+
+[Unit]
+Description=Traderie retain snapshots timer (weekly Sun 03:00)
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Timer]
+OnCalendar=Sun *-*-* 03:00:00
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

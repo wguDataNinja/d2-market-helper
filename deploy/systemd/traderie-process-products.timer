@@ -1,0 +1,17 @@
+# =============================================================================
+# traderie-process-products.timer
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Matches current launchd schedule (06:00 daily).
+# Should NOT overlap with ingest-snapshot runs — waiting 5min gap after :00.
+
+[Unit]
+Description=Traderie process products timer (daily 06:00)
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Timer]
+OnCalendar=06:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

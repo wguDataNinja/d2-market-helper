@@ -1,0 +1,43 @@
+# =============================================================================
+# traderie-retain-snapshots.service
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# INERT until Backup/Restore Gate AND Destructive Operation Gate are granted.
+# Prunes old raw/normalized snapshots and history artifacts per retention policy.
+# Current data: 2.7 GB, ~100-150 MB/day growth.
+# Default retention (post-parity): 14 days raw, 30 days normalized.
+# Archive manifest with SHA-256 checksum for pruned files.
+# Dry-run mode: add --dry-run flag to run without deleting.
+
+[Unit]
+Description=Traderie retain snapshots — prune expired artifacts per retention policy
+After=network-online.target
+Documentation=https://github.com/wguDataNinja/traderie
+Wants=traderie-backup-postgres.service
+
+[Service]
+Type=oneshot
+User=scraper
+WorkingDirectory=/home/scraper/apps/traderie
+EnvironmentFile=/home/scraper/config/traderie.env
+
+ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
+
+# WARNING: Remove --dry-run ONLY after Destructive Operation Gate is granted.
+# Retention script defaults to dry-run for safety.
+ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/retain-snapshots.lock \
+    /usr/bin/python3 /home/scraper/apps/traderie/scripts/traderie_disk_inventory.py \
+    --mode prune --dry-run
+
+# PG-disabled fallback: retention operates on filesystem artifacts only.
+# PG data is not pruned by this service (separate pg_dump retention).
+# Non-zero exit on failed prune (e.g. checksum mismatch during archive).
+
+Restart=on-failure
+RestartSec=30
+TimeoutStartSec=300
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=timers.target

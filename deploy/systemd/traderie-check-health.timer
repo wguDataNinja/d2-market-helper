@@ -1,0 +1,18 @@
+# =============================================================================
+# traderie-check-health.timer
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Runs every 30 minutes. Health check is lightweight and independent.
+# Can run even when other workflows are active.
+
+[Unit]
+Description=Traderie check health timer (every 30min)
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Timer]
+OnCalendar=*:0/30
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,18 @@
+# =============================================================================
+# traderie-ingest-snapshot.timer
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# Dev cadence: every 15 minutes. Production cadence (launchd): 4x daily.
+# Install ONLY after SHARED-004 capacity preflight and Scheduler Gate approval.
+
+[Unit]
+Description=Traderie ingest snapshot timer (every 15min)
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Timer]
+OnCalendar=*:0/15
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

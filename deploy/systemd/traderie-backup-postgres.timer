@@ -1,0 +1,19 @@
+# =============================================================================
+# traderie-backup-postgres.timer
+# DO NOT INSTALL OR ENABLE WITHOUT SCHEDULER GATE
+# =============================================================================
+# INERT until Backup/Restore Gate is granted.
+# Runs daily at 07:00 — after process-products and validation complete.
+# 30-minute timeout allows for full pg_dump + checksum + off-host transport.
+
+[Unit]
+Description=Traderie backup PostgreSQL timer (daily 07:00)
+Documentation=https://github.com/wguDataNinja/traderie
+
+[Timer]
+OnCalendar=07:00:00
+Persistent=true
+RandomizedDelaySec=180
+
+[Install]
+WantedBy=timers.target
