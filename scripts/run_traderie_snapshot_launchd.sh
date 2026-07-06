@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-REPO_DIR="/Users/buddy/projects/traderie"
+REPO_DIR="${TRADERIE_REPO_DIR:-/Users/buddy/projects/traderie}"
 LOCK_DIR="${REPO_DIR}/.run/locks/snapshot-traderie.lock"
 PYTHON="${REPO_DIR}/.venv/bin/python"
 SNAPSHOT_SCRIPT="${REPO_DIR}/scripts/snapshot_traderie.py"

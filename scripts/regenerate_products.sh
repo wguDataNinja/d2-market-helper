@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-REPO_DIR="/Users/buddy/projects/traderie"
+REPO_DIR="${TRADERIE_REPO_DIR:-/Users/buddy/projects/traderie}"
 PYTHON="${REPO_DIR}/.venv/bin/python"
 
 "$PYTHON" scripts/build_traderie_dataset_from_history.py --write-research
