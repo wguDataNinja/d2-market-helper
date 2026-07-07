@@ -16,6 +16,9 @@ w3lib>=2.1                    # Web utilities for extruct
 beautifulsoup4>=4.12          # HTML parsing (diablo2.io, G2G, IGGM parsers)
 tabulate>=0.9                 # CLI table formatting (audit/inspection scripts)
 
+# --- Test / publication proof ---
+pytest>=8,<9                  # Fresh-clone validation
+
 # --- Browser capture (optional, local-only) ---
 # camoufox>=0.4               # Anti-bot browser automation
 # playwright>=1.40            # Browser automation engine
