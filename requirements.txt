@@ -8,6 +8,7 @@
 cloudscraper>=1.2,<2          # Cloudflare bypass HTTP client
 numpy>=1.24                   # Numerical operations (rune price calculation)
 pandas>=2.0                   # DataFrame / CSV analysis
+psycopg2-binary>=2.9,<3       # PostgreSQL adapter, lifecycle tools, health export
 
 # --- Cash price parsers (optional, local-only) ---
 extruct>=0.15                 # Schema.org microdata extraction (MuleFactory parser)

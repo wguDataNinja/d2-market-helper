@@ -2,6 +2,8 @@
 
 **Status:** INERT — do not install or enable without Scheduler Gate approval.
 
+**Current implementation report:** `docs/TRADERIE_POSTGRES_VPS_IMPLEMENTATION_AND_REMAINING_WORK_20260706.md` contains the latest local Mac PostgreSQL pilot/lifecycle evidence and the remaining VPS work list. Use it before this deployment runbook.
+
 ## Architecture
 
 Traderie runs as a set of `oneshot` systemd services triggered by systemd timers on the VPS (`ih-market-vps`, `46.224.146.164`). All services run as the `scraper` user.
@@ -10,7 +12,7 @@ Traderie runs as a set of `oneshot` systemd services triggered by systemd timers
 
 | Service | Timer Schedule | Timeout | Lock | Purpose |
 |---------|---------------|---------|------|---------|
-| `traderie-ingest-snapshot` | Every 15 min | 5 min | `snapshot.lock` | Fetch completed trades from Traderie API (4 segments) |
+| `traderie-ingest-snapshot` | 4x daily | 5 min | `snapshot.lock` | Fetch completed trades from Traderie API (4 segments) |
 | `traderie-process-products` | Daily 06:00 | 5 min | `process-products.lock` | Rebuild product JSONs from accumulated history |
 | `traderie-validate-products` | Daily 06:30 | 5 min | `validate-products.lock` | Run all product validators |
 | `traderie-check-health` | Every 30 min | 2 min | `check-health.lock` | Produce sanitized health JSON export |
@@ -35,11 +37,11 @@ These scripts must exist on VPS (adapt from Mac counterparts):
 
 | Service | Script | Source |
 |---------|--------|--------|
-| ingest-snapshot | `scripts/run_traderie_snapshot.sh` | Adapt from `run_traderie_snapshot_launchd.sh` (use VPS paths, drop macOS-specific lock) |
+| ingest-snapshot | `scripts/run_traderie_snapshot.sh` | VPS paths, systemd lock owned by unit |
 | process-products | `scripts/regenerate_products.sh` | Adapt from existing (replace Mac paths with VPS paths) |
 | validate-products | `scripts/run_traderie_validate.sh` | Create — runs all 4 validators + collection_status.py --json |
-| check-health | `scripts/traderie_health_export.py` | Already exists — inert/dry-run, needs production readiness |
-| backup-postgres | `scripts/run_traderie_backup.sh` | Create — pg_dump + sha256sum + manifest (INERT) |
+| check-health | `scripts/traderie_health_export.py` | Sanitized health export; `--pg` records one health row |
+| backup-postgres | `scripts/run_traderie_backup.sh` | pg_dump + SHA-256 checksum + manifest (INERT) |
 | retain-snapshots | Referenced via `traderie_disk_inventory.py` | Already exists — dry-run default (INERT) |
 
 ### Database (Optional, Future)
