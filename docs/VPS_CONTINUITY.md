@@ -3,6 +3,8 @@
 **Date:** 2026-07-06
 **Purpose:** Provide a durable record of the repository's PostgreSQL foundation, pilot readiness, and VPS deployment path.
 
+**Current consolidated PostgreSQL/VPS report:** `docs/TRADERIE_POSTGRES_VPS_IMPLEMENTATION_AND_REMAINING_WORK_20260706.md`. Read that report first for the latest local Mac PG pilot/lifecycle evidence and remaining VPS work.
+
 ## Read First
 
 A future worker should begin in this order:
@@ -10,10 +12,17 @@ A future worker should begin in this order:
 1. Repo-local `AGENTS.md` — routing and safety rules
 2. Repo-local `SESSION.md` — current session state
 3. Repo-local `LOG.md` — durable activity log
-4. **This document** (`docs/VPS_CONTINUITY.md`) — project-specific VPS status
-5. `ivy-control/vps/worker-control/reports/STRONG_AGENTIC_EXECUTION_REPORT.md` — most recent execution report
-6. `ivy-control/vps/worker-control/reports/REAL_DATA_PILOT_GATE_ASSESSMENT_20260706.md` — current Gate status
-7. `ivy-control/vps/worker-control/reports/POST_FOUNDATION_TO_VPS_ROADMAP.md` — forward roadmap
+4. **`ivy-control-vps/repos/traderie/STATUS.md`** — canonical VPS readiness status for ivy-control agents
+5. `docs/TRADERIE_POSTGRES_VPS_IMPLEMENTATION_AND_REMAINING_WORK_20260706.md` — current consolidated implementation report
+6. **This document** (`docs/VPS_CONTINUITY.md`) — project-specific VPS status
+7. `ivy-control/vps/worker-control/reports/STRONG_AGENTIC_EXECUTION_REPORT.md` — older execution report, use only for historical context
+8. `ivy-control/vps/worker-control/reports/REAL_DATA_PILOT_GATE_ASSESSMENT_20260706.md` — older Gate status
+9. `ivy-control/vps/worker-control/reports/POST_FOUNDATION_TO_VPS_ROADMAP.md` — forward roadmap
+
+### External Status
+
+Traderie's VPS readiness status is tracked in `ivy-control-vps/repos/traderie/STATUS.md`.  
+Ivy-control agents read that file before acting on Traderie VPS work.
 
 ### Where Recent Work Was Logged
 
