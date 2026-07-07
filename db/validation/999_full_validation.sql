@@ -8,6 +8,10 @@ UNION ALL SELECT 'row_count_app.items', COUNT(*) FROM app.items
 UNION ALL SELECT 'row_count_app.sources', COUNT(*) FROM app.sources
 UNION ALL SELECT 'row_count_app.completed_trades', COUNT(*) FROM app.completed_trades
 UNION ALL SELECT 'row_count_app.price_entries', COUNT(*) FROM app.price_entries
+UNION ALL SELECT 'row_count_app.collection_run_metrics', COUNT(*) FROM app.collection_run_metrics
+UNION ALL SELECT 'row_count_app.segment_aggregates', COUNT(*) FROM app.segment_aggregates
+UNION ALL SELECT 'row_count_app.prune_audit', COUNT(*) FROM app.prune_audit
+UNION ALL SELECT 'row_count_archive.prune_archive_audit', COUNT(*) FROM archive.prune_archive_audit
 UNION ALL SELECT 'row_count_health.health_runs', COUNT(*) FROM health.health_runs
 UNION ALL SELECT 'row_count_health.workflow_status', COUNT(*) FROM health.workflow_status;
 
@@ -33,11 +37,15 @@ WITH expected(table_schema, table_name) AS (
         ('app','rune_registry'),
         ('app','segment_rune_prices'),
         ('app','ruleset_breakdowns'),
+        ('app','collection_run_metrics'),
+        ('app','segment_aggregates'),
+        ('app','prune_audit'),
+        ('archive','prune_archive_audit'),
         ('health','health_runs'),
         ('health','workflow_status')
 )
 SELECT 'expected_tables_exist' AS check_name,
-       CASE WHEN COUNT(c.oid) = 13 THEN 'PASS' ELSE 'FAIL' END AS result,
+       CASE WHEN COUNT(c.oid) = 17 THEN 'PASS' ELSE 'FAIL' END AS result,
        COUNT(c.oid) AS found
 FROM expected e
 LEFT JOIN pg_namespace n ON n.nspname = e.table_schema
@@ -53,20 +61,20 @@ WHERE n.nspname IN ('app','archive','health')
   AND r.rolname = 'traderie_owner';
 
 SELECT 'table_ownership' AS check_name,
-       CASE WHEN COUNT(*) = 13 THEN 'PASS' ELSE 'FAIL' END AS result,
+       CASE WHEN COUNT(*) = 17 THEN 'PASS' ELSE 'FAIL' END AS result,
        COUNT(*) AS owned_tables
 FROM pg_class c
 JOIN pg_namespace n ON n.oid = c.relnamespace
 JOIN pg_roles r ON r.oid = c.relowner
-WHERE n.nspname IN ('app','health')
+WHERE n.nspname IN ('app','archive','health')
   AND c.relkind = 'r'
   AND r.rolname = 'traderie_owner';
 
 SELECT 'migration_versions' AS check_name,
-       CASE WHEN COUNT(*) IN (0, 9) THEN 'PASS' ELSE 'FAIL' END AS result,
+       CASE WHEN COUNT(*) IN (0, 17) THEN 'PASS' ELSE 'FAIL' END AS result,
        ARRAY_AGG(version ORDER BY version) AS versions
 FROM app.traderie_migrations
-WHERE version BETWEEN 1 AND 9;
+WHERE version BETWEEN 1 AND 17;
 
 SELECT 'segments_reference_rows' AS check_name,
        CASE WHEN COUNT(*) IN (0, 4) THEN 'PASS' ELSE 'FAIL' END AS result,
@@ -74,17 +82,17 @@ SELECT 'segments_reference_rows' AS check_name,
 FROM app.segments;
 
 SELECT 'primary_keys' AS check_name,
-       CASE WHEN COUNT(*) >= 13 THEN 'PASS' ELSE 'FAIL' END AS result,
+       CASE WHEN COUNT(*) >= 17 THEN 'PASS' ELSE 'FAIL' END AS result,
        COUNT(*) AS pk_count
 FROM information_schema.table_constraints
-WHERE table_schema IN ('app','health')
+WHERE table_schema IN ('app','archive','health')
   AND constraint_type = 'PRIMARY KEY';
 
 SELECT 'foreign_keys' AS check_name,
-       CASE WHEN COUNT(*) >= 10 THEN 'PASS' ELSE 'FAIL' END AS result,
+       CASE WHEN COUNT(*) >= 21 THEN 'PASS' ELSE 'FAIL' END AS result,
        COUNT(*) AS fk_count
 FROM information_schema.table_constraints
-WHERE table_schema IN ('app','health')
+WHERE table_schema IN ('app','archive','health')
   AND constraint_type = 'FOREIGN KEY';
 
 SELECT 'writer_app_dml' AS check_name,
@@ -100,7 +108,15 @@ SELECT 'writer_app_dml' AS check_name,
                  AND has_table_privilege('traderie_writer', c.oid, 'UPDATE')
                  AND has_table_privilege('traderie_writer', c.oid, 'DELETE')
              )
-       ) THEN 'PASS' ELSE 'FAIL' END AS result;
+    ) THEN 'PASS' ELSE 'FAIL' END AS result;
+
+SELECT 'writer_archive_audit_select_insert' AS check_name,
+       CASE WHEN
+           has_schema_privilege('traderie_writer', 'archive', 'USAGE')
+           AND
+           has_table_privilege('traderie_writer', 'archive.prune_archive_audit', 'SELECT')
+           AND has_table_privilege('traderie_writer', 'archive.prune_archive_audit', 'INSERT')
+       THEN 'PASS' ELSE 'FAIL' END AS result;
 
 SELECT 'reader_app_select' AS check_name,
        CASE WHEN NOT EXISTS (
@@ -112,6 +128,13 @@ SELECT 'reader_app_select' AS check_name,
              AND NOT has_table_privilege('traderie_reader', c.oid, 'SELECT')
        ) THEN 'PASS' ELSE 'FAIL' END AS result;
 
+SELECT 'reader_health_select' AS check_name,
+       CASE WHEN
+           has_schema_privilege('traderie_reader', 'health', 'USAGE')
+           AND has_table_privilege('traderie_reader', 'health.health_runs', 'SELECT')
+           AND has_table_privilege('traderie_reader', 'health.workflow_status', 'SELECT')
+       THEN 'PASS' ELSE 'FAIL' END AS result;
+
 SELECT 'monitor_health_only' AS check_name,
        CASE WHEN has_schema_privilege('traderie_monitor', 'health', 'USAGE')
              AND NOT has_schema_privilege('traderie_monitor', 'app', 'USAGE')
@@ -122,7 +145,7 @@ SELECT 'backup_all_project_tables' AS check_name,
            SELECT 1
            FROM pg_class c
            JOIN pg_namespace n ON n.oid = c.relnamespace
-           WHERE n.nspname IN ('app','health')
+           WHERE n.nspname IN ('app','archive','health')
              AND c.relkind = 'r'
              AND NOT has_table_privilege('traderie_backup', c.oid, 'SELECT')
        ) THEN 'PASS' ELSE 'FAIL' END AS result;
@@ -158,12 +181,20 @@ BEGIN
     END IF;
 
     IF (SELECT COUNT(*) FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace JOIN pg_roles r ON r.oid = c.relowner
-        WHERE n.nspname IN ('app','health') AND c.relkind = 'r' AND r.rolname = 'traderie_owner') <> 13 THEN
+        WHERE n.nspname IN ('app','archive','health') AND c.relkind = 'r' AND r.rolname = 'traderie_owner') <> 17 THEN
         failures := array_append(failures, 'table_ownership');
     END IF;
 
-    IF (SELECT COUNT(*) FROM app.traderie_migrations WHERE version BETWEEN 1 AND 9) NOT IN (0, 9) THEN
+    IF (SELECT COUNT(*) FROM app.traderie_migrations WHERE version BETWEEN 1 AND 17) NOT IN (0, 17) THEN
         failures := array_append(failures, 'migration_versions');
+    END IF;
+
+    IF NOT (
+        has_schema_privilege('traderie_writer', 'archive', 'USAGE')
+        AND has_table_privilege('traderie_writer', 'archive.prune_archive_audit', 'SELECT')
+        AND has_table_privilege('traderie_writer', 'archive.prune_archive_audit', 'INSERT')
+    ) THEN
+        failures := array_append(failures, 'writer_archive_audit_select_insert');
     END IF;
 
     IF (SELECT COUNT(*) FROM app.segments) NOT IN (0, 4) THEN
@@ -171,12 +202,12 @@ BEGIN
     END IF;
 
     IF (SELECT COUNT(*) FROM information_schema.table_constraints
-        WHERE table_schema IN ('app','health') AND constraint_type = 'PRIMARY KEY') < 13 THEN
+        WHERE table_schema IN ('app','archive','health') AND constraint_type = 'PRIMARY KEY') < 17 THEN
         failures := array_append(failures, 'primary_keys');
     END IF;
 
     IF (SELECT COUNT(*) FROM information_schema.table_constraints
-        WHERE table_schema IN ('app','health') AND constraint_type = 'FOREIGN KEY') < 10 THEN
+        WHERE table_schema IN ('app','archive','health') AND constraint_type = 'FOREIGN KEY') < 21 THEN
         failures := array_append(failures, 'foreign_keys');
     END IF;
 
@@ -192,6 +223,14 @@ BEGIN
           )
     ) THEN
         failures := array_append(failures, 'writer_app_dml');
+    END IF;
+
+    IF NOT (
+        has_schema_privilege('traderie_reader', 'health', 'USAGE')
+        AND has_table_privilege('traderie_reader', 'health.health_runs', 'SELECT')
+        AND has_table_privilege('traderie_reader', 'health.workflow_status', 'SELECT')
+    ) THEN
+        failures := array_append(failures, 'reader_health_select');
     END IF;
 
     IF NOT (has_schema_privilege('traderie_monitor', 'health', 'USAGE')

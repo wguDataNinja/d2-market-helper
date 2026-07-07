@@ -238,6 +238,34 @@ class TestPgAdapterFallback:
         trades = pg_adapter_enabled_with_file.get_completed_trades()
         assert trades == []
 
+    def test_explicit_pg_url_refuses_file_fallback(self, file_adapter):
+        adapter = PgTraderieAdapter(file_adapter=file_adapter, enabled=True, pg_url="postgresql://localhost/traderie")
+        def failing(*args, **kwargs):
+            raise RuntimeError("PG connection failed")
+        adapter._fetch_all = failing
+        with pytest.raises(RuntimeError, match="refusing file fallback"):
+            adapter.get_segments()
+
+    def test_snapshot_runs_real_pg_query_matches_schema(self):
+        adapter = PgTraderieAdapter(enabled=True, pg_url="postgresql://localhost/traderie")
+        captured = {}
+        def fake_fetch_all(sql, params=()):
+            captured["sql"] = sql
+            captured["params"] = params
+            return []
+        adapter._fetch_all = fake_fetch_all
+
+        assert adapter.get_snapshot_runs("pc_sc_l") == []
+        sql = captured["sql"]
+        assert "snapshot_run_id" in sql
+        assert "item_count" in sql
+        assert "listing_count" in sql
+        assert "error_count" in sql
+        assert "duration_seconds" in sql
+        assert "source_artifact_path" not in sql
+        assert "records_fetched" not in sql
+        assert captured["params"] == ("pc_sc_l",)
+
 
 # ---------------------------------------------------------------------------
 # Test: Parity comparison with known fixture data

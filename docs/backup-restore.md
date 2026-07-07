@@ -4,6 +4,8 @@
 **Scope:** PostgreSQL dumps, file artifact manifests, restore drills  
 **Based on:** SHARED-002 evidence standard, Codex Session 1 §7
 
+**Latest implementation evidence:** See `docs/TRADERIE_POSTGRES_VPS_IMPLEMENTATION_AND_REMAINING_WORK_20260706.md` for the local Mac PG pilot, migration, validation, and lifecycle command results. This file remains the backup/restore runbook.
+
 ---
 
 ## 1. Backup Method

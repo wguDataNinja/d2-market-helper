@@ -1,5 +1,7 @@
 # Traderie — Rollback Plan
 
+**Current implementation report:** `docs/TRADERIE_POSTGRES_VPS_IMPLEMENTATION_AND_REMAINING_WORK_20260706.md` records the latest local PostgreSQL pilot, rollback, prune/archive, and health evidence. Use it for current state before applying this rollback plan.
+
 ## 1. Disable Timer (Stop Scheduled Runs)
 
 ```bash

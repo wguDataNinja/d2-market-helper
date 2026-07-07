@@ -4,6 +4,8 @@
 **Scope:** PostgreSQL dumps, raw snapshots, normalized snapshots, history JSONL, derived products, research artifacts  
 **Gates:** Backup/Restore Gate, Destructive Operation Gate
 
+**Latest implementation evidence:** See `docs/TRADERIE_POSTGRES_VPS_IMPLEMENTATION_AND_REMAINING_WORK_20260706.md` for the key-limited pilot prune dry-run/apply, archive audit proof, and health retention output. This file remains the policy reference.
+
 ---
 
 ## 1. Retention-Class Definitions
