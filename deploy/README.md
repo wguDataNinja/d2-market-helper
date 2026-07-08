@@ -2,7 +2,7 @@
 
 **Status:** INERT — do not install or enable without Scheduler Gate approval.
 
-**Current implementation report:** `docs/TRADERIE_POSTGRES_VPS_IMPLEMENTATION_AND_REMAINING_WORK_20260706.md` contains the latest local Mac PostgreSQL pilot/lifecycle evidence and the remaining VPS work list. Use it before this deployment runbook.
+**Current implementation plan:** The current VPS capacity evidence and deployment plan are in `repos/traderie/PHASE_B_CODEX_PACKET.md` in the `ivy-control-vps` repository. VPS PostgreSQL is the operational target; Mac PostgreSQL is the archive/backup/restore authority.
 
 ## Architecture
 
@@ -44,9 +44,9 @@ These scripts must exist on VPS (adapt from Mac counterparts):
 | backup-postgres | `scripts/run_traderie_backup.sh` | pg_dump + SHA-256 checksum + manifest (INERT) |
 | retain-snapshots | Referenced via `traderie_disk_inventory.py` | Already exists — dry-run default (INERT) |
 
-### Database (Optional, Future)
+### Database
 
-PostgreSQL adapter is disabled by default (`TRADERIE_PG_ADAPTER_ENABLED=false`). All services fall back to file-based storage when PG is unavailable. See `db/` for schema and migration files.
+VPS PostgreSQL is the operational authority. The PostgreSQL adapter (`TRADERIE_PG_ADAPTER_ENABLED=true`) is used when PG is available; services fall back to file-based storage when PG is unavailable. See `db/` for schema and migration files. Mac PostgreSQL is the archive/backup/restore authority.
 
 ## PG-Disabled Fallback
 
@@ -78,10 +78,10 @@ When `TRADERIE_PG_ADAPTER_ENABLED=false` (default):
 
 | Document | Path |
 |----------|------|
-| Architecture (Codex S1) | `ivy-control/vps/worker-control/reports/CODEX_SESSION_1_ARCHITECTURE.md` |
-| Health contract | `ivy-control/vps/worker-control/reports/SHARED-003_HEALTH_CONTRACT.md` |
-| PG provisioning | `ivy-control/vps/postgres/README.md` |
+| Architecture | `ivy-control-vps/docs/PORTFOLIO_CONVENTIONS.md` |
+| Health contract | `ivy-control-vps/docs/PORTFOLIO_CONVENTIONS.md` (health contract section) |
 | Backup/restore | `docs/backup-restore.md` |
 | Retention policy | `docs/retention.md` |
 | Schema/migrations | `db/README.md` |
-| Shared conventions | `ivy-control/vps/shared-conventions.md` |
+| Shared conventions | `ivy-control-vps/docs/PORTFOLIO_CONVENTIONS.md` |
+| Repository control | `ivy-control-vps/repos/traderie/CONTROL.md` |
