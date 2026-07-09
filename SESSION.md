@@ -1,16 +1,41 @@
-- foundation_complete: true (2026-07-06 — migrations, validation, backup, restore, pilot loader done)
-- pilot_loader: scripts/traderie_pilot_loader.py (dry-run/plan/apply/rollback/parity, 6 tests PASS)
-- continuity_doc: docs/VPS_CONTINUITY.md
-- evidence: ivy-control/vps/worker-control/reports/STRONG_AGENTIC_EXECUTION_REPORT.md
-- current_goal: VPS migration preparation — backup/retention prep (TRD_BACKUP_RETENTION_PREP)
-- active_task: Traderie real-data pilot readiness dry-run complete — no live ingest
-- active_agent: Codex
-- current_decision: Pilot blocked until real PG loader/adapter exists and explicit real-data Gate approval is recorded.
-- pilot_candidate:
-    command: python3 scripts/traderie_pilot_readiness_report.py --eligible-only --json
-    segment: pc_sc_l
-    selected_count: 25
-    digest: df82ac34e7ccb16688963a1100d30bfc1eeeb8223d00b2243c75146e88bf794f
-- validation:
-    - python3 -m pytest tests/test_traderie_adapter.py — 40 passed
-- next_action: Implement real PG loader/adapter with dry-run/plan/apply, reject report, rollback by segment_slug + observation_key, delete-and-reimport proof, and parity.
+- current_goal: Phase A GitHub publication and local database authority proof
+- active_task: Phase A GitHub publication completed; fresh-clone proof passed. Stop before VPS work.
+- active_agent: orchestrator with delegated worker/git-steward execution
+- phase_a_status: preflight, backup, restore drill, health export proof, tests, DB validation, push, and fresh-clone proof PASSED.
+- git_grouping: resolved — C0 separates prior implementation from this session's finishing work
+- approved_decisions:
+    - repo: https://github.com/wguDataNinja/d2-market-helper (PUBLIC)
+    - no license
+    - 7-day raw retention
+    - 365-day daily aggregate retention
+    - compressed JSONL + pg_dump archive
+    - no new .db
+    - no VPS mutation
+    - no timer/service activation
+    - preserve validated Mac PostgreSQL traderie database as current authority
+- local_commits:
+    - 90eb38f feat: complete PostgreSQL foundation, adapter, pilot, aggregates, metrics, prune, and product updates
+    - 77ffa28 cleanup: remove dev, captures, old scripts, stale CSVs; add VPS wrappers; wire health export; fix cadence
+    - ea8221c docs: add public README
+- followup_commit:
+    - b3b70a0 test: include pytest for fresh-clone validation
+- remote: origin git@github.com:wguDataNinja/d2-market-helper.git
+- pushed_branch: master
+- fresh_clone_proof:
+    - git clone: passed
+    - pip install -r requirements.txt: passed
+    - python3 -m pytest tests/ -v: 57 passed
+    - python3 scripts/collection_status.py --json: passed
+    - psql migration count: 17
+- vps_capacity_recheck_20260707: 91% used (3.3 GB free) — worsened since 2026-07-06 Gate. No passwordless sudo. No PostgreSQL installed. No traderie checkout.
+- phase_b_prerequisite: VPS Capacity Gate must pass before deployment. Cleanup alone likely insufficient (~1.5-2 GB recoverable); resize may be needed.
+- digest_discrepancy_resolved: Old file-sourced digest (df82ac34...) and live PG digest (eb05ce29...) are not directly comparable — computed on different source data at different times. Pilot loader verified its own load. Pre-push backup and restore cycle passed.
+- next_action: Stop before VPS work; Phase B remains separately gated. VPS capacity remediation required before deployment.
+- stop_conditions:
+    - clean C0 staging impossible → report
+    - test count < 55 → stop
+    - migration validation fails → stop
+    - app table row counts change → stop
+    - remote exists with different URL → stop
+    - GitHub identity lacks write permission → stop
+    - fresh clone fails → stop

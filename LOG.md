@@ -507,3 +507,133 @@
     - python3 -m pytest tests/test_traderie_adapter.py ✅ 40 passed
   outcome: blocked-by-gate-and-adapter
   next: Implement real PG loader/adapter with dry-run/plan/apply, reject report, rollback by observation_key, delete-and-reimport proof, and parity.
+
+- date: 2026-07-07
+  agent: git-steward
+  task: commit-docs-vps-continuity-crossref
+  commit: e2c05d649aefdc2d153d84ee5915249c7457c8e6
+  files_changed:
+    - docs/VPS_CONTINUITY.md (modified — added ivy-control-vps repos/ status cross-reference)
+  outcome: committed
+
+- date: 2026-07-07
+  agent: Codex orchestrator
+  task: phase-a-github-publication-and-local-db-authority-proof
+  packet: _outbox/VPS_deployment_prompt.txt
+  files_changed:
+    - SESSION.md (updated active task/current goal)
+    - LOG.md (this entry)
+  validation_completed:
+    - python3 -m pytest tests/ -v: 54 passed
+    - psql -d traderie -f db/validation/999_full_validation.sql: PASS
+    - SQLite inventory: no .db/.sqlite/.sqlite3 files found
+    - source counts before/after unchanged:
+        completed_trades: 25
+        price_entries: 37
+        segment_aggregates: 2
+        collection_run_metrics: 1
+        health_runs: 0
+    - backup created: /Users/buddy/projects/backups/postgres/traderie/traderie_pre_push_20260707T083001Z.dump
+    - checksum created and verified: /Users/buddy/projects/backups/postgres/traderie/traderie_pre_push_20260707T083001Z.dump.sha256
+    - restore drill completed; restored row counts matched; no traderie_restore_test% DB remains
+  blocked:
+    - Packet stop condition reached: git status cannot be cleanly grouped into the two prescribed A6 commits.
+    - A4 health export implementation did not run; no health.health_runs test row inserted.
+    - A6/A7/A8 staging, commits, push, and fresh-clone proof did not run.
+  outcome: stopped
+  next: Resolve/authorize dirty-tree grouping before rerunning Phase A publication.
+
+- date: 2026-07-07
+  agent: Codex orchestrator
+  task: phase-a-c0-c1-c2-local-publication-sequence
+  packet: _outbox/VPS_deployment_prompt.txt
+  files_changed:
+    - SESSION.md (updated push blocker/current state)
+    - LOG.md (this entry)
+  local_commits:
+    - 90eb38f feat: complete PostgreSQL foundation, adapter, pilot, aggregates, metrics, prune, and product updates
+    - 77ffa28 cleanup: remove dev, captures, old scripts, stale CSVs; add VPS wrappers; wire health export; fix cadence
+    - ea8221c docs: add public README
+  validation_completed:
+    - preflight tests: 54 passed
+    - post-change tests: 57 passed
+    - db/validation/999_full_validation.sql: PASS before and after changes
+    - wrapper validation: TRADERIE_REPO_DIR=/Users/buddy/projects/traderie scripts/run_traderie_validate.sh passed
+    - SQLite inventory: no .db/.sqlite/.sqlite3 files found
+    - source counts unchanged:
+        completed_trades: 25
+        price_entries: 37
+        segment_aggregates: 2
+        collection_run_metrics: 1
+        health_runs: 0
+    - health export proof: inserted run_id 7e096889-b6e8-4321-a613-43bf83279586, then DELETE 1 cleanup
+  git:
+    - remote added: origin https://github.com/wguDataNinja/d2-market-helper.git
+    - push attempted: git push origin master
+  blocked:
+    - GitHub authenticated account is SwampDad and received 403 permission denied for wguDataNinja/d2-market-helper.
+    - Fresh-clone proof did not run because push failed.
+  outcome: blocked-by-github-permission
+  next: Authenticate or push with a GitHub identity that has write permission to wguDataNinja/d2-market-helper, then run fresh-clone proof.
+
+- date: 2026-07-07
+  agent: Codex orchestrator
+  task: phase-a-github-push-and-fresh-clone-proof
+  files_changed:
+    - requirements.txt (added pytest for published fresh-clone validation)
+    - SESSION.md (updated final pushed state)
+    - LOG.md (this entry)
+  git:
+    - remote changed to SSH: origin git@github.com:wguDataNinja/d2-market-helper.git
+    - pushed branch: master
+    - pushed commits:
+        - 90eb38f feat: complete PostgreSQL foundation, adapter, pilot, aggregates, metrics, prune, and product updates
+        - 77ffa28 cleanup: remove dev, captures, old scripts, stale CSVs; add VPS wrappers; wire health export; fix cadence
+        - ea8221c docs: add public README
+        - b3b70a0 test: include pytest for fresh-clone validation
+  validation_completed:
+    - local tests after pytest dependency: 57 passed
+    - db/validation/999_full_validation.sql: PASS
+    - fresh clone from git@github.com:wguDataNinja/d2-market-helper.git: PASS
+    - fresh clone pip install -r requirements.txt: PASS
+    - fresh clone tests: 57 passed
+    - fresh clone collection_status JSON: PASS
+    - fresh clone PG migration count: 17
+  outcome: complete
+  next: Stop before VPS work; Phase B remains separately gated.
+
+- date: 2026-07-07
+  agent: orchestrator
+  task: dirty-tree-resolution-phase-a-continuation
+  files_changed:
+    - _outbox/VPS_deployment_prompt (updated — 3-commit plan, full path classification, health export plan, files-never-commit list)
+    - SESSION.md (updated — git grouping resolved, stop conditions listed)
+    - LOG.md (this entry)
+  classification:
+    C0_foundation: 44 paths (prior implementation: migrations, adapter, pilot, aggregates, metrics, prune, products, docs)
+    C1_cleanup: 7 git rm paths + .gitignore, deploy/README.md, health export, 3 wrapper scripts
+    C2_docs: README.md
+    never_commit: 22 path patterns (gitignored or explicitly excluded)
+    audit_only: 6 doc reports + _outbox contents
+  git_grouping: 3-commit sequence resolves the prior 2-commit ambiguity. C0 separates prior Strong Codex implementation from this session's finishing work.
+  validation: inventory complete — no .db files exist, no SQLite to reconcile, 17 PG migrations applied, remote URL confirmed public
+  outcome: complete
+  next: Execute _outbox/VPS_deployment_prompt — wire health export, cleanup, 3 commits, push, fresh-clone proof
+
+- date: 2026-07-07
+  agent: orchestrator
+  task: phase-a-verification-and-documentation
+  files_changed:
+    - SESSION.md (updated — Phase A verified, VPS capacity rechecked at 91%, digest discrepancy resolved)
+    - LOG.md (this entry)
+    - /Users/buddy/projects/ivy-control-vps/repos/traderie/STATUS.md (updated — reflects 17 migrations, 57 tests, pilot loaded, GitHub published, VPS 91%)
+    - /Users/buddy/projects/ivy-control-vps/docs/ (promoted conventions from historical ivy-control: PG naming, systemd, gates, health contract, deployment stop conditions)
+  validation:
+    - 57/57 tests pass
+    - 17 PG migrations applied
+    - 25 pilot rows confirmed in app.completed_trades
+    - VPS rechecked: 91% disk, 3.3 GB free, no sudo, no reboot pending
+    - digest discrepancy found and documented: not comparable (different source data at different times)
+    - dirty tree classified: SESSION.md/LOG.md durable, product JSONs generated/runtime, 6 decision docs historical
+  outcome: Phase A verified complete. Phase B gated on VPS capacity.
+  next: VPS capacity remediation (cleanup + possible resize), then bounded deployment proof by exact SHA b3b70a0
