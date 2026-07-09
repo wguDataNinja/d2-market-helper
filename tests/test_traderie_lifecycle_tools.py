@@ -109,10 +109,10 @@ def test_health_transform_keeps_retention_fields():
         }
     )
 
-    assert sanitized["retention_health"]["completed_trades_eligible_7d"] == 0
-    assert sanitized["latest_collection_metrics"]["records_returned"] == 25
-    assert sanitized["latest_prune_audit"]["action"] == "pruned"
-    assert sanitized["row_counts"]["completed_trades"] == 25
+    assert sanitized["metadata"]["retention_health"]["completed_trades_eligible_7d"] == 0
+    assert sanitized["metadata"]["latest_collection_metrics"]["records_returned"] == 25
+    assert sanitized["metadata"]["latest_prune_audit"]["action"] == "pruned"
+    assert sanitized["metadata"]["row_counts"]["completed_trades"] == 25
     assert sanitized["database_size_bytes"] == 1234
 
 

@@ -68,7 +68,7 @@ When `TRADERIE_PG_ADAPTER_ENABLED=false` (default):
 
 ## Gate Sequence
 
-1. **SHARED-004** VPS Capacity Gate — confirm disk/RAM headroom before any install
+1. **VPS Capacity Gate** — confirm disk/RAM headroom before any install (per `ivy-control-vps/docs/PORTFOLIO_CONVENTIONS.md`)
 2. **Scheduler Gate** — approve timer installation
 3. **Database Authority Gate** — before PG role/database creation
 4. **Backup/Restore Gate** — before backup-postgres, retain-snapshots, or any destructive operation
@@ -79,9 +79,15 @@ When `TRADERIE_PG_ADAPTER_ENABLED=false` (default):
 | Document | Path |
 |----------|------|
 | Architecture | `ivy-control-vps/docs/PORTFOLIO_CONVENTIONS.md` |
-| Health contract | `ivy-control-vps/docs/PORTFOLIO_CONVENTIONS.md` (health contract section) |
+| Health contract | `ivy-control-vps/docs/HEALTH_CONTRACT.md` (v2.0.0) |
+| Health schema | `ivy-control-vps/docs/health/schemas/portfolio_health_schema.json` |
 | Backup/restore | `docs/backup-restore.md` |
 | Retention policy | `docs/retention.md` |
 | Schema/migrations | `db/README.md` |
 | Shared conventions | `ivy-control-vps/docs/PORTFOLIO_CONVENTIONS.md` |
 | Repository control | `ivy-control-vps/repos/traderie/CONTROL.md` |
+| Source authority | `docs/source-authority.md` |
+| Writer inventory | `docs/writer-inventory.md` |
+| Data transfer plan | `docs/data-transfer-plan.md` |
+| Scheduler cutover | `docs/scheduler-cutover-packet.md` |
+| Userscript boundary | `docs/userscript-boundary.md` |

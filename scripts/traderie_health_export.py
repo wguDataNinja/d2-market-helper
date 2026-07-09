@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Traderie health export — sanitized JSON matching SHARED-003 schema.
+"""Traderie health export — canonical v2 JSON.
 
 Default mode reads fixture data, applies redaction, and outputs sanitized JSON.
 When --pg is supplied, reads PostgreSQL health/retention summaries using the
@@ -8,7 +8,8 @@ configured local connection without printing credentials.
 Usage:
     python3 scripts/traderie_health_export.py [--output /tmp/traderie.health.json]
 
-See CODEX_SESSION_1_ARCHITECTURE.md §8 and SHARED-003_HEALTH_CONTRACT.md.
+Produces the portfolio v2 health contract payload.
+See docs/HEALTH_CONTRACT.md (ivy-control-vps).
 """
 
 import argparse
@@ -17,6 +18,7 @@ import logging
 import os
 import re
 import sys
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
@@ -76,46 +78,81 @@ def redact_dict(data: dict[str, Any]) -> dict[str, Any]:
 
 
 def transform_to_sanitized(private: dict[str, Any]) -> dict[str, Any]:
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    freshness = 0
+    now = datetime.now(timezone.utc)
+    now_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    project = private.get("project", "traderie")
+    workflow = private.get("workflow", "unknown")
+    workflow_id = f"{project}/{workflow}"
+
+    freshness_seconds = 0
     if private.get("last_success_at") and private.get("last_success_at") != "unknown":
         try:
             last = datetime.fromisoformat(private["last_success_at"].replace("Z", "+00:00"))
-            freshness = int((datetime.now(timezone.utc) - last).total_seconds())
+            freshness_seconds = int((now - last).total_seconds())
         except (ValueError, TypeError):
-            freshness = -1
+            freshness_seconds = -1
+
+    run_id = private.get("run_id") or str(uuid.uuid4())
+
+    metadata = {}
+    for key in ("cloudscraper_status", "snapshot_age", "product_age", "segment_status",
+                "hardcore_degraded", "history_rows", "unique_listing_count",
+                "largest_tables", "retention_health", "latest_collection_metrics",
+                "latest_prune_audit", "row_counts", "storage_growth_bytes"):
+        if key in private and private[key] is not None:
+            metadata[key] = private[key]
 
     sanitized = {
-        "schema_version": 1,
-        "generated_at": now,
-        "project": private.get("project", "traderie"),
-        "workflow": private.get("workflow", "unknown"),
+        # Required core
+        "contract_version": 2,
+        "generated_at": now_str,
+        "project": project,
+        "workflow": workflow,
+        "workflow_id": workflow_id,
+        "run_id": run_id,
         "status": private.get("status", "unknown"),
-        "last_success": private.get("last_success_at"),
-        "freshness": max(freshness, 0),
-        "expected_cadence": private.get("expected_cadence", 86400),
-        "volume_24h": private.get("records_written", 0),
-        "incident": private.get("incident_state", "none") == "active",
-        "degraded_reason_code": private.get("error_code") or private.get("error_class"),
+        "started_at": private.get("started_at"),
+        "finished_at": private.get("finished_at"),
+        "last_success_at": private.get("last_success_at"),
+        "expected_cadence_seconds": private.get("expected_cadence", 86400),
+        "freshness_seconds": max(freshness_seconds, 0),
+        "deployed_revision": private.get("deployed_revision"),
+        "scheduler_state": private.get("scheduler_state", "unknown"),
         "backup_state": private.get("backup_state", "not_applicable"),
+        "incident_state": private.get("incident_state", "none"),
+
+        # Optional producer
+        "records_read": private.get("records_read"),
+        "records_written": private.get("records_written"),
+        "records_rejected": private.get("records_rejected"),
+        "backlog": private.get("backlog"),
+        "retry_count": private.get("retry_count"),
+        "error_class": private.get("error_class"),
+        "schema_version": private.get("schema_version"),
         "migration_version": private.get("migration_version"),
-        "storage_growth_bytes": private.get("storage_growth_bytes"),
-        "cloudscraper_status": private.get("cloudscraper_status"),
-        "snapshot_age": private.get("snapshot_age"),
-        "product_age": private.get("product_age"),
-        "segment_status": private.get("segment_status"),
-        "hardcore_degraded": private.get("hardcore_degraded"),
-        "history_rows": private.get("history_rows"),
-        "unique_listing_count": private.get("unique_listing_count"),
+        "backup_age_seconds": private.get("backup_age_seconds"),
         "storage_bytes": private.get("storage_bytes"),
+        "storage_growth_bytes_24h": private.get("storage_growth_bytes_24h"),
         "database_size_bytes": private.get("database_size_bytes"),
-        "largest_tables": private.get("largest_tables"),
-        "retention_health": private.get("retention_health"),
-        "latest_collection_metrics": private.get("latest_collection_metrics"),
-        "latest_prune_audit": private.get("latest_prune_audit"),
-        "row_counts": private.get("row_counts"),
+        "data_directory_size_bytes": private.get("data_directory_size_bytes"),
+        "prune_status": private.get("prune_status"),
+        "disk_free_bytes": private.get("disk_free_bytes"),
+        "disk_usage_pct": private.get("disk_usage_pct"),
+        "producer_version": private.get("producer_version"),
+        "project_environment": private.get("project_environment"),
+
+        # Operator-only (stripped by redact_dict in public projection)
+        "error_code": private.get("error_code"),
+        "error_message_private": private.get("error_message_private"),
+
+        # Traderie-specific metadata
+        "metadata": metadata if metadata else None,
     }
-    return {k: v for k, v in sanitized.items() if v is not None or k in ("schema_version", "generated_at", "project", "workflow", "freshness", "expected_cadence", "incident")}
+
+    required_nullable = {"started_at", "finished_at", "last_success_at",
+                         "deployed_revision", "error_code", "error_message_private"}
+    return {k: v for k, v in sanitized.items() if v is not None or k in required_nullable}
 
 
 def build_default_fixture_input() -> dict[str, Any]:
@@ -152,6 +189,13 @@ def build_default_fixture_input() -> dict[str, Any]:
         "hardcore_degraded": False,
         "history_rows": 99450,
         "unique_listing_count": 75000,
+        "database_size_bytes": 9700000,
+        "data_directory_size_bytes": 529000,
+        "prune_status": "ok",
+        "disk_free_bytes": 5800000000,
+        "disk_usage_pct": 84.0,
+        "producer_version": "traderie_health_export.py/2.0.0",
+        "project_environment": "development",
     }
 
 
@@ -229,13 +273,18 @@ def _fetch_all(cur, sql: str, params: tuple[Any, ...] = ()) -> list[dict[str, An
 
 def build_pg_health_input() -> dict[str, Any]:
     """Read sanitized PostgreSQL health facts only."""
+    import os
+    import shutil
+
     with _pg_connect() as conn:
         with conn.cursor() as cur:
             latest_health = _fetch_one(
                 cur,
                 """
                 SELECT workflow, status, last_success_at, expected_cadence, records_written,
-                       error_class, backup_state, migration_version
+                       error_class, backup_state, migration_version, schema_version,
+                       deployed_revision, scheduler_state, incident_state,
+                       records_read, records_rejected, backlog, retry_count, error_code
                 FROM health.health_runs
                 ORDER BY started_at DESC
                 LIMIT 1
@@ -243,7 +292,7 @@ def build_pg_health_input() -> dict[str, Any]:
             )
             migration = _fetch_one(
                 cur,
-                "SELECT name FROM app.traderie_migrations ORDER BY version DESC LIMIT 1",
+                "SELECT name, version FROM app.traderie_migrations ORDER BY version DESC LIMIT 1",
             )
             db_size = _fetch_one(cur, "SELECT pg_database_size(current_database()) AS database_size_bytes")
             largest_tables = _fetch_all(
@@ -298,20 +347,81 @@ def build_pg_health_input() -> dict[str, Any]:
                 LIMIT 1
                 """,
             )
+            backup_state_row = _fetch_one(
+                cur,
+                """
+                SELECT backup_state, backup_age_seconds
+                FROM health.health_runs
+                WHERE backup_state IS NOT NULL AND backup_state != 'not_applicable'
+                ORDER BY started_at DESC
+                LIMIT 1
+                """,
+            )
 
     last_success = latest_health.get("last_success_at")
+
+    # Derive prune_status from latest prune audit
+    latest_prune_acted_at = latest_prune.get("acted_at") if latest_prune else None
+    prune_status = "ok"
+    if latest_prune_acted_at:
+        try:
+            prune_age = (datetime.now(timezone.utc) - latest_prune_acted_at).total_seconds()
+            if prune_age > 35 * 86400:
+                prune_status = "stale"
+        except TypeError:
+            prune_status = "unknown"
+
+    # Filesystem disk stats from REPO_ROOT
+    disk_free_bytes = None
+    disk_usage_pct = None
+    try:
+        usage = shutil.disk_usage(REPO_ROOT)
+        disk_free_bytes = usage.free
+        disk_usage_pct = round((usage.used / usage.total) * 100, 2)
+    except OSError:
+        pass
+
+    # Data directory size via env var or default
+    data_directory_size_bytes = None
+    data_root = os.environ.get("TRADERIE_DATA_ROOT", "")
+    if data_root:
+        try:
+            data_dir = Path(data_root)
+            if data_dir.is_dir():
+                data_directory_size_bytes = sum(
+                    f.stat().st_size for f in data_dir.rglob("*") if f.is_file()
+                )
+        except OSError:
+            pass
+
     return {
         "project": "traderie",
         "workflow": latest_health.get("workflow", "postgres_health"),
         "status": latest_health.get("status", "ok"),
         "last_success_at": last_success.isoformat().replace("+00:00", "Z") if hasattr(last_success, "isoformat") else last_success,
-        "expected_cadence": 21600,
+        "expected_cadence": latest_health.get("expected_cadence", 21600) if isinstance(latest_health.get("expected_cadence"), (int, float)) else 21600,
+        "records_read": latest_health.get("records_read"),
         "records_written": latest_health.get("records_written", 0),
+        "records_rejected": latest_health.get("records_rejected"),
+        "backlog": latest_health.get("backlog"),
+        "retry_count": latest_health.get("retry_count"),
         "error_class": latest_health.get("error_class"),
-        "backup_state": latest_health.get("backup_state", "unknown"),
+        "error_code": latest_health.get("error_code"),
+        "deployed_revision": latest_health.get("deployed_revision") or os.environ.get("TRADERIE_DEPLOYED_REVISION"),
+        "schema_version": latest_health.get("schema_version") or migration.get("version"),
         "migration_version": latest_health.get("migration_version") or migration.get("name"),
+        "scheduler_state": latest_health.get("scheduler_state", "unknown"),
+        "backup_state": latest_health.get("backup_state", "unknown"),
+        "backup_age_seconds": backup_state_row.get("backup_age_seconds") if backup_state_row else None,
+        "incident_state": latest_health.get("incident_state", "none"),
         "database_size_bytes": db_size.get("database_size_bytes"),
         "storage_bytes": db_size.get("database_size_bytes"),
+        "data_directory_size_bytes": data_directory_size_bytes,
+        "prune_status": prune_status,
+        "disk_free_bytes": disk_free_bytes,
+        "disk_usage_pct": disk_usage_pct,
+        "producer_version": "traderie_health_export.py/2.0.0",
+        "project_environment": os.environ.get("TRADERIE_ENVIRONMENT", "development"),
         "largest_tables": largest_tables,
         "row_counts": row_counts,
         "retention_health": retention,

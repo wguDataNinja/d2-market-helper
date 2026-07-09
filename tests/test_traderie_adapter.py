@@ -344,15 +344,21 @@ class TestHealthExportRedaction:
         assert sanitized["project"] == "traderie"
         assert sanitized["workflow"] == "snapshot"
         assert sanitized["status"] == "ok"
-        assert sanitized["schema_version"] == 1
-        assert "error_message_private" not in sanitized
+        assert sanitized["contract_version"] == 2
+        assert sanitized["workflow_id"] == "traderie/snapshot"
+        assert sanitized["schema_version"] == 9
         assert sanitized["migration_version"] == "20260705_009_create_health_schema"
+        assert sanitized["error_message_private"] is not None  # included in private sanitized output
 
     def test_redaction_chain(self):
         private = build_default_fixture_input()
         sanitized = transform_to_sanitized(private)
-        for field in PROHIBITED_FIELDS:
-            assert field not in sanitized
+        # Operator-only fields are present in private sanitized output
+        assert "error_message_private" in sanitized
+        # Other prohibited fields (non-operator) should not be present
+        other_prohibited = PROHIBITED_FIELDS - {"error_message_private"}
+        for field in other_prohibited:
+            assert field not in sanitized, f"Field {field} should not be in sanitized output"
         redacted = redact_dict(sanitized)
         for field in PROHIBITED_FIELDS:
             assert field not in redacted
@@ -363,18 +369,19 @@ class TestHealthExportRedaction:
         assert "<redacted>" in redacted["description"]
         assert "<ip-redacted>" in redacted["description"]
 
-    def test_degraded_reason_code_propagated(self):
+    def test_error_class_and_code_separate(self):
         data = dict(HEALTH_EXPORT_INPUT)
         data["error_class"] = "TimeoutError"
         data["error_code"] = "E_TIMEOUT"
         sanitized = transform_to_sanitized(data)
-        assert sanitized["degraded_reason_code"] == "E_TIMEOUT"
+        assert sanitized["error_class"] == "TimeoutError"
+        assert sanitized["error_code"] == "E_TIMEOUT"
 
-    def test_incident_flag(self):
+    def test_incident_state(self):
         data = dict(HEALTH_EXPORT_INPUT)
         data["incident_state"] = "active"
         sanitized = transform_to_sanitized(data)
-        assert sanitized["incident"] is True
+        assert sanitized["incident_state"] == "active"
 
 
 # ---------------------------------------------------------------------------
