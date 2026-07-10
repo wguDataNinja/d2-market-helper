@@ -26,7 +26,7 @@ ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
 # WARNING: Remove --dry-run ONLY after Destructive Operation Gate is granted.
 # Retention script defaults to dry-run for safety.
 ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/retain-snapshots.lock \
-    /usr/bin/python3 /home/scraper/apps/traderie/scripts/traderie_disk_inventory.py \
+    /home/scraper/apps/traderie/.venv/bin/python /home/scraper/apps/traderie/scripts/traderie_disk_inventory.py \
     --mode prune --dry-run
 
 # PG-disabled fallback: retention operates on filesystem artifacts only.

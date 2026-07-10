@@ -21,7 +21,7 @@ EnvironmentFile=/home/scraper/config/traderie.env
 
 ExecStartPre=/usr/bin/mkdir -p /home/scraper/data/traderie/.locks
 ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/check-health.lock \
-    /usr/bin/python3 /home/scraper/apps/traderie/scripts/traderie_health_export.py \
+    /home/scraper/apps/traderie/.venv/bin/python /home/scraper/apps/traderie/scripts/traderie_health_export.py \
     --pg \
     --output ${TRADERIE_HEALTH_OUTPUT}
 

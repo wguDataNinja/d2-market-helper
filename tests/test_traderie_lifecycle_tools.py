@@ -2,6 +2,7 @@ import sys
 from argparse import Namespace
 from pathlib import Path
 import os
+import shlex
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -141,3 +142,68 @@ def test_snapshot_timer_uses_four_daily_runs():
     assert "OnCalendar=06:00:00" in timer
     assert "OnCalendar=12:00:00" in timer
     assert "OnCalendar=18:00:00" in timer
+
+
+def _continued_unit_values(unit_path, key):
+    values = []
+    lines = unit_path.read_text().splitlines()
+    index = 0
+    prefix = f"{key}="
+
+    while index < len(lines):
+        line = lines[index].strip()
+        if not line or line.startswith("#") or not line.startswith(prefix):
+            index += 1
+            continue
+
+        value_parts = [line.split("=", 1)[1].rstrip()]
+        while value_parts[-1].endswith("\\") and index + 1 < len(lines):
+            value_parts[-1] = value_parts[-1][:-1].rstrip()
+            index += 1
+            value_parts.append(lines[index].strip().rstrip())
+        values.append(" ".join(part for part in value_parts if part))
+        index += 1
+
+    return values
+
+
+def test_all_python_services_use_venv():
+    approved_python = "/home/scraper/apps/traderie/.venv/bin/python"
+
+    for unit_path in (REPO_ROOT / "deploy" / "systemd").glob("traderie-*.service"):
+        for exec_start in _continued_unit_values(unit_path, "ExecStart"):
+            tokens = shlex.split(exec_start)
+            python_tokens = [
+                token
+                for token in tokens
+                if token.startswith("/") and Path(token).name.startswith("python")
+            ]
+            assert all(token == approved_python for token in python_tokens), (
+                f"{unit_path.name} uses Python outside the deployment venv: "
+                f"{python_tokens}"
+            )
+
+
+def test_all_service_ExecStart_targets_exist():
+    deploy_root = "/home/scraper/apps/traderie/"
+    approved_external_executables = {"/usr/bin/flock"}
+    approved_deployment_executables = {
+        "/home/scraper/apps/traderie/.venv/bin/python",
+    }
+
+    for unit_path in (REPO_ROOT / "deploy" / "systemd").glob("traderie-*.service"):
+        for exec_start in _continued_unit_values(unit_path, "ExecStart"):
+            for token in shlex.split(exec_start):
+                if token in approved_external_executables:
+                    continue
+                if token in approved_deployment_executables:
+                    continue
+                if not token.startswith(deploy_root):
+                    continue
+
+                repo_relative = token.removeprefix(deploy_root)
+                target = REPO_ROOT / repo_relative
+                assert target.exists(), (
+                    f"{unit_path.name} references missing deployed repo path: "
+                    f"{token}"
+                )
