@@ -1,8 +1,8 @@
 {
   "schema_version": "0.2",
   "product": "external_cash_prices",
-  "generated_at": "2026-07-08T10:00:41Z",
-  "product_generated_at": "2026-07-08T10:00:41Z",
+  "generated_at": "2026-07-09T10:00:34Z",
+  "product_generated_at": "2026-07-09T10:00:34Z",
   "source_window_label": "current_snapshot",
   "model": "external_cash_listing_snapshot_v0",
   "caveats": [
