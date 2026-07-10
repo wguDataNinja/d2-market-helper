@@ -28,6 +28,8 @@ sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.traderie_pg_adapter import PG_URL_ENV_VAR
 
+PG_READER_URL_ENV_VAR = "TRADERIE_PG_READER_URL"
+
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
@@ -203,6 +205,12 @@ def _pg_connect():
     import psycopg2
     from psycopg2 import sql
     from psycopg2.extras import RealDictCursor
+
+    reader_url = os.environ.get(PG_READER_URL_ENV_VAR, "").strip()
+    if reader_url:
+        conn = psycopg2.connect(reader_url, cursor_factory=RealDictCursor)
+        conn.autocommit = True
+        return conn
 
     pg_url = os.environ.get(PG_URL_ENV_VAR, "").strip()
     if pg_url:

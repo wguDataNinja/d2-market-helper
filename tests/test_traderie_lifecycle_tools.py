@@ -184,6 +184,162 @@ def test_all_python_services_use_venv():
             )
 
 
+def _install_fake_psycopg2(mock_connect=None):
+    """Install a fake psycopg2 module into sys.modules for testing."""
+    import sys, types
+    mock_connect_fn = mock_connect or (lambda *a, **kw: None)
+
+    fake_pg = types.ModuleType("psycopg2")
+    fake_pg.__path__ = []
+    fake_pg.__package__ = "psycopg2"
+    fake_pg.connect = mock_connect_fn
+
+    fake_extras = types.ModuleType("psycopg2.extras")
+    fake_extras.__package__ = "psycopg2.extras"
+    fake_extras.RealDictCursor = dict
+
+    fake_sql = types.ModuleType("psycopg2.sql")
+    fake_sql.__package__ = "psycopg2.sql"
+    fake_sql.Identifier = lambda n: f'"{n}"'
+    fake_sql.SQL = lambda s: s
+
+    saved = {}
+    for name in ("psycopg2", "psycopg2.extras", "psycopg2.sql"):
+        saved[name] = sys.modules.get(name)
+    sys.modules["psycopg2"] = fake_pg
+    sys.modules["psycopg2.extras"] = fake_extras
+    sys.modules["psycopg2.sql"] = fake_sql
+
+    def restore():
+        for name, mod in saved.items():
+            if mod is not None:
+                sys.modules[name] = mod
+            else:
+                sys.modules.pop(name, None)
+
+    return fake_pg, restore
+
+
+def _test_pg_connect(env, mock_conn, assert_fn):
+    """Helper: install fake psycopg2, run _pg_connect with env, call assert_fn(mock_connect)."""
+    import os
+    from unittest.mock import patch, MagicMock
+
+    mock_connect = MagicMock(return_value=mock_conn)
+    fake_pg, restore = _install_fake_psycopg2(mock_connect)
+    try:
+        with patch.object(os.environ, "get", lambda k, d="": env.get(k, d)):
+            from scripts.traderie_health_export import _pg_connect
+            conn = _pg_connect()
+        assert_fn(mock_connect)
+        assert conn is mock_conn
+    finally:
+        restore()
+
+
+def test_pg_connect_reader_url_preferred():
+    """TRADERIE_PG_READER_URL is preferred over TRADERIE_PG_URL."""
+    from unittest.mock import MagicMock
+
+    mock_conn = MagicMock()
+    mock_conn.cursor.return_value.__enter__.return_value = MagicMock()
+
+    def check(mc):
+        mc.assert_called_once_with(
+            "postgresql://traderie_reader:secret@127.0.0.1:5432/traderie",
+            cursor_factory=dict,
+        )
+
+    _test_pg_connect({
+        "TRADERIE_PG_READER_URL": "postgresql://traderie_reader:secret@127.0.0.1:5432/traderie",
+        "TRADERIE_PG_URL": "postgresql://traderie_writer:secret@127.0.0.1:5432/traderie",
+    }, mock_conn, check)
+
+
+def test_pg_connect_reader_url_fallback_to_writer():
+    """Empty TRADERIE_PG_READER_URL falls back to TRADERIE_PG_URL + SET ROLE."""
+    from unittest.mock import MagicMock
+
+    mock_conn = MagicMock()
+    mock_cur = MagicMock()
+    mock_cur.fetchone.return_value = {"current_user": "traderie_writer"}
+    mock_conn.cursor.return_value.__enter__.return_value = mock_cur
+
+    def check(mc):
+        mc.assert_called_once_with(
+            "postgresql://traderie_writer:secret@127.0.0.1:5432/traderie",
+            cursor_factory=dict,
+        )
+
+    _test_pg_connect({
+        "TRADERIE_PG_READER_URL": "",
+        "TRADERIE_PG_URL": "postgresql://traderie_writer:secret@127.0.0.1:5432/traderie",
+    }, mock_conn, check)
+
+
+def test_pg_connect_whitespace_reader_url():
+    """Whitespace-only TRADERIE_PG_READER_URL treated as absent."""
+    from unittest.mock import MagicMock
+
+    mock_conn = MagicMock()
+    mock_cur = MagicMock()
+    mock_cur.fetchone.return_value = {"current_user": "traderie_writer"}
+    mock_conn.cursor.return_value.__enter__.return_value = mock_cur
+
+    def check(mc):
+        mc.assert_called_once_with(
+            "postgresql://traderie_writer:secret@127.0.0.1:5432/traderie",
+            cursor_factory=dict,
+        )
+
+    _test_pg_connect({
+        "TRADERIE_PG_READER_URL": "   ",
+        "TRADERIE_PG_URL": "postgresql://traderie_writer:secret@127.0.0.1:5432/traderie",
+    }, mock_conn, check)
+
+
+def test_pg_connect_no_urls_uses_kwargs():
+    """Neither reader nor writer URL available uses individual env vars."""
+    from unittest.mock import MagicMock
+
+    mock_conn = MagicMock()
+    mock_cur = MagicMock()
+    mock_cur.fetchone.return_value = {"current_user": "traderie_writer"}
+    mock_conn.cursor.return_value.__enter__.return_value = mock_cur
+
+    def check(mc):
+        mc.assert_called_once()
+        assert mc.call_args[1].get("database") == "traderie"
+        assert mc.call_args[1].get("host") == "127.0.0.1"
+        assert mc.call_args[1].get("user") == "traderie_writer"
+
+    _test_pg_connect({
+        "TRADERIE_PG_DATABASE": "traderie",
+        "PGHOST": "127.0.0.1",
+        "PGUSER": "traderie_writer",
+    }, mock_conn, check)
+
+
+def test_pg_connect_no_set_role_with_reader_url():
+    """When reader URL is present, connection returns without cursor execute."""
+    from unittest.mock import MagicMock
+
+    def check(mc):
+        mc.assert_called_once()
+
+    _test_pg_connect({
+        "TRADERIE_PG_READER_URL": "postgresql://traderie_reader:secret@127.0.0.1:5432/traderie",
+        "TRADERIE_PG_URL": "postgresql://traderie_writer:secret@127.0.0.1:5432/traderie",
+    }, MagicMock(), check)
+
+
+def test_health_import_does_not_expose_urls():
+    """Secret-bearing URL env vars are not exposed in normal error text."""
+    from scripts.traderie_health_export import PG_READER_URL_ENV_VAR, PG_URL_ENV_VAR
+    assert PG_READER_URL_ENV_VAR == "TRADERIE_PG_READER_URL"
+    assert PG_URL_ENV_VAR == "TRADERIE_PG_URL"
+
+
 def test_all_service_ExecStart_targets_exist():
     deploy_root = "/home/scraper/apps/traderie/"
     approved_external_executables = {"/usr/bin/flock"}
