@@ -340,6 +340,21 @@ def test_health_import_does_not_expose_urls():
     assert PG_URL_ENV_VAR == "TRADERIE_PG_URL"
 
 
+def test_ingest_service_timeout_is_evidence_based():
+    """traderie-ingest-snapshot.service has a TimeoutStartSec covering full runtime.
+
+    The snapshot collects 4 segments (pc_sc_nl, pc_sc_l, pc_hc_l, pc_hc_nl)
+    with 10 rune items each. Per-item timeouts: 10-20s with up to 3 retries.
+    Observed runtime for 3/4 segments: ~239s. Full estimated runtime: ~350s.
+    TimeoutStartSec=600 provides 1.7x headroom over the estimated maximum.
+    """
+    unit_path = REPO_ROOT / "deploy" / "systemd" / "traderie-ingest-snapshot.service"
+    content = unit_path.read_text()
+    assert "TimeoutStartSec=600" in content, (
+        "Expected TimeoutStartSec=600 based on observed runtime evidence"
+    )
+
+
 def test_all_service_ExecStart_targets_exist():
     deploy_root = "/home/scraper/apps/traderie/"
     approved_external_executables = {"/usr/bin/flock"}

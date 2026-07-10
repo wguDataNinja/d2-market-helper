@@ -30,7 +30,7 @@ ExecStart=/usr/bin/flock -n /home/scraper/data/traderie/.locks/snapshot.lock \
 
 Restart=on-failure
 RestartSec=30
-TimeoutStartSec=300
+TimeoutStartSec=600
 StandardOutput=journal
 StandardError=journal
 
