@@ -340,19 +340,38 @@ def test_health_import_does_not_expose_urls():
     assert PG_URL_ENV_VAR == "TRADERIE_PG_URL"
 
 
-def test_ingest_service_timeout_is_evidence_based():
-    """traderie-ingest-snapshot.service has a TimeoutStartSec covering full runtime.
-
-    The snapshot collects 4 segments (pc_sc_nl, pc_sc_l, pc_hc_l, pc_hc_nl)
-    with 10 rune items each. Per-item timeouts: 10-20s with up to 3 retries.
-    Observed runtime for 3/4 segments: ~239s. Full estimated runtime: ~350s.
-    TimeoutStartSec=600 provides 1.7x headroom over the estimated maximum.
+def test_ingest_service_uses_infinity_timeout_with_per_segment_bounds():
+    """traderie-ingest-snapshot.service uses TimeoutStartSec=infinity
+    because each segment has its own timeout in the orchestrator script.
     """
     unit_path = REPO_ROOT / "deploy" / "systemd" / "traderie-ingest-snapshot.service"
     content = unit_path.read_text()
-    assert "TimeoutStartSec=600" in content, (
-        "Expected TimeoutStartSec=600 based on observed runtime evidence"
-    )
+    assert "TimeoutStartSec=infinity" in content
+
+def test_generation_orchestrator_script_exists():
+    script = REPO_ROOT / "scripts" / "run_traderie_generation.sh"
+    assert script.is_file()
+    assert os.access(script, os.X_OK)
+
+def test_generation_orchestrator_defines_all_segment_timeouts():
+    script = (REPO_ROOT / "scripts" / "run_traderie_generation.sh").read_text()
+    for seg in ("pc_sc_nl", "pc_sc_l", "pc_hc_l", "pc_hc_nl"):
+        assert seg in script, f"Missing segment {seg} in orchestrator"
+        assert f"{seg})" in script, f"Missing timeout case for {seg} in orchestrator"
+
+def test_generation_orchestrator_timeouts_are_positive():
+    script = (REPO_ROOT / "scripts" / "run_traderie_generation.sh").read_text()
+    import re
+    timeouts = re.findall(r'(\w+)\)\s*echo\s+(\d+)', script)
+    for seg, val in timeouts:
+        assert int(val) > 0, f"Non-positive timeout for {seg}: {val}"
+        assert int(val) >= 120, f"Timeout for {seg} too small: {val}s (min 120s)"
+
+def test_generation_orchestrator_invokes_snapshot_correctly():
+    script = (REPO_ROOT / "scripts" / "run_traderie_generation.sh").read_text()
+    assert "timeout" in script
+    assert "snapshot_traderie.py" in script
+    assert '--segment "$SEGMENT"' in script or "--segment" in script
 
 
 def test_all_service_ExecStart_targets_exist():
