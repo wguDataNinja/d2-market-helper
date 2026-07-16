@@ -33,28 +33,33 @@ echo "Python: $PYTHON"
 echo "Segments: ${SEGMENTS[*]}"
 
 OVERALL_EXIT=0
+GLOBAL_START_TS=$(date -u +%s)
 for SEGMENT in "${SEGMENTS[@]}"; do
     SEG_TIMEOUT="$(segment_timeout "$SEGMENT")"
-    echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] Segment: $SEGMENT (timeout=${SEG_TIMEOUT}s)"
+    GLOBAL_ELAPSED=$(( $(date -u +%s) - GLOBAL_START_TS ))
+    echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] [PHASE] segment_start segment=${SEGMENT} timeout=${SEG_TIMEOUT}s elapsed=${GLOBAL_ELAPSED}s"
 
     START_TS=$(date -u +%s)
     if timeout "$SEG_TIMEOUT" "$PYTHON" "$SNAPSHOT_SCRIPT" --segment "$SEGMENT"; then
         END_TS=$(date -u +%s)
         ELAPSED=$((END_TS - START_TS))
-        echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] Segment $SEGMENT completed (${ELAPSED}s)"
+        PCT=$(( 100 * ELAPSED / SEG_TIMEOUT ))
+        echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] [PHASE] segment_end segment=${SEGMENT} result=ok elapsed=${ELAPSED}s timeout=${SEG_TIMEOUT}s pct=${PCT}%"
     else
         EXIT_STATUS=$?
         END_TS=$(date -u +%s)
         ELAPSED=$((END_TS - START_TS))
+        PCT=$(( 100 * ELAPSED / SEG_TIMEOUT ))
         if [ "$EXIT_STATUS" -eq 124 ]; then
-            echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] ERROR: segment $SEGMENT timed out after ${SEG_TIMEOUT}s" >&2
+            echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] [PHASE] segment_end segment=${SEGMENT} result=timeout elapsed=${ELAPSED}s timeout=${SEG_TIMEOUT}s pct=${PCT}%" >&2
         else
-            echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] ERROR: segment $SEGMENT failed (exit=${EXIT_STATUS}, ${ELAPSED}s)" >&2
+            echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] [PHASE] segment_end segment=${SEGMENT} result=fail exit=${EXIT_STATUS} elapsed=${ELAPSED}s timeout=${SEG_TIMEOUT}s pct=${PCT}%" >&2
         fi
         OVERALL_EXIT=1
         # Continue to next segment on failure (do not stop the generation)
     fi
 done
 
-echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] Traderie generation finished (exit=${OVERALL_EXIT})"
+GLOBAL_ELAPSED=$(( $(date -u +%s) - GLOBAL_START_TS ))
+echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] [PHASE] generation_end result=$([ "$OVERALL_EXIT" -eq 0 ] && echo ok || echo partial_failure) elapsed=${GLOBAL_ELAPSED}s exit=${OVERALL_EXIT}"
 exit "$OVERALL_EXIT"

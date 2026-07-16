@@ -7,10 +7,13 @@ import shlex
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+SCRIPTS_ROOT = REPO_ROOT / "scripts"
+sys.path.insert(0, str(SCRIPTS_ROOT))
 
 from scripts.traderie_collection_metrics import build_metrics
 from scripts.traderie_health_export import _migration_version_number, transform_to_sanitized
 from scripts.traderie_prune import _where
+from scripts.snapshot_traderie import classify_error, ERROR_CLASS_TIMEOUT, ERROR_CLASS_HTTP, ERROR_CLASS_CONNECTION, ERROR_CLASS_PROTOCOL, ERROR_CLASS_UNKNOWN
 
 
 def test_collection_metrics_duplicate_ratio_from_payload():
@@ -373,6 +376,106 @@ def test_generation_orchestrator_invokes_snapshot_correctly():
     assert "snapshot_traderie.py" in script
     assert '--segment "$SEGMENT"' in script or "--segment" in script
 
+
+# ---------------------------------------------------------------------------
+# Instrumentation tests — bounded recovery markers
+# ---------------------------------------------------------------------------
+
+def test_classify_error_timeout():
+    from requests.exceptions import ReadTimeout, Timeout, ConnectTimeout
+    assert classify_error(ReadTimeout("read timed out")) == ERROR_CLASS_TIMEOUT
+    assert classify_error(Timeout("timed out")) == ERROR_CLASS_TIMEOUT
+    assert classify_error(ConnectTimeout("connect timed out")) == ERROR_CLASS_TIMEOUT
+
+
+def test_classify_error_http():
+    from requests.exceptions import HTTPError
+    assert classify_error(HTTPError("503 Server Error")) == ERROR_CLASS_HTTP
+
+
+def test_classify_error_connection():
+    from requests.exceptions import ConnectionError
+    assert classify_error(ConnectionError("connection refused")) == ERROR_CLASS_CONNECTION
+
+
+def test_classify_error_protocol():
+    from requests.exceptions import SSLError, InvalidURL, TooManyRedirects
+    assert classify_error(SSLError("bad handshake")) == ERROR_CLASS_PROTOCOL
+    assert classify_error(InvalidURL("bad url")) == ERROR_CLASS_PROTOCOL
+    assert classify_error(TooManyRedirects("too many")) == ERROR_CLASS_PROTOCOL
+
+
+def test_classify_error_unknown():
+    assert classify_error(ValueError("something else")) == ERROR_CLASS_UNKNOWN
+    assert classify_error(RuntimeError("unexpected")) == ERROR_CLASS_UNKNOWN
+    assert classify_error(Exception("generic")) == ERROR_CLASS_UNKNOWN
+
+
+def test_classify_error_no_raw_exception_text_in_class():
+    """Error classification returns a bounded symbol, not raw exception text."""
+    from requests.exceptions import ReadTimeout, HTTPError, ConnectionError, SSLError
+    for exc in (ReadTimeout("secret_key=abc123"),
+                HTTPError("password=xyz"),
+                ConnectionError("host=prod.internal"),
+                SSLError("private_cert.pem")):
+        cls = classify_error(exc)
+        assert cls in (ERROR_CLASS_TIMEOUT, ERROR_CLASS_HTTP,
+                       ERROR_CLASS_CONNECTION, ERROR_CLASS_PROTOCOL, ERROR_CLASS_UNKNOWN)
+        assert "secret" not in cls
+        assert "password" not in cls
+        assert "prod" not in cls
+        assert "private" not in cls
+
+
+def test_snapshot_script_has_phase_markers():
+    """snapshot_traderie.py prints [PHASE] markers for segment start/end."""
+    script = (REPO_ROOT / "scripts" / "snapshot_traderie.py").read_text()
+    assert "[PHASE] segment_start" in script
+    assert "[PHASE] segment_end" in script
+
+
+def test_snapshot_script_has_item_progress_markers():
+    """snapshot_traderie.py prints [ITEM] markers with result and elapsed."""
+    script = (REPO_ROOT / "scripts" / "snapshot_traderie.py").read_text()
+    assert "[ITEM]" in script
+    assert "result=" in script
+    assert "elapsed=" in script
+    assert "error_class=" in script
+
+
+def test_generation_script_has_phase_markers():
+    """run_traderie_generation.sh prints [PHASE] markers."""
+    script = (REPO_ROOT / "scripts" / "run_traderie_generation.sh").read_text()
+    assert "[PHASE] segment_start" in script
+    assert "[PHASE] segment_end" in script
+    assert "[PHASE] generation_end" in script
+
+
+def test_generation_script_reports_segment_timeout_pct():
+    """The orchestrator reports what percentage of timeout was consumed."""
+    script = (REPO_ROOT / "scripts" / "run_traderie_generation.sh").read_text()
+    assert "pct=" in script
+
+
+def test_snapshot_script_tracks_last_successful_unit():
+    """snapshot_traderie.py tracks and reports the last successful item per segment."""
+    script = (REPO_ROOT / "scripts" / "snapshot_traderie.py").read_text()
+    assert "last_successful_item" in script or "seg_last_success" in script
+
+
+def test_snapshot_script_summary_has_instrumentation_block():
+    """Segment summary contains a dedicated INSTRUMENTATION block."""
+    script = (REPO_ROOT / "scripts" / "snapshot_traderie.py").read_text()
+    assert "INSTRUMENTATION" in script
+    assert "PER-SEGMENT PROGRESS" in script
+
+
+def test_snapshot_script_elapsed_in_each_item_marker():
+    """Each [ITEM] line includes elapsed time in seconds."""
+    script = (REPO_ROOT / "scripts" / "snapshot_traderie.py").read_text()
+    assert "elapsed=" in script
+    assert "item_start" in script
+    assert "item_elapsed" in script
 
 def test_all_service_ExecStart_targets_exist():
     deploy_root = "/home/scraper/apps/traderie/"

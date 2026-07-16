@@ -40,6 +40,13 @@ HARDCORE_REQUEST_MAX_ATTEMPTS = 2
 HARDCORE_SEGMENTS = {"pc_hc_l", "pc_hc_nl"}
 CRITICAL_SEGMENTS = {"pc_sc_l", "pc_sc_nl"}
 
+# Bounded error classifications — no raw exception text, no secrets
+ERROR_CLASS_TIMEOUT = "timeout"
+ERROR_CLASS_HTTP = "http_error"
+ERROR_CLASS_CONNECTION = "connection_error"
+ERROR_CLASS_PROTOCOL = "protocol_error"
+ERROR_CLASS_UNKNOWN = "unknown"
+
 # Ruleset filter mapping (used with prop_Game%20version API param)
 # Proven via probe: prop_Game%20version=lord+of+destruction filters completed trades.
 RULESET_MAP = {
@@ -63,6 +70,21 @@ HARDCORE_SKIP_ITEMS = {
         "The Stone of Jordan",
     },
 }
+
+
+def classify_error(exc: Exception) -> str:
+    cls_name = type(exc).__name__
+    if cls_name in ("ReadTimeout", "Timeout", "ConnectTimeout"):
+        return ERROR_CLASS_TIMEOUT
+    if cls_name.startswith("HTTP") or "HTTPError" in cls_name or cls_name in ("HTTPStatusError",):
+        return ERROR_CLASS_HTTP
+    if cls_name in ("ConnectionError", "ConnectionResetError", "ConnectionAbortedError",
+                    "ConnectionRefusedError", "RemoteDisconnected", "ChunkedEncodingError"):
+        return ERROR_CLASS_CONNECTION
+    if cls_name in ("ProtocolError", "SSLError", "ProxyError", "InvalidURL",
+                    "TooManyRedirects", "InvalidSchema"):
+        return ERROR_CLASS_PROTOCOL
+    return ERROR_CLASS_UNKNOWN
 
 
 def load_json(path):
@@ -409,16 +431,30 @@ def main():
     results = []
     # Track failures per segment: {slug: [item_name, ...]}
     seg_failures: dict[str, list[str]] = {}
+    # Track per-segment progress for instrumentation
+    seg_timers: dict[str, dict] = {}
+    seg_last_success: dict[str, str] = {}
 
     for cfg in configs:
+        slug = cfg["slug"]
+        seg_start = time.time()
+        seg_items_total = 0
+        seg_items_ok = 0
+        seg_items_skip = 0
+        seg_items_fail = 0
+        print(f"\n[PHASE] segment_start segment={slug} captured_at={captured_at}")
+
         for category, items in items_by_cat.items():
             for name, item_id in items.items():
                 if args.item != "all" and not match_item_name(args.item, name):
                     continue
 
-                slug = cfg["slug"]
+                seg_items_total += 1
+                item_start = time.time()
+
                 if slug in HARDCORE_SKIP_ITEMS and name in HARDCORE_SKIP_ITEMS[slug]:
-                    print(f"  [SKIP] {name} — hardcore skip list ({slug})")
+                    print(f"  [ITEM] item={name} result=skip category={category}")
+                    seg_items_skip += 1
                     continue
 
                 try:
@@ -426,11 +462,16 @@ def main():
                         scraper, cfg, name, item_id, category, captured_at,
                         ruleset=args.ruleset)
                     results.append(result)
+                    item_elapsed = time.time() - item_start
+                    print(f"  [ITEM] item={name} result=ok elapsed={item_elapsed:.1f}s category={category}")
+                    seg_items_ok += 1
+                    seg_last_success[slug] = name
                 except Exception as e:
-                    slug = cfg["slug"]
-                    cls = type(e).__name__
-                    print(f"\n  [FAILED] {name} ({category}) on {slug}: {cls}: {e}")
+                    item_elapsed = time.time() - item_start
+                    ec = classify_error(e)
+                    print(f"  [ITEM] item={name} result=fail elapsed={item_elapsed:.1f}s error_class={ec} category={category}")
                     seg_failures.setdefault(slug, []).append(name)
+                    seg_items_fail += 1
 
                 if args.single:
                     print("\n  [--single] stopping after first match")
@@ -439,6 +480,20 @@ def main():
                 break
         if args.single and results:
             break
+
+        seg_elapsed = time.time() - seg_start
+        seg_timers[slug] = {
+            "elapsed": seg_elapsed,
+            "items_total": seg_items_total,
+            "items_ok": seg_items_ok,
+            "items_skip": seg_items_skip,
+            "items_fail": seg_items_fail,
+            "last_successful_item": seg_last_success.get(slug),
+        }
+        print(f"\n[PHASE] segment_end segment={slug} elapsed={seg_elapsed:.1f}s "
+              f"items_total={seg_items_total} items_ok={seg_items_ok} "
+              f"items_skip={seg_items_skip} items_fail={seg_items_fail}")
+
         time.sleep(PER_ITEM_DELAY + random.uniform(0, 2))
 
     total_listings = sum(r["listing_count"] for r in results)
@@ -478,6 +533,18 @@ def main():
     if crit_failed:
         print(f"  CRITICAL: {', '.join(crit_failed)}")
     print(f"  EXIT CODE: {exit_code} ({'critical failure' if critical_exit else 'ok' if not warn_segs else 'ok with warnings'})")
+
+    # Instrumentation: per-segment timing and progress detail
+    print(f"\n{'='*60}")
+    print(f"INSTRUMENTATION — PER-SEGMENT PROGRESS")
+    print(f"{'='*60}")
+    for slug, info in sorted(seg_timers.items()):
+        f_count = len(seg_failures.get(slug, []))
+        last_ok = info.get("last_successful_item") or "(none)"
+        print(f"  {slug}: elapsed={info['elapsed']:.1f}s "
+              f"ok={info['items_ok']} skip={info['items_skip']} fail={info['items_fail']} "
+              f"last_ok={last_ok}")
+
     print(f"\nTotal listings captured: {total_listings}")
     print(f"Unique listing IDs: {len(set(all_ids))}")
     if all_updated:
